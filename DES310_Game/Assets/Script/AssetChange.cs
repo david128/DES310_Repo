@@ -12,6 +12,7 @@ using UnityEngine;
 
 public class AssetChange : MonoBehaviour
 {
+    //Declare variables
     bool whichShape; //true for sphere, false for cube
 
     void Start()
@@ -50,18 +51,24 @@ public class AssetChange : MonoBehaviour
     //check for input
     void GetInput()
     {
+        //gets mouse inout
         if (Input.GetMouseButtonDown(0))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            //Declares variables
             RaycastHit hit;
 
+            //casts a ray from camera to mouse position
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+          
             //Check what has been clicked/touched//
+            
 
+            //Checks if the ray connects with an object/asset
             if (Physics.Raycast(ray, out hit))
             {
                 Debug.Log("hit");
 
-                //Call change function//
+                //Calls change function
                 ChangeAsset();
 
             }
