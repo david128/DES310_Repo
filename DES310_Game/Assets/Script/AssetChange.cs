@@ -59,18 +59,23 @@ public class AssetChange : MonoBehaviour
 
             //casts a ray from camera to mouse position
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-          
+
             //Check what has been clicked/touched//
-            
+          
 
             //Checks if the ray connects with an object/asset
             if (Physics.Raycast(ray, out hit))
             {
                 Debug.Log("hit");
 
-                //Calls change function
-                ChangeAsset();
+                //Checks if the player has enough money to upgrade the object
+                if (gameObject.GetComponent<Currency>().GetMoney() >= 500)
+                {
+                    //Calls change function
+                    ChangeAsset();
 
+                    gameObject.GetComponent<Currency>().SetMoney(gameObject.GetComponent<Currency>().GetMoney() - 500);
+                }
             }
         }
     }
