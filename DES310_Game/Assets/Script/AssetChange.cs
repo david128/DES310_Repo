@@ -14,7 +14,7 @@ public class AssetChange : MonoBehaviour
 {
     //Declare variables
     bool whichShape; //true for sphere, false for cube
-
+    public bool controlType; //true for mobile, false for pc
     void Start()
     {
  
@@ -51,33 +51,66 @@ public class AssetChange : MonoBehaviour
     //check for input
     void GetInput()
     {
-        //gets mouse inout
-        if (Input.GetMouseButtonDown(0))
+        //gets input
+        if (controlType ==true)//mobile
         {
-            //Declares variables
-            RaycastHit hit;
-
-            //casts a ray from camera to mouse position
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            //Check what has been clicked/touched//
-          
-
-            //Checks if the ray connects with an object/asset
-            if (Physics.Raycast(ray, out hit))
+            if (Input.touchCount> 0)
             {
-                Debug.Log("hit");
+                //Declares variables
+                RaycastHit hit;
 
-                //Checks if the player has enough money to upgrade the object
-                if (gameObject.GetComponent<Currency>().GetMoney() >= 500)
+                //casts a ray from camera to mouse position
+                Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+
+                //Check what has been clicked/touched//
+
+
+                //Checks if the ray connects with an object/asset
+                if (Physics.Raycast(ray, out hit))
                 {
-                    //Calls change function
-                    ChangeAsset();
+                    Debug.Log("hit");
 
-                    gameObject.GetComponent<Currency>().SetMoney(gameObject.GetComponent<Currency>().GetMoney() - 500);
+                    //Checks if the player has enough money to upgrade the object
+                    if (gameObject.GetComponent<Currency>().GetMoney() >= 500)
+                    {
+                        //Calls change function
+                        ChangeAsset();
+
+                        gameObject.GetComponent<Currency>().SetMoney(gameObject.GetComponent<Currency>().GetMoney() - 500);
+                    }
                 }
             }
         }
+        else
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                //Declares variables
+                RaycastHit hit;
+
+                //casts a ray from camera to mouse position
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+                //Check what has been clicked/touched//
+
+
+                //Checks if the ray connects with an object/asset
+                if (Physics.Raycast(ray, out hit))
+                {
+                    Debug.Log("hit");
+
+                    //Checks if the player has enough money to upgrade the object
+                    if (gameObject.GetComponent<Currency>().GetMoney() >= 500)
+                    {
+                        //Calls change function
+                        ChangeAsset();
+
+                        gameObject.GetComponent<Currency>().SetMoney(gameObject.GetComponent<Currency>().GetMoney() - 500);
+                    }
+                }
+            }
+        }
+       
     }
 
     //everything to be updated
