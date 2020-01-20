@@ -17,7 +17,7 @@ public class AssetChange : MonoBehaviour
     public bool controlType; //true for mobile, false for pc
     void Start()
     {
- 
+        
     }
 
     void ChangeAsset()
@@ -39,6 +39,7 @@ public class AssetChange : MonoBehaviour
         if (whichShape == false)
         {
             GameObject.Instantiate(Resources.Load("Sphere"), transform.position, transform.rotation);
+
             whichShape = true;
         }
         else
@@ -68,15 +69,18 @@ public class AssetChange : MonoBehaviour
                 //Checks if the ray connects with an object/asset
                 if (Physics.Raycast(ray, out hit))
                 {
-                    Debug.Log("hit");
-
-                    //Checks if the player has enough money to upgrade the object
-                    if (gameObject.GetComponent<Currency>().GetMoney() >= 500)
+                    if (hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectType() == 0)
                     {
-                        //Calls change function
-                        ChangeAsset();
+                        Debug.Log("hit");
 
-                        gameObject.GetComponent<Currency>().SetMoney(gameObject.GetComponent<Currency>().GetMoney() - 500);
+                        //Checks if the player has enough money to upgrade the object
+                        if (gameObject.GetComponent<Currency>().GetMoney() >= 500)
+                        {
+                            //Calls change function
+                            ChangeAsset();
+
+                            gameObject.GetComponent<Currency>().SetMoney(gameObject.GetComponent<Currency>().GetMoney() - 500);
+                        }
                     }
                 }
             }
@@ -97,15 +101,18 @@ public class AssetChange : MonoBehaviour
                 //Checks if the ray connects with an object/asset
                 if (Physics.Raycast(ray, out hit))
                 {
-                    Debug.Log("hit");
-
-                    //Checks if the player has enough money to upgrade the object
-                    if (gameObject.GetComponent<Currency>().GetMoney() >= 500)
+                    if (hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectType() == 0)
                     {
-                        //Calls change function
-                        ChangeAsset();
+                        Debug.Log("hit");
 
-                        gameObject.GetComponent<Currency>().SetMoney(gameObject.GetComponent<Currency>().GetMoney() - 500);
+                        //Checks if the player has enough money to upgrade the object
+                        if (gameObject.GetComponent<Currency>().GetMoney() >= 500)
+                        {
+                            //Calls change function
+                            ChangeAsset();
+
+                            gameObject.GetComponent<Currency>().SetMoney(gameObject.GetComponent<Currency>().GetMoney() - 500);
+                        }
                     }
                 }
             }
