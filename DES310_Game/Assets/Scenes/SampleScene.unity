@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 215528161}
   - component: {fileID: 215528163}
   - component: {fileID: 215528162}
+  - component: {fileID: 215528164}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -208,6 +209,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 215528158}
   time: 0
+--- !u!114 &215528164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215528158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf218e0ea1409444b82427d251c6deab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridSquare: {fileID: 2595849239207618586, guid: 574f86a5fa7153b45942290530d4df69,
+    type: 3}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,7 +530,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4f209d8a96c8da746bb445c3d2d6ac48, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
