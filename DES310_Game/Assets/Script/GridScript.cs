@@ -8,8 +8,8 @@ public class GridScript : MonoBehaviour
 
     public int columnLength, rowLength;
 
-    public int xSpacing;
-    public int zSpacing;
+    public float xSpacing;
+    public float ySpacing;
 
     public GameObject gridSquare;
 
@@ -24,9 +24,9 @@ public class GridScript : MonoBehaviour
             xSpacing = 1;
         }
 
-        if (zSpacing < 1)
+        if (ySpacing < 1)
         {
-            zSpacing = 1;
+            ySpacing = 1;
         }
     }
 
@@ -37,18 +37,11 @@ public class GridScript : MonoBehaviour
     }
 
    public void CreateGrid()
-    { 
-        int id = 0;
-
-        for (int i = 0; i < columnLength; i++)
+    {
+        for (int i = 0; i < columnLength * rowLength; i++)
         {
-            for(int j = 0; j< rowLength; j++)
-            {
-                //GameObject.Instantiate(Resources.Load("Cube"), new Vector3((xSpacing * (i % columnLength)), 1.0f, (ySpacing * (i / rowLength))), Quaternion.identity);
-                CreateSquare(new Vector3((xSpacing * (i % columnLength)), 1.0f, (zSpacing * (j % rowLength))), id, 0);
-
-                id++;
-            }
+            //GameObject.Instantiate(Resources.Load("Cube"), new Vector3((xSpacing * (i % columnLength)), 1.0f, (ySpacing * (i / rowLength))), Quaternion.identity);
+            CreateSquare(new Vector3((xSpacing * (i % columnLength)), 1.0f, (ySpacing * (i / rowLength))),i,0);
         }
     }
 
