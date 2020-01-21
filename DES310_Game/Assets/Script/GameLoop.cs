@@ -14,6 +14,8 @@ public class GameLoop : MonoBehaviour
     void Start()
     {
 
+        gameManager.GetComponent<GridScript>().CreateGrid();
+
     }
 
     // Update is called once per frame
