@@ -12,7 +12,7 @@ public class ObjectInfo : MonoBehaviour
         return type;
     }
 
-    void SetObjectType(int t)
+    public void SetObjectType(int t)
     {
         type = t;
     }
@@ -22,7 +22,7 @@ public class ObjectInfo : MonoBehaviour
         return type;
     }
 
-    void SetObjectID(int id)
+    public void SetObjectID(int id)
     {
         ID = id;
     }
