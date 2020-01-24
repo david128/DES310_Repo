@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controlType: 1
+  gameManager: {fileID: 215528158}
 --- !u!4 &215528160
 Transform:
   m_ObjectHideFlags: 0
@@ -226,7 +227,7 @@ MonoBehaviour:
   columnLength: 5
   rowLength: 5
   xSpacing: 2
-  ySpacing: 2
+  zSpacing: 2
   gridSquare: {fileID: 2595849239207618586, guid: 574f86a5fa7153b45942290530d4df69,
     type: 3}
 --- !u!1 &705507993
