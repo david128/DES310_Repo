@@ -19,7 +19,7 @@ public class ObjectInfo : MonoBehaviour
 
     public int GetObjectID()
     {
-        return type;
+        return ID;
     }
 
     public void SetObjectID(int id)

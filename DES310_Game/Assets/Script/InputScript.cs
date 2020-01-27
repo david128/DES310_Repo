@@ -46,6 +46,8 @@ public class InputScript : MonoBehaviour
         if (Physics.Raycast(ray, out hit))
         {
             int targetType = hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectType(); //object we are clicking
+            int id = hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectID(); //object we are clicking
+
             switch (targetType)
             {
                 case 0:
@@ -53,8 +55,10 @@ public class InputScript : MonoBehaviour
                     if (gameManager.GetComponent<Currency>().GetMoney() >= 200)
                     {
                         gameManager.GetComponent<Currency>().SetMoney(gameManager.GetComponent<Currency>().GetMoney() - 200);
-                        gameManager.GetComponent<AssetChange>().ChangeAsset();
+                        gameManager.GetComponent<AssetChange>().ChangeAsset(id);
                     }
+
+                    
                     
                     break;
 
