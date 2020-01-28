@@ -52,10 +52,10 @@ public class InputScript : MonoBehaviour
             {
                 case 0:
                     //run selet object type 1 select
-                    if (gameManager.GetComponent<Currency>().GetMoney() >= 200)
+                    if (gameManager.GetComponent<Currency>().GetMoney() >= 200 && hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectLevel() != 2)//Check that have enough money and that maxLevel of asset has not been reached
                     {
-                        gameManager.GetComponent<Currency>().SetMoney(gameManager.GetComponent<Currency>().GetMoney() - 200);
-                        gameManager.GetComponent<AssetChange>().ChangeAsset(id);
+                        gameManager.GetComponent<Currency>().SetMoney(gameManager.GetComponent<Currency>().GetMoney() - 200);//remove 200 money
+                        gameManager.GetComponent<AssetChange>().ChangeAsset(id);//upgrade asset
                     }
 
                     
