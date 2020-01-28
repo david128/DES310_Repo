@@ -13,7 +13,7 @@ public class GameLoop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Creates grid from the start
+
         gameManager.GetComponent<GridScript>().CreateGrid();
 
     }
