@@ -5,6 +5,7 @@ Lee Gillan, David Ireland
 16/01/2020 
 */
 
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,11 +13,16 @@ using UnityEngine;
 public class AssetChange : MonoBehaviour
 {
     //Declare variables
+    bool whichShape; //true for sphere, false for cube
     public bool controlType; //true for mobile, false for pc
 
     public GameObject gameManager;
     GameObject newAsset;
 
+    void Start()
+    {
+        
+    }
 
     public void ChangeAsset(int id)
     {
@@ -25,7 +31,6 @@ public class AssetChange : MonoBehaviour
         Transform transform;
 
         int oldID;
-        int level;
 
         //find shape objects
         //shape = GameObject.FindGameObjectWithTag("Shape");
@@ -37,9 +42,6 @@ public class AssetChange : MonoBehaviour
         //gets old assets ID
         oldID = asset.GetComponent<ObjectInfo>().GetObjectID();
 
-        //get level and upgrade
-        level = asset.GetComponent<ObjectInfo>().GetObjectLevel() + 1;
-
         //Remove from list
         gameManager.GetComponent<GridScript>().RemoveGridTile(asset);
 
@@ -47,33 +49,31 @@ public class AssetChange : MonoBehaviour
         GameObject.Destroy(asset);
 
         //check what the shape is currently at adn instantiate the other shape
-        if (level == 1)
+        if (whichShape == false)
         {
             //GameObject.Instantiate(Resources.Load("Sphere"), transform.position, transform.rotation);
             newAsset =(GameObject)Instantiate(Resources.Load("Sphere"), transform.position, Quaternion.identity);
 
-            //set objectID and level
+            //set objectID
             newAsset.GetComponent<ObjectInfo>().SetObjectID(oldID);
-            newAsset.GetComponent<ObjectInfo>().SetObjectLevel(level);
             
             
             //Add from list
             gameManager.GetComponent<GridScript>().AddGridTile(newAsset);
 
-            
+            whichShape = true;
         }
         else
         {
             //GameObject.Instantiate(Resources.Load("Sphere"), transform.position, transform.rotation);
             newAsset = (GameObject)Instantiate(Resources.Load("Cube"), transform.position, Quaternion.identity);
 
-            //set objectID and level
+            //set objectID
             newAsset.GetComponent<ObjectInfo>().SetObjectID(oldID);
-            newAsset.GetComponent<ObjectInfo>().SetObjectLevel(level);
 
             //Add from list
             gameManager.GetComponent<GridScript>().AddGridTile(newAsset);
-            
+            whichShape = false;
         }
     }
 

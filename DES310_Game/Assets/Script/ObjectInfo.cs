@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class ObjectInfo : MonoBehaviour
 {
-  public int ID; //Unique ID
-  public int type; //type
-  public int level; //level of upgrade.
+  public int ID;
+  public int type;
 
-
-    //getters and setters
    public int GetObjectType()
     {
         return type;
@@ -28,15 +25,5 @@ public class ObjectInfo : MonoBehaviour
     public void SetObjectID(int id)
     {
         ID = id;
-    }
-
-    public int GetObjectLevel()
-    {
-        return level;
-    }
-
-    public void SetObjectLevel(int l)
-    {
-        level = l;
     }
 }

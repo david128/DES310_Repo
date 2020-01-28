@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GridScript : MonoBehaviour
 {
-    //variavles for grid dimensions and layout
     public float xStart, yStart;
 
     public int columnLength, rowLength;
@@ -12,25 +11,34 @@ public class GridScript : MonoBehaviour
     public int xSpacing;
     public int zSpacing;
 
-
-    //initial tile to be placed on grid
     public GameObject gridSquare;
 
-    //list of grid tiles
     List<GameObject> gridSquares = new List<GameObject>();
 
 
-    public void RemoveGridTile(GameObject ob)//removes tile from list
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    public void RemoveGridTile(GameObject ob)
     {
         gridSquares.Remove(ob);
     }
 
-    public void AddGridTile(GameObject ob)//adds tile to the list
+    public void AddGridTile(GameObject ob)
     {
         gridSquares.Add(ob);
     }
 
-   public GameObject GetGridTile(int id)//finds tile from ID
+   public GameObject GetGridTile(int id)
    {
         bool found = false;
         int count = 0;
@@ -46,15 +54,8 @@ public class GridScript : MonoBehaviour
             count += 1;
         }
 
-        if (found)
-        {
-            return gridSquares[count - 1];
-        }
-        else
-        {
-            return null;
-        }
-        
+
+        return gridSquares[count - 1];
    }
 
 
@@ -62,7 +63,6 @@ public class GridScript : MonoBehaviour
     { 
         int id = 0;
 
-        //minimum spacing of 1
         if(xSpacing< 1)
         {
             xSpacing = 1;
@@ -73,12 +73,11 @@ public class GridScript : MonoBehaviour
             zSpacing = 1;
         }
 
-        //create and instansiate each tile, giving a unique ID
         for (int i = 0; i < columnLength; i++)
         {
             for(int j = 0; j< rowLength; j++)
             {
-               
+                //GameObject.Instantiate(Resources.Load("Cube"), new Vector3((xSpacing * (i % columnLength)), 1.0f, (ySpacing * (i / rowLength))), Quaternion.identity);
                 CreateSquare(new Vector3((xSpacing * (i % columnLength)), 1.0f, (zSpacing * (j % rowLength))), id, 0);
 
                 id++;
@@ -87,7 +86,7 @@ public class GridScript : MonoBehaviour
     }
 
 
-    void CreateSquare(Vector3 pos, int ID, int type)// create individual tiles, setting ID and type;
+    void CreateSquare(Vector3 pos, int ID, int type)
     {
         gridSquare.GetComponent<ObjectInfo>().SetObjectID(ID);
         gridSquare.GetComponent<ObjectInfo>().SetObjectType(type);
