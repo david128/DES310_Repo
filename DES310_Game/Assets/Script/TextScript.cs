@@ -5,17 +5,16 @@ using UnityEngine.UI;
 
 public class TextScript : MonoBehaviour
 {
+    //Declares UI variables
     public Text moneyText;
     public Text foodText;
     public GameObject gameManager;
 
+    //Updates text on screen
     public void UpdateText()
     {
-        foodText.text = ("Food:" + gameManager.GetComponent<FoodScript>().getFood().ToString());
+        //translates into strings to be displayed
+        foodText.text = ("Food:" + gameManager.GetComponent<FoodScript>().GetFood().ToString());
         moneyText.text = ("Money:" + gameManager.GetComponent<Currency>().GetMoney().ToString());
- 
     }
-
-
-
 }

@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class InputScript : MonoBehaviour
 {
-
+    //Declare variables
     public bool controlType;//true for mobile, false for pc
     public GameObject gameManager;
 
-    //get Inut to be called in main game loop
+    //get Input to be called in main game loop
     public void GetInput()
     {
+        //Checks which input type is being used
         if (controlType == false)//pc
         {
             if (Input.GetMouseButtonDown(0))
             {
 
-                select(Input.mousePosition);
+                Select(Input.mousePosition);
 
             }
             else //mobile
@@ -24,53 +25,48 @@ public class InputScript : MonoBehaviour
                 if (Input.touchCount > 0)
                 {
 
-                    select(Input.GetTouch(0).position);
+                    Select(Input.GetTouch(0).position);
                 }
             }
 
 
         }
     }
-
-    void select(Vector2 pos)
+    
+    //Finds what object is being selected
+    void Select(Vector2 pos)
     {
+        //Declare variables
         RaycastHit hit;
 
         //casts a ray from camera to mouse position
         Ray ray = Camera.main.ScreenPointToRay(pos);
 
-        //Check what has been clicked/touched//
-
-
         //Checks if the ray connects with an object/asset
         if (Physics.Raycast(ray, out hit))
         {
-            int targetType = hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectType(); //object we are clicking
-            int id = hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectID(); //object we are clicking
+            //Decalares object variables
+            int targetType = hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectType(); //object we are clicking's type
+            int id = hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectID(); //object we are clicking's ID
 
             switch (targetType)
             {
                 case 0:
-                    //run selet object type 1 select
-                    if (gameManager.GetComponent<Currency>().GetMoney() >= 200)
+                    //Check that have enough money and that maxLevel of asset has not been reached
+                    if (gameManager.GetComponent<Currency>().GetMoney() >= 200 && hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectLevel() != 2)
                     {
-                        gameManager.GetComponent<Currency>().SetMoney(gameManager.GetComponent<Currency>().GetMoney() - 200);
-                        gameManager.GetComponent<AssetChange>().ChangeAsset(id);
+                        gameManager.GetComponent<Currency>().SetMoney(gameManager.GetComponent<Currency>().GetMoney() - 200); //removes 200 money
+                        gameManager.GetComponent<AssetChange>().ChangeAsset(id); //upgrade asset
                     }
 
-                    
-                    
                     break;
 
                 default:
                     //run default click action
                     break;
             }
-
-
         }
     }
-
 }
 
 

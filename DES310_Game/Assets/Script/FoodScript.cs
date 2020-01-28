@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class FoodScript : MonoBehaviour
 {
-
+    //Declare food variable
     public float foodOutput;
 
-    public void addFood(float f)
-    {
-        foodOutput += f;
-    }
+    //getter and setter
+    public void SetFood(float f) { foodOutput += f; }
 
-    public float getFood()
-    {
-        return foodOutput;
-    }
+    public float GetFood() { return foodOutput; }
 }
