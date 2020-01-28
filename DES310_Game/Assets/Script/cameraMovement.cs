@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class cameraMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
+    float zoom;
+
+    float startY;
+
+    private void Start()
+    {
+        zoom = 100.0f;
+        startY = 10.0f;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -32,5 +36,20 @@ public class cameraMovement : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x + 0.1f, transform.position.y, transform.position.z);
         }
+
+        if (Input.GetKey("i") && zoom < 200)
+        {
+            zoom = zoom + 1;
+        }
+
+
+        if (Input.GetKey("o") && zoom > -100)
+        {
+            zoom = zoom - 1;
+        }
+
+        transform.position = new Vector3 (transform.position.x,(((zoom / 100.0f) * startY)), transform.position.z);
+
+
     }
 }
