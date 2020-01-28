@@ -6,6 +6,7 @@ public class GameLoop : MonoBehaviour
 {
 
     public GameObject gameManager;
+    public GameObject textManager;
 
 
     public float time;
@@ -37,6 +38,7 @@ public class GameLoop : MonoBehaviour
 
         gameManager.GetComponent<InputScript>().GetInput();
 
+        textManager.GetComponent<TextScript>().UpdateText();
        
 
     }
