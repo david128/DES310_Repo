@@ -4,13 +4,8 @@ using UnityEngine;
 
 public class cameraMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
+    //Inputs for the main camera of the game
     void Update()
     {
         if (Input.GetKey("w"))
