@@ -4,18 +4,11 @@ using UnityEngine;
 
 public class Currency : MonoBehaviour
 {
-    // Start is called before the first frame update
-
-
+    //Declare money variable
     public int money;
 
-   public int GetMoney()
-    {
-        return money;
-    }
+    //getter and setter
+    public int GetMoney() { return money; }
 
-    public void SetMoney(int mon)
-    {
-      money = mon;
-    }
+    public void SetMoney(int mon) { money = mon; }
 }

@@ -4,26 +4,22 @@ using UnityEngine;
 
 public class ObjectInfo : MonoBehaviour
 {
-  public int ID;
-  public int type;
+    //Declares Object variables
+    public int ID;
+    public int type;
+    public int level;
 
-   public int GetObjectType()
-    {
-        return type;
-    }
+    //getters and setters for object
+    public int GetObjectType() {return type;}
 
-    public void SetObjectType(int t)
-    {
-        type = t;
-    }
+    public void SetObjectType(int t) { type = t; }
 
-    public int GetObjectID()
-    {
-        return ID;
-    }
+    public int GetObjectID() { return ID; }
 
-    public void SetObjectID(int id)
-    {
-        ID = id;
-    }
+    public void SetObjectID(int id) { ID = id; }
+
+    public int GetObjectLevel() { return level; }
+
+    public void SetObjectLevel(int lvl) { level = lvl; }
+
 }

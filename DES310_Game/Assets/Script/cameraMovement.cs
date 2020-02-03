@@ -14,7 +14,10 @@ public class cameraMovement : MonoBehaviour
         zoom = 100.0f;
         startY = 10.0f;
     }
+
+
     // Update is called once per frame
+    //Inputs for the main camera of the game
     void Update()
     {
         if (Input.GetKey("w"))
