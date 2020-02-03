@@ -8,6 +8,7 @@ public class TextScript : MonoBehaviour
     //Declares UI variables
     public Text moneyText;
     public Text foodText;
+    public Text fpsText;
     public GameObject gameManager;
 
     //Updates text on screen
@@ -16,5 +17,6 @@ public class TextScript : MonoBehaviour
         //translates into strings to be displayed
         foodText.text = ("Food:" + gameManager.GetComponent<FoodScript>().GetFood().ToString());
         moneyText.text = ("Money:" + gameManager.GetComponent<Currency>().GetMoney().ToString());
+        fpsText.text = ("FPS: " + gameManager.GetComponent<GameLoop>().GetFPS().ToString());
     }
 }

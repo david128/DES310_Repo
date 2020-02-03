@@ -83,9 +83,18 @@ public class GridScript : MonoBehaviour
     //creates individual tiles, setting ID and types
     void CreateSquare(Vector3 pos, int ID, int type)
     {
-        gridSquare.GetComponent<ObjectInfo>().SetObjectID(ID);
-        gridSquare.GetComponent<ObjectInfo>().SetObjectType(type);
-        gridSquares.Add((GameObject)Instantiate(gridSquare, pos, Quaternion.identity));
-
+        //Sets default grids components and locations of assets
+        if (ID == 4 || ID == 5)
+        {
+            gridSquare.GetComponent<ObjectInfo>().SetObjectID(ID);
+            gridSquare.GetComponent<ObjectInfo>().SetObjectType(type);
+            gridSquares.Add((GameObject)Instantiate(Resources.Load("GridSquare"), pos, Quaternion.identity));
+        }
+        else
+        {
+            gridSquare.GetComponent<ObjectInfo>().SetObjectID(ID);
+            gridSquare.GetComponent<ObjectInfo>().SetObjectType(type);
+            gridSquares.Add((GameObject)Instantiate(gridSquare, pos, Quaternion.identity));
+        }
     }
 }
