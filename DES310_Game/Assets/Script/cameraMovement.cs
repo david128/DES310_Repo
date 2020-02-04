@@ -4,33 +4,55 @@ using UnityEngine;
 
 public class cameraMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    float zoom;
+
+    float startY;
+
+    private void Start()
     {
-        
+        zoom = 100.0f;
+        startY = 10.0f;
     }
 
+
     // Update is called once per frame
+    //Inputs for the main camera of the game
     void Update()
     {
         if (Input.GetKey("w"))
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 0.1f);
+            transform.position = new Vector3(transform.position.x + 0.1f, transform.position.y, transform.position.z + 0.1f);
         }
 
         if (Input.GetKey("s"))
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.1f);
+            transform.position = new Vector3(transform.position.x - 0.1f, transform.position.y, transform.position.z - 0.1f);
         }
 
         if (Input.GetKey("a"))
         {
-            transform.position = new Vector3(transform.position.x - 0.1f, transform.position.y, transform.position.z );
+            transform.position = new Vector3(transform.position.x - 0.1f, transform.position.y, transform.position.z + 0.1f);
         }
 
         if (Input.GetKey("d"))
         {
-            transform.position = new Vector3(transform.position.x + 0.1f, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x + 0.1f, transform.position.y, transform.position.z - 0.1f);
         }
+
+        if (Input.GetKey("i") && zoom < 200)
+        {
+            zoom = zoom + 1;
+        }
+
+
+        if (Input.GetKey("o") && zoom > -100)
+        {
+            zoom = zoom - 1;
+        }
+
+        transform.position = new Vector3 (transform.position.x,(((zoom / 100.0f) * startY)), transform.position.z);
+
+
     }
 }

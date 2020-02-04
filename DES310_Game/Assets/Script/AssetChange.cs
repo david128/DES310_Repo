@@ -5,7 +5,6 @@ Lee Gillan, David Ireland
 16/01/2020 
 */
 
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,111 +12,62 @@ using UnityEngine;
 public class AssetChange : MonoBehaviour
 {
     //Declare variables
-    bool whichShape; //true for sphere, false for cube
     public bool controlType; //true for mobile, false for pc
-    void Start()
-    {
- 
-    }
 
-    void ChangeAsset()
+    public GameObject gameManager;
+    GameObject newAsset;
+
+    public void ChangeAsset(int id)
     {
         //Declare variables
-        GameObject shape;
+        GameObject asset;
         Transform transform;
 
-        //find shape objects
-        shape = GameObject.FindGameObjectWithTag("Shape");
+        int oldID;
+        int level;
 
-        //get shape transform
-        transform = shape.transform;
+        //sets asset to the object of what is being selected
+        asset = gameManager.GetComponent<GridScript>().GetGridTile(id);
+
+        //get asset transform
+        transform = asset.transform;
+
+        //gets old assets ID
+        oldID = asset.GetComponent<ObjectInfo>().GetObjectID();
+
+        //get level and upgrade
+        level = asset.GetComponent<ObjectInfo>().GetObjectLevel() + 1;
+
+        //Remove from list
+        gameManager.GetComponent<GridScript>().RemoveGridTile(asset);
 
         //Destroy shape to be replaced
-        GameObject.Destroy(shape);
+        GameObject.Destroy(asset);
 
         //check what the shape is currently at adn instantiate the other shape
-        if (whichShape == false)
+        if (level == 1)
         {
-            GameObject.Instantiate(Resources.Load("Sphere"), transform.position, transform.rotation);
-            whichShape = true;
+            //GameObject.Instantiate(Resources.Load("Sphere"), transform.position, transform.rotation);
+            newAsset =(GameObject)Instantiate(Resources.Load("Sphere"), transform.position, Quaternion.identity);
+
+            //set objectID and level
+            newAsset.GetComponent<ObjectInfo>().SetObjectID(oldID);
+            newAsset.GetComponent<ObjectInfo>().SetObjectLevel(level);
+            
+            //Add from list
+            gameManager.GetComponent<GridScript>().AddGridTile(newAsset);
         }
         else
         {
-            GameObject.Instantiate(Resources.Load("Cube"), transform.position, transform.rotation);
-            whichShape = false;
+            //GameObject.Instantiate(Resources.Load("Sphere"), transform.position, transform.rotation);
+            newAsset = (GameObject)Instantiate(Resources.Load("Cube"), transform.position, Quaternion.identity);
+
+            //set objectID and level
+            newAsset.GetComponent<ObjectInfo>().SetObjectID(oldID);
+            newAsset.GetComponent<ObjectInfo>().SetObjectLevel(level);
+
+            //Add from list
+            gameManager.GetComponent<GridScript>().AddGridTile(newAsset);
         }
     }
-
-    //check for input
-    void GetInput()
-    {
-        //gets input
-        if (controlType ==true)//mobile
-        {
-            if (Input.touchCount> 0)
-            {
-                //Declares variables
-                RaycastHit hit;
-
-                //casts a ray from camera to mouse position
-                Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
-
-                //Check what has been clicked/touched//
-
-
-                //Checks if the ray connects with an object/asset
-                if (Physics.Raycast(ray, out hit))
-                {
-                    Debug.Log("hit");
-
-                    //Checks if the player has enough money to upgrade the object
-                    if (gameObject.GetComponent<Currency>().GetMoney() >= 500)
-                    {
-                        //Calls change function
-                        ChangeAsset();
-
-                        gameObject.GetComponent<Currency>().SetMoney(gameObject.GetComponent<Currency>().GetMoney() - 500);
-                    }
-                }
-            }
-        }
-        else
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                //Declares variables
-                RaycastHit hit;
-
-                //casts a ray from camera to mouse position
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-                //Check what has been clicked/touched//
-
-
-                //Checks if the ray connects with an object/asset
-                if (Physics.Raycast(ray, out hit))
-                {
-                    Debug.Log("hit");
-
-                    //Checks if the player has enough money to upgrade the object
-                    if (gameObject.GetComponent<Currency>().GetMoney() >= 500)
-                    {
-                        //Calls change function
-                        ChangeAsset();
-
-                        gameObject.GetComponent<Currency>().SetMoney(gameObject.GetComponent<Currency>().GetMoney() - 500);
-                    }
-                }
-            }
-        }
-       
-    }
-
-    //everything to be updated
-    void Update()
-    {
-        //get input
-        GetInput();
-    }
-
 }
