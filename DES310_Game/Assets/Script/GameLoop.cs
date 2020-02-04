@@ -8,6 +8,8 @@ public class GameLoop : MonoBehaviour
     public GameObject gameManager, textManager;
     public float time;
 
+    public float FPS;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,10 @@ public class GameLoop : MonoBehaviour
     {
         //Adds up time passed every frame
         time += Time.deltaTime;
+
+        FPS = 1.0f / Time.deltaTime;
+
+       //FPS += (Time.unscaledDeltaTime - FPS) * 0.1f;
 
         //When the time gets to 3 seconds the money will increase causing a passive income
         if (time > 3)
@@ -39,4 +45,6 @@ public class GameLoop : MonoBehaviour
        
 
     }
+
+    public float GetFPS() { return FPS; }
 }

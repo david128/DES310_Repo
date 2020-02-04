@@ -6,13 +6,22 @@ public class ObjectInfo : MonoBehaviour
 {
     //Declares Object variables
     public int ID;
-    public int type;
+    public ObjectType objectType;
+
+   public enum ObjectType
+   {
+        EMPTY = 0,
+        FARMHOUSE = 1,
+        FIELD = 2,
+        BARN = 3
+   };
+  
     public int level;
 
     //getters and setters for object
-    public int GetObjectType() {return type;}
+    public ObjectType GetObjectType() {return objectType;}
 
-    public void SetObjectType(int t) { type = t; }
+    public void SetObjectType(ObjectType t) { objectType = t; }
 
     public int GetObjectID() { return ID; }
 
