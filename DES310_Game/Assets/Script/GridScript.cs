@@ -73,7 +73,7 @@ public class GridScript : MonoBehaviour
             for(int j = 0; j< rowLength; j++)
             {
                 //Calls Create Square function to place a unique tile
-                CreateSquare(new Vector3((xSpacing * (i % columnLength)), 1.0f, (zSpacing * (j % rowLength))), id, 0);
+                CreateSquare(new Vector3((xSpacing * (i % columnLength)), 1.0f, (zSpacing * (j % rowLength))), id);
 
                 id++;
             }
@@ -81,19 +81,21 @@ public class GridScript : MonoBehaviour
     }
 
     //creates individual tiles, setting ID and types
-    void CreateSquare(Vector3 pos, int ID, int type)
+    void CreateSquare(Vector3 pos, int ID)
     {
         //Sets default grids components and locations of assets
         if (ID == 4 || ID == 5)
         {
             gridSquare.GetComponent<ObjectInfo>().SetObjectID(ID);
-            gridSquare.GetComponent<ObjectInfo>().SetObjectType(type);
+            gridSquare.GetComponent<ObjectInfo>().SetObjectType(ObjectInfo.ObjectType.BARN);
             gridSquares.Add((GameObject)Instantiate(Resources.Load("GridSquare"), pos, Quaternion.identity));
+            gridSquares[ID].GetComponent < ObjectInfo>().SetObjectID(ID);
+
         }
         else
         {
             gridSquare.GetComponent<ObjectInfo>().SetObjectID(ID);
-            gridSquare.GetComponent<ObjectInfo>().SetObjectType(type);
+            gridSquare.GetComponent<ObjectInfo>().SetObjectType(ObjectInfo.ObjectType.FIELD);
             gridSquares.Add((GameObject)Instantiate(gridSquare, pos, Quaternion.identity));
         }
     }

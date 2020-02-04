@@ -46,16 +46,47 @@ public class InputScript : MonoBehaviour
         if (Physics.Raycast(ray, out hit))
         {
             //Decalares object variables
-            int targetType = hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectType(); //object we are clicking's type
+            ObjectInfo.ObjectType targetType = hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectType(); //object we are clicking's type
             int id = hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectID(); //object we are clicking's ID
 
             switch (targetType)
             {
-                case 0:
+                case ObjectInfo.ObjectType.EMPTY:
+
                     //Check that have enough money and that maxLevel of asset has not been reached
                     if (gameManager.GetComponent<Currency>().GetMoney() >= 200 && hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectLevel() != 2)
                     {
                         gameManager.GetComponent<Currency>().SetMoney(gameManager.GetComponent<Currency>().GetMoney() - 200); //removes 200 money
+                        gameManager.GetComponent<AssetChange>().ChangeAsset(id); //upgrade asset
+                    }
+                    break;
+
+                case ObjectInfo.ObjectType.FARMHOUSE:
+
+                    //Check that have enough money and that maxLevel of asset has not been reached
+                    if (gameManager.GetComponent<Currency>().GetMoney() >= 300 && hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectLevel() != 2)
+                    {
+                        gameManager.GetComponent<Currency>().SetMoney(gameManager.GetComponent<Currency>().GetMoney() - 300); //removes 200 money
+                        gameManager.GetComponent<AssetChange>().ChangeAsset(id); //upgrade asset
+                    }
+                    break;
+
+                case ObjectInfo.ObjectType.FIELD:
+
+                    //Check that have enough money and that maxLevel of asset has not been reached
+                    if (gameManager.GetComponent<Currency>().GetMoney() >= 300 && hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectLevel() != 2)
+                    {
+                        gameManager.GetComponent<Currency>().SetMoney(gameManager.GetComponent<Currency>().GetMoney() - 300); //removes 200 money
+                        gameManager.GetComponent<AssetChange>().ChangeAsset(id); //upgrade asset
+                    }
+                    break;
+
+                case ObjectInfo.ObjectType.BARN:
+
+                    //Check that have enough money and that maxLevel of asset has not been reached
+                    if (gameManager.GetComponent<Currency>().GetMoney() >= 400 && hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectLevel() != 2)
+                    {
+                        gameManager.GetComponent<Currency>().SetMoney(gameManager.GetComponent<Currency>().GetMoney() - 400); //removes 200 money
                         gameManager.GetComponent<AssetChange>().ChangeAsset(id); //upgrade asset
                     }
 
