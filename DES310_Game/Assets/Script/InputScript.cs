@@ -1,12 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class InputScript : MonoBehaviour
 {
     //Declare variables
     public bool controlType;//true for mobile, false for pc
     public GameObject gameManager;
+
+    public int selectedID;
+    public bool selecting = true;
+
+    public void AllowSelecting()
+    {
+        selecting = true;     
+
+    }
+
+    public int GetSelectedID()
+    {
+        return selectedID;
+    }
 
     //get Input to be called in main game loop
     public void GetInput()
@@ -20,16 +36,17 @@ public class InputScript : MonoBehaviour
                 Select(Input.mousePosition);
 
             }
-            else //mobile
+           
+
+
+        }
+        else //mobile
+        {
+            if (Input.touchCount > 0)
             {
-                if (Input.touchCount > 0)
-                {
 
-                    Select(Input.GetTouch(0).position);
-                }
+                Select(Input.GetTouch(0).position);
             }
-
-
         }
     }
     
@@ -53,10 +70,16 @@ public class InputScript : MonoBehaviour
             {
                 case 0:
                     //Check that have enough money and that maxLevel of asset has not been reached
-                    if (gameManager.GetComponent<Currency>().GetMoney() >= 200 && hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectLevel() != 2)
+                    if (gameManager.GetComponent<Currency>().GetMoney() >= 200 && hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectLevel() != 2 &&selecting == true)
                     {
-                        gameManager.GetComponent<Currency>().SetMoney(gameManager.GetComponent<Currency>().GetMoney() - 200); //removes 200 money
-                        gameManager.GetComponent<AssetChange>().ChangeAsset(id); //upgrade asset
+                        //display button
+                        gameManager.GetComponent<ButtonFunctions>().Enable();
+                        
+                        selectedID = id;
+                        selecting = false;
+                                                                      
+
+
                     }
 
                     break;
@@ -67,6 +90,8 @@ public class InputScript : MonoBehaviour
             }
         }
     }
+
+    
 }
 
 
