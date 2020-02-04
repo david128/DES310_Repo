@@ -3,18 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DisableButton : MonoBehaviour
+public class ButtonFunctions : MonoBehaviour
 {
 
-    Button button;
+    public Button button;
 
     // Start is called before the first frame update
     void Start()
     {
-        button = GetComponent<Button>();
-        button.interactable = false;
-        button.image.enabled = false;
+        Disable();
 
     }
 
+    public void Disable()
+    {
+        
+        button.interactable = false;
+        button.image.enabled = false;
+    }
+
+    public void Enable()
+    {
+        
+        button.interactable = true;
+        button.image.enabled = true;
+    }
 }
