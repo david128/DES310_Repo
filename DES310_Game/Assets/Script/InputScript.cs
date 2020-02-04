@@ -90,7 +90,7 @@ public class InputScript : MonoBehaviour
                     if (gameManager.GetComponent<Currency>().GetMoney() >= 300 && hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectLevel() != 2)
                     {
                         gameManager.GetComponent<Currency>().SetMoney(gameManager.GetComponent<Currency>().GetMoney() - 300); //removes 200 money
-                        gameManager.GetComponent<AssetChange>().ChangeAsset(id); //upgrade asset
+                        gameManager.GetComponent<AssetChange>().Upgrade(id); //upgrade asset
                     }
                     break;
 
@@ -100,7 +100,7 @@ public class InputScript : MonoBehaviour
                     if (gameManager.GetComponent<Currency>().GetMoney() >= 300 && hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectLevel() != 2)
                     {
                         gameManager.GetComponent<Currency>().SetMoney(gameManager.GetComponent<Currency>().GetMoney() - 300); //removes 200 money
-                        gameManager.GetComponent<AssetChange>().ChangeAsset(id); //upgrade asset
+                        gameManager.GetComponent<AssetChange>().Upgrade(id); //upgrade asset
                     }
                     break;
 
@@ -110,7 +110,7 @@ public class InputScript : MonoBehaviour
                     if (gameManager.GetComponent<Currency>().GetMoney() >= 400 && hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectLevel() != 2)
                     {
                         gameManager.GetComponent<Currency>().SetMoney(gameManager.GetComponent<Currency>().GetMoney() - 400); //removes 200 money
-                        gameManager.GetComponent<AssetChange>().ChangeAsset(id); //upgrade asset
+                        gameManager.GetComponent<AssetChange>().Upgrade(id); //upgrade asset
                     }
 
                     break;

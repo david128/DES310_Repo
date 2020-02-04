@@ -14,6 +14,6 @@ public class UpgradeAsset : MonoBehaviour
 
         //upgrading of asset
         gameManager.GetComponent<Currency>().SetMoney(gameManager.GetComponent<Currency>().GetMoney() - 200); //removes 200 money
-        gameManager.GetComponent<AssetChange>().ChangeAsset(id); //upgrade asset
+        gameManager.GetComponent<AssetChange>().Upgrade(id); //upgrade asset
     }
 }

@@ -28,41 +28,50 @@ public class AssetChange : MonoBehaviour
         int level = asset.GetComponent<ObjectInfo>().GetObjectLevel() + 1;
 
         //get type
-        int type = asset.GetComponent<ObjectInfo>().GetObjectType();
+        ObjectInfo.ObjectType type = asset.GetComponent<ObjectInfo>().GetObjectType();
 
-        NewChangeAsset(id, level, type);
+        ChangeAsset(id, level, type);
     }
 
     public void Demolish(int id) //change to empty
     {
 
-        NewChangeAsset(id, 0, 0);//change last 0 to empty type
+        ChangeAsset(id, 0, 0);//change last 0 to empty type
     }
 
-    public void Build(int id, int type)//build new tile
+    public void Build(int id, ObjectInfo.ObjectType type)//build new tile
     {
-        NewChangeAsset(id, 0, type);
+        ChangeAsset(id, 0, type);
     }
 
 
-    public GameObject LoadAsset(int type, Transform transform)//load asset based on type
+    public GameObject LoadAsset(ObjectInfo.ObjectType type, Transform transform)//load asset based on type
     {
 
         switch(type)
         {
-            case 0:
+            case ObjectInfo.ObjectType.EMPTY:
                 return (GameObject)Instantiate(Resources.Load("Cube"), transform.position, Quaternion.identity);
-                break;
+                
+            case ObjectInfo.ObjectType.BARN:
+                return (GameObject)Instantiate(Resources.Load("Cube"), transform.position, Quaternion.identity);
+
+            case ObjectInfo.ObjectType.FARMHOUSE:
+                return (GameObject)Instantiate(Resources.Load("Cube"), transform.position, Quaternion.identity);
+
+            case ObjectInfo.ObjectType.FIELD:
+                return (GameObject)Instantiate(Resources.Load("Cube"), transform.position, Quaternion.identity);
+                
             default:
-                return (GameObject)Instantiate(Resources.Load("Cube"), transform.position, Quaternion.identity);
-                break;
+                return null;
+                
 
         }
           
     }
 
 
-    public void NewChangeAsset(int id, int level, int type)
+    public void ChangeAsset(int id, int level, ObjectInfo.ObjectType type)
     {
 
         //find asset and keep transform
@@ -87,57 +96,58 @@ public class AssetChange : MonoBehaviour
         gameManager.GetComponent<GridScript>().AddGridTile(newAsset);
     }
 
-    public void ChangeAsset(int id)
-    {
-        //Declare variables
-        GameObject asset;
-        Transform transform;
+    //public void ChangeAsset(int id)
+    //{
+    //    //Declare variables
+    //    GameObject asset;
+    //    Transform transform;
 
-        int oldID;
-        int level;
+    //    int oldID;
+    //    int level;
 
-        //sets asset to the object of what is being selected
-        asset = gameManager.GetComponent<GridScript>().GetGridTile(id);
+    //    //sets asset to the object of what is being selected
+    //    asset = gameManager.GetComponent<GridScript>().GetGridTile(id);
 
-        //get asset transform
-        transform = asset.transform;
+    //    //get asset transform
+    //    transform = asset.transform;
 
-        //gets old assets ID
-        oldID = asset.GetComponent<ObjectInfo>().GetObjectID();
+    //    //gets old assets ID
+    //    oldID = asset.GetComponent<ObjectInfo>().GetObjectID();
 
-        //get level and upgrade
-        level = asset.GetComponent<ObjectInfo>().GetObjectLevel() + 1;
+    //    //get level and upgrade
+    //    level = asset.GetComponent<ObjectInfo>().GetObjectLevel() + 1;
 
-        //Remove from list
-        gameManager.GetComponent<GridScript>().RemoveGridTile(asset);
+    //    //Remove from list
+    //    gameManager.GetComponent<GridScript>().RemoveGridTile(asset);
 
-        //Destroy shape to be replaced
-        GameObject.Destroy(asset);
+    //    //Destroy shape to be replaced
+    //    GameObject.Destroy(asset);
 
-        //check what the shape is currently at adn instantiate the other shape
-        if (level == 1)
-        {
-            //GameObject.Instantiate(Resources.Load("Sphere"), transform.position, transform.rotation);
-            newAsset =(GameObject)Instantiate(Resources.Load("Sphere"), transform.position, Quaternion.identity);
+    //    //check what the shape is currently at adn instantiate the other shape
+    //    if (level == 1)
+    //    {
+    //        //GameObject.Instantiate(Resources.Load("Sphere"), transform.position, transform.rotation);
+    //        newAsset =(GameObject)Instantiate(Resources.Load("Sphere"), transform.position, Quaternion.identity);
 
-            //set objectID and level
-            newAsset.GetComponent<ObjectInfo>().SetObjectID(oldID);
-            newAsset.GetComponent<ObjectInfo>().SetObjectLevel(level);
+    //        //set objectID and level
+    //        newAsset.GetComponent<ObjectInfo>().SetObjectID(oldID);
+    //        newAsset.GetComponent<ObjectInfo>().SetObjectLevel(level);
             
-            //Add from list
-            gameManager.GetComponent<GridScript>().AddGridTile(newAsset);
-        }
-        else
-        {
-            //GameObject.Instantiate(Resources.Load("Sphere"), transform.position, transform.rotation);
-            newAsset = (GameObject)Instantiate(Resources.Load("Cube"), transform.position, Quaternion.identity);
+    //        //Add from list
+    //        gameManager.GetComponent<GridScript>().AddGridTile(newAsset);
+    //    }
+    //    else
+    //    {
+    //        //GameObject.Instantiate(Resources.Load("Sphere"), transform.position, transform.rotation);
+    //        newAsset = (GameObject)Instantiate(Resources.Load("Cube"), transform.position, Quaternion.identity);
 
-            //set objectID and level
-            newAsset.GetComponent<ObjectInfo>().SetObjectID(oldID);
-            newAsset.GetComponent<ObjectInfo>().SetObjectLevel(level);
+    //        //set objectID and level
+    //        newAsset.GetComponent<ObjectInfo>().SetObjectID(oldID);
+    //        newAsset.GetComponent<ObjectInfo>().SetObjectLevel(level);
 
-            //Add from list
-            gameManager.GetComponent<GridScript>().AddGridTile(newAsset);
-        }
-    }
+    //        //Add from list
+    //        gameManager.GetComponent<GridScript>().AddGridTile(newAsset);
+    //    }
+    //}
+
 }
