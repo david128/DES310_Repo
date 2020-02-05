@@ -36,31 +36,46 @@ public class AssetChange : MonoBehaviour
     public void Demolish(int id) //change to empty
     {
 
-        ChangeAsset(id, 0, 0);//change last 0 to empty type
+        ChangeAsset(id, 0, ObjectInfo.ObjectType.EMPTY);
     }
 
     public void Build(int id, ObjectInfo.ObjectType type)//build new tile
     {
-        ChangeAsset(id, 0, type);
+        ChangeAsset(id, 1, type);
     }
 
 
-    public GameObject LoadAsset(ObjectInfo.ObjectType type, Transform transform)//load asset based on type
+    public GameObject LoadAsset(ObjectInfo.ObjectType type, Transform transform, int level)//load asset based on type
     {
+
+        string lvlExtension;
+
+        if(level == 2)//finds correct extension for name of resource
+        {
+            lvlExtension = "_lvl2";
+        }
+        else if (level == 3)
+        {
+            lvlExtension = "_lvl3";
+        }
+        else
+        {
+            lvlExtension = ""; //no extension needed.
+        }
 
         switch(type)
         {
             case ObjectInfo.ObjectType.EMPTY:
-                return (GameObject)Instantiate(Resources.Load("Cube"), transform.position, Quaternion.identity);
+                return (GameObject)Instantiate(Resources.Load("Empty"), transform.position, Quaternion.identity);
                 
             case ObjectInfo.ObjectType.BARN:
-                return (GameObject)Instantiate(Resources.Load("Cube"), transform.position, Quaternion.identity);
+                return (GameObject)Instantiate(Resources.Load("Barn" + lvlExtension), transform.position, Quaternion.identity);
 
             case ObjectInfo.ObjectType.FARMHOUSE:
-                return (GameObject)Instantiate(Resources.Load("Cube"), transform.position, Quaternion.identity);
+                return (GameObject)Instantiate(Resources.Load("Farmhouse" + lvlExtension), transform.position, Quaternion.identity);
 
             case ObjectInfo.ObjectType.FIELD:
-                return (GameObject)Instantiate(Resources.Load("Cube"), transform.position, Quaternion.identity);
+                return (GameObject)Instantiate(Resources.Load("Field" + lvlExtension), transform.position, Quaternion.identity);
                 
             default:
                 return null;
@@ -80,7 +95,7 @@ public class AssetChange : MonoBehaviour
         Transform transform = asset.transform;
 
         //load correct asset based on type
-        newAsset = LoadAsset(type, transform);
+        newAsset = LoadAsset(type, transform, level);
 
         //remove from list
         gameManager.GetComponent<GridScript>().RemoveGridTile(asset);

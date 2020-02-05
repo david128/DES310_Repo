@@ -4772,7 +4772,7 @@ GameObject:
   - component: {fileID: -8781133205122223129}
   - component: {fileID: -1577196264899281536}
   m_Layer: 0
-  m_Name: GridObject
+  m_Name: Field
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4866,9 +4866,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 155482db5d7f9994fbe59fb2639247e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 14
-  type: 0
-  level: 0
+  ID: 0
+  objectType: 3
+  level: 1
 --- !u!33 &9083256130653441923
 MeshFilter:
   m_ObjectHideFlags: 0
