@@ -12,8 +12,18 @@ public class RadialPressable : MonoBehaviour
         public string Title;
 
     }
-
+    public string title;
     public Action[] options;
+
+    void Start()
+    {
+        if (title == "" || title == null)
+        {
+            title = gameObject.name;
+        }
+    }
+
+
     void OnMouseDown()
     {
         RadialMenuSpawner.instance.SpawnMenu(this);

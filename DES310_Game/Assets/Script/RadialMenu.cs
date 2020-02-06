@@ -1,12 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RadialMenu : MonoBehaviour
 {
+    public Text label;
     public RadialButtonScript buttonPrefab;
     public RadialButtonScript selected;
     public void SpawnButtons(RadialPressable obj)
+    {
+        StartCoroutine(AnimateButtons(obj));
+    }
+
+    IEnumerator AnimateButtons (RadialPressable obj)
     {
         for (int i = 0; i < obj.options.Length; i++)
         {
@@ -20,6 +27,9 @@ public class RadialMenu : MonoBehaviour
             newButton.circle.color = obj.options[i].Color;
             newButton.symbol.sprite = obj.options[i].Symbol;
             newButton.title = obj.options[i].Title;
+            newButton.myMenu = this;
+            newButton.Anim();
+            yield return new WaitForSeconds(0.06f);
         }
 
     }
@@ -29,6 +39,11 @@ public class RadialMenu : MonoBehaviour
     {
      if (Input.GetMouseButtonUp(0))
         {
+            if (selected)
+            {
+                //button function goes here
+                Debug.Log(selected.title + "was selected");
+            }
             Destroy(gameObject);
         }   
     }
