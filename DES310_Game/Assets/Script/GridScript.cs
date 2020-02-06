@@ -84,18 +84,26 @@ public class GridScript : MonoBehaviour
     void CreateSquare(Vector3 pos, int ID)
     {
         //Sets default grids components and locations of assets
-        if (ID == 4 || ID == 5)
+        if (ID == 1)
         {
-            gridSquare.GetComponent<ObjectInfo>().SetObjectID(ID);
-            gridSquare.GetComponent<ObjectInfo>().SetObjectType(ObjectInfo.ObjectType.BARN);
-            gridSquares.Add((GameObject)Instantiate(Resources.Load("GridSquare"), pos, Quaternion.identity));
+            gridSquares.Add((GameObject)Instantiate(Resources.Load("Barn"), pos, Quaternion.identity));
             gridSquares[ID].GetComponent < ObjectInfo>().SetObjectID(ID);
+            gridSquares[ID].GetComponent<ObjectInfo>().SetObjectType(ObjectInfo.ObjectType.BARN);
+            gridSquares[ID].GetComponent<ObjectInfo>().SetObjectLevel(1);
+        }
+        else if (ID == 2)
+        {
+
+            gridSquares.Add((GameObject)Instantiate(Resources.Load("Farmhouse"), pos, Quaternion.identity));
+            gridSquares[ID].GetComponent<ObjectInfo>().SetObjectID(ID);
+            gridSquares[ID].GetComponent<ObjectInfo>().SetObjectType(ObjectInfo.ObjectType.FARMHOUSE);
+            gridSquares[ID].GetComponent<ObjectInfo>().SetObjectLevel(1);
 
         }
         else
         {
             gridSquare.GetComponent<ObjectInfo>().SetObjectID(ID);
-            gridSquare.GetComponent<ObjectInfo>().SetObjectType(ObjectInfo.ObjectType.FIELD);
+            gridSquare.GetComponent<ObjectInfo>().SetObjectType(ObjectInfo.ObjectType.EMPTY);
             gridSquares.Add((GameObject)Instantiate(gridSquare, pos, Quaternion.identity));
         }
     }

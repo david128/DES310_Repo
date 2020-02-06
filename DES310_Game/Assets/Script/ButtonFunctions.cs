@@ -18,8 +18,8 @@ public class ButtonFunctions : MonoBehaviour
     public void Disable()
     {
         
-        button.interactable = false;
-        button.image.enabled = false;
+        //button.interactable = false;
+        //button.image.enabled = false;
     }
 
     public void Enable()
