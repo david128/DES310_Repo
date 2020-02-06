@@ -15,28 +15,29 @@ public class RadialButtonScript : MonoBehaviour, IPointerEnterHandler, IPointerE
 
     Color defaultColor;
 
-    public void Anim()
-    {
-        StartCoroutine(AnimateButtonIn());
-    }
-    
-        
-    
+     public void Anim()
+     {
+         StartCoroutine(AnimateButtonIn());
+     }
 
-    IEnumerator AnimateButtonIn()
-    {
-        transform.localScale = Vector3.zero;
-        float timer = 0f;
-        while (timer < (1 / speed)) ;
-        {
-           transform.localScale = Vector3.one * timer * speed;
-           timer += Time.deltaTime;
-           yield return null;
-        }
-        transform.localScale = Vector3.one;
-    }
 
-   
+
+
+       IEnumerator AnimateButtonIn()
+     {
+         transform.localScale = Vector3.zero;
+         float timer = 0f;
+         while (timer < (1 / speed)) 
+         {
+            
+            timer += Time.deltaTime;
+            transform.localScale = Vector3.one * timer * speed;
+            yield return null;
+         }
+         transform.localScale = Vector3.one;
+     }
+     
+
 
     public void OnPointerEnter(PointerEventData eventData)
     {
