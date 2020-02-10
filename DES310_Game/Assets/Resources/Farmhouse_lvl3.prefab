@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5764591504621495712}
   - component: {fileID: 8883017178409354102}
   - component: {fileID: 2648611728528349743}
+  - component: {fileID: 5345182987029185069}
   m_Layer: 0
   m_Name: Farmhouse_lvl3
   m_TagString: Untagged
@@ -109,6 +110,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5345182987029185069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6362888940028171142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c39e48ac04108ff439ee1b74af5371b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: Farmhouse
+  options: []
 --- !u!1 &9204505821653695925
 GameObject:
   m_ObjectHideFlags: 0

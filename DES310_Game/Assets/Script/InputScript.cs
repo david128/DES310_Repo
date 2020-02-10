@@ -82,7 +82,7 @@ public class InputScript : MonoBehaviour
         }
     }
 
-    void AttemptBuild(int id)
+    public void AttemptBuild(int id)
     {
         GameObject target = gameManager.GetComponent<GridScript>().GetGridTile(id); //get Target
         ObjectData targetData = gameManager.GetComponent<GameInfo>().GetTypeInfo(target.GetComponent<ObjectInfo>().GetObjectType()); //get data relating to target
@@ -95,7 +95,7 @@ public class InputScript : MonoBehaviour
 
     }
 
-    void AttemptUpgrade(int id)
+    public void AttemptUpgrade(int id)
     {
         GameObject target = gameManager.GetComponent<GridScript>().GetGridTile(id); //get Target
         ObjectData targetData = gameManager.GetComponent<GameInfo>().GetTypeInfo(target.GetComponent<ObjectInfo>().GetObjectType()); //get data relating to target
@@ -120,7 +120,7 @@ public class InputScript : MonoBehaviour
         }
     }
 
-    void AttmeptDemolish(int id)
+    public void AttmeptDemolish(int id)
     {
         GameObject target = gameManager.GetComponent<GridScript>().GetGridTile(id); //get Target
          

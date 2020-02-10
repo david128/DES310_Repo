@@ -8,6 +8,8 @@ public class RadialMenu : MonoBehaviour
     public Text label;
     public RadialButtonScript buttonPrefab;
     public RadialButtonScript selected;
+    public GameObject gameManager;
+
     public void SpawnButtons(RadialPressable obj)
     {
         StartCoroutine(AnimateButtons(obj));
@@ -37,12 +39,29 @@ public class RadialMenu : MonoBehaviour
 
     void Update()
     {
-     if (Input.GetMouseButtonUp(0))
+        gameManager = GameObject.FindWithTag("GameController");
+        int selectedID = gameManager.GetComponent<InputScript>().GetSelectedID();
+
+        if (Input.GetMouseButtonUp(0))
         {
+
             if (selected)
             {
                 //button function goes here
                 Debug.Log(selected.title + "was selected");
+
+                if (selected.title == "Upgrade" )
+                {
+                    gameManager.GetComponent<InputScript>().AttemptUpgrade(selectedID);
+                }
+                else if (selected.title == "Build")
+                {
+                    gameManager.GetComponent<InputScript>().AttemptBuild(selectedID);
+                }
+                else if (selected.title == "Demolish")
+                {
+                    gameManager.GetComponent<InputScript>().AttmeptDemolish(selectedID);
+                }
             }
             Destroy(gameObject);
         }   

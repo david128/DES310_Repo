@@ -4771,6 +4771,7 @@ GameObject:
   - component: {fileID: 9083256130653441923}
   - component: {fileID: -8781133205122223129}
   - component: {fileID: -1577196264899281536}
+  - component: {fileID: -4562006471504147511}
   m_Layer: 0
   m_Name: Field
   m_TagString: Untagged
@@ -4928,6 +4929,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 13.140432, y: 0.40692, z: 8.245068}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-4562006471504147511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9033137543861761869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c39e48ac04108ff439ee1b74af5371b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: Field
+  options:
+  - Color: {r: 0, g: 0, b: 0, a: 0}
+    Symbol: {fileID: 21300000, guid: 959fb29b63901a848b9081466e803175, type: 3}
+    Title: Upgrade
+  - Color: {r: 0, g: 0, b: 0, a: 0}
+    Symbol: {fileID: 21300000, guid: 1036a100564f9b94ca8f9f5c0da9e54a, type: 3}
+    Title: Demolish
 --- !u!1 &9111245306949845947
 GameObject:
   m_ObjectHideFlags: 0
