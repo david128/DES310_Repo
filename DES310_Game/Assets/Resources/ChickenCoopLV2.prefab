@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &811151554038481915
+--- !u!1 &2571828547132510454
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,45 +8,45 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6314473559628149404}
-  - component: {fileID: 5612013456523394823}
-  - component: {fileID: 2421567884144390731}
+  - component: {fileID: 9204906897926973938}
+  - component: {fileID: 842253618492671277}
+  - component: {fileID: 8568037419456673210}
   m_Layer: 0
-  m_Name: Barn
+  m_Name: ChickenCoopLV2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6314473559628149404
+--- !u!4 &9204906897926973938
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 811151554038481915}
+  m_GameObject: {fileID: 2571828547132510454}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1424931910046354142}
+  m_Father: {fileID: 5504837799878711070}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5612013456523394823
+--- !u!33 &842253618492671277
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 811151554038481915}
-  m_Mesh: {fileID: -616816430620026901, guid: f048dbf953b167c458ccabab330a9bc9, type: 3}
---- !u!23 &2421567884144390731
+  m_GameObject: {fileID: 2571828547132510454}
+  m_Mesh: {fileID: 8576534651789233360, guid: 74db2129e79081a4189ac7aa532465fd, type: 3}
+--- !u!23 &8568037419456673210
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 811151554038481915}
+  m_GameObject: {fileID: 2571828547132510454}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -57,10 +57,11 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -900251861087693428, guid: f048dbf953b167c458ccabab330a9bc9, type: 3}
-  - {fileID: -993758641431196140, guid: f048dbf953b167c458ccabab330a9bc9, type: 3}
-  - {fileID: -8654790933582462369, guid: f048dbf953b167c458ccabab330a9bc9, type: 3}
-  - {fileID: 3140674083027166227, guid: f048dbf953b167c458ccabab330a9bc9, type: 3}
+  - {fileID: 3140674083027166227, guid: 74db2129e79081a4189ac7aa532465fd, type: 3}
+  - {fileID: -993758641431196140, guid: 74db2129e79081a4189ac7aa532465fd, type: 3}
+  - {fileID: -8654790933582462369, guid: 74db2129e79081a4189ac7aa532465fd, type: 3}
+  - {fileID: -4030917311188774133, guid: 74db2129e79081a4189ac7aa532465fd, type: 3}
+  - {fileID: -900251861087693428, guid: 74db2129e79081a4189ac7aa532465fd, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -81,7 +82,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1 &2710386172784834765
+--- !u!1 &8808553825209099533
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -89,40 +90,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1424931910046354142}
-  - component: {fileID: -7547849650822918307}
-  - component: {fileID: -3934616842033451099}
-  - component: {fileID: 6710817616963386268}
-  - component: {fileID: 6300060771584168016}
+  - component: {fileID: 5504837799878711070}
+  - component: {fileID: -4898217179718773585}
+  - component: {fileID: -5269731193650894712}
+  - component: {fileID: 458648621330500771}
+  - component: {fileID: 1547028532685018695}
   m_Layer: 0
-  m_Name: Farmhouse
+  m_Name: ChickenCoopLV2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1424931910046354142
+--- !u!4 &5504837799878711070
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2710386172784834765}
+  m_GameObject: {fileID: 8808553825209099533}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 33.7, y: 0, z: 0}
+  m_LocalPosition: {x: 27.98, y: -2.0993025, z: -15.989652}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 6314473559628149404}
+  - {fileID: 9204906897926973938}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-7547849650822918307
+--- !u!114 &-4898217179718773585
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2710386172784834765}
+  m_GameObject: {fileID: 8808553825209099533}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 155482db5d7f9994fbe59fb2639247e6, type: 3}
@@ -131,13 +132,13 @@ MonoBehaviour:
   ID: 0
   objectType: 0
   level: 0
---- !u!23 &-3934616842033451099
+--- !u!23 &-5269731193650894712
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2710386172784834765}
+  m_GameObject: {fileID: 8808553825209099533}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -169,26 +170,26 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &6710817616963386268
+--- !u!65 &458648621330500771
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2710386172784834765}
+  m_GameObject: {fileID: 8808553825209099533}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6300060771584168016
+--- !u!114 &1547028532685018695
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2710386172784834765}
+  m_GameObject: {fileID: 8808553825209099533}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c39e48ac04108ff439ee1b74af5371b5, type: 3}

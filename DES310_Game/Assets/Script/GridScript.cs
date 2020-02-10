@@ -84,14 +84,14 @@ public class GridScript : MonoBehaviour
     void CreateSquare(Vector3 pos, int ID)
     {
         //Sets default grids components and locations of assets
-        if (ID == 1)
+        if (ID == 6)
         {
             gridSquares.Add((GameObject)Instantiate(Resources.Load("Barn"), pos, Quaternion.identity));
             gridSquares[ID].GetComponent < ObjectInfo>().SetObjectID(ID);
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectType(ObjectInfo.ObjectType.BARN);
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectLevel(1);
         }
-        else if (ID == 2)
+        else if (ID == 4)
         {
 
             gridSquares.Add((GameObject)Instantiate(Resources.Load("Farmhouse"), pos, Quaternion.identity));
