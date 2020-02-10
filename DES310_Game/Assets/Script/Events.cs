@@ -15,7 +15,7 @@ public class Events : MonoBehaviour
         gameEvents.Add(gameEvent);
     }   
 
-    void findCurrentLevels()
+    void FindCurrentLevels() //gets the current levels to be compared to requirements
     {
         EventRequirement newRequirement = new EventRequirement();
 
@@ -39,28 +39,47 @@ public class Events : MonoBehaviour
 
     }
     
-    void findCurrentLevelOfType(EventRequirementName type)
+    EventRequirement FindCurrentLevelOfType(EventRequirementName type) //finds the level for requirement as given
     {
-        if(event)
+        for (int i = 0; i < currentLevels.Count; i++)
+        {
+            if (currentLevels[i].getType() == type)
+            {
+                return (currentLevels[i]);
+            }
+        }
+        return (currentLevels[0]);
     }
 
     void checkTrigger() //loop through gameEvents here and check for req
     {
-        bool triggered = false;
+        bool triggered = false; // flag to check if an event has been triggered
         int count=0;
         while(triggered = false || count > gameEvents.Count)
         {
-            if (gameEvents[count].getTriggered() == false)
+            if (gameEvents[count].getTriggered() == false) //if the event has not been triggered then it will be checked for
             {
 
                 List<EventRequirement> eventRequirements = gameEvents[count].getEventRequirements(); //requirements for this event
-                for (int i = 0; i < eventRequirements.Count; i++)
-                {
-                    if ()
-                    {
+                triggered = true;//sets to true initially
 
+                for (int i = 0; i < eventRequirements.Count; i++) //check each requirement
+                {
+                    
+                    EventRequirement comparison = FindCurrentLevelOfType(eventRequirements[i].getType()); //finds the level to be compared to
+
+                    if (eventRequirements[i].getMin() >= comparison.getMin() && eventRequirements[i].getMax() <= comparison.getMax()) //if requirements are not met the set to false
+                    {
+                        triggered = false;
                     }
+
                 }
+
+                if (triggered == true) //if triggered is still true then add effects of this event
+                {
+                    currentEventEffects.AddEffects(gameEvents[count].getEffects());
+                }
+
             }
 
             count += 1;
@@ -122,6 +141,21 @@ class EventEffects //effects of an effect
     float growthReduction;
     float sustainabillityReduction;
     float moneyReduction;
+
+    public float GetGrowthReduction() { return growthReduction; }
+    public float GetSustainabillityReduction() { return sustainabillityReduction; }
+    public float GetMoneyReduction() { return moneyReduction; }
+
+    public void SetGrowthReduction(float g) { growthReduction = g; }
+    public void SetSustainabillityReduction(float s) { sustainabillityReduction = s; }
+    public void SetMoneyReduction(float m) { moneyReduction = m; }
+
+    public void AddEffects(EventEffects e)
+    {
+        growthReduction += e.growthReduction;
+        sustainabillityReduction += e.sustainabillityReduction;
+        moneyReduction += e.moneyReduction;
+    }
 
 }
 
