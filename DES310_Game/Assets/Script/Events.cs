@@ -55,7 +55,7 @@ public class Events : MonoBehaviour
     {
         bool triggered = false; // flag to check if an event has been triggered
         int count=0;
-        while(triggered = false || count > gameEvents.Count)
+        while(triggered == false || count > gameEvents.Count)
         {
             if (gameEvents[count].getTriggered() == false) //if the event has not been triggered then it will be checked for
             {
