@@ -23,9 +23,11 @@ public class RadialPressable : MonoBehaviour
         }
     }
 
-
     void OnMouseDown()
     {
-        RadialMenuSpawner.instance.SpawnMenu(this);
+        if (RadialMenuSpawner.instance.GetAwake() == false)
+        {
+            RadialMenuSpawner.instance.SpawnMenu(this);
+        }
     }
 }

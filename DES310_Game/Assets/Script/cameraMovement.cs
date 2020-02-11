@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class cameraMovement : MonoBehaviour
 {
-
     float zoom;
 
     float startY;
+
+    public GameObject gameManager;
 
     private void Start()
     {
@@ -51,8 +52,11 @@ public class cameraMovement : MonoBehaviour
             zoom = zoom - 1;
         }
 
-        transform.position = new Vector3 (transform.position.x,(((zoom / 100.0f) * startY)), transform.position.z);
+        transform.position = new Vector3(transform.position.x, (((zoom / 100.0f) * startY)), transform.position.z);
+    }
 
+    void SetPosition()
+    {
 
     }
 }
