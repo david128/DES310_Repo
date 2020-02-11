@@ -14,7 +14,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     void Update()
     {
-        gameObject.GetComponent<Animator>().SetTrigger("trig");
+        
     }
 
 
