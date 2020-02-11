@@ -10,10 +10,11 @@ public class ObjectInfo : MonoBehaviour
 
    public enum ObjectType
    {
-        EMPTY = 0,
-        FARMHOUSE = 1,
-        FIELD = 2,
-        BARN = 3
+        NONE =0,
+        EMPTY = 1,
+        FARMHOUSE = 2,
+        FIELD = 3,
+        BARN = 4
    };
   
     public int level;
