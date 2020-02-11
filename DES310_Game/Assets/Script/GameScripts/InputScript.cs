@@ -4,6 +4,7 @@
 public class InputScript : MonoBehaviour
 {
     //Declare variables
+    public static InputScript instance;
     public bool controlType;//true for mobile, false for pc
     public GameObject gameManager;
 
@@ -18,11 +19,15 @@ public class InputScript : MonoBehaviour
         cameraMovement = Camera.main.GetComponent<CameraMovement>();
     }
 
+    //Selecting Variables
     public void AllowSelecting()
     {
         selecting = true;
-
     }
+
+    public bool GetAllowSelecting() { return selecting; }
+
+    public void SetAllowSelecting(bool s) { selecting = s; }
 
     public int GetSelectedID()
     {
@@ -42,9 +47,7 @@ public class InputScript : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-
                 Select(Input.mousePosition);
-
             }
 
             if (Input.GetKey("w"))
@@ -111,18 +114,17 @@ public class InputScript : MonoBehaviour
         //casts a ray from camera to mouse position
         Ray ray = Camera.main.ScreenPointToRay(pos);
 
-        //Checks if the ray connects with an object/asset
-        if (Physics.Raycast(ray, out hit))
+        if (selecting == true)
         {
+            //Checks if the ray connects with an object/asset
+            if (Physics.Raycast(ray, out hit))
+            {
 
+                selectedID = hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectID(); //object we are clicking's ID
 
+                Debug.Log("Selected " + selectedID.ToString());
 
-            selectedID = hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectID(); //object we are clicking's ID
-
-            Debug.Log("Selected " + selectedID.ToString());
-
-
-
+            }
         }
     }
 

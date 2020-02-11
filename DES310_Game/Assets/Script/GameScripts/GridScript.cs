@@ -94,7 +94,7 @@ public class GridScript : MonoBehaviour
         else if (ID == 4)
         {
 
-            gridSquares.Add((GameObject)Instantiate(Resources.Load("Farmhouse"), pos, Quaternion.identity));
+            gridSquares.Add((GameObject)Instantiate(Resources.Load("Barn"), pos, Quaternion.identity));
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectID(ID);
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectType(ObjectInfo.ObjectType.FARMHOUSE);
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectLevel(1);
