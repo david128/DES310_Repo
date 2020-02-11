@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class cameraMovement : MonoBehaviour
+public class CameraMovement : MonoBehaviour
 {
 
     float zoom;
@@ -18,41 +18,65 @@ public class cameraMovement : MonoBehaviour
 
     // Update is called once per frame
     //Inputs for the main camera of the game
-    void Update()
+
+    public void MoveCamera(Vector2 m)
     {
-        if (Input.GetKey("w"))
+        if(m.x > 0)
         {
-            transform.position = new Vector3(transform.position.x + 0.1f, transform.position.y, transform.position.z + 0.1f);
+            MoveLeft(Mathf.Abs(m.x) * 0.001f);
+        }
+        else
+        {
+            MoveRight(Mathf.Abs(m.x) * 0.001f);
         }
 
-        if (Input.GetKey("s"))
+        if (m.y > 0)
         {
-            transform.position = new Vector3(transform.position.x - 0.1f, transform.position.y, transform.position.z - 0.1f);
+            MoveUp(Mathf.Abs(m.y) * 0.003f);
         }
-
-        if (Input.GetKey("a"))
+        else
         {
-            transform.position = new Vector3(transform.position.x - 0.1f, transform.position.y, transform.position.z + 0.1f);
+            MoveDown(Mathf.Abs(m.y) * 0.003f);
         }
-
-        if (Input.GetKey("d"))
-        {
-            transform.position = new Vector3(transform.position.x + 0.1f, transform.position.y, transform.position.z - 0.1f);
-        }
-
-        if (Input.GetKey("i") && zoom < 200)
-        {
-            zoom = zoom + 1;
-        }
-
-
-        if (Input.GetKey("o") && zoom > -100)
-        {
-            zoom = zoom - 1;
-        }
-
-        transform.position = new Vector3 (transform.position.x,(((zoom / 100.0f) * startY)), transform.position.z);
-
 
     }
+
+    public void MoveUp(float v)
+    {
+        transform.position = new Vector3(transform.position.x + v, transform.position.y, transform.position.z + v);
+    }
+
+    public void MoveDown(float v)
+    {
+        transform.position = new Vector3(transform.position.x - v, transform.position.y, transform.position.z - v);
+    }
+
+    public void MoveRight(float v)
+    {
+        transform.position = new Vector3(transform.position.x - v, transform.position.y, transform.position.z + v);
+    }
+
+    public void MoveLeft(float v)
+    {
+        transform.position = new Vector3(transform.position.x + v, transform.position.y, transform.position.z - v);
+    }
+
+
+
+    //if (Input.GetKey("i") && zoom < 200)
+    //{
+    //    zoom = zoom + 1;
+    //}
+
+
+    //if (Input.GetKey("o") && zoom > -100)
+    //{
+    //    zoom = zoom - 1;
+    //}
+
+    //transform.position = new Vector3 (transform.position.x,(((zoom / 100.0f) * startY)), transform.position.z);
 }
+
+
+    
+
