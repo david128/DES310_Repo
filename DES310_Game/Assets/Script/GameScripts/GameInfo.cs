@@ -5,10 +5,10 @@ using UnityEngine;
 public class ObjectData
 {
 
-    public float purchaseCost;
-    public float levels;
-    public float level2Cost;
-    public float level3Cost;
+    public int purchaseCost;
+    public int levels;
+    public int level2Cost;
+    public int level3Cost;
 
 }
 

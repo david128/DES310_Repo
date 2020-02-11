@@ -41,7 +41,7 @@ public class RadialMenu : MonoBehaviour
         gameManager = GameObject.FindWithTag("GameController");
         int selectedID = gameManager.GetComponent<InputScript>().GetSelectedID();
 
-        if (Input.GetMouseButtonDown(0) && RadialMenuSpawner.instance.GetAwake() == true)
+        if ((Input.GetMouseButtonDown(0) && RadialMenuSpawner.instance.GetAwake() == true ) || Input.touchCount > 0)
         {
             gameManager.GetComponent<InputScript>().SetAllowSelecting(false);
 
@@ -64,6 +64,7 @@ public class RadialMenu : MonoBehaviour
                 }
 
                 Destroy(gameObject);
+
                 RadialMenuSpawner.instance.SetAwake(false);
                 gameManager.GetComponent<InputScript>().SetAllowSelecting(true);
             }

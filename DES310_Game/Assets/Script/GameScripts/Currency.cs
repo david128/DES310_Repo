@@ -11,4 +11,5 @@ public class Currency : MonoBehaviour
     public int GetMoney() { return money; }
 
     public void SetMoney(int mon) { money = mon; }
+    public void AddMoney(int m) { money = money + m; }
 }

@@ -10,6 +10,14 @@ public class InputScript : MonoBehaviour
 
     public int selectedID;
     public bool selecting = true;
+    CameraMovement cameraMovement;
+
+    private Touch initTouch = new Touch();
+
+    private void Start()
+    {
+        cameraMovement = Camera.main.GetComponent<CameraMovement>();
+    }
 
     //Selecting Variables
     public void AllowSelecting()
@@ -26,6 +34,11 @@ public class InputScript : MonoBehaviour
         return selectedID;
     }
 
+    public bool GetControlType()
+    {
+        return controlType;
+    }
+
     //get Input to be called in main game loop
     public void GetInput()
     {
@@ -37,28 +50,59 @@ public class InputScript : MonoBehaviour
                 Select(Input.mousePosition);
             }
 
-            if (Input.GetKeyDown("u"))
+            if (Input.GetKey("w"))
             {
-                AttemptUpgrade(selectedID);
+                cameraMovement.MoveUp(0.1f);
             }
-            if (Input.GetKeyDown("b"))
+            if (Input.GetKey("s"))
             {
-                AttemptBuild(selectedID);
+                cameraMovement.MoveDown(0.1f);
             }
-            if (Input.GetKeyDown("h"))
+            if (Input.GetKey("d"))
             {
-                AttmeptDemolish(selectedID);
+                cameraMovement.MoveLeft(0.1f);
+            }
+            if (Input.GetKey("a"))
+            {
+                cameraMovement.MoveRight(0.1f);
             }
 
         }
         else //mobile
         {
-            if (Input.touchCount > 0)
+            if (Input.touchCount > 0 )
             {
 
                 Select(Input.GetTouch(0).position);
+
             }
+
+            foreach(Touch touch in Input.touches)
+            {
+                if (touch.phase== TouchPhase.Began)
+                {
+                    initTouch = touch;
+                }
+                else if (touch.phase == TouchPhase.Moved)
+                {
+                    //swipe
+                    float deltaX = initTouch.position.x - touch.position.x;
+                    float deltaY = initTouch.position.y - touch.position.y;
+                    cameraMovement.MoveCamera(new Vector2(deltaX, deltaY));
+                    //Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + deltaX, Camera.main.transform.position.y + deltaY); 
+
+                }
+                else if (touch.phase == TouchPhase.Ended)
+                {
+                    initTouch = new Touch();
+                }
+                
+            }
+
         }
+
+                
+ 
     }
 
     //Finds what object is being selected
@@ -91,6 +135,7 @@ public class InputScript : MonoBehaviour
 
         if (gameManager.GetComponent<Currency>().GetMoney() >= targetData.purchaseCost && target.GetComponent<ObjectInfo>().GetObjectType() == ObjectInfo.ObjectType.EMPTY)//check that user has enough menu and that object is empty
         {
+            gameManager.GetComponent<Currency>().AddMoney(-targetData.purchaseCost);
             Debug.Log("Build on " + id.ToString());
             gameManager.GetComponent<AssetChange>().Build(id, ObjectInfo.ObjectType.FIELD);
         }
@@ -101,7 +146,7 @@ public class InputScript : MonoBehaviour
     {
         GameObject target = gameManager.GetComponent<GridScript>().GetGridTile(id); //get Target
         ObjectData targetData = gameManager.GetComponent<GameInfo>().GetTypeInfo(target.GetComponent<ObjectInfo>().GetObjectType()); //get data relating to target
-        float levelCost;
+        int levelCost;
 
         if (target.GetComponent<ObjectInfo>().GetObjectLevel() == 1)//get level upgrade cost
         {
@@ -115,8 +160,7 @@ public class InputScript : MonoBehaviour
         //Check that have enough money and that maxLevel of asset has not been reached
         if (gameManager.GetComponent<Currency>().GetMoney() >= levelCost && target.GetComponent<ObjectInfo>().GetObjectLevel() != targetData.levels) 
         {
-            //display button
-            //gameManager.GetComponent<ButtonFunctions>().Enable();
+            gameManager.GetComponent<Currency>().AddMoney(-levelCost);
             Debug.Log("upgrade on " + id.ToString());
             gameManager.GetComponent<AssetChange>().Upgrade(id);
         }

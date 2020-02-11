@@ -8,7 +8,7 @@ public class FoodScript : MonoBehaviour
     public float foodOutput;
 
     //getter and setter
-    public void SetFood(float f) { foodOutput += f; }
+    public void AddFood(float f) { foodOutput += f; }
 
     public float GetFood() { return foodOutput; }
 }
