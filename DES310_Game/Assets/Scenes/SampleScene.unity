@@ -214,10 +214,9 @@ GameObject:
   - component: {fileID: 215528162}
   - component: {fileID: 215528164}
   - component: {fileID: 215528165}
-  - component: {fileID: 215528166}
   - component: {fileID: 215528167}
   - component: {fileID: 215528168}
-  - component: {fileID: 215528169}
+  - component: {fileID: 215528166}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameController
@@ -340,10 +339,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 215528158}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4c3d9106a4e20a46ae71df773377ad1, type: 3}
+  m_Script: {fileID: 11500000, guid: dc66f6035c732c64fbc3d2263f1ee6b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 0}
 --- !u!114 &215528167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -369,19 +367,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ec7f85e205a9bd4aa1676c862bf0c48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &215528169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 215528158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d61f5c6d89311be41b5b043dfe4d50af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 0}
 --- !u!1 &442854020
 GameObject:
   m_ObjectHideFlags: 0
@@ -935,7 +920,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc66f6035c732c64fbc3d2263f1ee6b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
 --- !u!1 &989226380
 GameObject:
   m_ObjectHideFlags: 0
@@ -1009,11 +993,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2710386172784834765, guid: 77c4eb6925e948349bc92c30d2b02077,
-        type: 3}
-      propertyPath: m_Name
-      value: Farmhouse
-      objectReference: {fileID: 0}
     - target: {fileID: 1424931910046354142, guid: 77c4eb6925e948349bc92c30d2b02077,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1068,6 +1047,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2710386172784834765, guid: 77c4eb6925e948349bc92c30d2b02077,
+        type: 3}
+      propertyPath: m_Name
+      value: Farmhouse
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77c4eb6925e948349bc92c30d2b02077, type: 3}
