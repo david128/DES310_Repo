@@ -31,7 +31,7 @@ public class GameLoop : MonoBehaviour
         if (time > 3)
         {
             //Increases the money
-            gameManager.GetComponent<Currency>().SetMoney(gameManager.GetComponent<Currency>().GetMoney() + 100);
+            //gameManager.GetComponent<Currency>().AddMoney(gameManager.GetComponent<Currency>().GetMoney() + 100);
 
             //Resets the period of time for the passive income
             time = 0.0f;

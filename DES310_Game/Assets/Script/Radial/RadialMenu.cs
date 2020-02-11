@@ -42,7 +42,7 @@ public class RadialMenu : MonoBehaviour
         gameManager = GameObject.FindWithTag("GameController");
         int selectedID = gameManager.GetComponent<InputScript>().GetSelectedID();
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0) || Input.touchCount > 0)
         {
 
             if (selected)
