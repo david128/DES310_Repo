@@ -56,7 +56,7 @@ public class RadialMenu : MonoBehaviour
                 }
                 else if (selected.title == "Build")
                 {
-                    gameManager.GetComponent<InputScript>().AttemptBuild(selectedID);
+                    gameManager.GetComponent<InputScript>().AttemptBuild(ObjectInfo.ObjectType.FIELD, ObjectFill.FillType.NONE);
                 }
                 else if (selected.title == "Demolish")
                 {

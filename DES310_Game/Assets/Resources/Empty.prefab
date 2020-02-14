@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8334857941560164885}
   - component: {fileID: 2348579136412483308}
   - component: {fileID: 3018749861070406307}
-  - component: {fileID: 8279409294688566319}
   - component: {fileID: 1273912700003777054}
   m_Layer: 0
   m_Name: Empty
@@ -96,23 +95,6 @@ MonoBehaviour:
   ID: 15
   objectType: 1
   level: 0
---- !u!114 &8279409294688566319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4083359981264456240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c39e48ac04108ff439ee1b74af5371b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  title: Empty
-  options:
-  - Color: {r: 0, g: 0, b: 0, a: 0}
-    Symbol: {fileID: 21300000, guid: 0e124e5acc7bb764e8931cb83acec243, type: 3}
-    Title: Build
 --- !u!65 &1273912700003777054
 BoxCollider:
   m_ObjectHideFlags: 0
