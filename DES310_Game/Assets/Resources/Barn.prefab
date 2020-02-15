@@ -99,8 +99,9 @@ GameObject:
   - component: {fileID: 3689177400647884536}
   - component: {fileID: 3688586986710164170}
   - component: {fileID: 7985889628894766258}
+  - component: {fileID: -4347485991414200780}
   m_Layer: 0
-  m_Name: Barn_LV1
+  m_Name: Barn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -204,3 +205,19 @@ MonoBehaviour:
   - Color: {r: 0, g: 0, b: 0, a: 0}
     Symbol: {fileID: 21300000, guid: 959fb29b63901a848b9081466e803175, type: 3}
     Title: Upgrade
+  - Color: {r: 0, g: 0, b: 0, a: 0}
+    Symbol: {fileID: 21300000, guid: d49f72b23360ea1489061921cb744002, type: 3}
+    Title: Back
+--- !u!114 &-4347485991414200780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5492754453899138409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea5c64a0edbc99b44870f36e22d14ba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fillType: 0

@@ -99,8 +99,9 @@ GameObject:
   - component: {fileID: 5954467029006338755}
   - component: {fileID: 8824029901648024984}
   - component: {fileID: 6476864003135659091}
+  - component: {fileID: -9107204056347751671}
   m_Layer: 0
-  m_Name: ChickenCoopLV3
+  m_Name: ChickenCoop_lvl3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -134,8 +135,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 0
-  objectType: 0
-  level: 0
+  objectType: 5
+  level: 3
 --- !u!23 &5954467029006338755
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -201,3 +202,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: 
   options: []
+--- !u!114 &-9107204056347751671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050222675113152670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea5c64a0edbc99b44870f36e22d14ba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fillType: 9

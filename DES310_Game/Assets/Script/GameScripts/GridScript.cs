@@ -67,6 +67,9 @@ public class GridScript : MonoBehaviour
             zSpacing = 1;
         }
 
+        //spawns outside ground
+        Instantiate(Resources.Load("ground"), new Vector3(27.0f, 1.0f, 19.5f), Quaternion.identity);
+
         //creates and instantiates each tile, giving them a unique ID
         for (int i = 0; i < columnLength; i++)
         {
@@ -84,17 +87,17 @@ public class GridScript : MonoBehaviour
     void CreateSquare(Vector3 pos, int ID)
     {
         //Sets default grids components and locations of assets
-        if (ID == 6)
+        if (ID == 13)
         {
             gridSquares.Add((GameObject)Instantiate(Resources.Load("Barn"), pos, Quaternion.identity));
             gridSquares[ID].GetComponent < ObjectInfo>().SetObjectID(ID);
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectType(ObjectInfo.ObjectType.BARN);
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectLevel(1);
         }
-        else if (ID == 4)
+        else if (ID == 14)
         {
 
-            gridSquares.Add((GameObject)Instantiate(Resources.Load("Barn"), pos, Quaternion.identity));
+            gridSquares.Add((GameObject)Instantiate(Resources.Load("Farmhouse"), pos, Quaternion.identity));
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectID(ID);
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectType(ObjectInfo.ObjectType.FARMHOUSE);
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectLevel(1);

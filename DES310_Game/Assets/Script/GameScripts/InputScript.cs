@@ -67,6 +67,16 @@ public class InputScript : MonoBehaviour
                 cameraMovement.MoveRight(0.1f);
             }
 
+            if (Input.GetKey("i"))
+            {
+                Camera.main.orthographicSize += .1f;
+            }
+
+            if (Input.GetKey("o"))
+            {
+                Camera.main.orthographicSize -= .1f;
+            }
+
         }
         else //mobile
         {
@@ -143,7 +153,7 @@ public class InputScript : MonoBehaviour
         {
             gameManager.GetComponent<Currency>().AddMoney(-targetData.purchaseCost);
             Debug.Log("Build on " + selectedID.ToString());
-            gameManager.GetComponent<AssetChange>().Build(selectedID, t);
+            gameManager.GetComponent<AssetChange>().Build(selectedID, t, f);
         }
 
     }
@@ -152,6 +162,7 @@ public class InputScript : MonoBehaviour
     {
         GameObject target = gameManager.GetComponent<GridScript>().GetGridTile(id); //get Target
         ObjectData targetData = gameManager.GetComponent<GameInfo>().GetTypeInfo(target.GetComponent<ObjectInfo>().GetObjectType()); //get data relating to target
+
         int levelCost;
 
         if (target.GetComponent<ObjectInfo>().GetObjectLevel() == 1)//get level upgrade cost
