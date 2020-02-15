@@ -13,6 +13,7 @@ public class CameraMovement : MonoBehaviour
     {
         zoom = 100.0f;
         startY = 10.0f;
+        bool fixScritp;
     }
 
 

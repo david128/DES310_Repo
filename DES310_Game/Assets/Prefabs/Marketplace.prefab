@@ -2669,6 +2669,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1116816644762094970}
+  - component: {fileID: 3593210321088650341}
   m_Layer: 5
   m_Name: Marketplace
   m_TagString: Marketplace
@@ -2705,8 +2706,16 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 1000, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &3593210321088650341
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116816644762094971}
+  m_CullTransparentMesh: 0
 --- !u!1 &1116816644820363418
 GameObject:
   m_ObjectHideFlags: 0

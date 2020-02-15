@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ObjectFill : MonoBehaviour
 {
+    public FillType fillType;
+
     // Start is called before the first frame update
     public enum FillType
     {
@@ -19,8 +21,12 @@ public class ObjectFill : MonoBehaviour
         CHICKEN = 9,
         SUNFLOWER = 10,
         SUGARCANE = 11,
-        COCCO = 12
-
+        COCCOA = 12
     };
 
+
+    //getters and setters for object
+    public FillType GetFillType() { return fillType; }
+
+    public void SetFillType(FillType t) { fillType = t; }
 }
