@@ -122,22 +122,28 @@ public class InputScript : MonoBehaviour
 
                 selectedID = hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectID(); //object we are clicking's ID
 
+                if (hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectType() == ObjectInfo.ObjectType.EMPTY)
+                {
+                    gameManager.GetComponent<MarketplaceSpawner>().SpawnMenu();
+                    selecting = false;
+                }
+
                 Debug.Log("Selected " + selectedID.ToString());
 
             }
         }
     }
 
-    public void AttemptBuild(int id)
+    public void AttemptBuild(ObjectInfo.ObjectType t, ObjectFill.FillType f)
     {
-        GameObject target = gameManager.GetComponent<GridScript>().GetGridTile(id); //get Target
+        GameObject target = gameManager.GetComponent<GridScript>().GetGridTile(selectedID); //get Target
         ObjectData targetData = gameManager.GetComponent<GameInfo>().GetTypeInfo(target.GetComponent<ObjectInfo>().GetObjectType()); //get data relating to target
-
+        
         if (gameManager.GetComponent<Currency>().GetMoney() >= targetData.purchaseCost && target.GetComponent<ObjectInfo>().GetObjectType() == ObjectInfo.ObjectType.EMPTY)//check that user has enough menu and that object is empty
         {
             gameManager.GetComponent<Currency>().AddMoney(-targetData.purchaseCost);
-            Debug.Log("Build on " + id.ToString());
-            gameManager.GetComponent<AssetChange>().Build(id, ObjectInfo.ObjectType.FIELD);
+            Debug.Log("Build on " + selectedID.ToString());
+            gameManager.GetComponent<AssetChange>().Build(selectedID, t);
         }
 
     }

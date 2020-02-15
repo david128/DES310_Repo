@@ -25,7 +25,9 @@ public class RadialPressable : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (RadialMenuSpawner.instance.GetAwake() == false)
+        InputScript i = GameObject.FindGameObjectWithTag("GameController").GetComponent<InputScript>();
+
+        if (RadialMenuSpawner.instance.GetAwake() == false && i.GetAllowSelecting() == true)
         {
             RadialMenuSpawner.instance.SpawnMenu(this);
         }
