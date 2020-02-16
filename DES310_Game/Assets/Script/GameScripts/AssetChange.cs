@@ -87,7 +87,10 @@ public class AssetChange : MonoBehaviour
 
             case ObjectInfo.ObjectType.FIELD:
                 return (GameObject)Instantiate(Resources.Load("Field" + lvlExtension), transform.position, Quaternion.identity);
-           
+
+            case ObjectInfo.ObjectType.CHICKEN_COUP:
+                return (GameObject)Instantiate(Resources.Load("ChickenCoop" + lvlExtension), transform.position, Quaternion.identity);
+
             default:
                 return (GameObject)Instantiate(Resources.Load("Field" + lvlExtension), transform.position, Quaternion.identity);
             
@@ -148,7 +151,7 @@ public class AssetChange : MonoBehaviour
                 return (GameObject)Instantiate(Resources.Load("Carrots"), transform.position, Quaternion.identity, newAsset.transform);
                 
             case ObjectFill.FillType.RICE:
-                return (GameObject)Instantiate(Resources.Load("Carrots"), transform.position, Quaternion.identity, newAsset.transform);
+                return (GameObject)Instantiate(Resources.Load("RiceField"), transform.position, Quaternion.identity, newAsset.transform);
                 
             case ObjectFill.FillType.CARROT:
                 return (GameObject)Instantiate(Resources.Load("Carrots"), transform.position, Quaternion.identity, newAsset.transform);
@@ -166,7 +169,7 @@ public class AssetChange : MonoBehaviour
                 return (GameObject)Instantiate(Resources.Load("Carrots"), transform.position, Quaternion.identity, newAsset.transform);
                 
             case ObjectFill.FillType.CHICKEN:
-                return (GameObject)Instantiate(Resources.Load("Carrots"), transform.position, Quaternion.identity, newAsset.transform);
+                return (GameObject)Instantiate(Resources.Load("Chicken"), transform.position, Quaternion.identity, newAsset.transform);
                 
             case ObjectFill.FillType.SUNFLOWER:
                 return (GameObject)Instantiate(Resources.Load("Sunflower"), transform.position, Quaternion.identity, newAsset.transform);
