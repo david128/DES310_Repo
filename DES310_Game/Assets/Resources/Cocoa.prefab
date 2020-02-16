@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3326885048648102485}
   - component: {fileID: 6012445055354488931}
   - component: {fileID: 21664259154818202}
+  - component: {fileID: -3744980790376218788}
   m_Layer: 0
   m_Name: Cocoa
   m_TagString: Untagged
@@ -80,3 +81,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &-3744980790376218788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760944338720555078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf237b14a943894d876bad565af84e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyOutput: 300
+  foodOutput: 50

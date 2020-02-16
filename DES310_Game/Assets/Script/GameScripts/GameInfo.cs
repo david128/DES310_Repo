@@ -25,12 +25,12 @@ public class GameInfo : MonoBehaviour
 
                 data.purchaseCost = 200;
                 data.levels = 3;
-                data.level2Cost = 200;
-                data.level3Cost = 200;
+                data.level2Cost = 3000;
+                data.level3Cost = 20000;
                 break;
 
             case ObjectInfo.ObjectType.EMPTY:
-                data.purchaseCost = 200;
+                data.purchaseCost = 300;
                 data.levels = 0;
                 data.level2Cost = 0;
                 data.level3Cost = 0;
@@ -39,15 +39,22 @@ public class GameInfo : MonoBehaviour
             case ObjectInfo.ObjectType.FARMHOUSE:
                 data.purchaseCost = 200;
                 data.levels = 3;
-                data.level2Cost = 200;
-                data.level3Cost = 200;
+                data.level2Cost = 10000;
+                data.level3Cost = 50000;
                 break;
 
             case ObjectInfo.ObjectType.FIELD:
-                data.purchaseCost = 200;
+                data.purchaseCost = 300;
                 data.levels = 3;
-                data.level2Cost = 200;
-                data.level3Cost = 200;
+                data.level2Cost = 1000;
+                data.level3Cost = 5000;
+                break;
+
+            case ObjectInfo.ObjectType.CHICKEN_COUP:
+                data.purchaseCost = 350;
+                data.levels = 3;
+                data.level2Cost = 1250;
+                data.level3Cost = 6500;
                 break;
 
             default:

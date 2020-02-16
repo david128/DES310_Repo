@@ -12,7 +12,7 @@ public class ObjectOutput : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameController");
-        InvokeRepeating("GrowthCycle", 0.0f, 1.0f);
+        InvokeRepeating("GrowthCycle", 0.0f, 15.0f);
     }
 
     void GrowthCycle()

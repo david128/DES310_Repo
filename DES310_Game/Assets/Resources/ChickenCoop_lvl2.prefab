@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2885904954490953362}
   - component: {fileID: 3157543992895028926}
   - component: {fileID: -4253953942932330034}
+  - component: {fileID: 7725202192662602690}
   m_Layer: 0
   m_Name: ChickenCoop_lvl2
   m_TagString: Untagged
@@ -138,6 +139,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fillType: 9
+--- !u!114 &7725202192662602690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141928132530839880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf237b14a943894d876bad565af84e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyOutput: 225
+  foodOutput: 325
 --- !u!1 &6221244534000669875
 GameObject:
   m_ObjectHideFlags: 0

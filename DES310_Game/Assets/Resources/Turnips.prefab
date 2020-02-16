@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 59840625211080968}
   - component: {fileID: 9047623918006254398}
   - component: {fileID: 3365059112401160135}
+  - component: {fileID: 5695867627426238025}
   m_Layer: 0
   m_Name: Turnips
   m_TagString: Untagged
@@ -79,3 +80,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &5695867627426238025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3931573633470624539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf237b14a943894d876bad565af84e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyOutput: 200
+  foodOutput: 150
