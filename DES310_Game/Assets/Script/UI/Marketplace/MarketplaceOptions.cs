@@ -19,7 +19,9 @@ public class MarketplaceOptions : MonoBehaviour
         InputScript i = GameObject.FindGameObjectWithTag("GameController").GetComponent<InputScript>();
         Debug.Log("Building " + type.ToString() + " with filler " + filler.ToString());
         i.AttemptBuild(type, filler);
+
         Quit();
     }
+
 
 }

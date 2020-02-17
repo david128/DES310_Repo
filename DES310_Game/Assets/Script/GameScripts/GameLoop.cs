@@ -13,6 +13,8 @@ public class GameLoop : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //load events
+        gameManager.GetComponent<Events>().HandleEventFile();
         //Creates grid at the start
         gameManager.GetComponent<GridScript>().CreateGrid();
     }
@@ -35,6 +37,9 @@ public class GameLoop : MonoBehaviour
 
             //Resets the period of time for the passive income
             time = 0.0f;
+
+            //checks for events
+            gameManager.GetComponent<Events>().checkTrigger();
         }
 
         //Gets input from player

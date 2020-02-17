@@ -11,7 +11,7 @@ public class Events : MonoBehaviour
 
     List<GameEvent> gameEvents = new List<GameEvent>(); //list of all gameEvents
     List<EventRequirement> currentLevels = new List<EventRequirement>(); //list of all current levels to compare to event requirements.
-    EventEffects currentEventEffects;
+    EventEffects currentEventEffects = new EventEffects(0,0,0);
 
 
 
@@ -19,7 +19,7 @@ public class Events : MonoBehaviour
     {
         GameEvent event1 = new GameEvent();
         event1.addRequirement(new EventRequirement(EventRequirementName.FOOD, 150, 150));
-        event1.addRequirement(new EventRequirement(EventRequirementName.SUSTAINABILLITY, 150, 150));
+        event1.addRequirement(new EventRequirement(EventRequirementName.SUSTAINABILITY, 150, 150));
         event1.addRequirement(new EventRequirement(EventRequirementName.TIME, 150, 150));
 
         event1.setEffects(new EventEffects(0,0,0));
@@ -42,7 +42,7 @@ public class Events : MonoBehaviour
 
         currentLevels.Add(newRequirement);
 
-        newRequirement.SetEventType(EventRequirementName.SUSTAINABILLITY);
+        newRequirement.SetEventType(EventRequirementName.SUSTAINABILITY);
         newRequirement.SetMax(0); //replace with getter
         newRequirement.SetMin(0); //replace with getter
 
@@ -68,11 +68,12 @@ public class Events : MonoBehaviour
         return (currentLevels[0]);
     }
 
-    void checkTrigger() //loop through gameEvents here and check for req
+    public void checkTrigger() //loop through gameEvents here and check for req
     {
+        FindCurrentLevels();
         bool triggered = false; // flag to check if an event has been triggered
         int count=0;
-        while(triggered == false || count > gameEvents.Count)
+        while(triggered == false && count < gameEvents.Count)
         {
             if (gameEvents[count].getTriggered() == false) //if the event has not been triggered then it will be checked for
             {
@@ -94,6 +95,8 @@ public class Events : MonoBehaviour
 
                 if (triggered == true) //if triggered is still true then add effects of this event
                 {
+                    Debug.Log("EventOccurred " + gameEvents[count].getEVentName());
+                    gameEvents[count].setTriggered(true);
                     currentEventEffects.AddEffects(gameEvents[count].getEffects());
                 }
 
@@ -107,7 +110,7 @@ public class Events : MonoBehaviour
     {
         EVENTNAME,
         FOOD,
-        SUSTAINABILLITY,
+        SUSTAINABILITY,
         TIME,
         MONEY_EFFECT,
         SUST_EFFECT,
@@ -115,20 +118,23 @@ public class Events : MonoBehaviour
            
     }
 
-    void HandleEventFile()
+    //read in events
+    public void HandleEventFile()
     {
 
         string[] lines = File.ReadAllLines(path);
         int i = 0;
-
+        
         bool eventDone = false;
-        while (i <= lines.Length)
+        while ((i+1 )< lines.Length)
         {
+            
             GameEvent newGameEvent = new GameEvent();
             EventRequirement newReq = new EventRequirement();
             EventEffects newEffects = new EventEffects(0, 0, 0);
+            eventDone = false;
 
-            while (i <= lines.Length && eventDone != true)
+            while ((i + 1) <= lines.Length && eventDone != true)
             {
                 switch (lines[i])
                 {
@@ -150,7 +156,7 @@ public class Events : MonoBehaviour
                         newGameEvent.addRequirement(newReq);
                         break;
                     case ("SUSTAINABILLITY"):
-                        newReq.SetEventType(EventRequirementName.SUSTAINABILLITY);
+                        newReq.SetEventType(EventRequirementName.SUSTAINABILITY);
                         i += 1;
                         newReq.SetMin(float.Parse(lines[i]));
                         i += 1;
@@ -158,7 +164,7 @@ public class Events : MonoBehaviour
                         newGameEvent.addRequirement(newReq);
                         break;
                     case ("TIME"):
-                        newReq.SetEventType(EventRequirementName.SUSTAINABILLITY);
+                        newReq.SetEventType(EventRequirementName.TIME);
                         i += 1;
                         newReq.SetMin(float.Parse(lines[i]));
                         i += 1;
@@ -173,7 +179,7 @@ public class Events : MonoBehaviour
                         i += 1;
                         newEffects.SetGrowthReduction(float.Parse(lines[i]));
                         break;
-                    case ("SUSTAINABILLITY_REDUCTION"):
+                    case ("SUSTAINABILITY_REDUCTION"):
                         i += 1;
                         newEffects.SetGrowthReduction(float.Parse(lines[i]));
                         break;
@@ -181,6 +187,7 @@ public class Events : MonoBehaviour
                         newGameEvent.setEffects(newEffects);
                         AddNewEvent(newGameEvent);
                         eventDone = true;
+                        i += 1;
                         break;
                     default:
                         i += 1;
@@ -303,6 +310,6 @@ class EventEffects //effects of an effect
 public enum EventRequirementName //different requirement types
 {
     FOOD = 0,
-    SUSTAINABILLITY = 1,
+    SUSTAINABILITY = 1,
     TIME = 2
 }
