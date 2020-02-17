@@ -52,19 +52,19 @@ public class InputScript : MonoBehaviour
 
             if (Input.GetKey("w"))
             {
-                cameraMovement.MoveUp(0.1f);
+                cameraMovement.MoveUp(0.5f);
             }
             if (Input.GetKey("s"))
             {
-                cameraMovement.MoveDown(0.1f);
+                cameraMovement.MoveDown(0.5f);
             }
             if (Input.GetKey("d"))
             {
-                cameraMovement.MoveLeft(0.1f);
+                cameraMovement.MoveLeft(0.5f);
             }
             if (Input.GetKey("a"))
             {
-                cameraMovement.MoveRight(0.1f);
+                cameraMovement.MoveRight(0.5f);
             }
 
             if (Input.GetKey("i"))
