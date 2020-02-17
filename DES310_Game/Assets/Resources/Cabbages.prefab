@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5047089500547294291}
   - component: {fileID: 4274438966888275557}
   - component: {fileID: 7524761797505409692}
+  - component: {fileID: -4138872544118256101}
   m_Layer: 0
   m_Name: Cabbages
   m_TagString: Untagged
@@ -79,3 +80,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &-4138872544118256101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8093396171993601600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf237b14a943894d876bad565af84e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyOutput: 100
+  foodOutput: 250

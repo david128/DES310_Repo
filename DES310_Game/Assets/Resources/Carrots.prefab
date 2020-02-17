@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7051778024126388209}
   - component: {fileID: 2055880582629076423}
   - component: {fileID: 5745323274912485694}
+  - component: {fileID: 9069283556222554761}
   m_Layer: 0
   m_Name: Carrots
   m_TagString: Untagged
@@ -79,3 +80,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &9069283556222554761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6307197925632206306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf237b14a943894d876bad565af84e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyOutput: 175
+  foodOutput: 175
