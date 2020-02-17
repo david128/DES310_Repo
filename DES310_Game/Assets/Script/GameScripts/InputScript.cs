@@ -10,13 +10,13 @@ public class InputScript : MonoBehaviour
 
     public int selectedID;
     public bool selecting = true;
-    CameraMovement cameraMovement;
+    CameraScript cameraMovement;
 
     private Touch initTouch = new Touch();
 
     private void Start()
     {
-        cameraMovement = Camera.main.GetComponent<CameraMovement>();
+        cameraMovement = Camera.main.GetComponent<CameraScript>();
     }
 
     //Selecting Variables

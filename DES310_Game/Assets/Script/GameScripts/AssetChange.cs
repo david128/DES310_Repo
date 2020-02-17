@@ -88,8 +88,14 @@ public class AssetChange : MonoBehaviour
             case ObjectInfo.ObjectType.FIELD:
                 return (GameObject)Instantiate(Resources.Load("Field" + lvlExtension), transform.position, Quaternion.identity);
 
-            case ObjectInfo.ObjectType.CHICKEN_COUP:
+            case ObjectInfo.ObjectType.RICE:
+                return (GameObject)Instantiate(Resources.Load("RiceField"), transform.position, Quaternion.identity);
+
+            case ObjectInfo.ObjectType.CHICKEN_COOP:
                 return (GameObject)Instantiate(Resources.Load("ChickenCoop" + lvlExtension), transform.position, Quaternion.identity);
+
+            case ObjectInfo.ObjectType.RESEARCH:
+                return (GameObject)Instantiate(Resources.Load("ResearchLab" + lvlExtension), transform.position, Quaternion.identity);
 
             default:
                 return (GameObject)Instantiate(Resources.Load("Field" + lvlExtension), transform.position, Quaternion.identity);
@@ -145,13 +151,10 @@ public class AssetChange : MonoBehaviour
                 return (GameObject)Instantiate(Resources.Load("Sphere"), new Vector3(100.0f, 1000.0f, 0.0f), Quaternion.identity, newAsset.transform);
 
             case ObjectFill.FillType.WHEAT:
-                return (GameObject)Instantiate(Resources.Load("Carrots"), transform.position, Quaternion.identity, newAsset.transform);
+                return (GameObject)Instantiate(Resources.Load("Wheat"), transform.position, Quaternion.identity, newAsset.transform);
                 
             case ObjectFill.FillType.CORN:
                 return (GameObject)Instantiate(Resources.Load("Carrots"), transform.position, Quaternion.identity, newAsset.transform);
-                
-            case ObjectFill.FillType.RICE:
-                return (GameObject)Instantiate(Resources.Load("RiceField"), transform.position, Quaternion.identity, newAsset.transform);
                 
             case ObjectFill.FillType.CARROT:
                 return (GameObject)Instantiate(Resources.Load("Carrots"), transform.position, Quaternion.identity, newAsset.transform);

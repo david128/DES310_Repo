@@ -50,11 +50,25 @@ public class GameInfo : MonoBehaviour
                 data.level3Cost = 5000;
                 break;
 
-            case ObjectInfo.ObjectType.CHICKEN_COUP:
+            case ObjectInfo.ObjectType.RICE:
+                data.purchaseCost = 350;
+                data.levels = 3;
+                data.level2Cost = 1250;
+                data.level3Cost = 10000;
+                break;
+
+            case ObjectInfo.ObjectType.CHICKEN_COOP:
                 data.purchaseCost = 350;
                 data.levels = 3;
                 data.level2Cost = 1250;
                 data.level3Cost = 6500;
+                break;
+
+            case ObjectInfo.ObjectType.RESEARCH:
+                data.purchaseCost = 350;
+                data.levels = 3;
+                data.level2Cost = 1250;
+                data.level3Cost = 10000;
                 break;
 
             default:

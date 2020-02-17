@@ -14,11 +14,13 @@ public class ObjectInfo : MonoBehaviour
         EMPTY = 1,
         FARMHOUSE = 2,
         FIELD = 3,
-        BARN = 4,
-        CHICKEN_COUP = 5,
-        PIG_PEN = 6,
-        COW_FIELD =7
-   };
+        RICE = 4,
+        BARN = 5,
+        CHICKEN_COOP = 6,
+        PIG_PEN = 7,
+        COW_FIELD = 8,
+        RESEARCH = 9
+    };
   
     public int level;
 
