@@ -70,6 +70,8 @@ public class GridScript : MonoBehaviour
         //spawns outside ground
         Instantiate(Resources.Load("FieldGrid"), new Vector3(36.0f, 1.0f, 25.9f), Quaternion.identity);
 
+        Instantiate(Resources.Load("Tractor"), new Vector3(67.29f, 2.0f, 32.36f), Quaternion.identity);
+
         Instantiate(Resources.Load("Mountains"), new Vector3(90.0f, 3.0f, 63.4f), new Quaternion(0.0f, -0.7071f, 0.0f, 0.7071f));
 
         //creates and instantiates each tile, giving them a unique ID

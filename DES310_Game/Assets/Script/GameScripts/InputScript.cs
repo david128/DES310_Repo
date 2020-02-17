@@ -132,6 +132,9 @@ public class InputScript : MonoBehaviour
 
                 selectedID = hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectID(); //object we are clicking's ID
 
+                Renderer rs = hit.collider.GetComponent<Renderer>();
+                Material m = rs.material;
+
                 if (hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectType() == ObjectInfo.ObjectType.EMPTY)
                 {
                     gameManager.GetComponent<MarketplaceSpawner>().SpawnMenu();
@@ -187,12 +190,9 @@ public class InputScript : MonoBehaviour
     {
         GameObject target = gameManager.GetComponent<GridScript>().GetGridTile(id); //get Target
          
-        if (target.GetComponent<ObjectInfo>().GetObjectType() == ObjectInfo.ObjectType.FIELD)//check that object is of type FIELD and then demolish
-        {
-            Debug.Log("Demolish on " + id.ToString());
-            gameManager.GetComponent<AssetChange>().Demolish(id);
-        }
-
+        Debug.Log("Demolish on " + id.ToString());
+        gameManager.GetComponent<AssetChange>().Demolish(id);
+    
     }
 
 
