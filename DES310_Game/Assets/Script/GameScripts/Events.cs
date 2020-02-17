@@ -1,15 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
+
+
 
 public class Events : MonoBehaviour
 {
+    string path = "Assets/Resources/events.txt";
+
     List<GameEvent> gameEvents = new List<GameEvent>(); //list of all gameEvents
     List<EventRequirement> currentLevels = new List<EventRequirement>(); //list of all current levels to compare to event requirements.
-    EventEffects currentEventEffects = new EventEffects();
+    EventEffects currentEventEffects;
 
-    
 
+
+    void SetUpGameEvents()
+    {
+        GameEvent event1 = new GameEvent();
+        event1.addRequirement(new EventRequirement(EventRequirementName.FOOD, 150, 150));
+        event1.addRequirement(new EventRequirement(EventRequirementName.SUSTAINABILLITY, 150, 150));
+        event1.addRequirement(new EventRequirement(EventRequirementName.TIME, 150, 150));
+
+        event1.setEffects(new EventEffects(0,0,0));
+
+        AddNewEvent(event1);
+    }
+     
     void AddNewEvent(GameEvent gameEvent) //add new event to list of events
     {
         gameEvents.Add(gameEvent);
@@ -86,7 +103,99 @@ public class Events : MonoBehaviour
         }
     }
 
+    public enum textIdentifier
+    {
+        EVENTNAME,
+        FOOD,
+        SUSTAINABILLITY,
+        TIME,
+        MONEY_EFFECT,
+        SUST_EFFECT,
+        FOOD_EFFECT
+           
+    }
+
+    void HandleEventFile()
+    {
+
+        string[] lines = File.ReadAllLines(path);
+        int i = 0;
+
+        bool eventDone = false;
+        while (i <= lines.Length)
+        {
+            GameEvent newGameEvent = new GameEvent();
+            EventRequirement newReq = new EventRequirement();
+            EventEffects newEffects = new EventEffects(0, 0, 0);
+
+            while (i <= lines.Length && eventDone != true)
+            {
+                switch (lines[i])
+                {
+
+                    case ("EVENTNAME"):
+                        i += 1;
+                        newGameEvent.setEventName(lines[i]);
+                        break;
+                    case ("DESCRIPTION"):
+                        i += 1;
+                        newGameEvent.setEventDescription(lines[i]);
+                        break;
+                    case ("FOOD"):
+                        newReq.SetEventType(EventRequirementName.FOOD);
+                        i += 1;
+                        newReq.SetMin(float.Parse(lines[i]));
+                        i += 1;
+                        newReq.SetMax(float.Parse(lines[i]));
+                        newGameEvent.addRequirement(newReq);
+                        break;
+                    case ("SUSTAINABILLITY"):
+                        newReq.SetEventType(EventRequirementName.SUSTAINABILLITY);
+                        i += 1;
+                        newReq.SetMin(float.Parse(lines[i]));
+                        i += 1;
+                        newReq.SetMax(float.Parse(lines[i]));
+                        newGameEvent.addRequirement(newReq);
+                        break;
+                    case ("TIME"):
+                        newReq.SetEventType(EventRequirementName.SUSTAINABILLITY);
+                        i += 1;
+                        newReq.SetMin(float.Parse(lines[i]));
+                        i += 1;
+                        newReq.SetMax(float.Parse(lines[i]));
+                        newGameEvent.addRequirement(newReq);
+                        break;
+                    case ("GROWTH_REDUCTION"):
+                        i += 1;
+                        newEffects.SetGrowthReduction(float.Parse(lines[i]));
+                        break;
+                    case ("MONEY_REDUCTION"):
+                        i += 1;
+                        newEffects.SetGrowthReduction(float.Parse(lines[i]));
+                        break;
+                    case ("SUSTAINABILLITY_REDUCTION"):
+                        i += 1;
+                        newEffects.SetGrowthReduction(float.Parse(lines[i]));
+                        break;
+                    case ("END"):
+                        newGameEvent.setEffects(newEffects);
+                        AddNewEvent(newGameEvent);
+                        eventDone = true;
+                        break;
+                    default:
+                        i += 1;
+                        break;
+
+                }
+            }
+        }
+
+       
+       
+    }
+
 }
+
 
 
 
@@ -96,11 +205,15 @@ class GameEvent
     bool triggered = false; //if the event has been triggered
     List<EventRequirement> eventRequirements = new List<EventRequirement>(); //requirements for triggering
     EventEffects effects;
-
+    string eventName;
+    string eventDescription;
 
     public bool getTriggered() { return triggered; }
     public List<EventRequirement> getEventRequirements() { return eventRequirements; }
     public EventEffects getEffects() { return effects; }
+    public string getEVentName() { return eventName; }
+    public string GetEventDescription() { return eventDescription; }
+
 
     public void addRequirement(EventRequirement eventRequirement) //add a new trigger requirement
     {
@@ -116,10 +229,27 @@ class GameEvent
     {
         triggered = t;
     }
+
+    public void setEventName(string name) //set effects of event
+    {
+        eventName= name;
+    }
+    public void setEventDescription(string description) //set effects of event
+    {
+        eventDescription = description;
+    }
 }
 
 class EventRequirement
 {
+    public EventRequirement(EventRequirementName eventType, float minValue, float maxValue)
+    {
+        type = eventType;
+        min = minValue;
+        max = maxValue;
+    }
+    public EventRequirement() { }
+
     EventRequirementName type; //type of requirement
     float min; //max requirement
     float max; //min requirement
@@ -138,6 +268,13 @@ class EventRequirement
 
 class EventEffects //effects of an effect
 {
+    public EventEffects(float g, float s, float m)
+    {
+        growthReduction = g;
+        sustainabillityReduction = s;
+        moneyReduction = m;
+    }
+
     float growthReduction;
     float sustainabillityReduction;
     float moneyReduction;
