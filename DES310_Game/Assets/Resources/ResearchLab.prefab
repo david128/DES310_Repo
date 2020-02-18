@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8065906250612062779}
   - component: {fileID: -8123623760915341851}
   - component: {fileID: -4845193263053829841}
+  - component: {fileID: 220461903583824883}
   m_Layer: 0
   m_Name: ResearchLab
   m_TagString: Untagged
@@ -141,3 +142,16 @@ MonoBehaviour:
   - Color: {r: 0, g: 0, b: 0, a: 0}
     Symbol: {fileID: 21300000, guid: d49f72b23360ea1489061921cb744002, type: 3}
     Title: Back
+--- !u!114 &220461903583824883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8634259149737660135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea5c64a0edbc99b44870f36e22d14ba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fillType: 0

@@ -13,8 +13,6 @@ public class Events : MonoBehaviour
     List<EventRequirement> currentLevels = new List<EventRequirement>(); //list of all current levels to compare to event requirements.
     EventEffects currentEventEffects = new EventEffects(0,0,0);
 
-
-
     void SetUpGameEvents()
     {
         GameEvent event1 = new GameEvent();
@@ -53,7 +51,6 @@ public class Events : MonoBehaviour
         newRequirement.SetMin(0); //replace with getter
 
         currentLevels.Add(newRequirement);
-
     }
     
     EventRequirement FindCurrentLevelOfType(EventRequirementName type) //finds the level for requirement as given
@@ -114,21 +111,19 @@ public class Events : MonoBehaviour
         TIME,
         MONEY_EFFECT,
         SUST_EFFECT,
-        FOOD_EFFECT
-           
+        FOOD_EFFECT          
     }
 
     //read in events
     public void HandleEventFile()
     {
-
         string[] lines = File.ReadAllLines(path);
         int i = 0;
         
         bool eventDone = false;
-        while ((i+1 )< lines.Length)
-        {
-            
+
+        while ((i + 1)< lines.Length)
+        {    
             GameEvent newGameEvent = new GameEvent();
             EventRequirement newReq = new EventRequirement();
             EventEffects newEffects = new EventEffects(0, 0, 0);
@@ -138,15 +133,16 @@ public class Events : MonoBehaviour
             {
                 switch (lines[i])
                 {
-
                     case ("EVENTNAME"):
                         i += 1;
                         newGameEvent.setEventName(lines[i]);
                         break;
+
                     case ("DESCRIPTION"):
                         i += 1;
                         newGameEvent.setEventDescription(lines[i]);
                         break;
+
                     case ("FOOD"):
                         newReq.SetEventType(EventRequirementName.FOOD);
                         i += 1;
@@ -155,6 +151,7 @@ public class Events : MonoBehaviour
                         newReq.SetMax(float.Parse(lines[i]));
                         newGameEvent.addRequirement(newReq);
                         break;
+
                     case ("SUSTAINABILLITY"):
                         newReq.SetEventType(EventRequirementName.SUSTAINABILITY);
                         i += 1;
@@ -163,6 +160,7 @@ public class Events : MonoBehaviour
                         newReq.SetMax(float.Parse(lines[i]));
                         newGameEvent.addRequirement(newReq);
                         break;
+
                     case ("TIME"):
                         newReq.SetEventType(EventRequirementName.TIME);
                         i += 1;
@@ -171,24 +169,30 @@ public class Events : MonoBehaviour
                         newReq.SetMax(float.Parse(lines[i]));
                         newGameEvent.addRequirement(newReq);
                         break;
+
                     case ("GROWTH_REDUCTION"):
                         i += 1;
                         newEffects.SetGrowthReduction(float.Parse(lines[i]));
                         break;
+
                     case ("MONEY_REDUCTION"):
                         i += 1;
+
                         newEffects.SetGrowthReduction(float.Parse(lines[i]));
                         break;
                     case ("SUSTAINABILITY_REDUCTION"):
                         i += 1;
+
                         newEffects.SetGrowthReduction(float.Parse(lines[i]));
                         break;
+
                     case ("END"):
                         newGameEvent.setEffects(newEffects);
                         AddNewEvent(newGameEvent);
                         eventDone = true;
                         i += 1;
                         break;
+
                     default:
                         i += 1;
                         break;
@@ -268,9 +272,6 @@ class EventRequirement
     public void SetEventType(EventRequirementName t) { type = t; }
     public void SetMin(float m) { min = m; }
     public void SetMax(float m) { max = m; }
-
-
-    
 }
 
 class EventEffects //effects of an effect
@@ -302,10 +303,6 @@ class EventEffects //effects of an effect
     }
 
 }
-
-
-
-
 
 public enum EventRequirementName //different requirement types
 {

@@ -15,6 +15,7 @@ public class GameLoop : MonoBehaviour
     {
         //load events
         gameManager.GetComponent<Events>().HandleEventFile();
+
         //Creates grid at the start
         gameManager.GetComponent<GridScript>().CreateGrid();
     }
@@ -27,14 +28,9 @@ public class GameLoop : MonoBehaviour
 
         FPS = 1.0f / Time.deltaTime;
 
-       //FPS += (Time.unscaledDeltaTime - FPS) * 0.1f;
-
         //When the time gets to 3 seconds the money will increase causing a passive income
         if (time > 3)
         {
-            //Increases the money
-            //gameManager.GetComponent<Currency>().AddMoney(gameManager.GetComponent<Currency>().GetMoney() + 100);
-
             //Resets the period of time for the passive income
             time = 0.0f;
 
@@ -47,8 +43,6 @@ public class GameLoop : MonoBehaviour
 
         //Updates the UI text
         textManager.GetComponent<TextScript>().UpdateText();
-       
-
     }
 
     public float GetFPS() { return FPS; }
