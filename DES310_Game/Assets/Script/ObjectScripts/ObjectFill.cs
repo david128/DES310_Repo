@@ -12,16 +12,15 @@ public class ObjectFill : MonoBehaviour
         NONE = 0,
         WHEAT = 1,
         CORN = 2,
-        RICE = 3,
-        CARROT = 4,
-        POTATO = 5,
-        TURNIP = 6,
-        COW = 7,
-        PIG = 8,
-        CHICKEN = 9,
-        SUNFLOWER = 10,
-        SUGARCANE = 11,
-        COCCOA = 12
+        CARROT = 3,
+        POTATO = 4,
+        TURNIP = 5,
+        COW = 6,
+        PIG = 7,
+        CHICKEN = 8,
+        SUNFLOWER = 9,
+        SUGARCANE = 10,
+        COCCOA = 11
     };
 
 

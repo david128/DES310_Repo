@@ -10,13 +10,13 @@ public class InputScript : MonoBehaviour
 
     public int selectedID;
     public bool selecting = true;
-    CameraMovement cameraMovement;
+    CameraScript cameraMovement;
 
     private Touch initTouch = new Touch();
 
     private void Start()
     {
-        cameraMovement = Camera.main.GetComponent<CameraMovement>();
+        cameraMovement = Camera.main.GetComponent<CameraScript>();
     }
 
     //Selecting Variables
@@ -52,19 +52,19 @@ public class InputScript : MonoBehaviour
 
             if (Input.GetKey("w"))
             {
-                cameraMovement.MoveUp(0.1f);
+                cameraMovement.MoveUp(0.5f);
             }
             if (Input.GetKey("s"))
             {
-                cameraMovement.MoveDown(0.1f);
+                cameraMovement.MoveDown(0.5f);
             }
             if (Input.GetKey("d"))
             {
-                cameraMovement.MoveLeft(0.1f);
+                cameraMovement.MoveLeft(0.5f);
             }
             if (Input.GetKey("a"))
             {
-                cameraMovement.MoveRight(0.1f);
+                cameraMovement.MoveRight(0.5f);
             }
 
             if (Input.GetKey("i"))
@@ -132,6 +132,9 @@ public class InputScript : MonoBehaviour
 
                 selectedID = hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectID(); //object we are clicking's ID
 
+                Renderer rs = hit.collider.GetComponent<Renderer>();
+                Material m = rs.material;
+
                 if (hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectType() == ObjectInfo.ObjectType.EMPTY)
                 {
                     gameManager.GetComponent<MarketplaceSpawner>().SpawnMenu();
@@ -187,12 +190,9 @@ public class InputScript : MonoBehaviour
     {
         GameObject target = gameManager.GetComponent<GridScript>().GetGridTile(id); //get Target
          
-        if (target.GetComponent<ObjectInfo>().GetObjectType() == ObjectInfo.ObjectType.FIELD)//check that object is of type FIELD and then demolish
-        {
-            Debug.Log("Demolish on " + id.ToString());
-            gameManager.GetComponent<AssetChange>().Demolish(id);
-        }
-
+        Debug.Log("Demolish on " + id.ToString());
+        gameManager.GetComponent<AssetChange>().Demolish(id);
+    
     }
 
 
