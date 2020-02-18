@@ -1,6 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{F139A540-843F-44D2-A23A-7B10E066F215}" SchemaVersion="94">
 	<Events>
-		<WorkUnit Name="Default Work Unit" ID="{F139A540-843F-44D2-A23A-7B10E066F215}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{F139A540-843F-44D2-A23A-7B10E066F215}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Cow" ID="{7FC20E83-6456-47C2-9FFA-69995366E7CB}">
+					<ChildrenList>
+						<Action Name="" ID="{14A4BBB1-8BFA-48C7-91DB-36C5195925E1}" ShortID="779169640">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Cow" ID="{45709C99-438B-4BF2-BADB-580C6186AFA8}" WorkUnitID="{3B07BB01-7DC0-4CC1-A6A1-7B149D37F843}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MenuSound" ID="{7766E4B9-EA7E-4275-9F6C-B792B3A76AC2}">
+					<ChildrenList>
+						<Action Name="" ID="{AC2694DE-4FBE-4F3A-B673-6C4C46EDDCA4}" ShortID="821283125">
+							<PropertyList>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Menu Music" ID="{DB453905-0E30-4736-BB52-788CD14CF1EB}" WorkUnitID="{3B07BB01-7DC0-4CC1-A6A1-7B149D37F843}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Ambience" ID="{FA8BAACE-190C-4AE5-9DFF-65518E617C72}">
+					<ChildrenList>
+						<Action Name="" ID="{B06F8A46-D925-4F78-871C-B1494622D3B6}" ShortID="352800135">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Ambience" ID="{DE79FF2F-98FD-411B-A54D-CB6D2C88EC11}" WorkUnitID="{3B07BB01-7DC0-4CC1-A6A1-7B149D37F843}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Chicken" ID="{99E62E09-CE13-496B-97F8-B1531CDED1B0}">
+					<ChildrenList>
+						<Action Name="" ID="{FC21F11F-5B9F-4B76-ABF5-F5FF28CC76B0}" ShortID="986871512">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Chicken" ID="{904081AD-DADA-4773-A23E-87C60617FA2A}" WorkUnitID="{3B07BB01-7DC0-4CC1-A6A1-7B149D37F843}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="ButtonSound" ID="{736DC6B0-E3F5-4E26-8D32-D48214CF3B48}">
+					<ChildrenList>
+						<Action Name="" ID="{D7D39416-BD40-46DF-A45C-FB915D980D7C}" ShortID="968283411">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Button Press" ID="{4F070F36-0E5B-45C9-B83A-2DEE5D648F09}" WorkUnitID="{3B07BB01-7DC0-4CC1-A6A1-7B149D37F843}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MenuSoundEnd" ID="{53DDF0ED-FEFB-480F-B14D-2E68A89CD1B9}">
+					<ChildrenList>
+						<Action Name="" ID="{7C90D693-0B03-46EB-8745-39299F3D3B99}" ShortID="591607889">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeTime" Type="Real64" Value="4"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Menu Music" ID="{DB453905-0E30-4736-BB52-788CD14CF1EB}" WorkUnitID="{3B07BB01-7DC0-4CC1-A6A1-7B149D37F843}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Pig" ID="{AA3CA75E-6F6D-4687-BDC4-627A9C37F89D}">
+					<ChildrenList>
+						<Action Name="" ID="{29255751-397A-490D-8988-98BE29A4A61C}" ShortID="906022667">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Pig1" ID="{D1CAA12D-3B99-4DD5-814F-98C53D4E18E2}" WorkUnitID="{3B07BB01-7DC0-4CC1-A6A1-7B149D37F843}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Water" ID="{97789AD1-D861-4B08-A85B-FBDB2ED9AC03}">
+					<ChildrenList>
+						<Action Name="" ID="{298E3069-0937-4ED5-9BBA-EF3E5BF00447}" ShortID="977965286">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Water" ID="{C0AF7EBA-DB26-4519-917C-71D96420E396}" WorkUnitID="{3B07BB01-7DC0-4CC1-A6A1-7B149D37F843}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>
