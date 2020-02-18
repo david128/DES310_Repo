@@ -50,7 +50,7 @@ public class Events : MonoBehaviour
 
         currentLevels.Add(newRequirement);
 
-        newRequirement.SetRequirementType(EventRequirementName.FILL)
+        newRequirement.SetRequirementType(EventRequirementName.FILL);
         newRequirement.SetMax(0); //replace with getter
         newRequirement.SetMin(0); //replace with getter
 
