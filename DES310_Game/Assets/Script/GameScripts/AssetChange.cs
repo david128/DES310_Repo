@@ -103,6 +103,9 @@ public class AssetChange : MonoBehaviour
             case ObjectInfo.ObjectType.RESEARCH:
                 return (GameObject)Instantiate(Resources.Load("ResearchLab" + lvlExtension), transform.position, Quaternion.identity);
 
+            case ObjectInfo.ObjectType.VERTICAL_FARM:
+                return (GameObject)Instantiate(Resources.Load("VerticalFarm" + lvlExtension), transform.position, Quaternion.identity);
+
             default:
                 return (GameObject)Instantiate(Resources.Load("Field" + lvlExtension), transform.position, Quaternion.identity);
             
@@ -184,7 +187,7 @@ public class AssetChange : MonoBehaviour
                 return (GameObject)Instantiate(Resources.Load("Sunflower"), transform.position, Quaternion.identity, newAsset.transform);
                
             case ObjectFill.FillType.SUGARCANE:
-                return (GameObject)Instantiate(Resources.Load("Carrots"), transform.position, Quaternion.identity, newAsset.transform);
+                return (GameObject)Instantiate(Resources.Load("Sugarcane"), transform.position, Quaternion.identity, newAsset.transform);
 
             case ObjectFill.FillType.COCCOA:
                 return (GameObject)Instantiate(Resources.Load("Cocoa"), transform.position, Quaternion.identity, newAsset.transform);
