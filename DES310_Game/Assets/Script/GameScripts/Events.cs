@@ -37,17 +37,21 @@ public class Events : MonoBehaviour
 
         currentLevels.Add(newRequirement);
 
+        newRequirement = new EventRequirement();
         newRequirement.SetRequirementType(EventRequirementName.SUSTAINABILITY);
         newRequirement.SetMax(0); //replace with getter
         newRequirement.SetMin(0); //replace with getter
 
         currentLevels.Add(newRequirement);
 
+        newRequirement = new EventRequirement();
         newRequirement.SetRequirementType(EventRequirementName.TIME);
         newRequirement.SetMax(0); //replace with getter
         newRequirement.SetMin(0); //replace with getter
 
         currentLevels.Add(newRequirement);
+
+        newRequirement = new EventRequirement();
 
         newRequirement.SetRequirementType(EventRequirementName.FILL);
         newRequirement.SetMax(0); //replace with getter
