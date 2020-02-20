@@ -7,7 +7,7 @@ using System.IO;
 
 public class Events : MonoBehaviour
 {
-    string path = "Assets/Resources/events.txt";
+    string path = "GameData/events.txt";
 
     List<GameEvent> gameEvents = new List<GameEvent>(); //list of all gameEvents
     List<EventRequirement> currentLevels = new List<EventRequirement>(); //list of all current levels to compare to event requirements.
@@ -52,7 +52,7 @@ public class Events : MonoBehaviour
         currentLevels.Add(newRequirement);
 
         newRequirement = new EventRequirement();
-        
+
         newRequirement.SetRequirementType(EventRequirementName.FILL);
         newRequirement.SetMax(0); //replace with getter
         newRequirement.SetMin(0); //replace with getter
@@ -113,6 +113,7 @@ public class Events : MonoBehaviour
     //read in events
     public void HandleEventFile()
     {
+        
         string[] lines = File.ReadAllLines(path);
         int i = 0;
         

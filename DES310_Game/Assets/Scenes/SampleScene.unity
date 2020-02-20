@@ -299,6 +299,7 @@ MonoBehaviour:
   textManager: {fileID: 442854020}
   time: 0
   FPS: 0
+  targetFrameRate: 60
 --- !u!114 &215528164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -740,7 +741,7 @@ Camera:
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
-  m_HDR: 1
+  m_HDR: 0
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
@@ -755,7 +756,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.32335088, y: 0.35847968, z: -0.13393633, w: 0.86544645}
-  m_LocalPosition: {x: 31.95009, y: 17.99, z: 6.0699987}
+  m_LocalPosition: {x: 49.95009, y: 17.99, z: 24.07}
   m_LocalScale: {x: 0.7598278, y: 0.85545, z: 0.85545}
   m_Children: []
   m_Father: {fileID: 0}
