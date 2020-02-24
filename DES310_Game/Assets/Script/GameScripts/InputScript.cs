@@ -1,8 +1,30 @@
 ﻿using UnityEngine;
-
+using System;
+using System.Collections.Generic;
+using UnityEngine.EventSystems;
 
 public class InputScript : MonoBehaviour
 {
+    /// <summary> Called as soon as the player touches the screen. The argument is the screen position. </summary>
+    public event Action<Vector2> onStartTouch;
+    /// <summary> Called as soon as the player stops touching the screen. The argument is the screen position. </summary>
+    public event Action<Vector2> onEndTouch;
+    /// <summary> Called if the player completed a quick tap motion. The argument is the screen position. </summary>
+    public event Action<Vector2> onTap;
+    /// <summary> Called if the player swiped the screen. The argument is the screen movement delta. </summary>
+    public event Action<Vector2> onSwipe;
+    /// <summary> Called if the player pinched the screen. The arguments are the distance between the fingers before and after. </summary>
+    public event Action<float, float> onPinch;
+
+    /// <summary> Has the player at least one finger on the screen? </summary>
+    public bool isTouching { get; private set; }
+
+    /// <summary> The point of contact if it exists in Screen space. </summary>
+    public Vector2 touchPosition { get { return touch0LastPosition; } }
+
+    public float maxDistanceForTap = 40;
+    public float maxDurationForTap = 0.4f;
+
     //Declare variables
     public static InputScript instance;
     public bool controlType;//true for mobile, false for pc
@@ -12,7 +34,13 @@ public class InputScript : MonoBehaviour
     public bool selecting = true;
     CameraScript cameraMovement;
 
-    private Touch initTouch = new Touch();
+    public float zoomOutMin = 5;
+    public float zoomOutMax = 17;
+
+    Vector3 touchStart;
+    Vector2 touch0StartPosition;
+    Vector2 touch0LastPosition;
+    float touch0StartTime;
 
     private void Start()
     {
@@ -42,77 +70,204 @@ public class InputScript : MonoBehaviour
     //get Input to be called in main game loop
     public void GetInput()
     {
-        //Checks which input type is being used
-        if (controlType == false)//pc
+
+        if (Input.GetMouseButtonDown(0))
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                Select(Input.mousePosition);
-            }
-
-            if (Input.GetKey("w") && Camera.main.transform.position.z <=  41 && Camera.main.transform.position.x <= 58)
-            {
-                cameraMovement.MoveUp(0.5f);
-            }
-            if (Input.GetKey("s") && Camera.main.transform.position.z >= -15 && Camera.main.transform.position.x >= -16)
-            {
-                cameraMovement.MoveDown(0.5f);
-            }
-            if (Input.GetKey("d") && Camera.main.transform.position.z >= -15 && Camera.main.transform.position.x <= 58)
-            {
-                cameraMovement.MoveLeft(0.5f);
-            }
-            if (Input.GetKey("a") && Camera.main.transform.position.z <= 41 && Camera.main.transform.position.x >= -16)
-            {
-                cameraMovement.MoveRight(0.5f);
-            }
-
-            if (Input.GetKey("i") && Camera.main.orthographicSize >= 5.0f)
-            {
-                Camera.main.orthographicSize -= .1f;
-            }
-
-            if (Input.GetKey("o") && Camera.main.orthographicSize <= 15.0f)
-            {
-                Camera.main.orthographicSize += .1f;
-            }
-
-        }
-        else //mobile
-        {
-            if (Input.touchCount > 0 )
-            {
-
-                Select(Input.GetTouch(0).position);
-
-            }
-
-            foreach(Touch touch in Input.touches)
-            {
-                if (touch.phase== TouchPhase.Began)
-                {
-                    initTouch = touch;
-                }
-                else if (touch.phase == TouchPhase.Moved)
-                {
-                    //swipe
-                    float deltaX = initTouch.position.x - touch.position.x;
-                    float deltaY = initTouch.position.y - touch.position.y;
-                    cameraMovement.MoveCamera(new Vector2(deltaX, deltaY));
-                    //Camera.main.transform.position = new Vector3(Camera.main.transform.position.x + deltaX, Camera.main.transform.position.y + deltaY); 
-
-                }
-                else if (touch.phase == TouchPhase.Ended)
-                {
-                    initTouch = new Touch();
-                }
-                
-            }
-
+            Select(Input.mousePosition);
         }
 
-                
- 
+        if (Input.GetKey("w") && Camera.main.transform.position.z <=  41 && Camera.main.transform.position.x <= 58)
+        {
+            cameraMovement.MoveUp(0.5f);
+        }
+        if (Input.GetKey("s") && Camera.main.transform.position.z >= -15 && Camera.main.transform.position.x >= -16)
+        {
+            cameraMovement.MoveDown(0.5f);
+        }
+        if (Input.GetKey("d") && Camera.main.transform.position.z >= -15 && Camera.main.transform.position.x <= 58)
+        {
+            cameraMovement.MoveLeft(0.5f);
+        }
+        if (Input.GetKey("a") && Camera.main.transform.position.z <= 41 && Camera.main.transform.position.x >= -16)
+        {
+            cameraMovement.MoveRight(0.5f);
+        }
+
+        if (Input.GetKey("i") && Camera.main.orthographicSize >= 5.0f)
+        {
+            Camera.main.orthographicSize -= .1f;
+        }
+
+        if (Input.GetKey("o") && Camera.main.orthographicSize <= 15.0f)
+        {
+            Camera.main.orthographicSize += .1f;
+        }
+
+        UpdateWithTouch();
+    }
+
+    void UpdateWithTouch()
+    {
+        int touchCount = Input.touches.Length;
+
+        if (touchCount == 1)
+        {
+            Touch touch = Input.touches[0];
+
+            switch (touch.phase)
+            {
+                case TouchPhase.Began:
+                    {
+                        touch0StartPosition = touch.position;
+                        touch0StartTime = Time.time;
+                        touch0LastPosition = touch0StartPosition;
+
+                        isTouching = true;
+
+                        if (onStartTouch != null) onStartTouch(touch0StartPosition);
+
+
+                        break;
+                    }
+                case TouchPhase.Moved:
+                    {
+                        touch0LastPosition = touch.position;
+
+                        if (touch.deltaPosition != Vector2.zero && isTouching)
+                        {
+                            OnSwipe(touch.deltaPosition);
+                        }
+                        break;
+                    }
+                case TouchPhase.Ended:
+                    {
+                        if (Time.time - touch0StartTime <= maxDurationForTap
+                            && Vector2.Distance(touch.position, touch0StartPosition) <= maxDistanceForTap
+                            && isTouching)
+                        {
+                            OnClick(touch.position);
+                        }
+
+                        if (onEndTouch != null) onEndTouch(touch.position);
+                        isTouching = false;
+                        controlType = true;
+                        break;
+                    }
+                case TouchPhase.Stationary:
+                case TouchPhase.Canceled:
+                    break;
+            }
+        }
+        else if (touchCount == 2)
+        {
+            Touch touch0 = Input.touches[0];
+            Touch touch1 = Input.touches[1];
+
+            if (touch0.phase == TouchPhase.Ended || touch1.phase == TouchPhase.Ended) return;
+
+            isTouching = true;
+
+            float previousDistance = Vector2.Distance(touch0.position - touch0.deltaPosition, touch1.position - touch1.deltaPosition);
+
+            float currentDistance = Vector2.Distance(touch0.position, touch1.position);
+
+            if (previousDistance != currentDistance)
+            {
+                OnPinch((touch0.position + touch1.position) / 2, previousDistance, currentDistance, (touch1.position - touch0.position).normalized);
+            }
+        }
+        else
+        {
+            if (isTouching)
+            {
+                if (onEndTouch != null) onEndTouch(touch0LastPosition);
+                isTouching = false;
+            }
+
+            controlType = true;
+        }
+    }
+
+    void OnClick(Vector2 position)
+    {
+        if (onTap != null) //&& (ignoreUI || !IsPointerOverUIObject()))
+        {
+            onTap(position);
+        }
+    }
+    void OnSwipe(Vector2 deltaPosition)
+    {
+        if (onSwipe != null)
+        {
+            onSwipe(deltaPosition);
+        }
+
+        if (controlType)
+        {
+            Camera.main.transform.position -= (Camera.main.ScreenToWorldPoint(deltaPosition) - Camera.main.ScreenToWorldPoint(Vector2.zero));
+        }
+    }
+
+    void OnPinch(Vector2 center, float oldDistance, float newDistance, Vector2 touchDelta)
+    {
+        if (onPinch != null)
+        {
+            onPinch(oldDistance, newDistance);
+        }
+
+        if (controlType == true)
+        {
+            if (Camera.main.orthographic)
+            {
+                var currentPinchPosition = Camera.main.ScreenToWorldPoint(center);
+
+                Camera.main.orthographicSize = Mathf.Max(0.1f, Camera.main.orthographicSize * oldDistance / newDistance);
+
+                var newPinchPosition = Camera.main.ScreenToWorldPoint(center);
+
+                Camera.main.transform.position -= newPinchPosition - currentPinchPosition;
+            }
+        }
+    }
+
+    void touchZoom()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            touchStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        }
+
+        if (Input.touchCount == 2)
+        {
+            Touch touchZero = Input.GetTouch(0);
+            Touch touchOne = Input.GetTouch(1);
+
+            Vector2 touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
+            Vector2 touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
+
+            float prevMagnitude = (touchZeroPrevPos - touchOnePrevPos).magnitude;
+            float curMagnitude = (touchZero.position - touchOne.position).magnitude;
+
+            float difference = curMagnitude - prevMagnitude;
+
+            Zooming(difference * 0.01f);
+        }
+        else if (Input.touchCount == 1)
+        {
+
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector3 direction = touchStart - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            Camera.main.transform.position += direction;
+        }
+    }
+
+    void Zooming(float increment)
+    {
+        Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize - increment, zoomOutMin, zoomOutMax);
     }
 
     //Finds what object is being selected
