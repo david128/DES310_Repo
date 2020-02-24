@@ -299,7 +299,6 @@ MonoBehaviour:
   textManager: {fileID: 442854020}
   time: 0
   FPS: 0
-  targetFrameRate: 60
 --- !u!114 &215528164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,6 +319,8 @@ MonoBehaviour:
   zSpacing: 13
   gridSquare: {fileID: 4083359981264456240, guid: 09abfd13e602e664fa97284be7f23a02,
     type: 3}
+  lockLvl2: {fileID: 0}
+  lockLvl3: {fileID: 0}
 --- !u!114 &215528165
 MonoBehaviour:
   m_ObjectHideFlags: 0
