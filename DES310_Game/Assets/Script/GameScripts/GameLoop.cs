@@ -10,6 +10,11 @@ public class GameLoop : MonoBehaviour
 
     public float FPS;
 
+    private void Awake()
+    {
+        Application.targetFrameRate = -1;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
