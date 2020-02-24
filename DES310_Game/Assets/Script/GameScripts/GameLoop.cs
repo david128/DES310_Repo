@@ -6,20 +6,16 @@ public class GameLoop : MonoBehaviour
 {
     //Declare variables
     public GameObject gameManager, textManager;
+    
     public float time;
-
     public float FPS;
-
-    public int targetFrameRate = 60;
-
+    
     // Start is called before the first frame update
     void Start()
     {
         //Application.targetFrameRate = targetFrameRate;
         QualitySettings.vSyncCount = 0;
-
         
-
         //load events
         //gameManager.GetComponent<Events>().HandleEventFile();
 
