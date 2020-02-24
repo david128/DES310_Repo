@@ -50,31 +50,31 @@ public class InputScript : MonoBehaviour
                 Select(Input.mousePosition);
             }
 
-            if (Input.GetKey("w"))
+            if (Input.GetKey("w") && Camera.main.transform.position.z <=  41 && Camera.main.transform.position.x <= 58)
             {
                 cameraMovement.MoveUp(0.5f);
             }
-            if (Input.GetKey("s"))
+            if (Input.GetKey("s") && Camera.main.transform.position.z >= -15 && Camera.main.transform.position.x >= -16)
             {
                 cameraMovement.MoveDown(0.5f);
             }
-            if (Input.GetKey("d"))
+            if (Input.GetKey("d") && Camera.main.transform.position.z >= -15 && Camera.main.transform.position.x <= 58)
             {
                 cameraMovement.MoveLeft(0.5f);
             }
-            if (Input.GetKey("a"))
+            if (Input.GetKey("a") && Camera.main.transform.position.z <= 41 && Camera.main.transform.position.x >= -16)
             {
                 cameraMovement.MoveRight(0.5f);
             }
 
-            if (Input.GetKey("i"))
-            {
-                Camera.main.orthographicSize += .1f;
-            }
-
-            if (Input.GetKey("o"))
+            if (Input.GetKey("i") && Camera.main.orthographicSize >= 5.0f)
             {
                 Camera.main.orthographicSize -= .1f;
+            }
+
+            if (Input.GetKey("o") && Camera.main.orthographicSize <= 15.0f)
+            {
+                Camera.main.orthographicSize += .1f;
             }
 
         }
