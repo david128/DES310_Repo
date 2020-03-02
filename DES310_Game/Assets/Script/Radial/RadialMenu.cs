@@ -36,34 +36,38 @@ public class RadialMenu : MonoBehaviour
 
     }
 
-
     void Update()
     {
         gameManager = GameObject.FindWithTag("GameController");
         int selectedID = gameManager.GetComponent<InputScript>().GetSelectedID();
 
-        if (Input.GetMouseButtonUp(0))
+        if ((Input.GetMouseButtonDown(0) && RadialMenuSpawner.instance.GetAwake() == true ) || Input.touchCount > 0)
         {
+            gameManager.GetComponent<InputScript>().SetAllowSelecting(false);
 
             if (selected)
             {
                 //button function goes here
                 Debug.Log(selected.title + "was selected");
 
-                if (selected.title == "Upgrade" )
+                if (selected.title == "Upgrade")
                 {
                     gameManager.GetComponent<InputScript>().AttemptUpgrade(selectedID);
                 }
                 else if (selected.title == "Build")
                 {
-                    gameManager.GetComponent<InputScript>().AttemptBuild(selectedID);
+                    gameManager.GetComponent<InputScript>().AttemptBuild(ObjectInfo.ObjectType.FIELD, ObjectFill.FillType.NONE);
                 }
                 else if (selected.title == "Demolish")
                 {
                     gameManager.GetComponent<InputScript>().AttmeptDemolish(selectedID);
                 }
+
+                Destroy(gameObject);
+
+                RadialMenuSpawner.instance.SetAwake(false);
+                gameManager.GetComponent<InputScript>().SetAllowSelecting(true);
             }
-            Destroy(gameObject);
-        }   
+        }
     }
 }

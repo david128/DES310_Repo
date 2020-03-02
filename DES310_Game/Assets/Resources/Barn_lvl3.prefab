@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &912798549051420339
+--- !u!1 &2507692546593775718
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,37 +8,45 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 237430855311915983}
-  - component: {fileID: 6493087146929576302}
-  - component: {fileID: 4319962596936416857}
+  - component: {fileID: 1904531258199067544}
+  - component: {fileID: 2739408202193405202}
+  - component: {fileID: 7446725975970939968}
   m_Layer: 0
-  m_Name: Text
+  m_Name: BarnLV3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &237430855311915983
+--- !u!4 &1904531258199067544
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 912798549051420339}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.5, y: 1, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
+  m_GameObject: {fileID: 2507692546593775718}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.046803072, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 3086633339791813881}
+  m_Father: {fileID: 4792785665020271545}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!23 &6493087146929576302
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &2739408202193405202
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2507692546593775718}
+  m_Mesh: {fileID: 4906064364393639761, guid: be0e4037f9e8a6544a84a41d87088208, type: 3}
+--- !u!23 &7446725975970939968
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 912798549051420339}
+  m_GameObject: {fileID: 2507692546593775718}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -49,7 +57,16 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: -2289094332857570980, guid: be0e4037f9e8a6544a84a41d87088208, type: 3}
+  - {fileID: -1853957667967180488, guid: be0e4037f9e8a6544a84a41d87088208, type: 3}
+  - {fileID: 9113582229050684978, guid: be0e4037f9e8a6544a84a41d87088208, type: 3}
+  - {fileID: -4030917311188774133, guid: be0e4037f9e8a6544a84a41d87088208, type: 3}
+  - {fileID: 2027680271036266594, guid: be0e4037f9e8a6544a84a41d87088208, type: 3}
+  - {fileID: 9047737237600312493, guid: be0e4037f9e8a6544a84a41d87088208, type: 3}
+  - {fileID: -900251861087693428, guid: be0e4037f9e8a6544a84a41d87088208, type: 3}
+  - {fileID: -993758641431196140, guid: be0e4037f9e8a6544a84a41d87088208, type: 3}
+  - {fileID: -8654790933582462369, guid: be0e4037f9e8a6544a84a41d87088208, type: 3}
+  - {fileID: 3140674083027166227, guid: be0e4037f9e8a6544a84a41d87088208, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -70,31 +87,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!102 &4319962596936416857
-TextMesh:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 912798549051420339}
-  m_Text: 'Barn
-
-    lvl 3'
-  m_OffsetZ: 0
-  m_CharacterSize: 1
-  m_LineSpacing: 1
-  m_Anchor: 0
-  m_Alignment: 0
-  m_TabSize: 4
-  m_FontSize: 38
-  m_FontStyle: 0
-  m_RichText: 1
-  m_Font: {fileID: 0}
-  m_Color:
-    serializedVersion: 2
-    rgba: 4278190080
---- !u!1 &8117196966927594270
+--- !u!1 &8419546520554629546
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -102,12 +95,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3086633339791813881}
-  - component: {fileID: 3461752164421131952}
-  - component: {fileID: 7427674984296613176}
-  - component: {fileID: 6029553997297525742}
-  - component: {fileID: 876605645109951159}
-  - component: {fileID: -4878800716468270320}
+  - component: {fileID: 4792785665020271545}
+  - component: {fileID: 4311810367850309237}
+  - component: {fileID: 3108871590793978249}
+  - component: {fileID: 813245307053360798}
+  - component: {fileID: 5076151480055948750}
+  - component: {fileID: -5418678079039650465}
   m_Layer: 0
   m_Name: Barn_lvl3
   m_TagString: Untagged
@@ -115,51 +108,43 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3086633339791813881
+--- !u!4 &4792785665020271545
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8117196966927594270}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.6319962, y: 1.19346, z: 13.119725}
-  m_LocalScale: {x: 15.03, y: 0.40692, z: 9.955}
+  m_GameObject: {fileID: 8419546520554629546}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -32.36, y: 35.08, z: -20.24}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 237430855311915983}
+  - {fileID: 1904531258199067544}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3461752164421131952
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8117196966927594270}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &7427674984296613176
+--- !u!114 &4311810367850309237
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8117196966927594270}
+  m_GameObject: {fileID: 8419546520554629546}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 155482db5d7f9994fbe59fb2639247e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 9
-  objectType: 4
+  ID: 0
+  objectType: 5
   level: 3
---- !u!23 &6029553997297525742
+--- !u!23 &3108871590793978249
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8117196966927594270}
+  m_GameObject: {fileID: 8419546520554629546}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -170,7 +155,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -191,30 +176,46 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &876605645109951159
+--- !u!65 &813245307053360798
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8117196966927594270}
+  m_GameObject: {fileID: 8419546520554629546}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 13.14043, y: 0.40692, z: 8.245068}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-4878800716468270320
+--- !u!114 &5076151480055948750
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8117196966927594270}
+  m_GameObject: {fileID: 8419546520554629546}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c39e48ac04108ff439ee1b74af5371b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   title: Barn
-  options: []
+  options:
+  - Color: {r: 0, g: 0, b: 0, a: 0}
+    Symbol: {fileID: 21300000, guid: 72405e6d4b5b3494b9b4209d48bdb377, type: 3}
+    Title: Back
+--- !u!114 &-5418678079039650465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8419546520554629546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea5c64a0edbc99b44870f36e22d14ba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fillType: 0

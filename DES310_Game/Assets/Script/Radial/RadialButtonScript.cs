@@ -20,25 +20,21 @@ public class RadialButtonScript : MonoBehaviour, IPointerEnterHandler, IPointerE
          StartCoroutine(AnimateButtonIn());
      }
 
-
-
-
-       IEnumerator AnimateButtonIn()
+     IEnumerator AnimateButtonIn()
      {
-         transform.localScale = Vector3.zero;
-         float timer = 0f;
-         while (timer < (1 / speed)) 
-         {
-            
-            timer += Time.deltaTime;
-            transform.localScale = Vector3.one * timer * speed;
-            yield return null;
-         }
-         transform.localScale = Vector3.one;
+        transform.localScale = Vector3.zero;
+        float timer = 0f;
+
+        while (timer < (1 / speed)) 
+        {
+           timer += Time.deltaTime;
+           transform.localScale = Vector3.one * timer * speed;
+           yield return null;
+        }
+
+        transform.localScale = Vector3.one;
      }
-     
-
-
+    
     public void OnPointerEnter(PointerEventData eventData)
     {
         myMenu.selected = this;
