@@ -12,6 +12,7 @@ public class Events : MonoBehaviour
     List<GameEvent> gameEvents = new List<GameEvent>(); //list of all gameEvents
     List<EventRequirement> currentLevels = new List<EventRequirement>(); //list of all current levels to compare to event requirements.
 
+
     List<EventEffects> currentEventEffects = new List<EventEffects>();
     
     void setUpEvents()
@@ -293,6 +294,36 @@ class EventRequirement
 {
     public EventRequirement(EventRequirementName eventType, float minValue, float maxValue)
     {
+
+    }
+    public EventRequirement() { }
+
+
+
+    public List<dynamic> subRequierment = new List<dynamic>();
+
+}
+
+class ValueMinOrMax
+{
+    public ValueMinOrMax(bool m, float v)
+    {
+        min = m;
+        value = v;
+    }
+
+    bool min;
+    float value;
+    public void SetValue(float v) { value= v; }
+    public float GetValue() { return value; }
+    public bool GetMin() { return min; }
+    
+}
+
+class ValueRange
+{
+    public ValueRange(EventRequirementName eventType, float minValue, float maxValue)
+    {
         requirementType = eventType;
         min = minValue;
         max = maxValue;
@@ -300,20 +331,21 @@ class EventRequirement
     public EventRequirement() { }
 
     EventRequirementName requirementType; //type of requirement
-    ObjectFill.FillType fillType;
     float min; //max requirement
     float max; //min requirement
-    
+
     public EventRequirementName getRequirementType() { return requirementType; }
-    public ObjectFill.FillType getFillType() { return fillType; }
     public float getMin() { return min; }
     public float getMax() { return max; }
 
     public void SetRequirementType(EventRequirementName t) { requirementType = t; }
-    public void SetFillType(ObjectFill.FillType t) { fillType = t; }
     public void SetMin(float m) { min = m; }
     public void SetMax(float m) { max = m; }
 }
+
+
+
+
 
 class EventEffects //effects of an effect
 {
