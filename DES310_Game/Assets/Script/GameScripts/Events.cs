@@ -75,42 +75,77 @@ public class Events : MonoBehaviour
 
     public void checkTrigger() //loop through gameEvents here and check for req
     {
-        //FindCurrentLevels();
-        //bool triggered = false; // flag to check if an event has been triggered
-        //int count=0;
-        //while(triggered == false && count < gameEvents.Count)
-        //{
-        //    if (gameEvents[count].getTriggered() == false) //if the event has not been triggered then it will be checked for
-        //    {
+        
+        bool triggered = false; // flag to check if an event has been triggered
+        int count = 0;
+        while (triggered == false && count < gameEvents.Count)
+        {
+            if (gameEvents[count].getTriggered() == false) //if the event has not been triggered then it will be checked for
+            {
 
-        //        List<EventRequirement> eventRequirements = gameEvents[count].getEventRequirements(); //requirements for this event
-        //        triggered = true;//sets to true initially
+                List<dynamic> eventRequirements = gameEvents[count].getEventRequirements(); //requirements for this event
+                triggered = true;//sets to true initially
 
-        //        for (int i = 0; i < eventRequirements.Count; i++) //check each requirement
-        //        {
-                    
-        //            EventRequirement comparison = FindCurrentLevelOfType(eventRequirements[i].getRequirementType()); //finds the level to be compared to
+                for (int i = 0; i < eventRequirements.Count; i++) //check each requirement
+                {
+                    if (eventRequirements[i].GetType() is List<dynamic>)
+                    {
+                        ValueMinOrMax v = new ValueMinOrMax(true, 0);
+                        Debug.Log("list");
+                    }
+                    else if(eventRequirements[i] is ValueMinOrMax)
+                    {
+                        //req is a min/max Value
+                        Debug.Log("min/max");
+                    }
+                    else if (eventRequirements[i] is string)
+                    {
+                        Debug.Log("and/or");
+                    }
+                    else if (eventRequirements[i] is ValueRange)
+                    {
+                        Debug.Log("Range");
 
-        //            if (eventRequirements[i].getMin() >= comparison.getMin() && eventRequirements[i].getMax() <= comparison.getMax()) //if requirements are not met the set to false
-        //            {
-        //                triggered = false;
-        //            }
+                    }
+                    else if (eventRequirements[i] is ObjectFill.FillType)
+                    {
+                        //req is fill type
+                        Debug.Log("fill");
 
-        //        }
+                    }
 
-        //        if (triggered == true) //if triggered is still true then add effects of this event
-        //        {
-        //            Debug.Log("EventOccurred " + gameEvents[count].getEVentName());
-        //            gameEvents[count].setTriggered(true);
-        //            //currentEventEffects.AddEffects(gameEvents[count].getEffects());
-        //        }
+                }
 
-        //    }
+                if (triggered == true) //if triggered is still true then add effects of this event
+                {
+                    Debug.Log("EventOccurred " + gameEvents[count].getEVentName());
+                    gameEvents[count].setTriggered(true);
+                    //currentEventEffects.AddEffects(gameEvents[count].getEffects());
+                }
 
-        //    count += 1;
-        //}
+            }
+
+            count += 1;
+        }
+
+        
     }
-    
+
+    bool CompareToMin()
+    {
+        return true;
+    }
+
+    bool CompareToMax()
+    {
+        return true;
+    }
+
+    bool CompareToRange()
+    {
+        return true;
+    }
+
     //read in events
     public void HandleEventFile()
     {
