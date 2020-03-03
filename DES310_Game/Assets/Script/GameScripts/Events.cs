@@ -22,7 +22,7 @@ public class Events : MonoBehaviour
     }
     
 
-
+    
     void AddNewEvent(GameEvent gameEvent) //add new event to list of events
     {
         gameEvents.Add(gameEvent);
@@ -30,85 +30,85 @@ public class Events : MonoBehaviour
 
     void FindCurrentLevels() //gets the current levels to be compared to requirements
     {
-        EventRequirement newRequirement = new EventRequirement();
+        //EventRequirement newRequirement = new EventRequirement();
 
-        newRequirement.SetRequirementType(EventRequirementName.FOOD);
-        newRequirement.SetMax(0); //replace with getter
-        newRequirement.SetMin(0); //replace with getter
+        //newRequirement.SetRequirementType(EventRequirementName.FOOD);
+        //newRequirement.SetMax(0); //replace with getter
+        //newRequirement.SetMin(0); //replace with getter
 
-        currentLevels.Add(newRequirement);
+        //currentLevels.Add(newRequirement);
 
-        newRequirement = new EventRequirement();
-        newRequirement.SetRequirementType(EventRequirementName.SUSTAINABILITY);
-        newRequirement.SetMax(0); //replace with getter
-        newRequirement.SetMin(0); //replace with getter
+        //newRequirement = new EventRequirement();
+        //newRequirement.SetRequirementType(EventRequirementName.SUSTAINABILITY);
+        //newRequirement.SetMax(0); //replace with getter
+        //newRequirement.SetMin(0); //replace with getter
 
-        currentLevels.Add(newRequirement);
+        //currentLevels.Add(newRequirement);
 
-        newRequirement = new EventRequirement();
-        newRequirement.SetRequirementType(EventRequirementName.TIME);
-        newRequirement.SetMax(0); //replace with getter
-        newRequirement.SetMin(0); //replace with getter
+        //newRequirement = new EventRequirement();
+        //newRequirement.SetRequirementType(EventRequirementName.TIME);
+        //newRequirement.SetMax(0); //replace with getter
+        //newRequirement.SetMin(0); //replace with getter
 
-        currentLevels.Add(newRequirement);
+        //currentLevels.Add(newRequirement);
 
-        newRequirement = new EventRequirement();
+        //newRequirement = new EventRequirement();
 
-        newRequirement.SetRequirementType(EventRequirementName.FILL);
-        newRequirement.SetMax(0); //replace with getter
-        newRequirement.SetMin(0); //replace with getter
+        //newRequirement.SetRequirementType(EventRequirementName.FILL);
+        //newRequirement.SetMax(0); //replace with getter
+        //newRequirement.SetMin(0); //replace with getter
 
-        currentLevels.Add(newRequirement);
+        //currentLevels.Add(newRequirement);
     }
     
     EventRequirement FindCurrentLevelOfType(EventRequirementName type) //finds the level for requirement as given
     {
-        for (int i = 0; i < currentLevels.Count; i++)
-        {
-            if (currentLevels[i].getRequirementType() == type)
-            {
-                return (currentLevels[i]);
-            }
-        }
+        //for (int i = 0; i < currentLevels.Count; i++)
+        //{
+        //    if (currentLevels[i].getRequirementType() == type)
+        //    {
+        //        return (currentLevels[i]);
+        //    }
+        //}
         return (currentLevels[0]);
     }
 
     public void checkTrigger() //loop through gameEvents here and check for req
     {
-        FindCurrentLevels();
-        bool triggered = false; // flag to check if an event has been triggered
-        int count=0;
-        while(triggered == false && count < gameEvents.Count)
-        {
-            if (gameEvents[count].getTriggered() == false) //if the event has not been triggered then it will be checked for
-            {
+        //FindCurrentLevels();
+        //bool triggered = false; // flag to check if an event has been triggered
+        //int count=0;
+        //while(triggered == false && count < gameEvents.Count)
+        //{
+        //    if (gameEvents[count].getTriggered() == false) //if the event has not been triggered then it will be checked for
+        //    {
 
-                List<EventRequirement> eventRequirements = gameEvents[count].getEventRequirements(); //requirements for this event
-                triggered = true;//sets to true initially
+        //        List<EventRequirement> eventRequirements = gameEvents[count].getEventRequirements(); //requirements for this event
+        //        triggered = true;//sets to true initially
 
-                for (int i = 0; i < eventRequirements.Count; i++) //check each requirement
-                {
+        //        for (int i = 0; i < eventRequirements.Count; i++) //check each requirement
+        //        {
                     
-                    EventRequirement comparison = FindCurrentLevelOfType(eventRequirements[i].getRequirementType()); //finds the level to be compared to
+        //            EventRequirement comparison = FindCurrentLevelOfType(eventRequirements[i].getRequirementType()); //finds the level to be compared to
 
-                    if (eventRequirements[i].getMin() >= comparison.getMin() && eventRequirements[i].getMax() <= comparison.getMax()) //if requirements are not met the set to false
-                    {
-                        triggered = false;
-                    }
+        //            if (eventRequirements[i].getMin() >= comparison.getMin() && eventRequirements[i].getMax() <= comparison.getMax()) //if requirements are not met the set to false
+        //            {
+        //                triggered = false;
+        //            }
 
-                }
+        //        }
 
-                if (triggered == true) //if triggered is still true then add effects of this event
-                {
-                    Debug.Log("EventOccurred " + gameEvents[count].getEVentName());
-                    gameEvents[count].setTriggered(true);
-                    //currentEventEffects.AddEffects(gameEvents[count].getEffects());
-                }
+        //        if (triggered == true) //if triggered is still true then add effects of this event
+        //        {
+        //            Debug.Log("EventOccurred " + gameEvents[count].getEVentName());
+        //            gameEvents[count].setTriggered(true);
+        //            //currentEventEffects.AddEffects(gameEvents[count].getEffects());
+        //        }
 
-            }
+        //    }
 
-            count += 1;
-        }
+        //    count += 1;
+        //}
     }
     
     //read in events
@@ -124,8 +124,13 @@ public class Events : MonoBehaviour
         {    
             GameEvent newGameEvent = new GameEvent();
             EventRequirement newReq = new EventRequirement();
+            ValueMinOrMax minValue = new ValueMinOrMax(false, 0);
+            ValueMinOrMax maxValue = new ValueMinOrMax(true, 0);
+            ValueRange rangeValue = new ValueRange();
             EventEffects newEffects = new EventEffects(0, 0, 0,ObjectFill.FillType.NONE);
             eventDone = false;
+            bool subReq = false;
+            List<dynamic> subReqierment = new List<dynamic>();
 
             while ((i + 1) <= lines.Length && eventDone != true)
             {
@@ -140,62 +145,132 @@ public class Events : MonoBehaviour
                         i += 1;
                         newGameEvent.setEventDescription(lines[i]);
                         break;
+                    case ("SUB_REQ"):
+                        i++;
+                        subReqierment = new List<dynamic>();
+                        subReq = true;
+                        break;
+                    case ("END_SUB_REQ"):
+                        i++;
+                        newGameEvent.AddRequirement(subReqierment);
 
+                        subReq = false;
+                        break;
+                    case ("AND"):
+                        i++;
+                        if (subReq)
+                        {
+                            subReqierment.Add("AND");
+                        }
+                        else
+                        {
+                            newGameEvent.AddRequirement("AND");
+                        }
+                        break;
+                    case ("OR"):
+                        i++;
+                        if (subReq)
+                        {
+                            subReqierment.Add("OR");
+                        }
+                        else
+                        {
+                            newGameEvent.AddRequirement("OR");
+                        }
+                        break;
                     case ("FOOD"):
-                        newReq.SetRequirementType(EventRequirementName.FOOD);
+                        minValue = new ValueMinOrMax(false, 0);
+                        minValue.SetRequirementType(EventRequirementName.FOOD);
                         i += 1;
-                        newReq.SetMin(float.Parse(lines[i]));
-                        i += 1;
-                        newReq.SetMax(float.Parse(lines[i]));
-                        newGameEvent.AddRequirement(newReq);
+                        minValue.SetValue(float.Parse(lines[i]));
+                        if (subReq)
+                        {
+                            subReqierment.Add(minValue);
+                        }
+                        else
+                        {
+                            newGameEvent.AddRequirement(minValue);
+                        }
                         break;
 
                     case ("SUSTAINABILLITY"):
-                        newReq = new EventRequirement();
-                        newReq.SetRequirementType(EventRequirementName.SUSTAINABILITY);
+                        minValue = new ValueMinOrMax(false, 0);
+                        minValue.SetRequirementType(EventRequirementName.SUSTAINABILITY);
                         i += 1;
-                        newReq.SetMin(float.Parse(lines[i]));
-                        i += 1;
-                        newReq.SetMax(float.Parse(lines[i]));
-                        newGameEvent.AddRequirement(newReq);
+                        minValue.SetValue(float.Parse(lines[i]));
+                        if (subReq)
+                        {
+                            subReqierment.Add(minValue);
+                        }
+                        else
+                        {
+                            newGameEvent.AddRequirement(minValue);
+                        }
                         break;
 
-                    case ("TIME"):
-                        newReq = new EventRequirement();
-                        newReq.SetRequirementType(EventRequirementName.TIME);
+                    case ("TIME_MIN"):
+                        minValue = new ValueMinOrMax(false, 0);
+                        minValue.SetRequirementType(EventRequirementName.TIME);
                         i += 1;
-                        newReq.SetMin(float.Parse(lines[i]));
-                        i += 1;
-                        newReq.SetMax(float.Parse(lines[i]));
-                        newGameEvent.AddRequirement(newReq);
+                        minValue.SetValue(float.Parse(lines[i]));
+                        if (subReq)
+                        {
+                            subReqierment.Add(minValue);
+                        }
+                        else
+                        {
+                            newGameEvent.AddRequirement(minValue);
+                        }
+                        break;
+                    case ("TIME_RANGE"):
+                        //newReq = new EventRequirement();
+                        //newReq.SetRequirementType(EventRequirementName.TIME);
+                        //i += 1;
+                        //newReq.SetMin(float.Parse(lines[i]));
+                        //i += 1;
+                        //newReq.SetMax(float.Parse(lines[i]));
+                        //newGameEvent.AddRequirement(newReq);
                         break;
                     case ("FILL_TYPE"):
-                        newReq = new EventRequirement();
-                        newReq.SetRequirementType(EventRequirementName.FILL);
                         i += 1;
                         ObjectFill.FillType f;
-                        if(ObjectFill.FillType.TryParse(lines[i].ToUpper(), out f)!=true) { Debug.LogError("Error: fill type does not match fill enum in events file"); } //check that this passes
-                        newReq.SetFillType(f);
-
-                        i += 1;
-                        newReq.SetMin(float.Parse(lines[i]));
-                        i += 1;
-                        newReq.SetMax(float.Parse(lines[i]));
-                        newGameEvent.AddRequirement(newReq);
+                        if (ObjectFill.FillType.TryParse((lines[i]).ToUpper(), out f) != true) { Debug.LogError("Error: fill type does not match fill enum in events file"); } //check that this passes
+                        if (subReq)
+                        {
+                            subReqierment.Add(f);
+                        }
+                        else
+                        {
+                            newGameEvent.AddRequirement(f);
+                        }
                         break;
                     case ("LVL"):
-                        newReq = new EventRequirement();
-                        newReq.SetRequirementType(EventRequirementName.LEVEL);
+                        minValue = new ValueMinOrMax(false, 0);
+                        minValue.SetRequirementType(EventRequirementName.LEVEL);
                         i += 1;
-                        ObjectFill.FillType l;
-                        if (ObjectFill.FillType.TryParse((lines[i]).ToUpper(), out l) != true) { Debug.LogError("Error: level type does not match fill enum in events file"); } //check that this passes
-                        newReq.SetFillType(l);
-
+                        minValue.SetValue(float.Parse(lines[i]));
+                        if (subReq)
+                        {
+                            subReqierment.Add(minValue);
+                        }
+                        else
+                        {
+                            newGameEvent.AddRequirement(minValue);
+                        }
+                        break;
+                    case ("COUNT"):
+                        minValue = new ValueMinOrMax(false, 0);
+                        minValue.SetRequirementType(EventRequirementName.COUNT);
                         i += 1;
-                        newReq.SetMin(float.Parse(lines[i]));
-                        i += 1;
-                        newReq.SetMax(float.Parse(lines[i]));
-                        newGameEvent.AddRequirement(newReq);
+                        minValue.SetValue(float.Parse(lines[i]));
+                        if (subReq)
+                        {
+                            subReqierment.Add(minValue);
+                        }
+                        else
+                        {
+                            newGameEvent.AddRequirement(minValue);
+                        }
                         break;
                     case ("EFFECTING"):
                         i += 1;
@@ -251,19 +326,19 @@ public class Events : MonoBehaviour
 class GameEvent
 {
     bool triggered = false; //if the event has been triggered
-    List<EventRequirement> eventRequirements = new List<EventRequirement>(); //requirements for triggering
+    List<dynamic> eventRequirements = new List<dynamic>(); //requirements for triggering
     List<EventEffects> effects = new List<EventEffects>();
     string eventName;
     string eventDescription;
 
     public bool getTriggered() { return triggered; }
-    public List<EventRequirement> getEventRequirements() { return eventRequirements; }
+    public List<dynamic> getEventRequirements() { return eventRequirements; }
     public List<EventEffects> getEffects() { return effects; }
     public string getEVentName() { return eventName; }
     public string GetEventDescription() { return eventDescription; }
 
 
-    public void AddRequirement(EventRequirement eventRequirement) //add a new trigger requirement
+    public void AddRequirement(dynamic eventRequirement) //add a new trigger requirement
     {
         eventRequirements.Add(eventRequirement);
     }
@@ -292,18 +367,19 @@ class GameEvent
 
 class EventRequirement
 {
-    public EventRequirement(EventRequirementName eventType, float minValue, float maxValue)
+    public EventRequirement()
     {
 
     }
-    public EventRequirement() { }
-
-
-
-    public List<dynamic> subRequierment = new List<dynamic>();
+    
 
 }
 
+
+/// <summary>
+/// Allows a value to be checked
+/// pass true to make it a min, false for a max
+/// </summary>
 class ValueMinOrMax
 {
     public ValueMinOrMax(bool m, float v)
@@ -312,32 +388,40 @@ class ValueMinOrMax
         value = v;
     }
 
+    EventRequirementName requirementType; //type of requirement
     bool min;
     float value;
     public void SetValue(float v) { value= v; }
+    public EventRequirementName GetRequirementType() { return requirementType; }
+    public void SetRequirementType(EventRequirementName t) { requirementType = t; }
     public float GetValue() { return value; }
     public bool GetMin() { return min; }
     
 }
 
+
+/// <summary>
+/// Allows a value range to be checked
+/// pass min and max range and type
+/// </summary>
 class ValueRange
 {
-    public ValueRange(EventRequirementName eventType, float minValue, float maxValue)
+    public ValueRange(float minValue, float maxValue, EventRequirementName eventType)
     {
         requirementType = eventType;
         min = minValue;
         max = maxValue;
     }
-    public EventRequirement() { }
+    public ValueRange() { }
 
     EventRequirementName requirementType; //type of requirement
     float min; //max requirement
     float max; //min requirement
 
-    public EventRequirementName getRequirementType() { return requirementType; }
+
     public float getMin() { return min; }
     public float getMax() { return max; }
-
+    public EventRequirementName GetRequirementType() { return requirementType; }
     public void SetRequirementType(EventRequirementName t) { requirementType = t; }
     public void SetMin(float m) { min = m; }
     public void SetMax(float m) { max = m; }
@@ -395,5 +479,6 @@ public enum EventRequirementName //different requirement types
     SUSTAINABILITY = 1,
     TIME = 2,
     FILL=3,
-    LEVEL =4
+    LEVEL =4,
+    COUNT=5
 }

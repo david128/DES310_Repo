@@ -17,7 +17,7 @@ public class GameLoop : MonoBehaviour
         QualitySettings.vSyncCount = 0;
         
         //load events
-        //gameManager.GetComponent<Events>().HandleEventFile();
+        gameManager.GetComponent<Events>().HandleEventFile();
 
         //Creates grid at the start
         gameManager.GetComponent<GridScript>().CreateGrid();
