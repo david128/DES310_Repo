@@ -9,7 +9,8 @@ public class Currency : MonoBehaviour
 
     //getter and setter
     public int GetMoney() { return money; }
-
     public void SetMoney(int mon) { money = mon; }
+
+    //Add to current money
     public void AddMoney(int m) { money = money + m; }
 }
