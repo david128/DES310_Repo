@@ -102,6 +102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2321193795362536545}
   - component: {fileID: 3409962455736696155}
+  - component: {fileID: 4619506480569212224}
   m_Layer: 0
   m_Name: Pig1
   m_TagString: Untagged
@@ -177,6 +178,25 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.025973596, y: 0.0006500073, z: 0}
     m_Extent: {x: 0.04239838, y: 0.032970283, z: 0.026703527}
   m_DirtyAABB: 0
+--- !u!95 &4619506480569212224
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4648924943244870616}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 5267e02f770fc2d49ac5b29b26ac16d8, type: 3}
+  m_Controller: {fileID: 9100000, guid: 14774b06ad88fc148835bdfb093b7093, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7946573307615903165
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,8 +272,8 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7960435384210975083}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: cd3e2f51a8fba6245abd923e867dcd1c, type: 3}
-  m_Controller: {fileID: 9100000, guid: ee01f0a456158cc4a920d77d5acebcaf, type: 2}
+  m_Avatar: {fileID: 9000000, guid: 5267e02f770fc2d49ac5b29b26ac16d8, type: 3}
+  m_Controller: {fileID: 9100000, guid: 14774b06ad88fc148835bdfb093b7093, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
