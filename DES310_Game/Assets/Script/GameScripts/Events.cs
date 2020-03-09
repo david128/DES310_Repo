@@ -92,6 +92,9 @@ public class Events : MonoBehaviour
                     if(eventRequirements[i] is ValueMinOrMax)
                     {
                         //req is a min/max Value
+
+                        //if not true then set to false
+
                         Debug.Log("min/max");
                     }
                     else if (eventRequirements[i] is string)
