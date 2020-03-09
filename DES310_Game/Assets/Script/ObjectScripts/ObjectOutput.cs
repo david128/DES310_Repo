@@ -7,7 +7,7 @@ public class ObjectOutput : MonoBehaviour
     GameObject gameManager;
 
     public int moneyOutput;
-    public float foodOutput;
+    public int foodOutput;
 
     void Start()
     {
