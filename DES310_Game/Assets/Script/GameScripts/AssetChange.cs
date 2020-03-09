@@ -116,12 +116,12 @@ public class AssetChange : MonoBehaviour
         //find asset and keep transform
         GameObject asset; 
         asset = gameManager.GetComponent<GridScript>().GetGridTile(id);
+
         Transform transform = asset.transform;
         Object locked;
       
         //load correct asset based on type
         newAsset = LoadAsset(type, transform, level);
-
 
         //Checks if the farmhouse is being upgraded and if so what level the farmhouse is being upgraded to
         if(type == ObjectInfo.ObjectType.FARMHOUSE && level == 2)

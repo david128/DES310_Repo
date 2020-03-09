@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class ObjectData
 {
-
     public int purchaseCost;
     public int levels;
     public int level2Cost;
     public int level3Cost;
 
 }
-
 public class GameInfo : MonoBehaviour
 {
     ObjectData data = new ObjectData();
