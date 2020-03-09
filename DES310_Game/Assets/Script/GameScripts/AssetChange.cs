@@ -18,7 +18,6 @@ public class AssetChange : MonoBehaviour
     GameObject newAsset;
     GameObject newFill;
 
-
     public void Upgrade(int id) //upgrade level and then change asset
     {
        // int oldID;
@@ -103,6 +102,9 @@ public class AssetChange : MonoBehaviour
             case ObjectInfo.ObjectType.RESEARCH:
                 return (GameObject)Instantiate(Resources.Load("ResearchLab" + lvlExtension), transform.position, Quaternion.identity);
 
+            case ObjectInfo.ObjectType.VERTICAL_FARM:
+                return (GameObject)Instantiate(Resources.Load("VerticalFarm" + lvlExtension), transform.position, Quaternion.identity);
+
             default:
                 return (GameObject)Instantiate(Resources.Load("Field" + lvlExtension), transform.position, Quaternion.identity);
             
@@ -114,10 +116,25 @@ public class AssetChange : MonoBehaviour
         //find asset and keep transform
         GameObject asset; 
         asset = gameManager.GetComponent<GridScript>().GetGridTile(id);
+
         Transform transform = asset.transform;
-     
+        Object locked;
+      
         //load correct asset based on type
         newAsset = LoadAsset(type, transform, level);
+
+        //Checks if the farmhouse is being upgraded and if so what level the farmhouse is being upgraded to
+        if(type == ObjectInfo.ObjectType.FARMHOUSE && level == 2)
+        {
+            locked = gameManager.GetComponent<GridScript>().lockLvl2;
+            Destroy(locked);
+        }
+        else if(type == ObjectInfo.ObjectType.FARMHOUSE && level == 3)
+        {
+            locked = gameManager.GetComponent<GridScript>().lockLvl3;
+            Destroy(locked);
+        }
+
 
         //Checks if the object being cahnged is a field or not to set the fill of the grid
         if (type == ObjectInfo.ObjectType.FIELD)
@@ -131,6 +148,7 @@ public class AssetChange : MonoBehaviour
             fill = ObjectFill.FillType.NONE;
         }
 
+    
         //newFill.transform.SetParent(newAsset.transform, true);
 
         //remove from list
@@ -184,7 +202,7 @@ public class AssetChange : MonoBehaviour
                 return (GameObject)Instantiate(Resources.Load("Sunflower"), transform.position, Quaternion.identity, newAsset.transform);
                
             case ObjectFill.FillType.SUGARCANE:
-                return (GameObject)Instantiate(Resources.Load("Carrots"), transform.position, Quaternion.identity, newAsset.transform);
+                return (GameObject)Instantiate(Resources.Load("Sugarcane"), transform.position, Quaternion.identity, newAsset.transform);
 
             case ObjectFill.FillType.COCCOA:
                 return (GameObject)Instantiate(Resources.Load("Cocoa"), transform.position, Quaternion.identity, newAsset.transform);

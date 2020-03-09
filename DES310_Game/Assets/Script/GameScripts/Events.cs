@@ -7,14 +7,13 @@ using System.IO;
 
 public class Events : MonoBehaviour
 {
-    string path = "Assets/Resources/events.txt";
+    string path = "GameData/events.txt";
 
     List<GameEvent> gameEvents = new List<GameEvent>(); //list of all gameEvents
     List<EventRequirement> currentLevels = new List<EventRequirement>(); //list of all current levels to compare to event requirements.
 
     List<EventEffects> currentEventEffects = new List<EventEffects>();
-
-
+    
     void setUpEvents()
     {
         currentEventEffects.Add(new EventEffects(0, 0, 0, ObjectFill.FillType.NONE));
@@ -38,24 +37,27 @@ public class Events : MonoBehaviour
 
         currentLevels.Add(newRequirement);
 
+        newRequirement = new EventRequirement();
         newRequirement.SetRequirementType(EventRequirementName.SUSTAINABILITY);
         newRequirement.SetMax(0); //replace with getter
         newRequirement.SetMin(0); //replace with getter
 
         currentLevels.Add(newRequirement);
 
+        newRequirement = new EventRequirement();
         newRequirement.SetRequirementType(EventRequirementName.TIME);
         newRequirement.SetMax(0); //replace with getter
         newRequirement.SetMin(0); //replace with getter
 
         currentLevels.Add(newRequirement);
 
+        newRequirement = new EventRequirement();
+
         newRequirement.SetRequirementType(EventRequirementName.FILL);
         newRequirement.SetMax(0); //replace with getter
         newRequirement.SetMin(0); //replace with getter
 
         currentLevels.Add(newRequirement);
-
     }
     
     EventRequirement FindCurrentLevelOfType(EventRequirementName type) //finds the level for requirement as given
@@ -107,19 +109,18 @@ public class Events : MonoBehaviour
             count += 1;
         }
     }
-
-
+    
     //read in events
     public void HandleEventFile()
     {
-
+        
         string[] lines = File.ReadAllLines(path);
         int i = 0;
         
         bool eventDone = false;
-        while ((i+1 )< lines.Length)
-        {
-            
+
+        while ((i + 1)< lines.Length)
+        {    
             GameEvent newGameEvent = new GameEvent();
             EventRequirement newReq = new EventRequirement();
             EventEffects newEffects = new EventEffects(0, 0, 0,ObjectFill.FillType.NONE);
@@ -129,15 +130,16 @@ public class Events : MonoBehaviour
             {
                 switch (lines[i])
                 {
-
                     case ("EVENTNAME"):
                         i += 1;
                         newGameEvent.setEventName(lines[i]);
                         break;
+
                     case ("DESCRIPTION"):
                         i += 1;
                         newGameEvent.setEventDescription(lines[i]);
                         break;
+
                     case ("FOOD"):
                         newReq.SetRequirementType(EventRequirementName.FOOD);
                         i += 1;
@@ -146,6 +148,7 @@ public class Events : MonoBehaviour
                         newReq.SetMax(float.Parse(lines[i]));
                         newGameEvent.AddRequirement(newReq);
                         break;
+
                     case ("SUSTAINABILLITY"):
                         newReq = new EventRequirement();
                         newReq.SetRequirementType(EventRequirementName.SUSTAINABILITY);
@@ -155,6 +158,7 @@ public class Events : MonoBehaviour
                         newReq.SetMax(float.Parse(lines[i]));
                         newGameEvent.AddRequirement(newReq);
                         break;
+
                     case ("TIME"):
                         newReq = new EventRequirement();
                         newReq.SetRequirementType(EventRequirementName.TIME);
@@ -198,12 +202,15 @@ public class Events : MonoBehaviour
                         if (ObjectFill.FillType.TryParse((lines[i]).ToUpper(), out e) != true) { Debug.LogError("Error: Effecting type does not match fill enum in events file"); } //check that this passes
                         newEffects.SetFillEffected(e);
                         break;
+
                     case ("GROWTH_REDUCTION"):
                         i += 1;
                         newEffects.SetGrowthReduction(float.Parse(lines[i]));
                         break;
+
                     case ("MONEY_REDUCTION"):
                         i += 1;
+
                         newEffects.SetMoneyReduction(float.Parse(lines[i]));
                         break;
                     case ("SUSTAINABILITY_REDUCTION"):
@@ -215,11 +222,13 @@ public class Events : MonoBehaviour
                         newEffects.ClearEffects();
                         i += 1;
                         break;
+
                     case ("END"):
                         AddNewEvent(newGameEvent);
                         eventDone = true;
                         i += 1;
                         break;
+
                     default:
                         i += 1;
                         break;
@@ -304,9 +313,6 @@ class EventRequirement
     public void SetFillType(ObjectFill.FillType t) { fillType = t; }
     public void SetMin(float m) { min = m; }
     public void SetMax(float m) { max = m; }
-
-
-    
 }
 
 class EventEffects //effects of an effect
@@ -350,10 +356,6 @@ class EventEffects //effects of an effect
     }
 
 }
-
-
-
-
 
 public enum EventRequirementName //different requirement types
 {

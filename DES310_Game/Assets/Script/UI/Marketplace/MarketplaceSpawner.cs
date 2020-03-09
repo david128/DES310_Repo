@@ -10,7 +10,9 @@ public class MarketplaceSpawner : MonoBehaviour
     public void SpawnMenu()
     {
         GameObject newMenu = Instantiate(menuPrefab,GameObject.FindGameObjectWithTag("Canvas").transform) as GameObject;
-        
+        LeanTween.scale(GameObject.FindGameObjectWithTag("Marketplace"), new Vector3(1, 1, 1), 0.3f);
+
+
     }
 
 }

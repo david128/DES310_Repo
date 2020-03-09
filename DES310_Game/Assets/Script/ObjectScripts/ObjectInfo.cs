@@ -19,7 +19,9 @@ public class ObjectInfo : MonoBehaviour
         CHICKEN_COOP = 6,
         PIG_PEN = 7,
         COW_FIELD = 8,
-        RESEARCH = 9
+        RESEARCH = 9,
+        VERTICAL_FARM = 10,
+        LOCKED = 11
     };
   
     public int level;

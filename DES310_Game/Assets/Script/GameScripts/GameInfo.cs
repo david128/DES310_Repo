@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class ObjectData
 {
-
     public int purchaseCost;
     public int levels;
     public int level2Cost;
     public int level3Cost;
 
 }
-
-
 public class GameInfo : MonoBehaviour
 {
     ObjectData data = new ObjectData();
@@ -69,6 +66,13 @@ public class GameInfo : MonoBehaviour
                 data.levels = 3;
                 data.level2Cost = 1250;
                 data.level3Cost = 10000;
+                break;
+
+            case ObjectInfo.ObjectType.VERTICAL_FARM:
+                data.purchaseCost = 900;
+                data.levels = 3;
+                data.level2Cost = 3000;
+                data.level3Cost = 6000;
                 break;
 
             default:
