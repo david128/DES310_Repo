@@ -1,0 +1,181 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d123d51b3dd517c40bb6296f621fe788, type: 3}
+  m_Name: AkWwiseProjectData
+  m_EditorClassIdentifier: 
+  AcousticTextureWwu:
+  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: daf9e8a199bcdc4fbfe0f3baedb829c5
+    GuidInternal: 
+    m_lastTime: -8586195719594326156
+    List: []
+  AuxBusWwu:
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: b61d3e8779aed9499fdf9e6e0322cd90
+    GuidInternal: 
+    m_lastTime: -8586195719596513075
+    List: []
+  BankWwu:
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 7a11aae2855948479274c74ac2d7efcd
+    GuidInternal: 
+    m_lastTime: -8586195712686332071
+    List:
+    - name: MainBank
+      guid: 427200f2eca1124a88450f2215ebd496
+      id: 2880737896
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: MainBank
+        ObjectType: 7
+      Path: Default Work Unit\MainBank
+  EventWwu:
+  - PhysicalPath: Events\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 40a539f13f84d244a23a7b10e066f215
+    GuidInternal: 
+    m_lastTime: -8586195682444911951
+    List:
+    - name: Ambience
+      guid: ceaa8bfa0c19e54a9dff65518e617c72
+      id: 85412153
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ambience
+        ObjectType: 3
+      Path: Default Work Unit\Ambience
+      maxAttenuation: 0
+      maxDuration: 96.38925
+      minDuration: 96.38925
+    - name: ButtonSound
+      guid: b0c66d73f5e3264e8d32d48214cf3b48
+      id: 3462570130
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ButtonSound
+        ObjectType: 3
+      Path: Default Work Unit\ButtonSound
+      maxAttenuation: 0
+      maxDuration: 0.433906
+      minDuration: 0.433906
+    - name: Chicken
+      guid: 092ee69913ce6b4997f8b1531cded1b0
+      id: 4251222990
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Chicken
+        ObjectType: 3
+      Path: Default Work Unit\Chicken
+      maxAttenuation: 0
+      maxDuration: 1.861111
+      minDuration: 1.861111
+    - name: Cow
+      guid: 830ec27f5664c2479ffa69995366e7cb
+      id: 1083682102
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Cow
+        ObjectType: 3
+      Path: Default Work Unit\Cow
+      maxAttenuation: 0
+      maxDuration: 2.051179
+      minDuration: 2.051179
+    - name: MenuSound
+      guid: b9e466777eea75429f6cb792b3a76ac2
+      id: 1197727813
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: MenuSound
+        ObjectType: 3
+      Path: Default Work Unit\MenuSound
+      maxAttenuation: 0
+      maxDuration: 48.21998
+      minDuration: 48.21998
+    - name: MenuSoundEnd
+      guid: edf0dd53fbfe0f48b14d2e68a89cd1b9
+      id: 3371366340
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: MenuSoundEnd
+        ObjectType: 3
+      Path: Default Work Unit\MenuSoundEnd
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Pig
+      guid: 5ea73caa6d6f8746bdc4627a9c37f89d
+      id: 1115118811
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Pig
+        ObjectType: 3
+      Path: Default Work Unit\Pig
+      maxAttenuation: 0
+      maxDuration: 0.515986
+      minDuration: 0.515986
+    - name: Water
+      guid: d19a789761d8084ba85bfbdb2ed9ac03
+      id: 2654748154
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Water
+        ObjectType: 3
+      Path: Default Work Unit\Water
+      maxAttenuation: 0
+      maxDuration: 18.030748
+      minDuration: 18.030748
+  RtpcWwu:
+  - PhysicalPath: Game Parameters\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: e7f427d8b93ad44e87bc59503f763464
+    GuidInternal: 
+    m_lastTime: -8586195719595419557
+    List: []
+  StateWwu:
+  - PhysicalPath: States\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 7685a0f6b719e64f80d4a47502dfb90c
+    GuidInternal: 
+    m_lastTime: -8586195719596669653
+    List: []
+  SwitchWwu:
+  - PhysicalPath: Switches\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: e41991b847e855429ca30fc8f796f9e8
+    GuidInternal: 
+    m_lastTime: -8586195719596826234
+    List: []
+  TriggerWwu:
+  - PhysicalPath: Triggers\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 83aa56770c3784479ffdd7e1fcbf1b0f
+    GuidInternal: 
+    m_lastTime: -8586195719595888499
+    List: []
+  ExpandedItems:
+  - /DES310_Game_WwiseProject
+  - /DES310_Game_WwiseProject/Events
+  - /DES310_Game_WwiseProject/Events/Default Work Unit
+  autoPopulateEnabled: 1
+  CurrentPluginConfig: 

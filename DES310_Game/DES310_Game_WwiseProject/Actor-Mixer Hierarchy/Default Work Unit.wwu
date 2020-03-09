@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{3B07BB01-7DC0-4CC1-A6A1-7B149D37F843}" SchemaVersion="94">
+	<AudioObjects>
+		<WorkUnit Name="Default Work Unit" ID="{3B07BB01-7DC0-4CC1-A6A1-7B149D37F843}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="Ambience" ID="{DE79FF2F-98FD-411B-A54D-CB6D2C88EC11}" ShortID="179898180">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-8</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E0171960-16A8-47E5-BAF9-698E1868883F}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{873E1DB6-AE79-49D9-9FDF-9E6E0322CD90}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Ambience" ID="{3019D365-82C4-411D-BDD7-89770727D90B}" ShortID="164514931">
+							<Language>SFX</Language>
+							<AudioFile>Ambience.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Ambience" ID="{3019D365-82C4-411D-BDD7-89770727D90B}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Button Press" ID="{4F070F36-0E5B-45C9-B83A-2DEE5D648F09}" ShortID="763032211">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-15</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E0171960-16A8-47E5-BAF9-698E1868883F}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{873E1DB6-AE79-49D9-9FDF-9E6E0322CD90}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Button Press" ID="{22EB35D7-99FD-4AB2-A644-24EA65BD2DA8}" ShortID="468668195">
+							<Language>SFX</Language>
+							<AudioFile>Button Press.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Button Press" ID="{22EB35D7-99FD-4AB2-A644-24EA65BD2DA8}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Chicken" ID="{904081AD-DADA-4773-A23E-87C60617FA2A}" ShortID="712328509">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-16</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E0171960-16A8-47E5-BAF9-698E1868883F}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{873E1DB6-AE79-49D9-9FDF-9E6E0322CD90}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Chicken" ID="{F85616E7-DCC4-4F5D-904C-86A740B1784C}" ShortID="662089283">
+							<Language>SFX</Language>
+							<AudioFile>Chicken.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Chicken" ID="{F85616E7-DCC4-4F5D-904C-86A740B1784C}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Cow" ID="{45709C99-438B-4BF2-BADB-580C6186AFA8}" ShortID="728035753">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-12</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E0171960-16A8-47E5-BAF9-698E1868883F}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{873E1DB6-AE79-49D9-9FDF-9E6E0322CD90}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Cow" ID="{C7BB3EEF-DCBD-48BF-81D7-FE98689A124C}" ShortID="542816116">
+							<Language>SFX</Language>
+							<AudioFile>Cow.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Cow" ID="{C7BB3EEF-DCBD-48BF-81D7-FE98689A124C}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Menu Music" ID="{DB453905-0E30-4736-BB52-788CD14CF1EB}" ShortID="274845573">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-15</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E0171960-16A8-47E5-BAF9-698E1868883F}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{873E1DB6-AE79-49D9-9FDF-9E6E0322CD90}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Menu Music" ID="{CC7A87E3-C704-4750-ABBB-ED5B867428AC}" ShortID="611773971">
+							<Language>SFX</Language>
+							<AudioFile>Menu Music.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Menu Music" ID="{CC7A87E3-C704-4750-ABBB-ED5B867428AC}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Water" ID="{C0AF7EBA-DB26-4519-917C-71D96420E396}" ShortID="902286095">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-43</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E0171960-16A8-47E5-BAF9-698E1868883F}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{873E1DB6-AE79-49D9-9FDF-9E6E0322CD90}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Water" ID="{C18E1309-D439-4471-BF32-B56355AF9417}" ShortID="1025459264">
+							<Language>SFX</Language>
+							<AudioFile>Water.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Water" ID="{C18E1309-D439-4471-BF32-B56355AF9417}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Pig1" ID="{D1CAA12D-3B99-4DD5-814F-98C53D4E18E2}" ShortID="649747385">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-11</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E0171960-16A8-47E5-BAF9-698E1868883F}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{873E1DB6-AE79-49D9-9FDF-9E6E0322CD90}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Pig1" ID="{AF84719B-7291-4B81-A1AB-C1A6AEE18773}" ShortID="80181288">
+							<Language>SFX</Language>
+							<AudioFile>Pig1.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Pig1" ID="{AF84719B-7291-4B81-A1AB-C1A6AEE18773}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>
