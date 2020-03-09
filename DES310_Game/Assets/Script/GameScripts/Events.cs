@@ -88,12 +88,8 @@ public class Events : MonoBehaviour
 
                 for (int i = 0; i < eventRequirements.Count; i++) //check each requirement
                 {
-                    if (eventRequirements[i].GetType() is List<dynamic>)
-                    {
-                        ValueMinOrMax v = new ValueMinOrMax(true, 0);
-                        Debug.Log("list");
-                    }
-                    else if(eventRequirements[i] is ValueMinOrMax)
+
+                    if(eventRequirements[i] is ValueMinOrMax)
                     {
                         //req is a min/max Value
                         Debug.Log("min/max");
@@ -110,8 +106,37 @@ public class Events : MonoBehaviour
                     else if (eventRequirements[i] is ObjectFill.FillType)
                     {
                         //req is fill type
+
                         Debug.Log("fill");
 
+                    }
+                    else
+                    {
+                        for (int j = 0; j < eventRequirements[i].Count; j++)
+                        {
+                            if (eventRequirements[i][j] is ValueMinOrMax)
+                            {
+                                Debug.Log("min/max");
+                            }
+                            else if (eventRequirements[i][j] is string)
+                            {
+                                Debug.Log("and/or");
+
+                            }
+                            else if (eventRequirements[i][j] is ValueRange)
+                            {
+                                Debug.Log("Range");
+
+                            }
+                            else if (eventRequirements[i][j] is ObjectFill.FillType)
+                            {
+                                //req is fill type
+                                Debug.Log("fill");
+
+                            }
+                        }
+
+                        Debug.Log("list");
                     }
 
                 }
@@ -128,6 +153,10 @@ public class Events : MonoBehaviour
             count += 1;
         }
 
+        while (count <gameEvents.Count)
+        {
+
+        }
         
     }
 
