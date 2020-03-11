@@ -11,8 +11,13 @@ GameObject:
   - component: {fileID: 5417798070462057535}
   - component: {fileID: 3924011988425848329}
   - component: {fileID: 7298203557054171888}
+  - component: {fileID: -89132184012813123}
+  - component: {fileID: -5340417884130987457}
+  - component: {fileID: -2163591193257086305}
+  - component: {fileID: 576273282817588439}
+  - component: {fileID: 30468807236413412}
   m_Layer: 0
-  m_Name: MeatLab03_Optimised 1
+  m_Name: MeatLab_lvl2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85,3 +90,81 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &-89132184012813123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9040056489014132268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c39e48ac04108ff439ee1b74af5371b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: Meat Lab
+  options:
+  - Color: {r: 0, g: 0, b: 0, a: 0}
+    Symbol: {fileID: 21300000, guid: aca4cbc874326ab478a020a0696caeed, type: 3}
+    Title: Upgrade
+  - Color: {r: 0, g: 0, b: 0, a: 0}
+    Symbol: {fileID: 21300000, guid: 59f671ec53a8d5843b6ef4ff9378c2d3, type: 3}
+    Title: Demolish
+  - Color: {r: 0, g: 0, b: 0, a: 0}
+    Symbol: {fileID: 21300000, guid: 72405e6d4b5b3494b9b4209d48bdb377, type: 3}
+    Title: Back
+--- !u!114 &-5340417884130987457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9040056489014132268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea5c64a0edbc99b44870f36e22d14ba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fillType: 0
+--- !u!114 &-2163591193257086305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9040056489014132268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 155482db5d7f9994fbe59fb2639247e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 0
+  objectType: 12
+  level: 2
+--- !u!114 &576273282817588439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9040056489014132268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf237b14a943894d876bad565af84e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moneyOutput: 3000
+  foodOutput: 3000
+--- !u!65 &30468807236413412
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9040056489014132268}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.14999999, y: 0.040082205, z: 0.099999994}
+  m_Center: {x: 0, y: 0, z: 0}

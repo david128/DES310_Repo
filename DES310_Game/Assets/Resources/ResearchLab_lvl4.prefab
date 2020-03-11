@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3694953742231414567
+--- !u!1 &7630107010366658388
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,64 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 368245148668319028}
-  - component: {fileID: 8666970490858761986}
-  - component: {fileID: 3133320989034025979}
-  - component: {fileID: -253232544224066943}
-  - component: {fileID: 6436518717471098154}
-  - component: {fileID: 6827154424242158961}
-  - component: {fileID: 5569711437071143150}
+  - component: {fileID: 6897487398939764039}
+  - component: {fileID: 9165812260851688624}
+  - component: {fileID: 2514075675192106865}
+  - component: {fileID: 8205351722328875912}
+  - component: {fileID: -125170469120920425}
+  - component: {fileID: -6828268826465944139}
+  - component: {fileID: -6756505876901311610}
   m_Layer: 0
-  m_Name: Farmhouse_lvl2
+  m_Name: ResearchLab_lvl3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &368245148668319028
+--- !u!4 &6897487398939764039
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3694953742231414567}
+  m_GameObject: {fileID: 7630107010366658388}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalPosition: {x: 4.099862, y: 0.9022112, z: 4.86}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8666970490858761986
+--- !u!114 &9165812260851688624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7630107010366658388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 155482db5d7f9994fbe59fb2639247e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 0
+  objectType: 9
+  level: 3
+--- !u!33 &2514075675192106865
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3694953742231414567}
-  m_Mesh: {fileID: -8713496746846165405, guid: d9dc46d1373f23140b945881454f9993, type: 3}
---- !u!23 &3133320989034025979
+  m_GameObject: {fileID: 7630107010366658388}
+  m_Mesh: {fileID: -7591736804178604479, guid: 6210292fe7d6b92418dfc8f8e9be5ded, type: 3}
+--- !u!23 &8205351722328875912
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3694953742231414567}
+  m_GameObject: {fileID: 7630107010366658388}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -61,12 +76,18 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ae1dd880f06e0b04c94189e3738540c0, type: 2}
-  - {fileID: 2100000, guid: 4674bae256f6a0749b335f1ee8e849b1, type: 2}
-  - {fileID: 2100000, guid: 69dd36af093b33c4bbcf94e097dcaa51, type: 2}
-  - {fileID: 2100000, guid: 5170b9dabc8d00f4d80732f6781e6dc3, type: 2}
-  - {fileID: 2100000, guid: 4674bae256f6a0749b335f1ee8e849b1, type: 2}
-  - {fileID: 2100000, guid: 7eac8f36072f122419a0b6ea55db7d7c, type: 2}
+  - {fileID: -7196604718457158454, guid: 6210292fe7d6b92418dfc8f8e9be5ded, type: 3}
+  - {fileID: 2027680271036266594, guid: 6210292fe7d6b92418dfc8f8e9be5ded, type: 3}
+  - {fileID: 3140674083027166227, guid: 6210292fe7d6b92418dfc8f8e9be5ded, type: 3}
+  - {fileID: 6698280203208818974, guid: 6210292fe7d6b92418dfc8f8e9be5ded, type: 3}
+  - {fileID: -1853957667967180488, guid: 6210292fe7d6b92418dfc8f8e9be5ded, type: 3}
+  - {fileID: -5718009323376054050, guid: 6210292fe7d6b92418dfc8f8e9be5ded, type: 3}
+  - {fileID: 2888653898620275253, guid: 6210292fe7d6b92418dfc8f8e9be5ded, type: 3}
+  - {fileID: -900251861087693428, guid: 6210292fe7d6b92418dfc8f8e9be5ded, type: 3}
+  - {fileID: -2553370967183805914, guid: 6210292fe7d6b92418dfc8f8e9be5ded, type: 3}
+  - {fileID: 9047737237600312493, guid: 6210292fe7d6b92418dfc8f8e9be5ded, type: 3}
+  - {fileID: -4030917311188774133, guid: 6210292fe7d6b92418dfc8f8e9be5ded, type: 3}
+  - {fileID: 9113582229050684978, guid: 6210292fe7d6b92418dfc8f8e9be5ded, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -87,47 +108,32 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &-253232544224066943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3694953742231414567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 155482db5d7f9994fbe59fb2639247e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: 0
-  objectType: 2
-  level: 2
---- !u!65 &6436518717471098154
+--- !u!65 &-125170469120920425
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3694953742231414567}
+  m_GameObject: {fileID: 7630107010366658388}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.10912207, y: 0.07358243, z: 0.09562666}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6827154424242158961
+  m_Size: {x: 15, y: 5.6322722, z: 9.999999}
+  m_Center: {x: 0, y: 2.5950153, z: 0}
+--- !u!114 &-6828268826465944139
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3694953742231414567}
+  m_GameObject: {fileID: 7630107010366658388}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c39e48ac04108ff439ee1b74af5371b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  title: Farmhouse
+  title: Research Lab
   options:
   - Color: {r: 0, g: 0, b: 0, a: 0}
     Symbol: {fileID: 21300000, guid: aca4cbc874326ab478a020a0696caeed, type: 3}
@@ -135,13 +141,13 @@ MonoBehaviour:
   - Color: {r: 0, g: 0, b: 0, a: 0}
     Symbol: {fileID: 21300000, guid: 72405e6d4b5b3494b9b4209d48bdb377, type: 3}
     Title: Back
---- !u!114 &5569711437071143150
+--- !u!114 &-6756505876901311610
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3694953742231414567}
+  m_GameObject: {fileID: 7630107010366658388}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea5c64a0edbc99b44870f36e22d14ba0, type: 3}
