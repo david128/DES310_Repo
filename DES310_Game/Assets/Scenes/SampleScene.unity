@@ -423,14 +423,14 @@ RectTransform:
   m_GameObject: {fileID: 340012572}
   m_LocalRotation: {x: -0, y: -0, z: 0.0050139325, w: 0.9999875}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.44285828, y: 0.3581213, z: 0.28721508}
+  m_LocalScale: {x: 0.5748269, y: 0.4648389, z: 0.37280315}
   m_Children: []
   m_Father: {fileID: 1956368649}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.57500005}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -23, y: 158.3}
+  m_AnchoredPosition: {x: -24.6, y: 163.2}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &340012574
@@ -453,7 +453,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: a337b716f1dde094b937c8c32adcd111, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7a68498b7a49eeb4eacf3844a18c98e3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1636,7 +1636,7 @@ RectTransform:
   m_GameObject: {fileID: 2107837174}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3831489, y: 0.3831489, z: 0.3831489}
+  m_LocalScale: {x: 0.36399147, y: 0.3831489, z: 0.3831489}
   m_Children: []
   m_Father: {fileID: 1956368649}
   m_RootOrder: 6
@@ -1805,6 +1805,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 524683059575730236, guid: 89115c32df845104ea69fe30cb1aeb71,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.5999985
+      objectReference: {fileID: 0}
+    - target: {fileID: 524683059575730236, guid: 89115c32df845104ea69fe30cb1aeb71,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.8999996
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89115c32df845104ea69fe30cb1aeb71, type: 3}
