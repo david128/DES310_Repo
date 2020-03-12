@@ -75,8 +75,6 @@ public class GridScript : MonoBehaviour
         //spawns outside ground
         Instantiate(Resources.Load("Grid"), new Vector3(36.0f, 1.0f, 25.9f), Quaternion.identity);
 
-        Instantiate(Resources.Load("GridFill"), new Vector3(36.0f, 1.08f, 25.9f), Quaternion.identity);
-
         //lockLvl2 = Instantiate(Resources.Load("Locked_lvl2"), new Vector3(76.64f, 12.0f, -14.213f), Quaternion.identity);
 
         //lockLvl3 = Instantiate(Resources.Load("Locked_lvl3"), new Vector3(-11.89f, 12.0f, 87.5f), new Quaternion(0.0f, 0.7071f, 0.0f, 0.7071f));
