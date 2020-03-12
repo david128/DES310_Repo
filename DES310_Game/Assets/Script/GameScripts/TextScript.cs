@@ -15,8 +15,8 @@ public class TextScript : MonoBehaviour
     public void UpdateText()
     {
         //translates into strings to be displayed
-        foodText.text = (gameManager.GetComponent<FoodScript>().GetFood().ToString());
-        moneyText.text = (gameManager.GetComponent<Currency>().GetMoney().ToString());
+        foodText.text = ("Food:" + gameManager.GetComponent<FoodScript>().GetFood().ToString());
+        moneyText.text = ("Money:" + gameManager.GetComponent<Currency>().GetMoney().ToString());
         fpsText.text = ("FPS: " + gameManager.GetComponent<GameLoop>().GetFPS().ToString());
     }
 }

@@ -1,0 +1,154 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1627565956689138989
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2363579763461678910}
+  - component: {fileID: 6743606056546491656}
+  - component: {fileID: 1056816019268149745}
+  - component: {fileID: 1797079696881379728}
+  - component: {fileID: -4416741568834063643}
+  - component: {fileID: -4223616638916362627}
+  - component: {fileID: 4224515145608635629}
+  m_Layer: 0
+  m_Name: MeatLab
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2363579763461678910
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627565956689138989}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0115, y: 0.0081, z: -0.115}
+  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &6743606056546491656
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627565956689138989}
+  m_Mesh: {fileID: 3620999561706935866, guid: 2f57aaff3515b784097a48735bac7e9c, type: 3}
+--- !u!23 &1056816019268149745
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627565956689138989}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 69dd36af093b33c4bbcf94e097dcaa51, type: 2}
+  - {fileID: 2100000, guid: e9e42fd411fe66549903241181541cad, type: 2}
+  - {fileID: 2100000, guid: 4a378bd5f449bcc479dde06542f5c3b1, type: 2}
+  - {fileID: 2100000, guid: ba0ed77097f0023429517d98f52249f5, type: 2}
+  - {fileID: 2100000, guid: 7eac8f36072f122419a0b6ea55db7d7c, type: 2}
+  - {fileID: 2100000, guid: 5170b9dabc8d00f4d80732f6781e6dc3, type: 2}
+  - {fileID: 2100000, guid: df3bb744bef17ba4c850ce801391ce01, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!114 &1797079696881379728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627565956689138989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea5c64a0edbc99b44870f36e22d14ba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fillType: 0
+--- !u!114 &-4416741568834063643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627565956689138989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 155482db5d7f9994fbe59fb2639247e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 0
+  objectType: 12
+  level: 1
+--- !u!114 &-4223616638916362627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627565956689138989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c39e48ac04108ff439ee1b74af5371b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: Meat Lab
+  options:
+  - Color: {r: 0, g: 0, b: 0, a: 0}
+    Symbol: {fileID: 21300000, guid: aca4cbc874326ab478a020a0696caeed, type: 3}
+    Title: Upgrade
+  - Color: {r: 0, g: 0, b: 0, a: 0}
+    Symbol: {fileID: 21300000, guid: 59f671ec53a8d5843b6ef4ff9378c2d3, type: 3}
+    Title: Demolish
+  - Color: {r: 0, g: 0, b: 0, a: 0}
+    Symbol: {fileID: 21300000, guid: 72405e6d4b5b3494b9b4209d48bdb377, type: 3}
+    Title: Back
+--- !u!65 &4224515145608635629
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627565956689138989}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.14999999, y: 0.025876231, z: 0.09999999}
+  m_Center: {x: 0, y: 0.01298309, z: 0}

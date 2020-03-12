@@ -279,12 +279,16 @@ public class InputScript : MonoBehaviour
         //casts a ray from camera to mouse position
         Ray ray = Camera.main.ScreenPointToRay(pos);
 
+        if(EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
+
         if (selecting == true)
         {
             //Checks if the ray connects with an object/asset
             if (Physics.Raycast(ray, out hit))
             {
-
                 selectedID = hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectID(); //object we are clicking's ID
 
                 Renderer rs = hit.collider.GetComponent<Renderer>();
@@ -297,7 +301,6 @@ public class InputScript : MonoBehaviour
                 }
 
                 Debug.Log("Selected " + selectedID.ToString());
-
             }
         }
     }
