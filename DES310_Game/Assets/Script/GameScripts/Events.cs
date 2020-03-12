@@ -73,10 +73,34 @@ public class Events : MonoBehaviour
         return (currentLevels[0]);
     }
 
+    float FindValue(ObjectFill.FillType fill, EventRequirementName req, int minLevel, int maxLevel )
+    {
+
+        //make this get current values based on paramaters.
+        if (req == EventRequirementName.COUNT)
+        {
+
+        }
+        else if (req == EventRequirementName.FOOD)
+        {
+
+        }
+        else if (req == EventRequirementName.SUSTAINABILITY)
+        {
+
+        }
+        else if (req == EventRequirementName.TIME)
+        {
+
+        }
+        return 100;
+    }
+
     public void checkTrigger() //loop through gameEvents here and check for req
     {
         
         bool triggered = false; // flag to check if an event has been triggered
+        
         int count = 0;
         while (triggered == false && count < gameEvents.Count)
         {
@@ -92,14 +116,49 @@ public class Events : MonoBehaviour
                     if(eventRequirements[i] is ValueMinOrMax)
                     {
                         //req is a min/max Value
+                        float comparison = FindValue(ObjectFill.FillType.NONE, eventRequirements[i].GetRequirementType(),1,3);
+                        if (eventRequirements[i].GetMin() == true)
+                        {
+                            
+                            
+                            //min
+                            if (comparison< eventRequirements[i].GetValue() )
+                            {
+                                triggered = false;
+                            }
 
-                        //if not true then set to false
-
+                        }
+                        else
+                        {
+                            //max
+                            if (comparison>eventRequirements[i].GetValue() )
+                            {
+                                triggered = false;
+                            }
+                        }
                         Debug.Log("min/max");
                     }
                     else if (eventRequirements[i] is string)
                     {
                         Debug.Log("and/or");
+                        if (eventRequirements[i] == "or")
+                        {
+                            if (triggered == false)
+                            {
+                                //reset and check other condition
+                                triggered = true;
+                            }
+                            else
+                            {
+                                //prev condition is true so dont need to check second
+                                i = eventRequirements.Count;
+                            }
+                        }
+                        else if (triggered == false)
+                        {
+                            //fitst condition has failed so no need to continue check
+                            i = eventRequirements.Count;
+                        }
                     }
                     else if (eventRequirements[i] is ValueRange)
                     {
@@ -110,20 +169,71 @@ public class Events : MonoBehaviour
                     {
                         //req is fill type
 
-                        Debug.Log("fill");
+                        //wont have fill in non sub req so wont need this probs?
+                        
 
                     }
                     else
                     {
+                        ObjectFill.FillType currentFill = ObjectFill.FillType.NONE;
+                        int minLevel =1;
+                        int maxLevel = 3;
                         for (int j = 0; j < eventRequirements[i].Count; j++)
                         {
+                           
                             if (eventRequirements[i][j] is ValueMinOrMax)
                             {
-                                Debug.Log("min/max");
+                                //req is a min/max Value
+                                float comparison = FindValue(currentFill, eventRequirements[i][j].GetRequirementType(), minLevel, maxLevel);
+                                if (eventRequirements[i][j].GetMin() == true)
+                                {
+                                    //min
+                                    if (eventRequirements[i][j].GetRequirementType() == EventRequirementName.LEVEL)
+                                    {
+                                        minLevel = eventRequirements[i][j].GetValue();
+                                    }
+                                    else if (comparison <= eventRequirements[i][j].GetValue())
+                                    {
+                                        triggered = false;
+                                    }
+
+                                }
+                                else
+                                {
+                                    //max
+                                    if (eventRequirements[i][j].GetRequirementType() == EventRequirementName.LEVEL)
+                                    {
+                                        maxLevel = eventRequirements[i][j].GetValue();
+                                    }
+                                    else if (comparison >= eventRequirements[i][j].GetValue())
+                                    {
+                                        triggered = false;
+                                    }
+                                }
+                                //Debug.Log("min/max");
                             }
                             else if (eventRequirements[i][j] is string)
                             {
                                 Debug.Log("and/or");
+                                if (eventRequirements[i][j] == "or")
+                                {
+                                    if (triggered == false)
+                                    {
+                                        //reset and check other condition
+                                        triggered = true;
+                                    }
+                                    else
+                                    {
+                                        //prev condition is true so dont need to check second
+                                        i = eventRequirements.Count;
+                                    }
+
+                                }
+                                else if (triggered == false)
+                                {
+                                    //first condition has failed so no need to continue check
+                                    i = eventRequirements.Count;
+                                }
 
                             }
                             else if (eventRequirements[i][j] is ValueRange)
@@ -134,6 +244,8 @@ public class Events : MonoBehaviour
                             else if (eventRequirements[i][j] is ObjectFill.FillType)
                             {
                                 //req is fill type
+                                currentFill = eventRequirements[i][j];
+
                                 Debug.Log("fill");
 
                             }
@@ -155,28 +267,10 @@ public class Events : MonoBehaviour
 
             count += 1;
         }
-
-        while (count <gameEvents.Count)
-        {
-
-        }
         
     }
 
-    bool CompareToMin()
-    {
-        return true;
-    }
 
-    bool CompareToMax()
-    {
-        return true;
-    }
-
-    bool CompareToRange()
-    {
-        return true;
-    }
 
     //read in events
     public void HandleEventFile()
@@ -191,8 +285,8 @@ public class Events : MonoBehaviour
         {    
             GameEvent newGameEvent = new GameEvent();
             EventRequirement newReq = new EventRequirement();
-            ValueMinOrMax minValue = new ValueMinOrMax(false, 0);
-            ValueMinOrMax maxValue = new ValueMinOrMax(true, 0);
+            ValueMinOrMax minValue = new ValueMinOrMax(true, 0);
+            ValueMinOrMax maxValue = new ValueMinOrMax(false, 0);
             ValueRange rangeValue = new ValueRange();
             EventEffects newEffects = new EventEffects(0, 0, 0,ObjectFill.FillType.NONE);
             eventDone = false;
@@ -246,7 +340,7 @@ public class Events : MonoBehaviour
                         }
                         break;
                     case ("FOOD"):
-                        minValue = new ValueMinOrMax(false, 0);
+                        minValue = new ValueMinOrMax(true, 0);
                         minValue.SetRequirementType(EventRequirementName.FOOD);
                         i += 1;
                         minValue.SetValue(float.Parse(lines[i]));
@@ -261,7 +355,7 @@ public class Events : MonoBehaviour
                         break;
 
                     case ("SUSTAINABILLITY"):
-                        minValue = new ValueMinOrMax(false, 0);
+                        minValue = new ValueMinOrMax(true, 0);
                         minValue.SetRequirementType(EventRequirementName.SUSTAINABILITY);
                         i += 1;
                         minValue.SetValue(float.Parse(lines[i]));
@@ -276,7 +370,7 @@ public class Events : MonoBehaviour
                         break;
 
                     case ("TIME_MIN"):
-                        minValue = new ValueMinOrMax(false, 0);
+                        minValue = new ValueMinOrMax(true, 0);
                         minValue.SetRequirementType(EventRequirementName.TIME);
                         i += 1;
                         minValue.SetValue(float.Parse(lines[i]));
@@ -312,7 +406,7 @@ public class Events : MonoBehaviour
                         }
                         break;
                     case ("LVL"):
-                        minValue = new ValueMinOrMax(false, 0);
+                        minValue = new ValueMinOrMax(true, 0);
                         minValue.SetRequirementType(EventRequirementName.LEVEL);
                         i += 1;
                         minValue.SetValue(float.Parse(lines[i]));
@@ -326,7 +420,7 @@ public class Events : MonoBehaviour
                         }
                         break;
                     case ("COUNT"):
-                        minValue = new ValueMinOrMax(false, 0);
+                        minValue = new ValueMinOrMax(true, 0);
                         minValue.SetRequirementType(EventRequirementName.COUNT);
                         i += 1;
                         minValue.SetValue(float.Parse(lines[i]));
@@ -456,7 +550,7 @@ class ValueMinOrMax
     }
 
     EventRequirementName requirementType; //type of requirement
-    bool min;
+    bool min; //true for min
     float value;
     public void SetValue(float v) { value= v; }
     public EventRequirementName GetRequirementType() { return requirementType; }
