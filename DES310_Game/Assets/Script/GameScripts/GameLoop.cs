@@ -27,7 +27,7 @@ public class GameLoop : MonoBehaviour
     void Update()
     {
 
-        Debug.Log(QualitySettings.vSyncCount.ToString());
+        //Debug.Log(QualitySettings.vSyncCount.ToString());
         //Adds up time passed every frame
         time += Time.deltaTime;
 

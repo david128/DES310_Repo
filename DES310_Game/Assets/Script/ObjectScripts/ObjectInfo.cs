@@ -21,7 +21,8 @@ public class ObjectInfo : MonoBehaviour
         COW_FIELD = 8,
         RESEARCH = 9,
         VERTICAL_FARM = 10,
-        LOCKED = 11
+        LOCKED = 11,
+        MEAT_LAB = 12
     };
   
     public int level;
