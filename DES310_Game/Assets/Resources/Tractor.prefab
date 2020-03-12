@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7918571774498599336
+--- !u!1 &7358550083675026408
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6611058629707203515}
-  - component: {fileID: 2802422544881531277}
-  - component: {fileID: 8491745041050387828}
+  - component: {fileID: 5784182715759198715}
+  - component: {fileID: 3251191251290504141}
+  - component: {fileID: 9088831794975655732}
   m_Layer: 0
   m_Name: Tractor 1
   m_TagString: Untagged
@@ -18,13 +18,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6611058629707203515
+--- !u!4 &5784182715759198715
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7918571774498599336}
+  m_GameObject: {fileID: 7358550083675026408}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 67.29, y: 2, z: 32.36}
   m_LocalScale: {x: 50, y: 50, z: 50}
@@ -32,21 +32,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &2802422544881531277
+--- !u!33 &3251191251290504141
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7918571774498599336}
+  m_GameObject: {fileID: 7358550083675026408}
   m_Mesh: {fileID: 172599395785400481, guid: 0f8b43b56c78475428ce41b2ce40eb3d, type: 3}
---- !u!23 &8491745041050387828
+--- !u!23 &9088831794975655732
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7918571774498599336}
+  m_GameObject: {fileID: 7358550083675026408}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -57,13 +57,13 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1580535799172915004, guid: 0f8b43b56c78475428ce41b2ce40eb3d, type: 3}
-  - {fileID: -4973734387028869240, guid: 0f8b43b56c78475428ce41b2ce40eb3d, type: 3}
-  - {fileID: -4770390735465466038, guid: 0f8b43b56c78475428ce41b2ce40eb3d, type: 3}
-  - {fileID: -7705134699115681519, guid: 0f8b43b56c78475428ce41b2ce40eb3d, type: 3}
-  - {fileID: -382652638819485698, guid: 0f8b43b56c78475428ce41b2ce40eb3d, type: 3}
-  - {fileID: 8556262120643298411, guid: 0f8b43b56c78475428ce41b2ce40eb3d, type: 3}
-  - {fileID: 5561349426305759274, guid: 0f8b43b56c78475428ce41b2ce40eb3d, type: 3}
+  - {fileID: 2100000, guid: 7eac8f36072f122419a0b6ea55db7d7c, type: 2}
+  - {fileID: 2100000, guid: 7eac8f36072f122419a0b6ea55db7d7c, type: 2}
+  - {fileID: 2100000, guid: 4674bae256f6a0749b335f1ee8e849b1, type: 2}
+  - {fileID: 2100000, guid: e9e42fd411fe66549903241181541cad, type: 2}
+  - {fileID: 2100000, guid: fc26c50d5e1c7ca49848d9c09373a43d, type: 2}
+  - {fileID: 2100000, guid: df3bb744bef17ba4c850ce801391ce01, type: 2}
+  - {fileID: 2100000, guid: e9e42fd411fe66549903241181541cad, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

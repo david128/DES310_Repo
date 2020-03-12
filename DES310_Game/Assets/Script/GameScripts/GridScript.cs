@@ -18,6 +18,8 @@ public class GridScript : MonoBehaviour
     //list if tiles on grid
     List<GameObject> gridSquares = new List<GameObject>();
 
+    public List<GameObject> GetGrid() { return gridSquares; }
+
     //removes tile from the grid list
     public void RemoveGridTile(GameObject ob) { gridSquares.Remove(ob); }
 
@@ -51,16 +53,16 @@ public class GridScript : MonoBehaviour
         {
             return null;
         }
-   }
+    }
 
     //Creates the grid with the tiles and spacing betwen them
-   public void CreateGrid()
-    { 
+    public void CreateGrid()
+    {
         //Declares variable
         int id = 0;
 
         //Creates minimum spacing if the default is below 1
-        if(xSpacing< 1)
+        if (xSpacing < 1)
         {
             xSpacing = 1;
         }
@@ -73,8 +75,6 @@ public class GridScript : MonoBehaviour
         //spawns outside ground
         Instantiate(Resources.Load("Grid"), new Vector3(36.0f, 1.0f, 25.9f), Quaternion.identity);
 
-        Instantiate(Resources.Load("GridFill"), new Vector3(36.0f, 1.08f, 25.9f), Quaternion.identity);
-
         //lockLvl2 = Instantiate(Resources.Load("Locked_lvl2"), new Vector3(76.64f, 12.0f, -14.213f), Quaternion.identity);
 
         //lockLvl3 = Instantiate(Resources.Load("Locked_lvl3"), new Vector3(-11.89f, 12.0f, 87.5f), new Quaternion(0.0f, 0.7071f, 0.0f, 0.7071f));
@@ -84,7 +84,7 @@ public class GridScript : MonoBehaviour
         //creates and instantiates each tile, giving them a unique ID
         for (int i = 0; i < columnLength; i++)
         {
-            for(int j = 0; j< rowLength; j++)
+            for (int j = 0; j < rowLength; j++)
             {
                 //Calls Create Square function to place a unique tile
                 CreateSquare(new Vector3((xSpacing * (i % columnLength)), 1.0f, (zSpacing * (j % rowLength))), id);
@@ -101,7 +101,7 @@ public class GridScript : MonoBehaviour
         if (ID == 10)
         {
             gridSquares.Add((GameObject)Instantiate(Resources.Load("Barn"), pos, Quaternion.identity));
-            gridSquares[ID].GetComponent < ObjectInfo>().SetObjectID(ID);
+            gridSquares[ID].GetComponent<ObjectInfo>().SetObjectID(ID);
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectType(ObjectInfo.ObjectType.BARN);
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectLevel(1);
         }
@@ -127,6 +127,28 @@ public class GridScript : MonoBehaviour
             gridSquare.GetComponent<ObjectInfo>().SetObjectID(ID);
             gridSquare.GetComponent<ObjectInfo>().SetObjectType(ObjectInfo.ObjectType.EMPTY);
             gridSquares.Add((GameObject)Instantiate(gridSquare, pos, Quaternion.identity));
+        }
+    }
+
+    //creates individual tiles, setting ID and types
+    public void LoadGrid(int[] ID, Vector3[] pos, string[] type, int[] lvl, string[] fill)
+    {
+        ObjectFill.FillType[] gridFill;
+        ObjectInfo.ObjectType[] gridType;
+
+        gridFill = new ObjectFill.FillType[25];
+        gridType = new ObjectInfo.ObjectType[25];
+
+        AssetChange gridLoad = gameObject.GetComponent<AssetChange>();
+
+
+        //creates and instantiates each tile, giving them a unique ID
+        for (int i = 0; i < columnLength * rowLength; i++)
+        { 
+                gridFill[i] = (ObjectFill.FillType)System.Enum.Parse(typeof(ObjectFill.FillType), fill[i]);
+                gridType[i] = (ObjectInfo.ObjectType)System.Enum.Parse(typeof(ObjectInfo.ObjectType), type[i]);
+
+                gridLoad.ChangeAsset(ID[i], lvl[i], gridType[i], gridFill[i]);
         }
     }
 }

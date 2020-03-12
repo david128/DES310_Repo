@@ -17,7 +17,7 @@ public class GameLoop : MonoBehaviour
         QualitySettings.vSyncCount = 0;
         
         //load events
-        //gameManager.GetComponent<Events>().HandleEventFile();
+        gameManager.GetComponent<Events>().HandleEventFile();
 
         //Creates grid at the start
         gameManager.GetComponent<GridScript>().CreateGrid();
@@ -27,21 +27,21 @@ public class GameLoop : MonoBehaviour
     void Update()
     {
 
-        Debug.Log(QualitySettings.vSyncCount.ToString());
+        //Debug.Log(QualitySettings.vSyncCount.ToString());
         //Adds up time passed every frame
         time += Time.deltaTime;
 
         FPS = 1.0f / Time.deltaTime;
 
         //When the time gets to 3 seconds the money will increase causing a passive income
-        //if (time > 3)
-        //{
-        //    //Resets the period of time for the passive income
-        //    time = 0.0f;
+        if (time > 3)
+        {
+            //Resets the period of time for the passive income
+            time = 0.0f;
 
-        //    //checks for events
-        //    gameManager.GetComponent<Events>().checkTrigger();
-        //}
+            //checks for events
+            gameManager.GetComponent<Events>().checkTrigger();
+        }
 
         //Gets input from player
         gameManager.GetComponent<InputScript>().GetInput();

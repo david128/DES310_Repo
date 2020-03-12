@@ -7,7 +7,7 @@ public class ObjectOutput : MonoBehaviour
     GameObject gameManager;
 
     public int moneyOutput;
-    public float foodOutput;
+    public int foodOutput;
 
     void Start()
     {
@@ -20,7 +20,8 @@ public class ObjectOutput : MonoBehaviour
 
         gameManager.GetComponent<Currency>().AddMoney(moneyOutput);
         gameManager.GetComponent<FoodScript>().AddFood(foodOutput);
-
+        int s;
+        
     }
 
 }
