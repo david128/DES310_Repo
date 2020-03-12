@@ -181,8 +181,8 @@ public class AssetChange : MonoBehaviour
                 return (GameObject)Instantiate(Resources.Load("Wheat"), transform.position, Quaternion.identity, newAsset.transform);
                 
             case ObjectFill.FillType.CORN:
-                return (GameObject)Instantiate(Resources.Load("Corn"), new Vector3(transform.position.x, transform.position.y + 1.8f, transform.position.z), Quaternion.identity, newAsset.transform);
-                
+                return (GameObject)Instantiate(Resources.Load("Corn"), transform.position, Quaternion.identity, newAsset.transform);
+
             case ObjectFill.FillType.CARROT:
                 return (GameObject)Instantiate(Resources.Load("Carrots"), transform.position, Quaternion.identity, newAsset.transform);
                 

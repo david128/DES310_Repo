@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 56a6e15804ae25240bcbb3160fe42c7e
+guid: adc416c5502eb334d931b3501c7e2637
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
@@ -7,8 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Grass_Mat
-    second: {fileID: 2100000, guid: 7256c6e7f12b80949a2d6ed03b89e6b5, type: 2}
+      name: CocoaPlant_Mat
+    second: {fileID: 2100000, guid: 272a3d527f6617b4783c7d4916510ec9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leaf1_Mat
+    second: {fileID: 2100000, guid: 8f55cb972ddfeb5458b1c439909ad489, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LightGreen1
+    second: {fileID: 2100000, guid: e938329c797fa1b45a496cc3fb7add4a, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
