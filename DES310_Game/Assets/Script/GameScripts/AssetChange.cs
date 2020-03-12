@@ -137,7 +137,7 @@ public class AssetChange : MonoBehaviour
 
 
         //Checks if the object being cahnged is a field or not to set the fill of the grid
-        if (type == ObjectInfo.ObjectType.FIELD || type == ObjectInfo.ObjectType.CHICKEN_COOP || type == ObjectInfo.ObjectType.COW_FIELD || type == ObjectInfo.ObjectType.PIG_PEN)
+        if (type == ObjectInfo.ObjectType.FIELD)
         {
             //load correct fill based on whats chosen
             newFill = LoadFill(fill, transform);
@@ -190,20 +190,11 @@ public class AssetChange : MonoBehaviour
                 return (GameObject)Instantiate(Resources.Load("Turnips"), transform.position, Quaternion.identity, newAsset.transform);
                 
             case ObjectFill.FillType.COW:
-
-                Instantiate(Resources.Load("Cow"), new Vector3(transform.position.x + 2.03f, transform.position.y, transform.position.z + 1.83f), new Quaternion(0.0f, 0.999f, 0.0f, 0.041f), newAsset.transform);
-
-                Instantiate(Resources.Load("Cow"), new Vector3(transform.position.x - 2.4f, transform.position.y, transform.position.z + 2.31f), new Quaternion(0.0f, 0.287f, 0.0f, 0.958f), newAsset.transform);
-
-                return (GameObject)Instantiate(Resources.Load("Cow"), new Vector3(transform.position.x + 0.37f, transform.position.y, transform.position.z - 0.43f), new Quaternion(0.0f, 0.827f, 0.0f, -0.563f), newAsset.transform);
-
+                return (GameObject)Instantiate(Resources.Load("Carrots"), transform.position, Quaternion.identity, newAsset.transform);
+                
             case ObjectFill.FillType.PIG:
-                Instantiate(Resources.Load("Pig"), new Vector3(transform.position.x + 2.23f, transform.position.y, transform.position.z + 0.14f), new Quaternion(0.0f, 0.999f, 0.0f, 0.041f), newAsset.transform);
-
-                Instantiate(Resources.Load("Pig"), new Vector3(transform.position.x - 3.13f, transform.position.y, transform.position.z + 1.21f), new Quaternion(-0.0f, -0.994f, -0.0f, 0.106f), newAsset.transform);
-
-                return (GameObject)Instantiate(Resources.Load("Pig"), new Vector3(transform.position.x - 1.39f, transform.position.y, transform.position.z - 1.72f), new Quaternion(0.0f, 0.827f, 0.0f, -0.563f), newAsset.transform);
-
+                return (GameObject)Instantiate(Resources.Load("Carrots"), transform.position, Quaternion.identity, newAsset.transform);
+                
             case ObjectFill.FillType.CHICKEN:
                 return (GameObject)Instantiate(Resources.Load("Chicken"), transform.position, Quaternion.identity, newAsset.transform);
                 
