@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -4416741568834063643}
   - component: {fileID: -4223616638916362627}
   - component: {fileID: 4224515145608635629}
+  - component: {fileID: 161230322082038143}
   m_Layer: 0
   m_Name: MeatLab
   m_TagString: Untagged
@@ -152,3 +153,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.14999999, y: 0.025876231, z: 0.09999999}
   m_Center: {x: 0, y: 0.01298309, z: 0}
+--- !u!95 &161230322082038143
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627565956689138989}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: de994223fa91acb4daf552afbe2c554e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

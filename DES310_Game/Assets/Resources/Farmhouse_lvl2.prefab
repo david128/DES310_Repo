@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -4078323597456579093}
   - component: {fileID: 1516078635731180947}
   - component: {fileID: -615879654103966059}
+  - component: {fileID: 1118504425449725123}
   m_Layer: 0
   m_Name: Farmhouse_lvl2
   m_TagString: Untagged
@@ -148,3 +149,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fillType: 0
+--- !u!95 &1118504425449725123
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3779088972723247121}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: de994223fa91acb4daf552afbe2c554e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
