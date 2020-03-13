@@ -176,7 +176,7 @@ public class Events : MonoBehaviour
                     else
                     {
                         ObjectFill.FillType currentFill = ObjectFill.FillType.NONE;
-                        int minLevel =1;
+                        int minLevel = 1;
                         int maxLevel = 3;
                         for (int j = 0; j < eventRequirements[i].Count; j++)
                         {
