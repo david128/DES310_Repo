@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 4034911323695938661}
   - component: {fileID: -456610134402423619}
   - component: {fileID: 7725105936565053091}
+  - component: {fileID: 2908653445143244802}
   m_Layer: 0
   m_Name: VerticalFarm
   m_TagString: Untagged
@@ -223,6 +224,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 12, y: 1, z: 8}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &2908653445143244802
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769837288256873047}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 46040039740348d4d912821159d25b68, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4152337148165702058
 GameObject:
   m_ObjectHideFlags: 0
