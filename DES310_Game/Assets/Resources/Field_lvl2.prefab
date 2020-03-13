@@ -168,7 +168,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6377038458832235688}
-  - component: {fileID: 2470888032314359174}
+  - component: {fileID: 5703830946615693339}
   m_Layer: 0
   m_Name: Sprayer
   m_TagString: Untagged
@@ -192,22 +192,25 @@ Transform:
   m_Father: {fileID: 437182664931293116}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!111 &2470888032314359174
-Animation:
+--- !u!95 &5703830946615693339
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 700227172057633470}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 3cd8d38d1bde6684898d19e5a5617a5e, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 3cd8d38d1bde6684898d19e5a5617a5e, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eeb67323d30a87943978b2765023e2f2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1746835472728634362
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,7 +224,7 @@ GameObject:
   - component: {fileID: -3285379489528342557}
   - component: {fileID: 8150671863687544766}
   - component: {fileID: 5124160727168966389}
-  - component: {fileID: 5254696602828912787}
+  - component: {fileID: -2451356019775153901}
   m_Layer: 0
   m_Name: Field_lvl2
   m_TagString: Untagged
@@ -308,7 +311,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 12, y: 1, z: 8}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!95 &5254696602828912787
+--- !u!95 &-2451356019775153901
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
