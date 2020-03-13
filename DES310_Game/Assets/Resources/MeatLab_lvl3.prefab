@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3486049336427140657}
   - component: {fileID: 4506517853132135406}
   - component: {fileID: 2387434344389422145}
+  - component: {fileID: 2698077343829495757}
   m_Layer: 0
   m_Name: MeatLab_lvl3
   m_TagString: Untagged
@@ -162,3 +163,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyOutput: 5000
   foodOutput: 5000
+--- !u!95 &2698077343829495757
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4286200835293396105}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: de994223fa91acb4daf552afbe2c554e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

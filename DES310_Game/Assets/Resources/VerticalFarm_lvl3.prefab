@@ -242,6 +242,7 @@ GameObject:
   - component: {fileID: 4008667576725424821}
   - component: {fileID: 3112893215007467635}
   - component: {fileID: -8551552942916049914}
+  - component: {fileID: -8622164718211963508}
   m_Layer: 0
   m_Name: VerticalFarm_lvl3
   m_TagString: Untagged
@@ -339,3 +340,22 @@ MonoBehaviour:
   ID: 0
   objectType: 10
   level: 3
+--- !u!95 &-8622164718211963508
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5806466555874011451}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: de994223fa91acb4daf552afbe2c554e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
