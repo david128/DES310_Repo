@@ -176,7 +176,7 @@ public class Events : MonoBehaviour
                     else
                     {
                         ObjectFill.FillType currentFill = ObjectFill.FillType.NONE;
-                        int minLevel =1;
+                        int minLevel = 1;
                         int maxLevel = 3;
                         for (int j = 0; j < eventRequirements[i].Count; j++)
                         {
@@ -190,7 +190,8 @@ public class Events : MonoBehaviour
                                     //min
                                     if (eventRequirements[i][j].GetRequirementType() == EventRequirementName.LEVEL)
                                     {
-                                        minLevel = eventRequirements[i][j].GetValue();
+                                        
+                                        minLevel = (int)eventRequirements[i][j].GetValue();
                                     }
                                     else if (comparison <= eventRequirements[i][j].GetValue())
                                     {
@@ -203,7 +204,7 @@ public class Events : MonoBehaviour
                                     //max
                                     if (eventRequirements[i][j].GetRequirementType() == EventRequirementName.LEVEL)
                                     {
-                                        maxLevel = eventRequirements[i][j].GetValue();
+                                        maxLevel = (int)eventRequirements[i][j].GetValue();
                                     }
                                     else if (comparison >= eventRequirements[i][j].GetValue())
                                     {
