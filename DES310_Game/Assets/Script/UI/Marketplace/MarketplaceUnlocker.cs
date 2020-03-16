@@ -18,6 +18,7 @@ public class MarketplaceUnlocker : MonoBehaviour
 
     void Start()
     {
+        gls.GetLevels();
         levels = gls.GetLvls();
 
         int currentFarmLevel = levels[0];

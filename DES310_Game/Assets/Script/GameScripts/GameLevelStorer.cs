@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameLevelStorer : MonoBehaviour
+public class GameLevelStorer 
 {
     GameObject farmhouse;
     GameObject barn;
@@ -17,6 +17,7 @@ public class GameLevelStorer : MonoBehaviour
     // Start is called before the first frame update
     public void GetLevels()
     {
+        gameManager = GameObject.FindGameObjectWithTag("GameController");
         farmhouse = gameManager.GetComponent<GridScript>().GetGridTile(23);
         barn = gameManager.GetComponent<GridScript>().GetGridTile(10);
         research = gameManager.GetComponent<GridScript>().GetGridTile(9);
