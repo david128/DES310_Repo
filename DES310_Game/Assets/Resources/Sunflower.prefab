@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7216121409038081832}
   - component: {fileID: 3970021319256679377}
   - component: {fileID: 25238506648541706}
+  - component: {fileID: 8124126352576027581}
   m_Layer: 0
   m_Name: Sunflower
   m_TagString: Untagged
@@ -96,3 +97,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyOutput: 225
   foodOutput: 75
+--- !u!114 &8124126352576027581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3396997625463412493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16a9890003ad75e44a2160c8797ef730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pol_lvl1: 0
+  pol_lvl2: 0
+  pol_lvl3: 0

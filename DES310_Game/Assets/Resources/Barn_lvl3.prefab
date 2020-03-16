@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8562601820301304895}
   - component: {fileID: 4165144675683204194}
   - component: {fileID: -7983737220450296963}
+  - component: {fileID: -759990428134272967}
   m_Layer: 0
   m_Name: Barn_lvl3
   m_TagString: Untagged
@@ -93,6 +94,21 @@ MonoBehaviour:
   ID: 0
   objectType: 5
   level: 3
+--- !u!114 &-759990428134272967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705080105096421812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16a9890003ad75e44a2160c8797ef730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pol_lvl1: 0
+  pol_lvl2: 0
+  pol_lvl3: 0
 --- !u!1 &4485626906738122659
 GameObject:
   m_ObjectHideFlags: 0

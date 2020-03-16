@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: -456610134402423619}
   - component: {fileID: 7725105936565053091}
   - component: {fileID: 5277744042836856840}
+  - component: {fileID: 4186855130131797255}
   m_Layer: 0
   m_Name: VerticalFarm
   m_TagString: Untagged
@@ -243,6 +244,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4186855130131797255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769837288256873047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16a9890003ad75e44a2160c8797ef730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pol_lvl1: 0
+  pol_lvl2: 0
+  pol_lvl3: 0
 --- !u!1 &4152337148165702058
 GameObject:
   m_ObjectHideFlags: 0

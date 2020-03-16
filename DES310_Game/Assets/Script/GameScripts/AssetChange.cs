@@ -164,6 +164,9 @@ public class AssetChange : MonoBehaviour
 
         //Add from list
         gameManager.GetComponent<GridScript>().AddGridTile(newAsset);
+
+        //sust has changed so update.
+        gameManager.GetComponent<SustainabilityScript>().CheckPollution();
     }
 
 
