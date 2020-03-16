@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MarketplaceOptions : MonoBehaviour
 {
-    //GameObject gameManager = GameObject.FindGameObjectWithTag("GameController");
     public ObjectInfo.ObjectType type;
     public ObjectFill.FillType filler;
 
@@ -14,6 +13,7 @@ public class MarketplaceOptions : MonoBehaviour
         i.AllowSelecting();
         Destroy( GameObject.FindGameObjectWithTag("Marketplace"));
     }
+
     public void Build()
     {
         InputScript i = GameObject.FindGameObjectWithTag("GameController").GetComponent<InputScript>();
@@ -22,6 +22,5 @@ public class MarketplaceOptions : MonoBehaviour
 
         Quit();
     }
-
 
 }

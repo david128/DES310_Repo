@@ -557,6 +557,7 @@ GameObject:
   - component: {fileID: 215528165}
   - component: {fileID: 215528168}
   - component: {fileID: 215528166}
+  - component: {fileID: 215528172}
   - component: {fileID: 215528169}
   - component: {fileID: 215528170}
   - component: {fileID: 215528171}
@@ -674,7 +675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f19cc8914b093ae42a14432e92f8db99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 215528158}
   food: 0
   maxFood: 10000
   minFood: 0
@@ -720,8 +721,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcc0458ef08d4cf49afc87015a4ae44d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuPrefab: {fileID: 1116816644762094971, guid: 2fc8793f70326924991d0525bbe066ec,
+  menuPrefab: {fileID: 2959608292089892359, guid: 0b41a891ee1e21d4280bcaa881d0f40f,
     type: 3}
+  gameManager: {fileID: 215528158}
 --- !u!114 &215528170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -744,6 +746,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd5896bebafd3e3468422dc93d4ea5f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 215528158}
+--- !u!114 &215528172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215528158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc29e676ef4ff954ba6d9da1518c04f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 215528158}
