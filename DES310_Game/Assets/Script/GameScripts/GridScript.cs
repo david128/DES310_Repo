@@ -11,13 +11,11 @@ public class GridScript : MonoBehaviour
 
     //initial tile to be placed on grid
     public GameObject gridSquare;
-
     public Object lockLvl2;
     public Object lockLvl3;
 
     //list if tiles on grid
     List<GameObject> gridSquares = new List<GameObject>();
-
     public List<GameObject> GetGrid() { return gridSquares; }
 
     //removes tile from the grid list

@@ -6,7 +6,7 @@ using UnityEngine;
 public class SaveData
 {
     public int money;
-    public int food;
+    public float food;
     public string[] gridType;
     public int[] gridLevel;
     public int[] gridID;
@@ -14,7 +14,7 @@ public class SaveData
     public float[] gridPos;
     public float[] pos;
 
-    public SaveData(int moneyData, int foodData, List<GameObject> grid)
+    public SaveData(int moneyData, float foodData, List<GameObject> grid)
     {
         money = moneyData;
         food = foodData;

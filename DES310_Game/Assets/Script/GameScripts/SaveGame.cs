@@ -6,7 +6,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public static class SaveGame
 {
-    public static void SaveGameData(int moneyData, int foodData, List<GameObject> grid)
+    public static void SaveGameData(int moneyData, float foodData, List<GameObject> grid)
     {
         BinaryFormatter formatter = new BinaryFormatter();
 

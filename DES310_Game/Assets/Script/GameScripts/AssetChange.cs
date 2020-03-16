@@ -151,9 +151,6 @@ public class AssetChange : MonoBehaviour
             fill = ObjectFill.FillType.NONE;
         }
 
-    
-        //newFill.transform.SetParent(newAsset.transform, true);
-
         //remove from list
         gameManager.GetComponent<GridScript>().RemoveGridTile(asset);
 
