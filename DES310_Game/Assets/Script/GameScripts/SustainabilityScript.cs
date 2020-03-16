@@ -4,27 +4,10 @@ using UnityEngine;
 
 public class SustainabilityScript : MonoBehaviour
 {
-    float sust;
+    float sustainability;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
-
-    void SustainabilityCheck()
-    {
-      
-
-    }
+    public float GetSustainability() { return sustainability; }
+    public void AddSustainability(float s) { sustainability += s; }
+    public void SetSustainability(float s) { sustainability = s; }
 
 }
