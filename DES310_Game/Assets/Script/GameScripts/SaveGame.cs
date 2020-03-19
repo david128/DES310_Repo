@@ -6,6 +6,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public static class SaveGame
 {
+    //saves game data 
     public static void SaveGameData(int moneyData, float foodData, List<GameObject> grid)
     {
         BinaryFormatter formatter = new BinaryFormatter();
@@ -21,6 +22,7 @@ public static class SaveGame
         stream.Close();
     }
 
+    //load game data
     public static SaveData LoadGameData()
     {
         string path = Application.persistentDataPath + "/saveData.SaveData";

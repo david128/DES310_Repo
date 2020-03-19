@@ -12,11 +12,10 @@ public class SustainabilityScript : MonoBehaviour
 
     public GameObject gameManager;
 
-
-
     public void CheckPollution()
     {
         sustainability = 0;
+
         List<GameObject> Grid = gameManager.GetComponent<GridScript>().GetGrid();
 
         //for each grid square
