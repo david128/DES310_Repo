@@ -6,11 +6,13 @@ public class Save : MonoBehaviour
 {
     public GameObject gameManager;
 
+    //saves current game data
     public void SaveGameData()
     {
         SaveGame.SaveGameData(gameManager.GetComponent<Currency>().GetMoney(), gameManager.GetComponent<FoodScript>().GetFood(), gameManager.GetComponent<GridScript>().GetGrid());
     }
 
+    //loads data into variables to be used in game
     public void LoadGameData()
     {
         SaveData data = SaveGame.LoadGameData();

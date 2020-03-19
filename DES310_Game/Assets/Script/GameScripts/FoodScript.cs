@@ -10,21 +10,24 @@ public class FoodScript : MonoBehaviour
 
     //Declare food variable
     public float food;
+    float foodOver;
     public float maxFood = 10000;
     public float minFood = 0;
     public float currentFood;
     public Image foodBar;
 
-    //Delcare time variables
+    //Delcare time variables 
+    float time;
     public float maxTime = 10;
     public float minTime = 0;
     public float currentTime;
     public Image timeBar;
 
-    float time;
-
     //Amount required for quota
     float quotaAmount = 10000;
+
+    //money gained after food extracted
+    int moneyGain;
 
     //getter and setter
     public float GetFood() { return food; }
@@ -46,17 +49,28 @@ public class FoodScript : MonoBehaviour
 
         if (time >= maxTime)
         {
-            time = 0;
-            currentFood = 0;
-
-            if (food > quotaAmount)
+            if (currentFood > quotaAmount)
             {
-                float foodOver;
-                int moneyGain;
+                foodOver = currentFood - quotaAmount;
 
-                foodOver = quotaAmount - currentFood;
+                moneyGain = Mathf.RoundToInt(moneyGain / 10) * 10;
+
+                gameManager.GetComponent<Currency>().AddMoney(moneyGain);
 
             }
+
+            if (currentFood < quotaAmount)
+            {
+                foodOver = quotaAmount - currentFood;
+
+                moneyGain = Mathf.RoundToInt(moneyGain / 10) * 10;
+
+                gameManager.GetComponent<Currency>().AddMoney(moneyGain);
+
+            }
+
+            time = 0;
+            currentFood = 0;
 
             food -= food;
         }

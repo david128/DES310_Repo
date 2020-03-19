@@ -30,6 +30,7 @@ public class AssetChange : MonoBehaviour
         //get type
         ObjectInfo.ObjectType type = asset.GetComponent<ObjectInfo>().GetObjectType();
 
+        //set fill
         ObjectFill.FillType fill;
 
         if (type == ObjectInfo.ObjectType.FIELD)
@@ -144,7 +145,6 @@ public class AssetChange : MonoBehaviour
         {
             //load correct fill based on whats chosen
             newFill = LoadFill(fill, transform);
-            
         }
         else
         {
@@ -166,7 +166,7 @@ public class AssetChange : MonoBehaviour
         gameManager.GetComponent<GridScript>().AddGridTile(newAsset);
 
         //sust has changed so update.
-        gameManager.GetComponent<SustainabilityScript>().CheckPollution();
+        //gameManager.GetComponent<SustainabilityScript>().CheckPollution();
     }
 
 

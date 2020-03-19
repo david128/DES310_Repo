@@ -17,7 +17,6 @@ public class ObjectOutput : MonoBehaviour
 
     void GrowthCycle()
     {
-
         gameManager.GetComponent<Currency>().AddMoney(moneyOutput);
         gameManager.GetComponent<FoodScript>().AddFood(foodOutput);
         int s;

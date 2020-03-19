@@ -22,7 +22,7 @@ public class InputScript : MonoBehaviour
     /// <summary> The point of contact if it exists in Screen space. </summary>
     public Vector2 touchPosition { get { return touch0LastPosition; } }
 
-    public float maxDistanceForTap = 40;
+    public float maxDistanceForTap = 10.0f;
     public float maxDurationForTap = 0.4f;
 
     //Declare variables
@@ -103,6 +103,16 @@ public class InputScript : MonoBehaviour
             Camera.main.orthographicSize += .1f;
         }
 
+        if (Input.GetKey("m"))
+        {
+            Camera.main.orthographicSize += .1f;
+        }
+
+        if (Input.GetKey("n"))
+        {
+            Camera.main.orthographicSize += .1f;
+        }
+
         UpdateWithTouch();
     }
 
@@ -119,7 +129,7 @@ public class InputScript : MonoBehaviour
                 case TouchPhase.Began:
                     {
                         touch0StartPosition = touch.position;
-                        touch0StartTime = Time.time;
+                        touch0StartTime = Time.deltaTime;
                         touch0LastPosition = touch0StartPosition;
 
                         isTouching = true;
@@ -137,13 +147,12 @@ public class InputScript : MonoBehaviour
                         {
                             OnSwipe(touch.deltaPosition);
                         }
+
                         break;
                     }
                 case TouchPhase.Ended:
                     {
-                        if (Time.time - touch0StartTime <= maxDurationForTap
-                            && Vector2.Distance(touch.position, touch0StartPosition) <= maxDistanceForTap
-                            && isTouching)
+                        if (Time.deltaTime - touch0StartTime <= maxDurationForTap && Vector2.Distance(touch.position, touch0StartPosition) <= maxDistanceForTap && isTouching)
                         {
                             OnClick(touch.position);
                         }
@@ -195,6 +204,7 @@ public class InputScript : MonoBehaviour
             onTap(position);
         }
     }
+
     void OnSwipe(Vector2 deltaPosition)
     {
         if (onSwipe != null)
@@ -230,7 +240,7 @@ public class InputScript : MonoBehaviour
         }
     }
 
-    void touchZoom()
+    void TouchZoom()
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -290,9 +300,6 @@ public class InputScript : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 selectedID = hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectID(); //object we are clicking's ID
-
-                Renderer rs = hit.collider.GetComponent<Renderer>();
-                Material m = rs.material;
 
                 if (hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectType() == ObjectInfo.ObjectType.EMPTY)
                 {
