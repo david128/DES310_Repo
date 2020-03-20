@@ -14,7 +14,7 @@ public class GameInfo : MonoBehaviour
 {
     ObjectData data = new ObjectData();
 
-    public ObjectData GetTypeInfo(ObjectInfo.ObjectType type) //ret
+    public ObjectData GetTypeInfo(ObjectInfo.ObjectType type, ObjectFill.FillType fill) //ret
     {
         switch(type)
         {
@@ -41,10 +41,31 @@ public class GameInfo : MonoBehaviour
                 break;
 
             case ObjectInfo.ObjectType.FIELD:
-                data.purchaseCost = 300;
-                data.levels = 3;
-                data.level2Cost = 1000;
-                data.level3Cost = 5000;
+
+                switch(fill)
+                {
+                    case ObjectFill.FillType.CARROT:
+                        data.purchaseCost = 300;
+                        data.levels = 3;
+                        data.level2Cost = 1000;
+                        data.level3Cost = 5000;
+                        break;
+                    case ObjectFill.FillType.COCCOA:
+                        data.purchaseCost = 300;
+                        data.levels = 3;
+                        data.level2Cost = 1000;
+                        data.level3Cost = 5000;
+                        break;
+                    case ObjectFill.FillType.CORN:
+                        data.purchaseCost = 300;
+                        data.levels = 3;
+                        data.level2Cost = 1000;
+                        data.level3Cost = 5000;
+                        break;
+                    default:
+                        break;
+                }
+
                 break;
 
             case ObjectInfo.ObjectType.RICE:
