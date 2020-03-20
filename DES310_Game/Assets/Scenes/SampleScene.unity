@@ -742,7 +742,7 @@ MonoBehaviour:
   minFood: 0
   currentFood: 0
   foodBar: {fileID: 288346171}
-  maxTime: 60
+  maxTime: 40
   minTime: 0
   currentTime: 0
   timeBar: {fileID: 1954431459}
@@ -1011,7 +1011,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.70569384, g: 0.754717, b: 0.20291919, a: 1}
+  m_Color: {r: 1, g: 0.09570472, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1023,7 +1023,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.366
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0

@@ -22,7 +22,7 @@ public class InputScript : MonoBehaviour
     /// <summary> The point of contact if it exists in Screen space. </summary>
     public Vector2 touchPosition { get { return touch0LastPosition; } }
 
-    public float maxDistanceForTap = 10.0f;
+    public float maxDistanceForTap = 40.0f;
     public float maxDurationForTap = 0.4f;
 
     //Declare variables
@@ -128,8 +128,9 @@ public class InputScript : MonoBehaviour
             {
                 case TouchPhase.Began:
                     {
+                        //Gets position of touch and time of touch time
                         touch0StartPosition = touch.position;
-                        touch0StartTime = Time.deltaTime;
+                        touch0StartTime = Time.time;
                         touch0LastPosition = touch0StartPosition;
 
                         isTouching = true;
@@ -152,7 +153,7 @@ public class InputScript : MonoBehaviour
                     }
                 case TouchPhase.Ended:
                     {
-                        if (Time.deltaTime - touch0StartTime <= maxDurationForTap && Vector2.Distance(touch.position, touch0StartPosition) <= maxDistanceForTap && isTouching)
+                        if (Time.time - touch0StartTime <= maxDurationForTap && Vector2.Distance(touch.position, touch0StartPosition) <= maxDistanceForTap && isTouching)
                         {
                             OnClick(touch.position);
                         }
@@ -231,12 +232,13 @@ public class InputScript : MonoBehaviour
             {
                 var currentPinchPosition = Camera.main.ScreenToWorldPoint(center);
 
-                Camera.main.orthographicSize = Mathf.Max(0.1f, Camera.main.orthographicSize * oldDistance / newDistance);
+                Camera.main.orthographicSize = Mathf.Max(0.01f, Camera.main.orthographicSize * oldDistance / newDistance);
+                Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize, zoomOutMin, zoomOutMax);
 
                 var newPinchPosition = Camera.main.ScreenToWorldPoint(center);
 
                 Camera.main.transform.position -= newPinchPosition - currentPinchPosition;
-            }
+            } 
         }
     }
 
