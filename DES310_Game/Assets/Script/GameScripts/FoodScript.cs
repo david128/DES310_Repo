@@ -11,7 +11,6 @@ public class FoodScript : MonoBehaviour
     //Declare food variable
     public float food;
     float foodOver;
-    public float maxFood = 10000;
     public float minFood = 0;
     public float currentFood;
     public Image foodBar;
@@ -24,7 +23,8 @@ public class FoodScript : MonoBehaviour
     public Image timeBar;
 
     //Amount required for quota
-    float quotaAmount = 10000;
+    public float[] quotaAmount = { 5000, 10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000};
+    int quotaCount = 0;
     bool overQuota = false;
 
     //money gained after food extracted
@@ -49,9 +49,9 @@ public class FoodScript : MonoBehaviour
 
         //Updates food variables for the food bar
         currentFood = food;
-        foodBar.fillAmount = currentFood / maxFood;
+        foodBar.fillAmount = currentFood / quotaAmount[quotaCount];
 
-        if (currentFood > quotaAmount)
+        if (currentFood > quotaAmount[quotaCount])
         {
             overQuota = true;
         }
@@ -62,22 +62,22 @@ public class FoodScript : MonoBehaviour
 
         if (overQuota == false)
         {
-            if (currentFood < quotaAmount * 0.2f)
+            if (currentFood < quotaAmount[quotaCount] * 0.2f)
             {
                 //Red Bar
                 foodBar.color = Color.Lerp(foodBar.color, new Color(0.8773585f, 0.05067572f, 0.02069241f), Time.deltaTime * 0.8f);
             }
-            else if (currentFood < quotaAmount * 0.4f)
+            else if (currentFood < quotaAmount[quotaCount] * 0.4f)
             {
                 //Red-Orangey Bar
                 foodBar.color = Color.Lerp(foodBar.color, new Color(0.9215686f, 0.2095846f, 0.126f), Time.deltaTime * 0.8f);
             }
-            else if (currentFood < quotaAmount * 0.6f)
+            else if (currentFood < quotaAmount[quotaCount] * 0.6f)
             {
                 //Orangey Bar
                 foodBar.color = Color.Lerp(foodBar.color, new Color(0.895f, 0.629f, 0.14f), Time.deltaTime * 0.8f);
             }
-            else if (currentFood < quotaAmount * 0.8f)
+            else if (currentFood < quotaAmount[quotaCount] * 0.8f)
             {
                 //Yellowy Bar
                 foodBar.color = Color.Lerp(foodBar.color, new Color(0.79f, 0.8301887f, 0.1292275f), Time.deltaTime * 0.8f);
@@ -94,19 +94,24 @@ public class FoodScript : MonoBehaviour
 
         if (time >= maxTime)
         {
-            if (currentFood > quotaAmount)
+            if (currentFood >= quotaAmount[quotaCount])
             {
-                foodOver = currentFood - quotaAmount;
+                foodOver = currentFood - quotaAmount[quotaCount];
+
+                moneyGain = (int)foodOver;
 
                 moneyGain = Mathf.RoundToInt(moneyGain / 10) * 10;
 
                 gameManager.GetComponent<Currency>().AddMoney(moneyGain);
 
+                quotaCount++;
             }
 
-            if (currentFood < quotaAmount)
+            if (currentFood < quotaAmount[quotaCount])
             {
-                foodOver = quotaAmount - currentFood;
+                foodOver = quotaAmount[quotaCount] - currentFood;
+
+                moneyGain = (int)foodOver;
 
                 moneyGain = Mathf.RoundToInt(moneyGain / 10) * 10;
 
