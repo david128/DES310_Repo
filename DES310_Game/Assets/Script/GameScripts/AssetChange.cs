@@ -95,7 +95,7 @@ public class AssetChange : MonoBehaviour
                 return (GameObject)Instantiate(Resources.Load("ChickenCoop" + lvlExtension), transform.position, Quaternion.identity);
 
             case ObjectInfo.ObjectType.COW_FIELD:
-                return (GameObject)Instantiate(Resources.Load("CowFieldCow" + lvlExtension), transform.position, Quaternion.identity);
+                return (GameObject)Instantiate(Resources.Load("CowField" + lvlExtension), transform.position, Quaternion.identity);
 
             case ObjectInfo.ObjectType.PIG_PEN:
                 return (GameObject)Instantiate(Resources.Load("PigField" + lvlExtension), transform.position, Quaternion.identity);
