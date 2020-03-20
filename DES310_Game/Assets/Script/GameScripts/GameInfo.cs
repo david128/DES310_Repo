@@ -19,7 +19,6 @@ public class GameInfo : MonoBehaviour
         switch(type)
         {
             case ObjectInfo.ObjectType.BARN:
-
                 data.purchaseCost = 200;
                 data.levels = 3;
                 data.level2Cost = 3000;
