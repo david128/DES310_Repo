@@ -17,13 +17,14 @@ public class FoodScript : MonoBehaviour
 
     //Delcare time variables 
     float time;
+    bool timerStart = false;
     public float maxTime = 10;
     public float minTime = 0;
     public float currentTime;
     public Image timeBar;
 
     //Amount required for quota
-    public float[] quotaAmount = { 5000, 10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000};
+    public float[] quotaAmount;
     int quotaCount = 0;
     bool overQuota = false;
 
@@ -40,13 +41,26 @@ public class FoodScript : MonoBehaviour
     //Add to current food
     public void AddFood(float f) { food = food + f; }
 
+    private void Start()
+    {
+        //Delay starting the functions
+        InvokeRepeating("UpdateTimeBar", 10.0f, 0.1f);
+        InvokeRepeating("UpdateFoodBar", 10.0f, 0.1f);
+    }
+
+    //Update time bar
+    void UpdateTimeBar()
+    {
+        if (timerStart == false)
+        {
+            timerStart = true;
+        }
+
+        timeBar.fillAmount = currentTime / maxTime;
+    }
+
     void Update()
     {
-        //Updates time variables for the time bar
-        time += Time.deltaTime;
-        currentTime = time;
-        timeBar.fillAmount = currentTime / maxTime;
-
         //Updates food variables for the food bar
         currentFood = food;
         foodBar.fillAmount = currentFood / quotaAmount[quotaCount];
@@ -92,48 +106,56 @@ public class FoodScript : MonoBehaviour
             foodBar.color = Color.Lerp(foodBar.color, new Color(0.2509804f, 0.654902f, 0.9490197f), Time.deltaTime * 0.8f);
         }
 
-        if (time >= maxTime)
+        if (timerStart == true)
         {
-            if (currentFood >= quotaAmount[quotaCount])
+            //Updates time variables for the time bar
+            time += Time.deltaTime;
+            currentTime = time;
+
+            if (time >= maxTime)
             {
-                foodOver = currentFood - quotaAmount[quotaCount];
-
-                moneyGain = (int)foodOver;
-
-                moneyGain = Mathf.RoundToInt(moneyGain / 10) * 10;
-
-                gameManager.GetComponent<Currency>().AddMoney(moneyGain);
-
-                quotaCount++;
-            }
-
-            if (currentFood < quotaAmount[quotaCount])
-            {
-                foodOver = quotaAmount[quotaCount] - currentFood;
-
-                moneyGain = (int)foodOver;
-
-                moneyGain = Mathf.RoundToInt(moneyGain / 10) * 10;
-
-                gameManager.GetComponent<Currency>().AddMoney(moneyGain);
-
-                //failure count
-                failToFill++;
-
-                if(failToFill == 5)
+                if (currentFood > quotaAmount[quotaCount])
                 {
-                    Failure();
-                    failToFill = 0;
+                    foodOver = currentFood - quotaAmount[quotaCount];
+
+                    moneyGain = (int)foodOver;
+
+                    moneyGain = Mathf.RoundToInt(moneyGain / 10) * 10;
+
+                    gameManager.GetComponent<Currency>().AddMoney(moneyGain);
+
+                    if (quotaCount != 10)
+                    {
+                        quotaCount++;
+                    }
                 }
+                else if (currentFood < quotaAmount[quotaCount])
+                {
+                    foodOver = currentFood - quotaAmount[quotaCount];
+
+                    moneyGain = (int)foodOver;
+
+                    moneyGain = Mathf.RoundToInt(moneyGain / 10) * 10;
+
+                    gameManager.GetComponent<Currency>().AddMoney(moneyGain);
+
+                    //failure count
+                    failToFill++;
+
+                    if (failToFill == 5)
+                    {
+                        Failure();
+                        failToFill = 0;
+                    }
+                }
+
+                time = 0;
+                currentFood = 0;
+
+                food -= food;
             }
-
-            time = 0;
-            currentFood = 0;
-
-            food -= food;
         }
     }
-
 
     void Failure()
     {
