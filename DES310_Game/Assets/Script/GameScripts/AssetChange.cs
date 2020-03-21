@@ -42,7 +42,6 @@ public class AssetChange : MonoBehaviour
             fill = ObjectFill.FillType.NONE;
         }
 
-
         ChangeAsset(id, level, type, fill);
     }
 
@@ -138,7 +137,6 @@ public class AssetChange : MonoBehaviour
             locked = gameManager.GetComponent<GridScript>().lockLvl3;
             Destroy(locked);
         }
-
 
         //Checks if the object being cahnged is a field or not to set the fill of the grid
         if (type == ObjectInfo.ObjectType.FIELD || type == ObjectInfo.ObjectType.CHICKEN_COOP || type == ObjectInfo.ObjectType.COW_FIELD || type == ObjectInfo.ObjectType.PIG_PEN)
