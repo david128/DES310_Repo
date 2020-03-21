@@ -192,28 +192,28 @@ public class AssetChange : MonoBehaviour
                 
             case ObjectFill.FillType.COW:
 
-                Instantiate(Resources.Load("Animal"), new Vector3(transform.position.x + 2.03f, transform.position.y, transform.position.z + 1.83f), new Quaternion(0.0f, 0.999f, 0.0f, 0.041f), newAsset.transform);
+                Instantiate(Resources.Load("Cow"), new Vector3(transform.position.x + 2.03f, transform.position.y, transform.position.z + 1.83f), new Quaternion(0.0f, 0.999f, 0.0f, 0.041f), newAsset.transform);
 
-                Instantiate(Resources.Load("Animal"), new Vector3(transform.position.x - 2.4f, transform.position.y, transform.position.z + 2.31f), new Quaternion(0.0f, 0.287f, 0.0f, 0.958f), newAsset.transform);
+                Instantiate(Resources.Load("Cow"), new Vector3(transform.position.x - 2.4f, transform.position.y, transform.position.z + 2.31f), new Quaternion(0.0f, 0.287f, 0.0f, 0.958f), newAsset.transform);
 
-                return (GameObject)Instantiate(Resources.Load("Animal"), new Vector3(transform.position.x + 0.37f, transform.position.y, transform.position.z - 0.43f), new Quaternion(0.0f, 0.827f, 0.0f, -0.563f), newAsset.transform);
+                return (GameObject)Instantiate(Resources.Load("Cow"), new Vector3(transform.position.x + 0.37f, transform.position.y, transform.position.z - 0.43f), new Quaternion(0.0f, 0.827f, 0.0f, -0.563f), newAsset.transform);
 
             case ObjectFill.FillType.PIG:
 
-                Instantiate(Resources.Load("Animal"), new Vector3(transform.position.x + 2.03f, transform.position.y, transform.position.z + 1.83f), new Quaternion(0.0f, 0.999f, 0.0f, 0.041f), newAsset.transform);
+                Instantiate(Resources.Load("Pig"), new Vector3(transform.position.x + 2.03f, transform.position.y, transform.position.z + 1.83f), new Quaternion(0.0f, 0.999f, 0.0f, 0.041f), newAsset.transform);
 
-                Instantiate(Resources.Load("Animal"), new Vector3(transform.position.x - 2.4f, transform.position.y, transform.position.z + 2.31f), new Quaternion(0.0f, 0.287f, 0.0f, 0.958f), newAsset.transform);
+                Instantiate(Resources.Load("Pig"), new Vector3(transform.position.x - 2.4f, transform.position.y, transform.position.z + 2.31f), new Quaternion(0.0f, 0.287f, 0.0f, 0.958f), newAsset.transform);
 
-                return (GameObject)Instantiate(Resources.Load("Animal"), new Vector3(transform.position.x + 0.37f, transform.position.y, transform.position.z - 0.43f), new Quaternion(0.0f, 0.827f, 0.0f, -0.563f), newAsset.transform);
+                return (GameObject)Instantiate(Resources.Load("Pig"), new Vector3(transform.position.x + 0.37f, transform.position.y, transform.position.z - 0.43f), new Quaternion(0.0f, 0.827f, 0.0f, -0.563f), newAsset.transform);
 
 
             case ObjectFill.FillType.CHICKEN:
 
-                Instantiate(Resources.Load("Animal"), new Vector3(transform.position.x + 2.03f, transform.position.y, transform.position.z + 1.83f), new Quaternion(0.0f, 0.999f, 0.0f, 0.041f), newAsset.transform);
+                Instantiate(Resources.Load("Chicken"), new Vector3(transform.position.x + 2.03f, transform.position.y, transform.position.z + 1.83f), new Quaternion(0.0f, 0.999f, 0.0f, 0.041f), newAsset.transform);
 
-                Instantiate(Resources.Load("Animal"), new Vector3(transform.position.x - 2.4f, transform.position.y, transform.position.z + 2.31f), new Quaternion(0.0f, 0.287f, 0.0f, 0.958f), newAsset.transform);
+                Instantiate(Resources.Load("Chicken"), new Vector3(transform.position.x - 2.4f, transform.position.y, transform.position.z + 2.31f), new Quaternion(0.0f, 0.287f, 0.0f, 0.958f), newAsset.transform);
 
-                return (GameObject)Instantiate(Resources.Load("Animal"), new Vector3(transform.position.x + 0.37f, transform.position.y, transform.position.z - 0.43f), new Quaternion(0.0f, 0.827f, 0.0f, -0.563f), newAsset.transform);
+                return (GameObject)Instantiate(Resources.Load("Chicken"), new Vector3(transform.position.x + 0.37f, transform.position.y, transform.position.z - 0.43f), new Quaternion(0.0f, 0.827f, 0.0f, -0.563f), newAsset.transform);
 
 
             case ObjectFill.FillType.SUNFLOWER:
