@@ -45,7 +45,6 @@ public class FoodScript : MonoBehaviour
     {
         //Delay starting the functions
         InvokeRepeating("UpdateTimeBar", 10.0f, 0.1f);
-        InvokeRepeating("UpdateFoodBar", 10.0f, 0.1f);
     }
 
     //Update time bar
