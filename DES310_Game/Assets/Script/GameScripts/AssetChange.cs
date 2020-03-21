@@ -42,7 +42,6 @@ public class AssetChange : MonoBehaviour
             fill = ObjectFill.FillType.NONE;
         }
 
-
         ChangeAsset(id, level, type, fill);
     }
 
@@ -139,9 +138,8 @@ public class AssetChange : MonoBehaviour
             Destroy(locked);
         }
 
-
         //Checks if the object being cahnged is a field or not to set the fill of the grid
-        if (type == ObjectInfo.ObjectType.FIELD)
+        if (type == ObjectInfo.ObjectType.FIELD || type == ObjectInfo.ObjectType.CHICKEN_COOP || type == ObjectInfo.ObjectType.COW_FIELD || type == ObjectInfo.ObjectType.PIG_PEN)
         {
             //load correct fill based on whats chosen
             newFill = LoadFill(fill, transform);
@@ -193,14 +191,31 @@ public class AssetChange : MonoBehaviour
                 return (GameObject)Instantiate(Resources.Load("Turnips"), transform.position, Quaternion.identity, newAsset.transform);
                 
             case ObjectFill.FillType.COW:
-                return (GameObject)Instantiate(Resources.Load("Carrots"), transform.position, Quaternion.identity, newAsset.transform);
-                
+
+                Instantiate(Resources.Load("Animal"), new Vector3(transform.position.x + 2.03f, transform.position.y, transform.position.z + 1.83f), new Quaternion(0.0f, 0.999f, 0.0f, 0.041f), newAsset.transform);
+
+                Instantiate(Resources.Load("Animal"), new Vector3(transform.position.x - 2.4f, transform.position.y, transform.position.z + 2.31f), new Quaternion(0.0f, 0.287f, 0.0f, 0.958f), newAsset.transform);
+
+                return (GameObject)Instantiate(Resources.Load("Animal"), new Vector3(transform.position.x + 0.37f, transform.position.y, transform.position.z - 0.43f), new Quaternion(0.0f, 0.827f, 0.0f, -0.563f), newAsset.transform);
+
             case ObjectFill.FillType.PIG:
-                return (GameObject)Instantiate(Resources.Load("Carrots"), transform.position, Quaternion.identity, newAsset.transform);
-                
+
+                Instantiate(Resources.Load("Animal"), new Vector3(transform.position.x + 2.03f, transform.position.y, transform.position.z + 1.83f), new Quaternion(0.0f, 0.999f, 0.0f, 0.041f), newAsset.transform);
+
+                Instantiate(Resources.Load("Animal"), new Vector3(transform.position.x - 2.4f, transform.position.y, transform.position.z + 2.31f), new Quaternion(0.0f, 0.287f, 0.0f, 0.958f), newAsset.transform);
+
+                return (GameObject)Instantiate(Resources.Load("Animal"), new Vector3(transform.position.x + 0.37f, transform.position.y, transform.position.z - 0.43f), new Quaternion(0.0f, 0.827f, 0.0f, -0.563f), newAsset.transform);
+
+
             case ObjectFill.FillType.CHICKEN:
-                return (GameObject)Instantiate(Resources.Load("Chicken"), transform.position, Quaternion.identity, newAsset.transform);
-                
+
+                Instantiate(Resources.Load("Animal"), new Vector3(transform.position.x + 2.03f, transform.position.y, transform.position.z + 1.83f), new Quaternion(0.0f, 0.999f, 0.0f, 0.041f), newAsset.transform);
+
+                Instantiate(Resources.Load("Animal"), new Vector3(transform.position.x - 2.4f, transform.position.y, transform.position.z + 2.31f), new Quaternion(0.0f, 0.287f, 0.0f, 0.958f), newAsset.transform);
+
+                return (GameObject)Instantiate(Resources.Load("Animal"), new Vector3(transform.position.x + 0.37f, transform.position.y, transform.position.z - 0.43f), new Quaternion(0.0f, 0.827f, 0.0f, -0.563f), newAsset.transform);
+
+
             case ObjectFill.FillType.SUNFLOWER:
                 return (GameObject)Instantiate(Resources.Load("Sunflower"), transform.position, Quaternion.identity, newAsset.transform);
                

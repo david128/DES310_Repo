@@ -44,7 +44,5 @@ public class Save : MonoBehaviour
         }
 
         gameManager.GetComponent<GridScript>().LoadGrid(id, pos, type, level, fill);
-
     }
-
 }
