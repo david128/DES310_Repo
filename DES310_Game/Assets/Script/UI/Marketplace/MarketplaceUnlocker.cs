@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class MarketplaceUnlocker : MonoBehaviour
 {
     //This field should be set by the inspector
-    [SerializeField] int[] farmhouseRequirement;
-    [SerializeField] int[] barnRequirement;
-    [SerializeField] int[] researchRequirement;
+    public int[] farmhouseRequirement;
+    public int[] barnRequirement;
+    public int[] researchRequirement;
 
     GameLevelStorer gls = new GameLevelStorer();
 

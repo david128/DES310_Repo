@@ -109,10 +109,10 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1580535799172915004, guid: 638de1c79ffb3cc4c8ab8a95c3f02168, type: 3}
-  - {fileID: 8748892135801146194, guid: 638de1c79ffb3cc4c8ab8a95c3f02168, type: 3}
-  - {fileID: -905690159841262435, guid: 638de1c79ffb3cc4c8ab8a95c3f02168, type: 3}
-  - {fileID: -4318571312361772713, guid: 638de1c79ffb3cc4c8ab8a95c3f02168, type: 3}
+  - {fileID: 2100000, guid: 7eac8f36072f122419a0b6ea55db7d7c, type: 2}
+  - {fileID: 2100000, guid: 69dd36af093b33c4bbcf94e097dcaa51, type: 2}
+  - {fileID: 2100000, guid: df6d74c9bd227ab4ca0f48acc16b7811, type: 2}
+  - {fileID: 2100000, guid: 43cc2dd64b113f44eb47904d091188c5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -158,8 +158,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6857490370248930624}
   - component: {fileID: 3576052620773414970}
+  - component: {fileID: -2777110694143178749}
   m_Layer: 0
-  m_Name: CowLow_Anim
+  m_Name: Cow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -200,6 +201,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-2777110694143178749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7598112363649140563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b3bb3c0bbb3c984a987972f06ad0e52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8990838856701422709
 GameObject:
   m_ObjectHideFlags: 0
