@@ -141,10 +141,10 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1976799459468813334, guid: 1f30243d524b2754c99b3b911d45a51a, type: 3}
-  - {fileID: -59136025557594432, guid: 1f30243d524b2754c99b3b911d45a51a, type: 3}
-  - {fileID: -1360991219368177298, guid: 1f30243d524b2754c99b3b911d45a51a, type: 3}
-  - {fileID: -8255497921437555292, guid: 1f30243d524b2754c99b3b911d45a51a, type: 3}
+  - {fileID: 2100000, guid: 69dd36af093b33c4bbcf94e097dcaa51, type: 2}
+  - {fileID: 2100000, guid: df6d74c9bd227ab4ca0f48acc16b7811, type: 2}
+  - {fileID: 2100000, guid: 7eac8f36072f122419a0b6ea55db7d7c, type: 2}
+  - {fileID: 2100000, guid: 14f61cb4f88f46d4695f5e90179e24df, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -223,8 +223,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5892576790808918299}
   - component: {fileID: 4561197128821822561}
+  - component: {fileID: -88820077914311627}
   m_Layer: 0
-  m_Name: Chick_Low_Anim
+  m_Name: Chicken
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -265,6 +266,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-88820077914311627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7466399211026025224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b3bb3c0bbb3c984a987972f06ad0e52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8720373874770083631
 GameObject:
   m_ObjectHideFlags: 0
