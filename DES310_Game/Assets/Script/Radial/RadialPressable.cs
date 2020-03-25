@@ -11,7 +11,6 @@ public class RadialPressable : MonoBehaviour
         public Color Color;
         public Sprite Symbol;
         public string Title;
-
     }
     public string title;
     public Action[] options;

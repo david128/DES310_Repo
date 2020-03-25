@@ -322,7 +322,9 @@ public class InputScript : MonoBehaviour
         if (gameManager.GetComponent<Currency>().GetMoney() >= targetData.purchaseCost && target.GetComponent<ObjectInfo>().GetObjectType() == ObjectInfo.ObjectType.EMPTY)//check that user has enough menu and that object is empty
         {
             gameManager.GetComponent<Currency>().AddMoney(-targetData.purchaseCost);
+
             Debug.Log("Build on " + selectedID.ToString());
+
             gameManager.GetComponent<AssetChange>().Build(selectedID, t, f);
         }
 
@@ -353,13 +355,13 @@ public class InputScript : MonoBehaviour
         }
     }
 
-    public void AttmeptDemolish(int id)
+    public void AttemptDemolish(int id)
     {
         GameObject target = gameManager.GetComponent<GridScript>().GetGridTile(id); //get Target
 
         Debug.Log("Demolish on " + id.ToString());
+       
         gameManager.GetComponent<AssetChange>().Demolish(id);
-
     }
 
 

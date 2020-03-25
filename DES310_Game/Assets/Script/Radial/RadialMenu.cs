@@ -60,7 +60,7 @@ public class RadialMenu : MonoBehaviour
                 }
                 else if (selected.title == "Demolish")
                 {
-                    gameManager.GetComponent<InputScript>().AttmeptDemolish(selectedID);
+                    gameManager.GetComponent<InputScript>().AttemptDemolish(selectedID);
                 }
 
                 Destroy(gameObject);
