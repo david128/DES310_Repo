@@ -111,7 +111,6 @@ public class AssetChange : MonoBehaviour
 
             default:
                 return (GameObject)Instantiate(Resources.Load("Field" + lvlExtension), transform.position, Quaternion.identity);
-            
         }    
     }
 

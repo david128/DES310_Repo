@@ -147,12 +147,12 @@ public class GridScript : MonoBehaviour
             gridType[i] = (ObjectInfo.ObjectType)System.Enum.Parse(typeof(ObjectInfo.ObjectType), type[i]);
 
             //Checks if the farmhouse is being upgraded and if so what level the farmhouse is being upgraded to
-            if (gridType[i] == ObjectInfo.ObjectType.FARMHOUSE && lvl[i] < 2)
+            if (gridType[i] == ObjectInfo.ObjectType.FARMHOUSE && lvl[i] < 2 && !lockLvl2)
             {
                 lockLvl2 = Instantiate(Resources.Load("Locked_lvl2"), new Vector3(76.64f, 12.0f, -14.213f), Quaternion.identity);
             }
 
-            if (gridType[i] == ObjectInfo.ObjectType.FARMHOUSE && lvl[i] < 3)
+            if (gridType[i] == ObjectInfo.ObjectType.FARMHOUSE && lvl[i] < 3 && !lockLvl3)
             {
                 lockLvl3 = Instantiate(Resources.Load("Locked_lvl3"), new Vector3(-11.89f, 12.0f, 87.5f), new Quaternion(0.0f, 0.7071f, 0.0f, 0.7071f));
             }
