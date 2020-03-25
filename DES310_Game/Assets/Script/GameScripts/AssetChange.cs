@@ -142,15 +142,12 @@ public class AssetChange : MonoBehaviour
         }
 
         //Checks if the object being changed is a field or not to set the fill of the grid
-        if (type == ObjectInfo.ObjectType.FIELD || type == ObjectInfo.ObjectType.CHICKEN_COOP || type == ObjectInfo.ObjectType.COW_FIELD || type == ObjectInfo.ObjectType.PIG_PEN)
+        if (fill != ObjectFill.FillType.NONE)
         {
             //load correct fill based on whats chosen 
             newFill = LoadFill(fill, transform, level);
         }
-        else
-        {
-            fill = ObjectFill.FillType.NONE;
-        }
+
 
         if (asset.TryGetComponent<Animator>(out anim))
         {
