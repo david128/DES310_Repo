@@ -155,7 +155,6 @@ public class AssetChange : MonoBehaviour
         if (asset.TryGetComponent<Animator>(out anim))
         {
             StartCoroutine(DestroyAnimation(anim, "DestroyAnim", asset));
-
         }
         else
         {
@@ -190,7 +189,7 @@ public class AssetChange : MonoBehaviour
         Destroy(asset.GetComponent<BoxCollider>());
         
         float counter = 0;
-        float waitTime = anim.GetCurrentAnimatorStateInfo(0).length * anim.GetCurrentAnimatorStateInfo(0).speed;
+        float waitTime = anim.GetCurrentAnimatorStateInfo(0).length + (anim.GetCurrentAnimatorStateInfo(0).speedMultiplier * anim.GetCurrentAnimatorStateInfo(0).length);
 
         //Now, Wait until the current state is done playing
         while (counter < (waitTime))
