@@ -34,11 +34,11 @@ RectTransform:
   - {fileID: 6245179490524247914}
   - {fileID: 3693330265320258166}
   m_Father: {fileID: 4594630278210896267}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9.7526, y: -186.44}
+  m_AnchoredPosition: {x: -2.2, y: -174}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6930205967999655846
@@ -433,7 +433,7 @@ RectTransform:
   - {fileID: 2416712221300281839}
   - {fileID: 8921889291803008146}
   m_Father: {fileID: 4594630278210896267}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -710,11 +710,11 @@ RectTransform:
   - {fileID: 2490486658667591504}
   - {fileID: 2130907655443715925}
   m_Father: {fileID: 4594630278210896267}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -101.51, y: -91.78}
+  m_AnchoredPosition: {x: -101.51, y: -82.92999}
   m_SizeDelta: {x: 152.44, y: 48.95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &749755614341532791
@@ -798,8 +798,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: LoadGameData
+      - m_Target: {fileID: 11500000, guid: a925dafc75c595041987c9856916e5c1, type: 3}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -845,7 +845,7 @@ RectTransform:
   - {fileID: 2609193478218501911}
   - {fileID: 970746439601261623}
   m_Father: {fileID: 4594630278210896267}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -963,8 +963,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.45324, y: 0.45324, z: 0.45324}
-  m_Children:
-  - {fileID: 8251341440946583382}
+  m_Children: []
   m_Father: {fileID: 4594630278210896267}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1262,11 +1261,11 @@ RectTransform:
   - {fileID: 1011920738698986752}
   - {fileID: 5932224860104743967}
   m_Father: {fileID: 4594630278210896267}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 102.57, y: -91.85}
+  m_AnchoredPosition: {x: 102.57, y: -83}
   m_SizeDelta: {x: 154.02, y: 49.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8696695917467847401
@@ -1350,8 +1349,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: SaveGameData
+      - m_Target: {fileID: 11500000, guid: a925dafc75c595041987c9856916e5c1, type: 3}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1391,17 +1390,17 @@ RectTransform:
   m_GameObject: {fileID: 4944125193652418969}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.96, y: 5.32, z: 3.005}
+  m_LocalScale: {x: 1.3415905, y: 2.411237, z: 1.3619864}
   m_Children:
   - {fileID: 7867933931171974133}
   - {fileID: 7272654855264476566}
   - {fileID: 5883470243067460761}
-  m_Father: {fileID: 804326739075949881}
-  m_RootOrder: 0
+  m_Father: {fileID: 4594630278210896267}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 193, y: -325}
+  m_AnchoredPosition: {x: -9.751678, y: 81.22696}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1754176418292932171
@@ -2110,6 +2109,7 @@ RectTransform:
   - {fileID: 532449240486160731}
   - {fileID: 587355849134162019}
   - {fileID: 804326739075949881}
+  - {fileID: 8251341440946583382}
   - {fileID: 9140381151349627949}
   - {fileID: 5137922275455082165}
   - {fileID: 4649599138963616590}
