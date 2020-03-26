@@ -175,7 +175,7 @@ public class AssetChange : MonoBehaviour
         }
 
         //sust has changed so update.
-        //gameManager.GetComponent<SustainabilityScript>().CheckPollution();
+        gameManager.GetComponent<SustainabilityScript>().CheckPollution();
     }
 
     IEnumerator DestroyAnimation(Animator anim, string stateName, GameObject asset)

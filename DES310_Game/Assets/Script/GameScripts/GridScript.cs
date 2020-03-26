@@ -139,7 +139,6 @@ public class GridScript : MonoBehaviour
 
         AssetChange gridLoad = gameObject.GetComponent<AssetChange>();
 
-
         //creates and instantiates each tile, giving them a unique ID
         for (int i = 0; i < columnLength * rowLength; i++)
         { 

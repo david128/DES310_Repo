@@ -22,7 +22,7 @@ public class InputScript : MonoBehaviour
     /// <summary> The point of contact if it exists in Screen space. </summary>
     public Vector2 touchPosition { get { return touch0LastPosition; } }
 
-    public float maxDistanceForTap = 40.0f;
+    public float maxDistanceForTap = 10.0f;
     public float maxDurationForTap = 0.4f;
 
     //Declare variables
@@ -36,6 +36,9 @@ public class InputScript : MonoBehaviour
 
     public float zoomOutMin = 5;
     public float zoomOutMax = 17;
+
+    float newX;
+    float newY;
 
     Vector3 touchStart;
     Vector2 touch0StartPosition;
@@ -71,49 +74,54 @@ public class InputScript : MonoBehaviour
     public void GetInput()
     {
 
-        if (Input.GetMouseButtonDown(0))
+        if (controlType == false)
         {
-            Select(Input.mousePosition);
-        }
+            if (Input.GetMouseButtonDown(0))
+            {
+                Select(Input.mousePosition);
+            }
 
-        if (Input.GetKey("w") && Camera.main.transform.position.z <= 41 && Camera.main.transform.position.x <= 58)
-        {
-            cameraMovement.MoveUp(0.5f);
-        }
-        if (Input.GetKey("s") && Camera.main.transform.position.z >= -15 && Camera.main.transform.position.x >= -16)
-        {
-            cameraMovement.MoveDown(0.5f);
-        }
-        if (Input.GetKey("d") && Camera.main.transform.position.z >= -15 && Camera.main.transform.position.x <= 58)
-        {
-            cameraMovement.MoveLeft(0.5f);
-        }
-        if (Input.GetKey("a") && Camera.main.transform.position.z <= 41 && Camera.main.transform.position.x >= -16)
-        {
-            cameraMovement.MoveRight(0.5f);
-        }
+            if (Input.GetKey("w") && Camera.main.transform.position.z <= 41 && Camera.main.transform.position.x <= 58)
+            {
+                cameraMovement.MoveUp(0.5f);
+            }
+            if (Input.GetKey("s") && Camera.main.transform.position.z >= -15 && Camera.main.transform.position.x >= -16)
+            {
+                cameraMovement.MoveDown(0.5f);
+            }
+            if (Input.GetKey("d") && Camera.main.transform.position.z >= -15 && Camera.main.transform.position.x <= 58)
+            {
+                cameraMovement.MoveLeft(0.5f);
+            }
+            if (Input.GetKey("a") && Camera.main.transform.position.z <= 41 && Camera.main.transform.position.x >= -16)
+            {
+                cameraMovement.MoveRight(0.5f);
+            }
 
-        if (Input.GetKey("i") && Camera.main.orthographicSize >= 5.0f)
-        {
-            Camera.main.orthographicSize -= .1f;
-        }
+            if (Input.GetKey("i") && Camera.main.orthographicSize >= 5.0f)
+            {
+                Camera.main.orthographicSize -= .1f;
+            }
 
-        if (Input.GetKey("o") && Camera.main.orthographicSize <= 15.0f)
-        {
-            Camera.main.orthographicSize += .1f;
-        }
+            if (Input.GetKey("o") && Camera.main.orthographicSize <= 15.0f)
+            {
+                Camera.main.orthographicSize += .1f;
+            }
 
-        if (Input.GetKey("m"))
-        {
-            Camera.main.orthographicSize += .1f;
-        }
+            if (Input.GetKey("m"))
+            {
+                Camera.main.orthographicSize += .1f;
+            }
 
-        if (Input.GetKey("n"))
-        {
-            Camera.main.orthographicSize += .1f;
+            if (Input.GetKey("n"))
+            {
+                Camera.main.orthographicSize += .1f;
+            }
         }
-
-        UpdateWithTouch();
+        else
+        {
+            UpdateWithTouch();
+        }
     }
 
     void UpdateWithTouch()
@@ -204,19 +212,36 @@ public class InputScript : MonoBehaviour
         {
             onTap(position);
         }
+
+        Select(position);
     }
 
     void OnSwipe(Vector2 deltaPosition)
     {
+        float XClamp, ZClamp;
+
         if (onSwipe != null)
         {
             onSwipe(deltaPosition);
         }
 
-        if (controlType)
+        float newX = Camera.main.ScreenToWorldPoint(deltaPosition).x - Camera.main.ScreenToWorldPoint(Vector2.zero).x;
+        float newZ = Camera.main.ScreenToWorldPoint(deltaPosition).y - Camera.main.ScreenToWorldPoint(Vector2.zero).y;
+
+        if (Camera.main.transform.position.x <= 58 && Camera.main.transform.position.x >= -15 || Camera.main.transform.position.z <= 41 && Camera.main.transform.position.z >= -16)
         {
-            Camera.main.transform.position -= (Camera.main.ScreenToWorldPoint(deltaPosition) - Camera.main.ScreenToWorldPoint(Vector2.zero));
+            Camera.main.transform.position -= new Vector3(newX, 0.0f, newZ);
+
+            XClamp = Camera.main.transform.position.x;
+            ZClamp = Camera.main.transform.position.z;
+            XClamp = Mathf.Clamp(XClamp, -15, 58);
+            ZClamp = Mathf.Clamp(ZClamp, -16, 41);
+
+            Camera.main.transform.position = new Vector3(XClamp, 18.0f, ZClamp);
         }
+
+      
+
     }
 
     void OnPinch(Vector2 center, float oldDistance, float newDistance, Vector2 touchDelta)
@@ -226,19 +251,16 @@ public class InputScript : MonoBehaviour
             onPinch(oldDistance, newDistance);
         }
 
-        if (controlType == true)
+        if (Camera.main.orthographic)
         {
-            if (Camera.main.orthographic)
-            {
-                var currentPinchPosition = Camera.main.ScreenToWorldPoint(center);
+            var currentPinchPosition = Camera.main.ScreenToWorldPoint(center);
 
-                Camera.main.orthographicSize = Mathf.Max(0.01f, Camera.main.orthographicSize * oldDistance / newDistance);
-                Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize, zoomOutMin, zoomOutMax);
+            Camera.main.orthographicSize = Mathf.Max(0.01f, Camera.main.orthographicSize * oldDistance / newDistance);
+            Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize, zoomOutMin, zoomOutMax);
 
-                var newPinchPosition = Camera.main.ScreenToWorldPoint(center);
+            var newPinchPosition = Camera.main.ScreenToWorldPoint(center);
 
-                Camera.main.transform.position -= newPinchPosition - currentPinchPosition;
-            } 
+            Camera.main.transform.position -= new Vector3(newPinchPosition.x - currentPinchPosition.x, 0.0f, newPinchPosition.y - currentPinchPosition.y);
         }
     }
 
