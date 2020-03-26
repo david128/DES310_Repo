@@ -22,7 +22,7 @@ public class InputScript : MonoBehaviour
     /// <summary> The point of contact if it exists in Screen space. </summary>
     public Vector2 touchPosition { get { return touch0LastPosition; } }
 
-    public float maxDistanceForTap = 40;
+    public float maxDistanceForTap = 40.0f;
     public float maxDurationForTap = 0.4f;
 
     //Declare variables
@@ -76,7 +76,7 @@ public class InputScript : MonoBehaviour
             Select(Input.mousePosition);
         }
 
-        if (Input.GetKey("w") && Camera.main.transform.position.z <=  41 && Camera.main.transform.position.x <= 58)
+        if (Input.GetKey("w") && Camera.main.transform.position.z <= 41 && Camera.main.transform.position.x <= 58)
         {
             cameraMovement.MoveUp(0.5f);
         }
@@ -103,6 +103,16 @@ public class InputScript : MonoBehaviour
             Camera.main.orthographicSize += .1f;
         }
 
+        if (Input.GetKey("m"))
+        {
+            Camera.main.orthographicSize += .1f;
+        }
+
+        if (Input.GetKey("n"))
+        {
+            Camera.main.orthographicSize += .1f;
+        }
+
         UpdateWithTouch();
     }
 
@@ -118,6 +128,7 @@ public class InputScript : MonoBehaviour
             {
                 case TouchPhase.Began:
                     {
+                        //Gets position of touch and time of touch time
                         touch0StartPosition = touch.position;
                         touch0StartTime = Time.time;
                         touch0LastPosition = touch0StartPosition;
@@ -137,13 +148,12 @@ public class InputScript : MonoBehaviour
                         {
                             OnSwipe(touch.deltaPosition);
                         }
+
                         break;
                     }
                 case TouchPhase.Ended:
                     {
-                        if (Time.time - touch0StartTime <= maxDurationForTap
-                            && Vector2.Distance(touch.position, touch0StartPosition) <= maxDistanceForTap
-                            && isTouching)
+                        if (Time.time - touch0StartTime <= maxDurationForTap && Vector2.Distance(touch.position, touch0StartPosition) <= maxDistanceForTap && isTouching)
                         {
                             OnClick(touch.position);
                         }
@@ -195,6 +205,7 @@ public class InputScript : MonoBehaviour
             onTap(position);
         }
     }
+
     void OnSwipe(Vector2 deltaPosition)
     {
         if (onSwipe != null)
@@ -221,16 +232,17 @@ public class InputScript : MonoBehaviour
             {
                 var currentPinchPosition = Camera.main.ScreenToWorldPoint(center);
 
-                Camera.main.orthographicSize = Mathf.Max(0.1f, Camera.main.orthographicSize * oldDistance / newDistance);
+                Camera.main.orthographicSize = Mathf.Max(0.01f, Camera.main.orthographicSize * oldDistance / newDistance);
+                Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize, zoomOutMin, zoomOutMax);
 
                 var newPinchPosition = Camera.main.ScreenToWorldPoint(center);
 
                 Camera.main.transform.position -= newPinchPosition - currentPinchPosition;
-            }
+            } 
         }
     }
 
-    void touchZoom()
+    void TouchZoom()
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -279,7 +291,7 @@ public class InputScript : MonoBehaviour
         //casts a ray from camera to mouse position
         Ray ray = Camera.main.ScreenPointToRay(pos);
 
-        if(EventSystem.current.IsPointerOverGameObject())
+        if (EventSystem.current.IsPointerOverGameObject())
         {
             return;
         }
@@ -290,9 +302,6 @@ public class InputScript : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 selectedID = hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectID(); //object we are clicking's ID
-
-                Renderer rs = hit.collider.GetComponent<Renderer>();
-                Material m = rs.material;
 
                 if (hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectType() == ObjectInfo.ObjectType.EMPTY)
                 {
@@ -308,8 +317,8 @@ public class InputScript : MonoBehaviour
     public void AttemptBuild(ObjectInfo.ObjectType t, ObjectFill.FillType f)
     {
         GameObject target = gameManager.GetComponent<GridScript>().GetGridTile(selectedID); //get Target
-        ObjectData targetData = gameManager.GetComponent<GameInfo>().GetTypeInfo(target.GetComponent<ObjectInfo>().GetObjectType()); //get data relating to target
-        
+        ObjectData targetData = gameManager.GetComponent<GameInfo>().GetTypeInfo(target.GetComponent<ObjectInfo>().GetObjectType(), target.GetComponent<ObjectFill>().GetFillType()); //get data relating to target
+
         if (gameManager.GetComponent<Currency>().GetMoney() >= targetData.purchaseCost && target.GetComponent<ObjectInfo>().GetObjectType() == ObjectInfo.ObjectType.EMPTY)//check that user has enough menu and that object is empty
         {
             gameManager.GetComponent<Currency>().AddMoney(-targetData.purchaseCost);
@@ -322,7 +331,7 @@ public class InputScript : MonoBehaviour
     public void AttemptUpgrade(int id)
     {
         GameObject target = gameManager.GetComponent<GridScript>().GetGridTile(id); //get Target
-        ObjectData targetData = gameManager.GetComponent<GameInfo>().GetTypeInfo(target.GetComponent<ObjectInfo>().GetObjectType()); //get data relating to target
+        ObjectData targetData = gameManager.GetComponent<GameInfo>().GetTypeInfo(target.GetComponent<ObjectInfo>().GetObjectType(), target.GetComponent<ObjectFill>().GetFillType()); //get data relating to target
 
         int levelCost;
 
@@ -336,7 +345,7 @@ public class InputScript : MonoBehaviour
         }
 
         //Check that have enough money and that maxLevel of asset has not been reached
-        if (gameManager.GetComponent<Currency>().GetMoney() >= levelCost && target.GetComponent<ObjectInfo>().GetObjectLevel() != targetData.levels) 
+        if (gameManager.GetComponent<Currency>().GetMoney() >= levelCost && target.GetComponent<ObjectInfo>().GetObjectLevel() != targetData.levels)
         {
             gameManager.GetComponent<Currency>().AddMoney(-levelCost);
             Debug.Log("upgrade on " + id.ToString());
@@ -347,16 +356,11 @@ public class InputScript : MonoBehaviour
     public void AttmeptDemolish(int id)
     {
         GameObject target = gameManager.GetComponent<GridScript>().GetGridTile(id); //get Target
-         
+
         Debug.Log("Demolish on " + id.ToString());
         gameManager.GetComponent<AssetChange>().Demolish(id);
-    
+
     }
 
 
 }
-
-
-
-
-

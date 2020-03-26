@@ -5,8 +5,9 @@ using UnityEngine;
 [System.Serializable]
 public class SaveData
 {
+    //Variables to be saved
     public int money;
-    public int food;
+    public float food;
     public string[] gridType;
     public int[] gridLevel;
     public int[] gridID;
@@ -14,11 +15,13 @@ public class SaveData
     public float[] gridPos;
     public float[] pos;
 
-    public SaveData(int moneyData, int foodData, List<GameObject> grid)
+    public SaveData(int moneyData, float foodData, List<GameObject> grid)
     {
+        //sets variables with passed information
         money = moneyData;
         food = foodData;
 
+        //sets up arrays to be stored in
         gridType = new string[25];
         gridLevel = new int[25];
         gridID = new int[25];
@@ -28,6 +31,7 @@ public class SaveData
         pos = new float[3];
         int count = 0;
 
+        //loops through each grid tile
         for (int i = 0; i < 25; i++)
         {
             gridType[i] = grid[i].GetComponent<ObjectInfo>().GetObjectType().ToString();
@@ -40,7 +44,5 @@ public class SaveData
 
             count += 3;
         }
-
-        count = 0;
     }
 }

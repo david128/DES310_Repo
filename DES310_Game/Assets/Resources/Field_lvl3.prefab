@@ -122,6 +122,7 @@ GameObject:
   - component: {fileID: 4535911151647564499}
   - component: {fileID: 3519346766960594399}
   - component: {fileID: 490905782307536991}
+  - component: {fileID: -1421085568096581258}
   m_Layer: 0
   m_Name: Field_lvl3
   m_TagString: Untagged
@@ -205,6 +206,25 @@ MonoBehaviour:
   - Color: {r: 0, g: 0, b: 0, a: 0}
     Symbol: {fileID: 21300000, guid: 72405e6d4b5b3494b9b4209d48bdb377, type: 3}
     Title: Back
+--- !u!95 &-1421085568096581258
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4340738149346370155}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: de994223fa91acb4daf552afbe2c554e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6991688918321482167
 GameObject:
   m_ObjectHideFlags: 0

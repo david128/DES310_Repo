@@ -30,6 +30,7 @@ public class AssetChange : MonoBehaviour
         //get type
         ObjectInfo.ObjectType type = asset.GetComponent<ObjectInfo>().GetObjectType();
 
+        //set fill
         ObjectFill.FillType fill;
 
         if (type == ObjectInfo.ObjectType.FIELD)
@@ -40,7 +41,6 @@ public class AssetChange : MonoBehaviour
         {
             fill = ObjectFill.FillType.NONE;
         }
-
 
         ChangeAsset(id, level, type, fill);
     }
@@ -127,32 +127,27 @@ public class AssetChange : MonoBehaviour
         newAsset = LoadAsset(type, transform, level);
 
         //Checks if the farmhouse is being upgraded and if so what level the farmhouse is being upgraded to
-        if(type == ObjectInfo.ObjectType.FARMHOUSE && level == 2)
+        if(type == ObjectInfo.ObjectType.FARMHOUSE && level >= 2)
         {
             locked = gameManager.GetComponent<GridScript>().lockLvl2;
             Destroy(locked);
         }
-        else if(type == ObjectInfo.ObjectType.FARMHOUSE && level == 3)
+        if(type == ObjectInfo.ObjectType.FARMHOUSE && level == 3)
         {
             locked = gameManager.GetComponent<GridScript>().lockLvl3;
             Destroy(locked);
         }
 
-
         //Checks if the object being cahnged is a field or not to set the fill of the grid
-        if (type == ObjectInfo.ObjectType.FIELD)
+        if (type == ObjectInfo.ObjectType.FIELD || type == ObjectInfo.ObjectType.CHICKEN_COOP || type == ObjectInfo.ObjectType.COW_FIELD || type == ObjectInfo.ObjectType.PIG_PEN)
         {
             //load correct fill based on whats chosen
             newFill = LoadFill(fill, transform);
-            
         }
         else
         {
             fill = ObjectFill.FillType.NONE;
         }
-
-    
-        //newFill.transform.SetParent(newAsset.transform, true);
 
         //remove from list
         gameManager.GetComponent<GridScript>().RemoveGridTile(asset);
@@ -167,6 +162,9 @@ public class AssetChange : MonoBehaviour
 
         //Add from list
         gameManager.GetComponent<GridScript>().AddGridTile(newAsset);
+
+        //sust has changed so update.
+        //gameManager.GetComponent<SustainabilityScript>().CheckPollution();
     }
 
 
@@ -193,14 +191,31 @@ public class AssetChange : MonoBehaviour
                 return (GameObject)Instantiate(Resources.Load("Turnips"), transform.position, Quaternion.identity, newAsset.transform);
                 
             case ObjectFill.FillType.COW:
-                return (GameObject)Instantiate(Resources.Load("Carrots"), transform.position, Quaternion.identity, newAsset.transform);
-                
+
+                Instantiate(Resources.Load("Cow"), new Vector3(transform.position.x + -1.52f, transform.position.y, transform.position.z + 0.93f), new Quaternion(0.0f, 0.990f, 0.0f, 0.138f), newAsset.transform);
+
+                Instantiate(Resources.Load("Cow"), new Vector3(transform.position.x - 2.86f, transform.position.y, transform.position.z + -1.41f), new Quaternion(0.0f, 0.335f, 0.0f, 0.942f), newAsset.transform);
+
+                return (GameObject)Instantiate(Resources.Load("Cow"), new Vector3(transform.position.x + 1.93f, transform.position.y, transform.position.z - 1.33f), new Quaternion(0.0f, -0.827f, 0.0f, 0.563f), newAsset.transform);
+
             case ObjectFill.FillType.PIG:
-                return (GameObject)Instantiate(Resources.Load("Carrots"), transform.position, Quaternion.identity, newAsset.transform);
-                
+
+                Instantiate(Resources.Load("Pig"), new Vector3(transform.position.x - 5.75f, transform.position.y, transform.position.z + 2.38f), new Quaternion(0.0f, -0.827f, 0.0f, 0.563f), newAsset.transform);
+
+                Instantiate(Resources.Load("Pig"), new Vector3(transform.position.x + 2.44f, transform.position.y, transform.position.z - 1.97f), new Quaternion(0.0f, 0.294f, 0.0f, 0.956f), newAsset.transform);
+
+                return (GameObject)Instantiate(Resources.Load("Pig"), new Vector3(transform.position.x - 2.19f, transform.position.y, transform.position.z + 1.24f), new Quaternion(0.0f, 0.999f, 0.0f, 0.041f), newAsset.transform);
+
+
             case ObjectFill.FillType.CHICKEN:
-                return (GameObject)Instantiate(Resources.Load("Chicken"), transform.position, Quaternion.identity, newAsset.transform);
-                
+
+                Instantiate(Resources.Load("Chicken"), new Vector3(transform.position.x + -4.5f, transform.position.y, transform.position.z + 0.02f), new Quaternion(0.0f, 0.287f, 0.0f, 0.958f), newAsset.transform);
+
+                Instantiate(Resources.Load("Chicken"), new Vector3(transform.position.x + 0.12f, transform.position.y, transform.position.z + 1.88f), new Quaternion(0.0f, 0.988f, 0.0f, -0.157f), newAsset.transform);
+
+                return (GameObject)Instantiate(Resources.Load("Chicken"), new Vector3(transform.position.x + 2.818f, transform.position.y, transform.position.z - 1.299f), new Quaternion(0.0f, -0.625f, 0.0f, 0.780f), newAsset.transform);
+
+
             case ObjectFill.FillType.SUNFLOWER:
                 return (GameObject)Instantiate(Resources.Load("Sunflower"), transform.position, Quaternion.identity, newAsset.transform);
                

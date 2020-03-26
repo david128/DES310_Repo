@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9064413900827234352}
   - component: {fileID: 4246169760290371408}
   - component: {fileID: -6424831311381380775}
+  - component: {fileID: -8857339608864424702}
   m_Layer: 0
   m_Name: Corn
   m_TagString: Untagged
@@ -107,5 +108,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf237b14a943894d876bad565af84e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneyOutput: 150
-  foodOutput: 150
+  AttatchedToFill: 1
+  moneyOutput: 1e0000004100000064000000
+  foodOutput: 4b00000096000000e1000000
+--- !u!114 &-8857339608864424702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7347502285648930028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16a9890003ad75e44a2160c8797ef730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pol_lvl1: 0
+  pol_lvl2: 0
+  pol_lvl3: 0

@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 2905655194676069870}
   - component: {fileID: 3824128144969668041}
   - component: {fileID: 6314192058419133398}
+  - component: {fileID: 2989517678489522024}
   m_Layer: 0
   m_Name: ChickenCoop
   m_TagString: Untagged
@@ -193,8 +194,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf237b14a943894d876bad565af84e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneyOutput: 100
-  foodOutput: 300
+  AttatchedToFill: 0
+  moneyOutput: 32000000
+  foodOutput: 4b000000
+--- !u!95 &2989517678489522024
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3014497840352979246}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: de994223fa91acb4daf552afbe2c554e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4489932081158586729
 GameObject:
   m_ObjectHideFlags: 0

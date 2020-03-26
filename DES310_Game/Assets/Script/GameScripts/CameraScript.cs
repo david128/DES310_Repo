@@ -4,19 +4,6 @@ using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
-
-    float zoom;
-
-    float startY;
-
-    private void Start()
-    {
-        zoom = 100.0f;
-        startY = 10.0f;
-        bool fixScritp;
-    }
-
-
     // Update is called once per frame
     //Inputs for the main camera of the game
 
@@ -39,7 +26,6 @@ public class CameraScript : MonoBehaviour
         {
             MoveDown(Mathf.Abs(m.y) * 0.003f);
         }
-
     }
 
     public void MoveUp(float v)
@@ -61,21 +47,6 @@ public class CameraScript : MonoBehaviour
     {
         transform.position = new Vector3(transform.position.x + v, transform.position.y, transform.position.z - v);
     }
-
-
-
-    //if (Input.GetKey("i") && zoom < 200)
-    //{
-    //    zoom = zoom + 1;
-    //}
-
-
-    //if (Input.GetKey("o") && zoom > -100)
-    //{
-    //    zoom = zoom - 1;
-    //}
-
-    //transform.position = new Vector3 (transform.position.x,(((zoom / 100.0f) * startY)), transform.position.z);
 }
 
 

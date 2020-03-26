@@ -123,6 +123,8 @@ GameObject:
   - component: {fileID: 4034911323695938661}
   - component: {fileID: -456610134402423619}
   - component: {fileID: 7725105936565053091}
+  - component: {fileID: 5277744042836856840}
+  - component: {fileID: 4186855130131797255}
   m_Layer: 0
   m_Name: VerticalFarm
   m_TagString: Untagged
@@ -185,8 +187,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf237b14a943894d876bad565af84e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneyOutput: 2000
-  foodOutput: 1000
+  AttatchedToFill: 0
+  moneyOutput: 2c010000
+  foodOutput: 14000000
 --- !u!114 &-456610134402423619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,6 +226,40 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 12, y: 1, z: 8}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &5277744042836856840
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769837288256873047}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: de994223fa91acb4daf552afbe2c554e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4186855130131797255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769837288256873047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16a9890003ad75e44a2160c8797ef730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pol_lvl1: 0
+  pol_lvl2: 0
+  pol_lvl3: 0
 --- !u!1 &4152337148165702058
 GameObject:
   m_ObjectHideFlags: 0

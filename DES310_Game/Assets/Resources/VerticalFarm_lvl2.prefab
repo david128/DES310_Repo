@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: -8633328766809481266}
   - component: {fileID: -4444770519996555105}
   - component: {fileID: -5578880117955679160}
+  - component: {fileID: -7485161992353117537}
+  - component: {fileID: -5568217895898320298}
   m_Layer: 0
   m_Name: VerticalFarm_lvl2
   m_TagString: Untagged
@@ -61,8 +63,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf237b14a943894d876bad565af84e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneyOutput: 2000
-  foodOutput: 2000
+  AttatchedToFill: 0
+  moneyOutput: 90010000
+  foodOutput: 14000000
 --- !u!114 &-8633328766809481266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +117,40 @@ MonoBehaviour:
   ID: 0
   objectType: 10
   level: 2
+--- !u!95 &-7485161992353117537
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2900595615179338286}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: de994223fa91acb4daf552afbe2c554e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-5568217895898320298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2900595615179338286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16a9890003ad75e44a2160c8797ef730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pol_lvl1: 0
+  pol_lvl2: 0
+  pol_lvl3: 0
 --- !u!1 &3528225454248118413
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,7 +26,6 @@ public class GameLoop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         //Debug.Log(QualitySettings.vSyncCount.ToString());
         //Adds up time passed every frame
         time += Time.deltaTime;
