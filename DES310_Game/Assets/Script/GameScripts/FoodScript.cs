@@ -124,11 +124,22 @@ public class FoodScript : MonoBehaviour
 
                     if (quotaCount != 9)
                     {
+                        Debug.Log("Quota " + quotaCount + " completed");
                         quotaCount++;
                         currentQuota = quotaCount;
+                        
                     }
                     else
                     {
+                        if (gameManager.GetComponent<SustainabilityScript>().GetSustainability() > 10)
+                        {
+                            Debug.Log("You have completed the game with a good ending");
+                        }
+                        else
+                        {
+                            Debug.Log("You have completed the game with a bad ending");
+                        }
+
                         quotaCount = 9;
                     }
                 }
@@ -165,7 +176,7 @@ public class FoodScript : MonoBehaviour
     void Failure()
     {
         Debug.Log("You have failed to meet the quota too mnay times and the government have asked you to vacate your farm.");
-        gameManager.GetComponent<Save>().LoadGameData();
+        //gameManager.GetComponent<Save>().LoadGameData();
     }
 
 }
