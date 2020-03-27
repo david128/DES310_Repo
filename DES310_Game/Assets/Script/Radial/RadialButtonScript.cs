@@ -6,18 +6,17 @@ using UnityEngine.EventSystems;
 
 public class RadialButtonScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 { 
-
     public Image circle;
     public Image symbol;
     public string title;
-    public RadialMenu myMenu;
     public float speed = 8f;
-
+    public RadialMenu myMenu;
+    
     Color defaultColor;
 
      public void Anim()
      {
-         StartCoroutine(AnimateButtonIn());
+        StartCoroutine(AnimateButtonIn());
      }
 
      IEnumerator AnimateButtonIn()
@@ -27,9 +26,9 @@ public class RadialButtonScript : MonoBehaviour, IPointerEnterHandler, IPointerE
 
         while (timer < (1 / speed)) 
         {
-           timer += Time.deltaTime;
-           transform.localScale = Vector3.one * timer * speed;
-           yield return null;
+            timer += Time.deltaTime;
+            transform.localScale = Vector3.one * timer * speed;
+            yield return null;
         }
 
         transform.localScale = Vector3.one;
@@ -37,6 +36,7 @@ public class RadialButtonScript : MonoBehaviour, IPointerEnterHandler, IPointerE
     
     public void OnPointerEnter(PointerEventData eventData)
     {
+        //when mouse/tap chooses this button
         myMenu.selected = this;
         defaultColor = circle.color;
         circle.color = Color.white;
@@ -44,6 +44,15 @@ public class RadialButtonScript : MonoBehaviour, IPointerEnterHandler, IPointerE
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        if (Time.time - InputScript.instance.touch0StartTime <= InputScript.instance.maxDurationForTap)
+        { 
+            myMenu.RadialOption();
+        }
+        else
+        {
+            myMenu.selected = null;
+        }
+
         myMenu.selected = null;
         circle.color = defaultColor;
     }

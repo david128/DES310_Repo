@@ -29,7 +29,6 @@ public class RadialMenuSpawner : MonoBehaviour
         newMenu.SpawnButtons(obj);
 
         SetAwake(true);
-       
     }
 }
   

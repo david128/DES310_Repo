@@ -12,8 +12,6 @@ using UnityEngine;
 public class AssetChange : MonoBehaviour
 {
     //Declare variables
-    public bool controlType; //true for mobile, false for pc
-
     public GameObject gameManager;
     GameObject newAsset;
     GameObject newFill;
@@ -146,7 +144,6 @@ public class AssetChange : MonoBehaviour
             //load correct fill based on whats chosen 
             newFill = LoadFill(fill, transform, level);
         }
-
 
         if (asset.TryGetComponent<Animator>(out anim))
         {
