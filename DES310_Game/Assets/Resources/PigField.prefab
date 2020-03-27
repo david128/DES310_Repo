@@ -178,6 +178,9 @@ MonoBehaviour:
   title: Pig Field
   options:
   - Color: {r: 0, g: 0, b: 0, a: 0}
+    Symbol: {fileID: 21300000, guid: aca4cbc874326ab478a020a0696caeed, type: 3}
+    Title: Upgrade
+  - Color: {r: 0, g: 0, b: 0, a: 0}
     Symbol: {fileID: 21300000, guid: 59f671ec53a8d5843b6ef4ff9378c2d3, type: 3}
     Title: Demolish
   - Color: {r: 0, g: 0, b: 0, a: 0}
@@ -208,8 +211,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf237b14a943894d876bad565af84e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneyOutput: 500
-  foodOutput: 500
+  AttatchedToFill: 0
+  moneyOutput: 000000000000000000000000
+  foodOutput: 000000000000000000000000
 --- !u!65 &8791293845186281312
 BoxCollider:
   m_ObjectHideFlags: 0

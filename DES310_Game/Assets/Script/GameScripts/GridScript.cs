@@ -73,9 +73,9 @@ public class GridScript : MonoBehaviour
         //spawns outside ground
         Instantiate(Resources.Load("Grid"), new Vector3(36.0f, 1.0f, 25.9f), Quaternion.identity);
 
-        lockLvl2 = Instantiate(Resources.Load("Locked_lvl2"), new Vector3(76.64f, 12.0f, -14.213f), Quaternion.identity);
+        lockLvl2 = Instantiate(lockLvl2, new Vector3(76.64f, 12.0f, -14.213f), Quaternion.identity);
 
-        lockLvl3 = Instantiate(Resources.Load("Locked_lvl3"), new Vector3(-11.89f, 12.0f, 87.5f), new Quaternion(0.0f, 0.7071f, 0.0f, 0.7071f));
+        lockLvl3 = Instantiate(lockLvl3, new Vector3(-11.89f, 12.0f, 87.5f), new Quaternion(0.0f, 0.7071f, 0.0f, 0.7071f));
 
         Instantiate(Resources.Load("Tractor"), new Vector3(64.0f, 2.0f, 33.0f), new Quaternion(0.0f, 0.225f, 0.0f, 0.974f));
 
@@ -139,14 +139,24 @@ public class GridScript : MonoBehaviour
 
         AssetChange gridLoad = gameObject.GetComponent<AssetChange>();
 
-
         //creates and instantiates each tile, giving them a unique ID
         for (int i = 0; i < columnLength * rowLength; i++)
         { 
-                gridFill[i] = (ObjectFill.FillType)System.Enum.Parse(typeof(ObjectFill.FillType), fill[i]);
-                gridType[i] = (ObjectInfo.ObjectType)System.Enum.Parse(typeof(ObjectInfo.ObjectType), type[i]);
+            gridFill[i] = (ObjectFill.FillType)System.Enum.Parse(typeof(ObjectFill.FillType), fill[i]);
+            gridType[i] = (ObjectInfo.ObjectType)System.Enum.Parse(typeof(ObjectInfo.ObjectType), type[i]);
 
-                gridLoad.ChangeAsset(ID[i], lvl[i], gridType[i], gridFill[i]);
+            //Checks if the farmhouse is being upgraded and if so what level the farmhouse is being upgraded to
+            if (gridType[i] == ObjectInfo.ObjectType.FARMHOUSE && lvl[i] < 2 && !lockLvl2)
+            {
+                lockLvl2 = Instantiate(Resources.Load("Locked_lvl2"), new Vector3(76.64f, 12.0f, -14.213f), Quaternion.identity);
+            }
+
+            if (gridType[i] == ObjectInfo.ObjectType.FARMHOUSE && lvl[i] < 3 && !lockLvl3)
+            {
+                lockLvl3 = Instantiate(Resources.Load("Locked_lvl3"), new Vector3(-11.89f, 12.0f, 87.5f), new Quaternion(0.0f, 0.7071f, 0.0f, 0.7071f));
+            }
+
+            gridLoad.ChangeAsset(ID[i], lvl[i], gridType[i], gridFill[i]);
         }
     }
 }
