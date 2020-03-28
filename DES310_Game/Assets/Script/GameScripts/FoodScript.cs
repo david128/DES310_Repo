@@ -14,7 +14,7 @@ public class FoodScript : MonoBehaviour
     public float currentFood;
     public Image foodBar;
 
-    //Delcare time variables 
+    //Declare time variables 
     float time;
     public float[] quotaTime;
     bool timerStart = false;
@@ -34,7 +34,7 @@ public class FoodScript : MonoBehaviour
     int failToFill;
 
     //getter and setter
-    public float GetFood() { return food; }
+    public float GetFood() { return currentFood; }
     public void SetFood(float f) { food = f; }
 
     //Add to current food
@@ -60,7 +60,19 @@ public class FoodScript : MonoBehaviour
     void Update()
     {
         //Updates food variables for the food bar
-        currentFood = food;
+        if (Distributer.instance.GetDistributor() == "BG")
+        {
+            currentFood += (food * 1.2f);
+        }
+        else if (Distributer.instance.GetDistributor() == "P")
+        {
+            currentFood += food;
+        }
+        else if (Distributer.instance.GetDistributor() == "GG")
+        {
+            currentFood += (food * 0.8f);
+        }
+       
         foodBar.fillAmount = currentFood / quotaAmount[quotaCount];
 
         if (currentFood > quotaAmount[quotaCount])
@@ -70,7 +82,7 @@ public class FoodScript : MonoBehaviour
         else
         {
             overQuota = false;
-        }
+        }   
 
         if (overQuota == false)
         {
@@ -115,10 +127,21 @@ public class FoodScript : MonoBehaviour
                 if (currentFood > quotaAmount[quotaCount])
                 {
                     foodOver = currentFood - quotaAmount[quotaCount];
-
+                
                     moneyGain = (int)foodOver;
 
-                    moneyGain = Mathf.RoundToInt(moneyGain / 10) * 10;
+                    if (Distributer.instance.GetDistributor() == "BG")
+                    {
+                        moneyGain = Mathf.RoundToInt(moneyGain / 10) * 15;
+                    }
+                    else if (Distributer.instance.GetDistributor() == "P")
+                    {
+                        moneyGain = Mathf.RoundToInt(moneyGain / 10) * 10;
+                    }
+                    else if (Distributer.instance.GetDistributor() == "GG")
+                    {
+                        moneyGain = Mathf.RoundToInt(moneyGain / 10) * 5;
+                    }
 
                     gameManager.GetComponent<Currency>().AddMoney(moneyGain);
 
@@ -127,7 +150,6 @@ public class FoodScript : MonoBehaviour
                         Debug.Log("Quota " + quotaCount + " completed");
                         quotaCount++;
                         currentQuota = quotaCount;
-                        
                     }
                     else
                     {
