@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class RadialButtonScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class RadialButtonScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 { 
     public Image circle;
     public Image symbol;
@@ -42,17 +42,28 @@ public class RadialButtonScript : MonoBehaviour, IPointerEnterHandler, IPointerE
         circle.color = Color.white;
     }
 
-    public void OnPointerExit(PointerEventData eventData)
+    public void OnPointerClick(PointerEventData eventData)
     {
-        if (Time.time - InputScript.instance.touch0StartTime <= InputScript.instance.maxDurationForTap)
-        { 
-            myMenu.RadialOption();
+        //when mouse/tap chooses this button
+        if (InputScript.instance.GetControlType() == true)
+        {
+            if (Time.time - InputScript.instance.touch0StartTime <= InputScript.instance.maxDurationForTap)
+            {
+                myMenu.RadialOption();
+            }
+            else
+            {
+                myMenu.selected = null;
+            }
         }
         else
         {
-            myMenu.selected = null;
+            myMenu.RadialOption();
         }
+    }
 
+    public void OnPointerExit(PointerEventData eventData)
+    {
         myMenu.selected = null;
         circle.color = defaultColor;
     }
