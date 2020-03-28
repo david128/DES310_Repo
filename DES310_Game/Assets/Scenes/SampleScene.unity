@@ -371,7 +371,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64048c471eafa004c8b6c66aaa70d0a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controlType: 1
   gameManager: {fileID: 215528158}
 --- !u!4 &215528160
 Transform:
@@ -412,9 +411,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9d57d2e0b7abbb4ea6fda865eeef5d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  touch0StartTime: 0
   maxDistanceForTap: 10
   maxDurationForTap: 0.4
-  controlType: 1
+  controlType: 0
   gameManager: {fileID: 215528158}
   selectedID: 0
   selecting: 1
