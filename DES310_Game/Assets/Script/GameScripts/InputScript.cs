@@ -7,12 +7,16 @@ public class InputScript : MonoBehaviour
 {
     /// <summary> Called as soon as the player touches the screen. The argument is the screen position. </summary>
     public event Action<Vector2> onStartTouch;
+
     /// <summary> Called as soon as the player stops touching the screen. The argument is the screen position. </summary>
     public event Action<Vector2> onEndTouch;
+
     /// <summary> Called if the player completed a quick tap motion. The argument is the screen position. </summary>
     public event Action<Vector2> onTap;
+
     /// <summary> Called if the player swiped the screen. The argument is the screen movement delta. </summary>
     public event Action<Vector2> onSwipe;
+
     /// <summary> Called if the player pinched the screen. The arguments are the distance between the fingers before and after. </summary>
     public event Action<float, float> onPinch;
 
@@ -22,7 +26,15 @@ public class InputScript : MonoBehaviour
     /// <summary> The point of contact if it exists in Screen space. </summary>
     public Vector2 touchPosition { get { return touch0LastPosition; } }
 
-    public float maxDistanceForTap = 40.0f;
+    //Touch Variables
+    Vector3 touchStart;
+    //Public so it can be checked in the radial script
+    public float touch0StartTime;
+    Vector2 touch0StartPosition;
+    Vector2 touch0LastPosition;
+
+    //Min/Max's for taps
+    public float maxDistanceForTap = 10.0f;
     public float maxDurationForTap = 0.4f;
 
     //Declare variables
@@ -30,90 +42,85 @@ public class InputScript : MonoBehaviour
     public bool controlType;//true for mobile, false for pc
     public GameObject gameManager;
 
+    //Selection variables
     public int selectedID;
     public bool selecting = true;
     CameraScript cameraMovement;
 
+    //Min/Max camera zoom
     public float zoomOutMin = 5;
     public float zoomOutMax = 17;
 
-    Vector3 touchStart;
-    Vector2 touch0StartPosition;
-    Vector2 touch0LastPosition;
-    float touch0StartTime;
-
+    //First function to get called - only once
     private void Start()
     {
+        instance = this;
         cameraMovement = Camera.main.GetComponent<CameraScript>();
     }
 
     //Selecting Variables
-    public void AllowSelecting()
-    {
-        selecting = true;
-    }
+    public void AllowSelecting() { selecting = true;}
 
+    //Getters/Setters
     public bool GetAllowSelecting() { return selecting; }
 
     public void SetAllowSelecting(bool s) { selecting = s; }
 
-    public int GetSelectedID()
-    {
-        return selectedID;
-    }
+    public int GetSelectedID() { return selectedID; }
 
-    public bool GetControlType()
-    {
-        return controlType;
-    }
+    public bool GetControlType() { return controlType; }
 
     //get Input to be called in main game loop
     public void GetInput()
     {
+        if (controlType == false)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                Select(Input.mousePosition);
+            }
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            Select(Input.mousePosition);
-        }
+            if (Input.GetKey("w") && Camera.main.transform.position.z <= 41 && Camera.main.transform.position.x <= 58)
+            {
+                cameraMovement.MoveUp(0.5f);
+            }
+            if (Input.GetKey("s") && Camera.main.transform.position.z >= -15 && Camera.main.transform.position.x >= -16)
+            {
+                cameraMovement.MoveDown(0.5f);
+            }
+            if (Input.GetKey("d") && Camera.main.transform.position.z >= -15 && Camera.main.transform.position.x <= 58)
+            {
+                cameraMovement.MoveLeft(0.5f);
+            }
+            if (Input.GetKey("a") && Camera.main.transform.position.z <= 41 && Camera.main.transform.position.x >= -16)
+            {
+                cameraMovement.MoveRight(0.5f);
+            }
 
-        if (Input.GetKey("w") && Camera.main.transform.position.z <= 41 && Camera.main.transform.position.x <= 58)
-        {
-            cameraMovement.MoveUp(0.5f);
-        }
-        if (Input.GetKey("s") && Camera.main.transform.position.z >= -15 && Camera.main.transform.position.x >= -16)
-        {
-            cameraMovement.MoveDown(0.5f);
-        }
-        if (Input.GetKey("d") && Camera.main.transform.position.z >= -15 && Camera.main.transform.position.x <= 58)
-        {
-            cameraMovement.MoveLeft(0.5f);
-        }
-        if (Input.GetKey("a") && Camera.main.transform.position.z <= 41 && Camera.main.transform.position.x >= -16)
-        {
-            cameraMovement.MoveRight(0.5f);
-        }
+            if (Input.GetKey("i") && Camera.main.orthographicSize >= 5.0f)
+            {
+                Camera.main.orthographicSize -= .1f;
+            }
 
-        if (Input.GetKey("i") && Camera.main.orthographicSize >= 5.0f)
-        {
-            Camera.main.orthographicSize -= .1f;
-        }
+            if (Input.GetKey("o") && Camera.main.orthographicSize <= 15.0f)
+            {
+                Camera.main.orthographicSize += .1f;
+            }
 
-        if (Input.GetKey("o") && Camera.main.orthographicSize <= 15.0f)
-        {
-            Camera.main.orthographicSize += .1f;
-        }
+            if (Input.GetKey("m"))
+            {
+                Camera.main.orthographicSize += .1f;
+            }
 
-        if (Input.GetKey("m"))
-        {
-            Camera.main.orthographicSize += .1f;
+            if (Input.GetKey("n"))
+            {
+                Camera.main.orthographicSize += .1f;
+            }
         }
-
-        if (Input.GetKey("n"))
+        else
         {
-            Camera.main.orthographicSize += .1f;
+            UpdateWithTouch();
         }
-
-        UpdateWithTouch();
     }
 
     void UpdateWithTouch()
@@ -204,18 +211,35 @@ public class InputScript : MonoBehaviour
         {
             onTap(position);
         }
+
+        Select(position);
     }
 
     void OnSwipe(Vector2 deltaPosition)
     {
+        float XClamp, ZClamp;
+
         if (onSwipe != null)
         {
             onSwipe(deltaPosition);
         }
 
-        if (controlType)
+        float newX = Camera.main.ScreenToWorldPoint(deltaPosition).x - Camera.main.ScreenToWorldPoint(Vector2.zero).x;
+        float newZ = Camera.main.ScreenToWorldPoint(deltaPosition).y - Camera.main.ScreenToWorldPoint(Vector2.zero).y;
+
+        if(selecting == true)
         {
-            Camera.main.transform.position -= (Camera.main.ScreenToWorldPoint(deltaPosition) - Camera.main.ScreenToWorldPoint(Vector2.zero));
+            if (Camera.main.transform.position.x <= 58 && Camera.main.transform.position.x >= -15 || Camera.main.transform.position.z <= 41 && Camera.main.transform.position.z >= -16)
+            {
+                Camera.main.transform.position -= new Vector3(newX, 0.0f, newZ);
+
+                XClamp = Camera.main.transform.position.x;
+                ZClamp = Camera.main.transform.position.z;
+                XClamp = Mathf.Clamp(XClamp, -15, 58);
+                ZClamp = Mathf.Clamp(ZClamp, -16, 41);
+
+                Camera.main.transform.position = new Vector3(XClamp, 18.0f, ZClamp);
+            }
         }
     }
 
@@ -226,19 +250,19 @@ public class InputScript : MonoBehaviour
             onPinch(oldDistance, newDistance);
         }
 
-        if (controlType == true)
+        if (selecting == true)
         {
             if (Camera.main.orthographic)
             {
                 var currentPinchPosition = Camera.main.ScreenToWorldPoint(center);
 
-                Camera.main.orthographicSize = Mathf.Max(0.01f, Camera.main.orthographicSize * oldDistance / newDistance);
+                Camera.main.orthographicSize = Mathf.Max(0.1f, Camera.main.orthographicSize * oldDistance / newDistance);
                 Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize, zoomOutMin, zoomOutMax);
 
                 var newPinchPosition = Camera.main.ScreenToWorldPoint(center);
 
-                Camera.main.transform.position -= newPinchPosition - currentPinchPosition;
-            } 
+                Camera.main.transform.position -= new Vector3(newPinchPosition.x - currentPinchPosition.x, 0.0f, newPinchPosition.y - currentPinchPosition.y);
+            }
         }
     }
 
@@ -288,7 +312,7 @@ public class InputScript : MonoBehaviour
         //Declare variables
         RaycastHit hit;
 
-        //casts a ray from camera to mouse position
+        //casts a ray from camera to mouse position/tap
         Ray ray = Camera.main.ScreenPointToRay(pos);
 
         if (EventSystem.current.IsPointerOverGameObject())
@@ -308,6 +332,18 @@ public class InputScript : MonoBehaviour
                     gameManager.GetComponent<MarketplaceSpawner>().SpawnMenu();
                     selecting = false;
                 }
+                else if (hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectType() != ObjectInfo.ObjectType.EMPTY)
+                {
+                    if (hit.collider.gameObject.TryGetComponent<RadialPressable>(out RadialPressable radial))
+                    {
+                        radial.TriggerMenu();
+                        selecting = false;
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
 
                 Debug.Log("Selected " + selectedID.ToString());
             }
@@ -322,7 +358,9 @@ public class InputScript : MonoBehaviour
         if (gameManager.GetComponent<Currency>().GetMoney() >= targetData.purchaseCost && target.GetComponent<ObjectInfo>().GetObjectType() == ObjectInfo.ObjectType.EMPTY)//check that user has enough menu and that object is empty
         {
             gameManager.GetComponent<Currency>().AddMoney(-targetData.purchaseCost);
+
             Debug.Log("Build on " + selectedID.ToString());
+
             gameManager.GetComponent<AssetChange>().Build(selectedID, t, f);
         }
 
@@ -353,13 +391,13 @@ public class InputScript : MonoBehaviour
         }
     }
 
-    public void AttmeptDemolish(int id)
+    public void AttemptDemolish(int id)
     {
         GameObject target = gameManager.GetComponent<GridScript>().GetGridTile(id); //get Target
 
         Debug.Log("Demolish on " + id.ToString());
+       
         gameManager.GetComponent<AssetChange>().Demolish(id);
-
     }
 
 

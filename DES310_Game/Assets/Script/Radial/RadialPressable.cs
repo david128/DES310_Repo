@@ -11,7 +11,6 @@ public class RadialPressable : MonoBehaviour
         public Color Color;
         public Sprite Symbol;
         public string Title;
-
     }
     public string title;
     public Action[] options;
@@ -24,16 +23,16 @@ public class RadialPressable : MonoBehaviour
         }
     }
 
-    void OnMouseDown()
+    public void TriggerMenu()
     {
         if (EventSystem.current.IsPointerOverGameObject())
         {
             return;
         }
 
-        InputScript i = GameObject.FindGameObjectWithTag("GameController").GetComponent<InputScript>();
+        //InputScript i = GameObject.FindGameObjectWithTag("GameController").GetComponent<InputScript>();
 
-        if (RadialMenuSpawner.instance.GetAwake() == false && i.GetAllowSelecting() == true)
+        if (RadialMenuSpawner.instance.GetAwake() == false && InputScript.instance.GetAllowSelecting() == true)
         {
             RadialMenuSpawner.instance.SpawnMenu(this);
         }

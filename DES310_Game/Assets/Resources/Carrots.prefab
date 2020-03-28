@@ -125,8 +125,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf237b14a943894d876bad565af84e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneyOutput: 175
-  foodOutput: 175
+  AttatchedToFill: 1
+  moneyOutput: 000000000000000000000000
+  foodOutput: 000000000000000000000000
+  level: 0
 --- !u!33 &5803064835692372962
 MeshFilter:
   m_ObjectHideFlags: 0

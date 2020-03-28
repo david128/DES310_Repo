@@ -11,20 +11,19 @@ public class FoodScript : MonoBehaviour
     //Declare food variable
     public float food;
     float foodOver;
-    public float minFood = 0;
     public float currentFood;
     public Image foodBar;
 
     //Delcare time variables 
     float time;
+    public float[] quotaTime;
     bool timerStart = false;
-    public float maxTime = 10;
-    public float minTime = 0;
     public float currentTime;
     public Image timeBar;
 
     //Amount required for quota
     public float[] quotaAmount;
+    int currentQuota;
     int quotaCount = 0;
     bool overQuota = false;
 
@@ -55,7 +54,7 @@ public class FoodScript : MonoBehaviour
             timerStart = true;
         }
 
-        timeBar.fillAmount = currentTime / maxTime;
+        timeBar.fillAmount = currentTime / quotaTime[quotaCount];
     }
 
     void Update()
@@ -111,7 +110,7 @@ public class FoodScript : MonoBehaviour
             time += Time.deltaTime;
             currentTime = time;
 
-            if (time >= maxTime)
+            if (currentTime >= quotaTime[quotaCount])
             {
                 if (currentFood > quotaAmount[quotaCount])
                 {
@@ -123,9 +122,25 @@ public class FoodScript : MonoBehaviour
 
                     gameManager.GetComponent<Currency>().AddMoney(moneyGain);
 
-                    if (quotaCount != 10)
+                    if (quotaCount != 9)
                     {
+                        Debug.Log("Quota " + quotaCount + " completed");
                         quotaCount++;
+                        currentQuota = quotaCount;
+                        
+                    }
+                    else
+                    {
+                        if (gameManager.GetComponent<SustainabilityScript>().GetSustainability() > 10)
+                        {
+                            Debug.Log("You have completed the game with a good ending");
+                        }
+                        else
+                        {
+                            Debug.Log("You have completed the game with a bad ending");
+                        }
+
+                        quotaCount = 9;
                     }
                 }
                 else if (currentFood < quotaAmount[quotaCount])
@@ -143,8 +158,10 @@ public class FoodScript : MonoBehaviour
 
                     if (failToFill == 5)
                     {
+                        currentQuota = quotaCount;
                         Failure();
                         failToFill = 0;
+                        quotaCount = currentQuota;
                     }
                 }
 
@@ -159,7 +176,7 @@ public class FoodScript : MonoBehaviour
     void Failure()
     {
         Debug.Log("You have failed to meet the quota too mnay times and the government have asked you to vacate your farm.");
-        gameManager.GetComponent<Save>().LoadGameData();
+        //gameManager.GetComponent<Save>().LoadGameData();
     }
 
 }
