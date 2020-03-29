@@ -281,10 +281,10 @@ MonoBehaviour:
   title: Vertical Farm
   options:
   - Color: {r: 0, g: 0, b: 0, a: 0}
-    Symbol: {fileID: 21300000, guid: 59f671ec53a8d5843b6ef4ff9378c2d3, type: 3}
+    Symbol: {fileID: 21300000, guid: 250cbb2e5fad9f642b5b390dfc38ace9, type: 3}
     Title: Demolish
   - Color: {r: 0, g: 0, b: 0, a: 0}
-    Symbol: {fileID: 21300000, guid: 72405e6d4b5b3494b9b4209d48bdb377, type: 3}
+    Symbol: {fileID: 21300000, guid: ca82c9da83539304487a4b5ec8b8c3d9, type: 3}
     Title: Back
 --- !u!114 &2825589083166008413
 MonoBehaviour:
@@ -311,8 +311,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf237b14a943894d876bad565af84e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moneyOutput: 3000
-  foodOutput: 3000
+  AttatchedToFill: 0
+  moneyOutput: 
+  foodOutput: 
 --- !u!65 &3112893215007467635
 BoxCollider:
   m_ObjectHideFlags: 0
