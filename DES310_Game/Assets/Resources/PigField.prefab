@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 2170985741002007625}
   - component: {fileID: 8791293845186281312}
   - component: {fileID: 4684523645042409135}
+  - component: {fileID: -2821459963274898075}
   m_Layer: 0
   m_Name: PigField
   m_TagString: Untagged
@@ -212,8 +213,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttatchedToFill: 0
-  moneyOutput: 000000000000000000000000
-  foodOutput: 000000000000000000000000
+  moneyOutput: 
+  foodOutput: 
 --- !u!65 &8791293845186281312
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -246,3 +247,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-2821459963274898075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8534845734462076009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf237b14a943894d876bad565af84e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttatchedToFill: 0
+  moneyOutput: 3c00000078000000b4000000
+  foodOutput: 3c00000078000000b4000000

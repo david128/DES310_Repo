@@ -43,7 +43,7 @@ public class FoodScript : MonoBehaviour
     private void Start()
     {
         //Delay starting the functions
-        InvokeRepeating("UpdateTimeBar", 10.0f, 0.1f);
+        InvokeRepeating("UpdateTimeBar", 0.0f, 0.1f);
     }
 
     //Update time bar
