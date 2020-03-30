@@ -7,6 +7,8 @@ using System.IO;
 
 public class Events : MonoBehaviour
 {
+    GameObject gameManager;
+
     string path =  "/events.txt";
 
     List<GameEvent> gameEvents = new List<GameEvent>(); //list of all gameEvents
@@ -79,21 +81,194 @@ public class Events : MonoBehaviour
         //make this get current values based on paramaters.
         if (req == EventRequirementName.COUNT)
         {
+            
+            if (fill == ObjectFill.FillType.NONE) //if fill is none then do not compare to anything else
+            {
+                float count = 0;
+                List<GameObject> grid = gameManager.GetComponent<GridScript>().GetGrid();
+                for (int i = 0; i < grid.Count; i++)
+                {
+                    ObjectInfo objectInfo = grid[i].GetComponent<ObjectInfo>();
+                    if (objectInfo.GetObjectType() != ObjectInfo.ObjectType.EMPTY && objectInfo.level >= minLevel && objectInfo.level <= maxLevel)
+                    {
+                        count = count + 1.0f; //count all non empty grid tiles that are between the min and max level
+                    }
+                }
 
+                return count;
+            }
+            else //else find with fill type passed
+            {
+                float count = 0;
+                List<GameObject> grid = gameManager.GetComponent<GridScript>().GetGrid();
+                for (int i = 0; i < grid.Count; i++)
+                {
+                    ObjectInfo objectInfo = grid[i].GetComponent<ObjectInfo>();
+                    if (grid[i].GetComponent<ObjectFill>().GetFillType() == fill && objectInfo.level >= minLevel && objectInfo.level <= maxLevel)
+                    {
+                        count = count + 1.0f; //count all grid tiles that have the fill and are between the min and max level
+                    }
+                }
+
+                return count;
+            }
         }
         else if (req == EventRequirementName.FOOD)
         {
+            if (fill == ObjectFill.FillType.NONE) //if fill is none then do not compare to anything else
+            {
+                float food = 0;
+                List<GameObject> grid = gameManager.GetComponent<GridScript>().GetGrid();
+                for (int i = 0; i < grid.Count; i++)
+                {
+                    ObjectInfo objectInfo = grid[i].GetComponent<ObjectInfo>();
+                    if (objectInfo.GetObjectType() != ObjectInfo.ObjectType.EMPTY && objectInfo.level >= minLevel && objectInfo.level <= maxLevel)
+                    {
+                        if (objectInfo.objectType == ObjectInfo.ObjectType.FIELD)
+                        {
+                            //need to get component from child
+                            food = food + grid[i].GetComponentInChildren<ObjectOutput>().foodOutput[objectInfo.level - 1]; //add up food from all grid tiles that are between the min and max level
+                        }
+                        else
+                        {
+                            food = food + grid[i].GetComponent<ObjectOutput>().foodOutput[objectInfo.level - 1]; //add up food from all grid tiles that are between the min and max level
+                        }
+                    }
+                }
 
+                return food;
+            }
+            else //else find with fill type passed
+            {
+                float food = 0;
+                List<GameObject> grid = gameManager.GetComponent<GridScript>().GetGrid();
+                for (int i = 0; i < grid.Count; i++)
+                {
+                    ObjectInfo objectInfo = grid[i].GetComponent<ObjectInfo>();
+                    if (grid[i].GetComponent<ObjectFill>().GetFillType() == fill && objectInfo.level >= minLevel && objectInfo.level <= maxLevel)
+                    {
+                        if (objectInfo.objectType == ObjectInfo.ObjectType.FIELD)
+                        {
+                            //need to get component from child
+                            food = food + grid[i].GetComponentInChildren<ObjectOutput>().foodOutput[objectInfo.level - 1]; //add up food from all grid tiles that have the fill and are between the min and max level
+                        }
+                        else
+                        {
+                            food = food + grid[i].GetComponent<ObjectOutput>().foodOutput[objectInfo.level - 1]; //add up food from all grid tiles that have the fill and are between the min and max level
+                        }
+                            
+                    }
+                }
+
+                return food;
+            }
         }
         else if (req == EventRequirementName.SUSTAINABILITY)
         {
+            if (fill == ObjectFill.FillType.NONE) //if fill is none then do not compare to anything else
+            {
+                float sust = 0;
+                List<GameObject> grid = gameManager.GetComponent<GridScript>().GetGrid();
+                for (int i = 0; i < grid.Count; i++)
+                {
+                    ObjectInfo objectInfo = grid[i].GetComponent<ObjectInfo>();
+                    if (objectInfo.GetObjectType() != ObjectInfo.ObjectType.EMPTY && objectInfo.level >= minLevel && objectInfo.level <= maxLevel)
+                    {
+                        if (objectInfo.objectType == ObjectInfo.ObjectType.FIELD)
+                        {
+                            //need to get component from child and add up appropriate pol from object
+                            if (objectInfo.level == 1)
+                            {
+                                sust = sust + grid[i].GetComponentInChildren<ObjectPollution>().pol_lvl1;
+                            }
+                            else if (objectInfo.level == 1)
+                            {
+                                sust = sust + grid[i].GetComponentInChildren<ObjectPollution>().pol_lvl2;
+                            }
+                            else
+                            {
+                                sust = sust + grid[i].GetComponentInChildren<ObjectPollution>().pol_lvl3;
+                            }
+                        }
+                        else
+                        {
+                            //add up appropriate pol from object
+                            if (objectInfo.level == 1)
+                            {
+                                sust = sust + grid[i].GetComponent<ObjectPollution>().pol_lvl1;
+                            }
+                            else if (objectInfo.level == 1)
+                            {
+                                sust = sust + grid[i].GetComponent<ObjectPollution>().pol_lvl2;
+                            }
+                            else
+                            {
+                                sust = sust + grid[i].GetComponent<ObjectPollution>().pol_lvl3;
+                            }
+                        }
 
+                    }
+                }
+
+                return sust;
+            }
+            else //else find with fill type passed
+            {
+                float sust = 0;
+                List<GameObject> grid = gameManager.GetComponent<GridScript>().GetGrid();
+                for (int i = 0; i < grid.Count; i++)
+                {
+                    ObjectInfo objectInfo = grid[i].GetComponent<ObjectInfo>();
+                    if (grid[i].GetComponent<ObjectFill>().GetFillType() == fill && objectInfo.level >= minLevel && objectInfo.level <= maxLevel)
+                    {
+                        if (objectInfo.objectType == ObjectInfo.ObjectType.FIELD)
+                        {
+                            //need to get component from child and add up appropriate pol from object
+                            if (objectInfo.level == 1)
+                            {
+                                sust = sust + grid[i].GetComponentInChildren<ObjectPollution>().pol_lvl1;
+                            }
+                            else if (objectInfo.level == 1)
+                            {
+                                sust = sust + grid[i].GetComponentInChildren<ObjectPollution>().pol_lvl2;
+                            }
+                            else
+                            {
+                                sust = sust + grid[i].GetComponentInChildren<ObjectPollution>().pol_lvl3;
+                            }
+                        }
+                        else
+                        {
+                            //add up appropriate pol from object
+                            if (objectInfo.level == 1)
+                            {
+                                sust = sust + grid[i].GetComponent<ObjectPollution>().pol_lvl1;
+                            }
+                            else if (objectInfo.level == 1)
+                            {
+                                sust = sust + grid[i].GetComponent<ObjectPollution>().pol_lvl2;
+                            }
+                            else
+                            {
+                                sust = sust + grid[i].GetComponent<ObjectPollution>().pol_lvl3;
+                            }
+                        }
+
+                    }
+                }
+
+                return sust;
+            }
         }
         else if (req == EventRequirementName.TIME)
         {
-
+            return Time.time;
         }
-        return 100;
+        else 
+        {
+            return 0;
+        }
+        
     }
 
     public void checkTrigger() //loop through gameEvents here and check for req
@@ -247,6 +422,7 @@ public class Events : MonoBehaviour
                                 //req is fill type
                                 currentFill = eventRequirements[i][j];
 
+                                
                                 Debug.Log("fill");
 
                             }
