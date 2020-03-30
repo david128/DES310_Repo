@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 530ec1915cbc50043a47d5cb3aeacfca
+guid: fb86fa5360f78f545a0751626b07e7c8
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
@@ -7,28 +7,33 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: BrownWood_Mat
+    second: {fileID: 2100000, guid: b0aa58c6d85240345a4796b4050e8986, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: DarkWood
-    second: {fileID: 2100000, guid: 665c9f2d3b8a75d4fb6e4e9a9339ea2b, type: 2}
+    second: {fileID: 2100000, guid: 2ebced7b071cf2147b1597148444c686, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Glass
-    second: {fileID: 2100000, guid: 5da9cc4c57ddef749a68e8e18c5bba41, type: 2}
+      name: Grass_Mat
+    second: {fileID: 2100000, guid: 8760e0f93fe40024b92b9db37843a8db, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: LightGreen2
-    second: {fileID: 2100000, guid: 6c994b0fcaa004d4e8d2ef3f438c4342, type: 2}
+      name: Leaf2_Mat
+    second: {fileID: 2100000, guid: 177015d8fc4c11b41b6aad934ad0d162, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Yellow1
-    second: {fileID: 2100000, guid: d7eb1fba57afede4e8ca1c66e602a427, type: 2}
+      name: RiceFiedlWater_Mat
+    second: {fileID: 2100000, guid: a4b5dba9c8366cd4c8e92f45ee67f8ef, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: lambert9
-    second: {fileID: 2100000, guid: 4be6d673f581bae458eeb7998a63dcd7, type: 2}
+      name: WhiteWood_Mat
+    second: {fileID: 2100000, guid: 4b3422e8f71e0f549890afde4fe23125, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
