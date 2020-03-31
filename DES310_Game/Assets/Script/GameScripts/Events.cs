@@ -17,14 +17,7 @@ public class Events : MonoBehaviour
 
     List<EventEffects> currentEventEffects = new List<EventEffects>();
     
-    void setUpEvents()
-    {
-        currentEventEffects.Add(new EventEffects(0, 0, 0, ObjectFill.FillType.NONE));
 
-    }
-    
-
-    
     void AddNewEvent(GameEvent gameEvent) //add new event to list of events
     {
         gameEvents.Add(gameEvent);
@@ -467,7 +460,7 @@ public class Events : MonoBehaviour
             ValueMinOrMax minValue = new ValueMinOrMax(true, 0);
             ValueMinOrMax maxValue = new ValueMinOrMax(false, 0);
             ValueRange rangeValue = new ValueRange();
-            EventEffects newEffects = new EventEffects(0, 0, 0,ObjectFill.FillType.NONE);
+            EventEffects newEffect = new EventEffects(0, ObjectFill.FillType.NONE, EventEffectType.MONEY); ;
             eventDone = false;
             bool subReq = false;
             List<dynamic> subReqierment = new List<dynamic>();
@@ -612,30 +605,39 @@ public class Events : MonoBehaviour
                             newGameEvent.AddRequirement(minValue);
                         }
                         break;
+                    case ("EFFECT"):
+                        newEffect = new EventEffects(0, ObjectFill.FillType.NONE, EventEffectType.MONEY);
+                        i += 1;
+                        break;
                     case ("EFFECTING"):
                         i += 1;
-                        ObjectFill.FillType e;
-                        if (ObjectFill.FillType.TryParse((lines[i]).ToUpper(), out e) != true) { Debug.LogError("Error: Effecting type does not match fill enum in events file"); } //check that this passes
-                        newEffects.SetFillEffected(e);
+                        ObjectFill.FillType et;
+                        if (ObjectFill.FillType.TryParse((lines[i]).ToUpper(), out et) != true) { Debug.LogError("Error: effect fill type does not match fill enum in events file"); } //check that this
+                        newEffect.SetFillEffected(et);
                         break;
 
-                    case ("GROWTH_REDUCTION"):
+                    case ("MONEY_EFFECT"):
+                        EventEffectType me;
+                        if (EventEffectType.TryParse((lines[i]).ToUpper(), out me) != true) { Debug.LogError("Error: effect type does not match fill enum in events file"); } //check that this
+                        newEffect.SetEventEffectType(me);
                         i += 1;
-                        newEffects.SetGrowthReduction(float.Parse(lines[i]));
+                        newEffect.SetReduction(float.Parse(lines[i]));
+                        i += 1;
+                        break;
+                    case ("FOOD_EFFECT"):
+                        EventEffectType fe;
+                        if (EventEffectType.TryParse((lines[i]).ToUpper(), out fe) != true) { Debug.LogError("Error: fill type does not match fill enum in events file"); } //check that this
+                        newEffect.SetEventEffectType(fe);
+                        i += 1;
+                        newEffect.SetReduction(float.Parse(lines[i]));
                         break;
 
-                    case ("MONEY_REDUCTION"):
-                        i += 1;
-
-                        newEffects.SetMoneyReduction(float.Parse(lines[i]));
-                        break;
-                    case ("SUSTAINABILITY_REDUCTION"):
-                        i += 1;
-                        newEffects.SetSustainabillityReduction(float.Parse(lines[i]));
+                    case ("DESTROY_EFFECT"):
+                        EventEffectType de;
+                        if (EventEffectType.TryParse((lines[i]).ToUpper(), out de) != true) { Debug.LogError("Error: fill type does not match fill enum in events file"); } //check that this
+                        newEffect.SetEventEffectType(de);
                         break;
                     case ("EFFECT_END"):
-                        newGameEvent.AddEfffect(newEffects);
-                        newEffects.ClearEffects();
                         i += 1;
                         break;
 
@@ -773,44 +775,33 @@ class ValueRange
 
 class EventEffects //effects of an effect
 {
-    public EventEffects(float g, float s, float m, ObjectFill.FillType f)
+    public EventEffects(float r,  ObjectFill.FillType f, EventEffectType t)
     {
-        growthReduction = g;
-        sustainabillityReduction = s;
-        moneyReduction = m;
+        reduction = r;
         fillEffected = f;
+        effectType = t;
     }
 
     ObjectFill.FillType fillEffected;
-    float growthReduction;
-    float sustainabillityReduction;
-    float moneyReduction;
+    EventEffectType effectType;
+    float reduction;
 
-    public float GetGrowthReduction() { return growthReduction; }
-    public float GetSustainabillityReduction() { return sustainabillityReduction; }
-    public float GetMoneyReduction() { return moneyReduction; }
+    public float GetReduction() { return reduction; }
+    public EventEffectType GetEventEffectType() { return effectType; }
     public ObjectFill.FillType GetFillEffected() { return fillEffected; }
 
-    public void SetGrowthReduction(float g) { growthReduction = g; }
-    public void SetSustainabillityReduction(float s) { sustainabillityReduction = s; }
-    public void SetMoneyReduction(float m) { moneyReduction = m; }
+    public void SetReduction(float r) { reduction = r; }
     public void SetFillEffected(ObjectFill.FillType f) { fillEffected= f; }
+    public void SetEventEffectType(EventEffectType t) { effectType = t; }
 
-    public void AddEffects(EventEffects e)
-    {
-        growthReduction += e.growthReduction;
-        sustainabillityReduction += e.sustainabillityReduction;
-        moneyReduction += e.moneyReduction;
-    }
 
-    public void ClearEffects()//clear effects
-    {
-        growthReduction = 0.0f;
-        sustainabillityReduction = 0.0f;
-        moneyReduction = 0.0f;
-        fillEffected = ObjectFill.FillType.NONE;
-    }
+}
 
+public enum EventEffectType
+{
+    MONEY =0,
+    FOOD = 1,
+    DESTROY_RANDOM =2
 }
 
 public enum EventRequirementName //different requirement types
