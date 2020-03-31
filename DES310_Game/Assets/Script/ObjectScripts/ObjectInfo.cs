@@ -39,5 +39,4 @@ public class ObjectInfo : MonoBehaviour
     public int GetObjectLevel() { return level; }
 
     public void SetObjectLevel(int lvl) { level = lvl; }
-
 }
