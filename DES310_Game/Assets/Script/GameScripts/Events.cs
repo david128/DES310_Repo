@@ -17,6 +17,10 @@ public class Events : MonoBehaviour
 
     List<EventEffects> currentEventEffects = new List<EventEffects>();
     
+    public List<GameEvent> GetEvents()
+    {
+        return gameEvents;
+    }
 
     void AddNewEvent(GameEvent gameEvent) //add new event to list of events
     {
@@ -631,7 +635,8 @@ public class Events : MonoBehaviour
 }
 
 
-class GameEvent
+
+public class GameEvent
 {
     bool triggered = false; //if the event has been triggered
     List<dynamic> eventRequirements = new List<dynamic>(); //requirements for triggering
@@ -673,7 +678,7 @@ class GameEvent
     }
 }
 
-class EventRequirement
+public class EventRequirement
 {
     public EventRequirement()
     {
@@ -688,7 +693,7 @@ class EventRequirement
 /// Allows a value to be checked
 /// pass true to make it a min, false for a max
 /// </summary>
-class ValueMinOrMax
+public class ValueMinOrMax
 {
     public ValueMinOrMax(bool m, float v)
     {
@@ -712,7 +717,7 @@ class ValueMinOrMax
 /// Allows a value range to be checked
 /// pass min and max range and type
 /// </summary>
-class ValueRange
+public class ValueRange
 {
     public ValueRange(float minValue, float maxValue, EventRequirementName eventType)
     {
@@ -739,7 +744,7 @@ class ValueRange
 
 
 
-class EventEffects //effects of an effect
+public class EventEffects //effects of an effect
 {
     public EventEffects(float r,  ObjectFill.FillType f, EventEffectType t)
     {
