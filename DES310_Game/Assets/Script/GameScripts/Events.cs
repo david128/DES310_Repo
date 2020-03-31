@@ -23,50 +23,9 @@ public class Events : MonoBehaviour
         gameEvents.Add(gameEvent);
     }   
 
-    void FindCurrentLevels() //gets the current levels to be compared to requirements
-    {
-        //EventRequirement newRequirement = new EventRequirement();
 
-        //newRequirement.SetRequirementType(EventRequirementName.FOOD);
-        //newRequirement.SetMax(0); //replace with getter
-        //newRequirement.SetMin(0); //replace with getter
-
-        //currentLevels.Add(newRequirement);
-
-        //newRequirement = new EventRequirement();
-        //newRequirement.SetRequirementType(EventRequirementName.SUSTAINABILITY);
-        //newRequirement.SetMax(0); //replace with getter
-        //newRequirement.SetMin(0); //replace with getter
-
-        //currentLevels.Add(newRequirement);
-
-        //newRequirement = new EventRequirement();
-        //newRequirement.SetRequirementType(EventRequirementName.TIME);
-        //newRequirement.SetMax(0); //replace with getter
-        //newRequirement.SetMin(0); //replace with getter
-
-        //currentLevels.Add(newRequirement);
-
-        //newRequirement = new EventRequirement();
-
-        //newRequirement.SetRequirementType(EventRequirementName.FILL);
-        //newRequirement.SetMax(0); //replace with getter
-        //newRequirement.SetMin(0); //replace with getter
-
-        //currentLevels.Add(newRequirement);
-    }
     
-    EventRequirement FindCurrentLevelOfType(EventRequirementName type) //finds the level for requirement as given
-    {
-        //for (int i = 0; i < currentLevels.Count; i++)
-        //{
-        //    if (currentLevels[i].getRequirementType() == type)
-        //    {
-        //        return (currentLevels[i]);
-        //    }
-        //}
-        return (currentLevels[0]);
-    }
+
 
     float FindValue(ObjectFill.FillType fill, EventRequirementName req, int minLevel, int maxLevel )
     {
@@ -257,6 +216,10 @@ public class Events : MonoBehaviour
         {
             return Time.time;
         }
+        else if (req == EventRequirementName.RANDOM_CHANCE)
+        {
+            return (Random.Range(1, 100));
+        }
         else 
         {
             return 0;
@@ -331,14 +294,6 @@ public class Events : MonoBehaviour
                     else if (eventRequirements[i] is ValueRange)
                     {
                         Debug.Log("Range");
-
-                    }
-                    else if (eventRequirements[i] is ObjectFill.FillType)
-                    {
-                        //req is fill type
-
-                        //wont have fill in non sub req so wont need this probs?
-                        
 
                     }
                     else
@@ -555,6 +510,20 @@ public class Events : MonoBehaviour
                             newGameEvent.AddRequirement(minValue);
                         }
                         break;
+                    case ("RANDOM_CHANCE"):
+                        minValue = new ValueMinOrMax(true, 0);
+                        minValue.SetRequirementType(EventRequirementName.RANDOM_CHANCE);
+                        i += 1;
+                        minValue.SetValue(float.Parse(lines[i]));
+                        if (subReq)
+                        {
+                            subReqierment.Add(minValue);
+                        }
+                        else
+                        {
+                            newGameEvent.AddRequirement(minValue);
+                        }
+                        break;
                     case ("TIME_RANGE"):
                         //newReq = new EventRequirement();
                         //newReq.SetRequirementType(EventRequirementName.TIME);
@@ -660,9 +629,6 @@ public class Events : MonoBehaviour
     }
 
 }
-
-
-
 
 
 class GameEvent
@@ -811,5 +777,6 @@ public enum EventRequirementName //different requirement types
     TIME = 2,
     FILL=3,
     LEVEL =4,
-    COUNT=5
+    COUNT=5,
+    RANDOM_CHANCE = 6
 }
