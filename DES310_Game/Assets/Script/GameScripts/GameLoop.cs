@@ -6,10 +6,12 @@ public class GameLoop : MonoBehaviour
 {
     //Declare variables
     public GameObject gameManager, textManager;
+    Save saveGame;
     
     public float time;
     public float FPS;
 
+    //Frames per second
     public float GetFPS() { return FPS; }
 
     // Start is called before the first frame update
@@ -49,5 +51,20 @@ public class GameLoop : MonoBehaviour
 
         //Updates the UI text
         textManager.GetComponent<TextScript>().UpdateText();
+    }
+
+    // Quits the player when the user hits escape
+    public void QuitGame()
+    {
+        //Saves Game
+        ///Done in button now
+        //saveGame.SaveGameData();
+
+        Debug.Log("Quit Application");
+
+        //Quits application
+        Application.Quit();
+
+       
     }
 }

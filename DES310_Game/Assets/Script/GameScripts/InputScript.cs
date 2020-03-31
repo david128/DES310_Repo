@@ -353,7 +353,7 @@ public class InputScript : MonoBehaviour
     public void AttemptBuild(ObjectInfo.ObjectType t, ObjectFill.FillType f)
     {
         GameObject target = gameManager.GetComponent<GridScript>().GetGridTile(selectedID); //get Target
-        ObjectData targetData = gameManager.GetComponent<GameInfo>().GetTypeInfo(target.GetComponent<ObjectInfo>().GetObjectType(), target.GetComponent<ObjectFill>().GetFillType()); //get data relating to target
+        ObjectData targetData = gameManager.GetComponent<GameInfo>().GetTypeInfo(t, f); //get data relating to target
 
         if (gameManager.GetComponent<Currency>().GetMoney() >= targetData.purchaseCost && target.GetComponent<ObjectInfo>().GetObjectType() == ObjectInfo.ObjectType.EMPTY)//check that user has enough menu and that object is empty
         {
