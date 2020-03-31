@@ -60,17 +60,20 @@ public class FoodScript : MonoBehaviour
     void Update()
     {
         //Updates food variables for the food bar
-        if (Distributer.instance.GetDistributor() == "BG")
+        if (gameManager.GetComponent<DistributerChoice>().GetDistributerChoice() == "BF")
         {
-            currentFood += (food * 1.2f);
+            currentFood += (food * 1.5f);
+            food = 0;
         }
-        else if (Distributer.instance.GetDistributor() == "P")
+        else if (gameManager.GetComponent<DistributerChoice>().GetDistributerChoice() == "P")
         {
             currentFood += food;
+            food = 0;
         }
-        else if (Distributer.instance.GetDistributor() == "GG")
+        else if (gameManager.GetComponent<DistributerChoice>().GetDistributerChoice() == "GG")
         {
-            currentFood += (food * 0.8f);
+            currentFood += (food * 0.5f);
+            food = 0;
         }
        
         foodBar.fillAmount = currentFood / quotaAmount[quotaCount];
@@ -130,15 +133,15 @@ public class FoodScript : MonoBehaviour
                 
                     moneyGain = (int)foodOver;
 
-                    if (Distributer.instance.GetDistributor() == "BG")
+                    if (gameManager.GetComponent<DistributerChoice>().GetDistributerChoice() == "BF")
                     {
                         moneyGain = Mathf.RoundToInt(moneyGain / 10) * 15;
                     }
-                    else if (Distributer.instance.GetDistributor() == "P")
+                    else if (gameManager.GetComponent<DistributerChoice>().GetDistributerChoice() == "P")
                     {
                         moneyGain = Mathf.RoundToInt(moneyGain / 10) * 10;
                     }
-                    else if (Distributer.instance.GetDistributor() == "GG")
+                    else if (gameManager.GetComponent<DistributerChoice>().GetDistributerChoice() == "GG")
                     {
                         moneyGain = Mathf.RoundToInt(moneyGain / 10) * 5;
                     }
@@ -189,8 +192,6 @@ public class FoodScript : MonoBehaviour
 
                 time = 0;
                 currentFood = 0;
-
-                food -= food;
             }
         }
     }

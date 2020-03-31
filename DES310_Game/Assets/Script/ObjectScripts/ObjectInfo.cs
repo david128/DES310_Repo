@@ -8,8 +8,8 @@ public class ObjectInfo : MonoBehaviour
     public int ID;
     public ObjectType objectType;
 
-   public enum ObjectType
-   {
+    public enum ObjectType
+    {
         NONE = 0,
         EMPTY = 1,
         FARMHOUSE = 2,

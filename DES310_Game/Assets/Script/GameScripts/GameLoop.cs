@@ -9,7 +9,9 @@ public class GameLoop : MonoBehaviour
     
     public float time;
     public float FPS;
-    
+
+    public float GetFPS() { return FPS; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +50,4 @@ public class GameLoop : MonoBehaviour
         //Updates the UI text
         textManager.GetComponent<TextScript>().UpdateText();
     }
-
-    public float GetFPS() { return FPS; }
 }

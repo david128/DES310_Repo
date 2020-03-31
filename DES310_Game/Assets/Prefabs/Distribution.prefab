@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 5442616576839355134}
   - component: {fileID: 5780138260320652650}
   - component: {fileID: 322831963993401854}
-  - component: {fileID: 158015246941509940}
+  - component: {fileID: 4098726087708169025}
   m_Layer: 5
   m_Name: BFConfirm
   m_TagString: Untagged
@@ -164,21 +164,10 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8415530303776887964}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 158015246941509940}
-        m_MethodName: ChangeDistributor
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &158015246941509940
+--- !u!114 &4098726087708169025
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -187,10 +176,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3799746459487155263}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de4385401e56db146bb00b79af4bceaf, type: 3}
+  m_Script: {fileID: 11500000, guid: d48733b0f57e7fb4ab7981362ac5d173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distributionTitle: BG
+  distributerTitle: BF
 --- !u!1 &4233899225852231489
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,7 +465,7 @@ GameObject:
   - component: {fileID: 2829501267431166030}
   - component: {fileID: 9212387026181700796}
   - component: {fileID: 6987624451725572571}
-  - component: {fileID: 7684004390362157739}
+  - component: {fileID: 4587051420052858287}
   m_Layer: 5
   m_Name: PConfirm
   m_TagString: Untagged
@@ -554,21 +543,10 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8415530303776887964}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 158015246941509940}
-        m_MethodName: ChangeDistributor
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &7684004390362157739
+--- !u!114 &4587051420052858287
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -577,10 +555,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4436684115032753044}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de4385401e56db146bb00b79af4bceaf, type: 3}
+  m_Script: {fileID: 11500000, guid: d48733b0f57e7fb4ab7981362ac5d173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distributionTitle: P
+  distributerTitle: P
 --- !u!1 &5851602890810571422
 GameObject:
   m_ObjectHideFlags: 0
@@ -921,7 +899,7 @@ GameObject:
   - component: {fileID: 6475175807909932740}
   - component: {fileID: 1864860788116568813}
   - component: {fileID: 2722619314314673956}
-  - component: {fileID: 8616128764734219401}
+  - component: {fileID: 8310617846658602836}
   m_Layer: 5
   m_Name: GGConfirm
   m_TagString: Untagged
@@ -999,21 +977,10 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8415530303776887964}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 158015246941509940}
-        m_MethodName: ChangeDistributor
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &8616128764734219401
+--- !u!114 &8310617846658602836
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1022,7 +989,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7947437032141367665}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de4385401e56db146bb00b79af4bceaf, type: 3}
+  m_Script: {fileID: 11500000, guid: d48733b0f57e7fb4ab7981362ac5d173, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distributionTitle: GG
+  distributerTitle: GG
