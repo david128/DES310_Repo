@@ -53,7 +53,7 @@ public class GameLoop : MonoBehaviour
         textManager.GetComponent<TextScript>().UpdateText();
     }
 
-// Quits the player when the user hits escape
+    // Quits the player when the user hits escape
     public void QuitGame()
     {
         //Saves Game

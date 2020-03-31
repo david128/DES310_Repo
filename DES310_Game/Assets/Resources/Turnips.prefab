@@ -40,7 +40,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8776759804146137620}
-  - component: {fileID: 959137461431078240}
   - component: {fileID: -9218390656573335605}
   - component: {fileID: -5038908689282614657}
   m_Layer: 0
@@ -65,14 +64,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &959137461431078240
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5734781425620109319}
-  m_Mesh: {fileID: 1703985599891865844, guid: ac47bae96991bc343baadfd2eac33738, type: 3}
 --- !u!114 &-9218390656573335605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,7 +79,6 @@ MonoBehaviour:
   AttatchedToFill: 1
   moneyOutput: 000000000000000000000000
   foodOutput: 000000000000000000000000
-  level: 0
 --- !u!114 &-5038908689282614657
 MonoBehaviour:
   m_ObjectHideFlags: 0

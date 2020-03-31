@@ -8,13 +8,15 @@ public class FoodScript : MonoBehaviour
     //Sets manager
     public GameObject gameManager;
 
+    public string Distributer;
+
     //Declare food variable
     public float food;
     float foodOver;
     public float currentFood;
     public Image foodBar;
 
-    //Delcare time variables 
+    //Declare time variables 
     float time;
     public float[] quotaTime;
     bool timerStart = false;
@@ -34,7 +36,7 @@ public class FoodScript : MonoBehaviour
     int failToFill;
 
     //getter and setter
-    public float GetFood() { return food; }
+    public float GetFood() { return currentFood; }
     public void SetFood(float f) { food = f; }
 
     //Add to current food
@@ -42,6 +44,8 @@ public class FoodScript : MonoBehaviour
 
     private void Start()
     {
+        DistributionChoice.instance.SetDefDistributionChoice();
+
         //Delay starting the functions
         InvokeRepeating("UpdateTimeBar", 10.0f, 0.1f);
     }
@@ -59,8 +63,25 @@ public class FoodScript : MonoBehaviour
 
     void Update()
     {
+        Distributer = DistributionChoice.instance.GetDistributionChoice();
+
         //Updates food variables for the food bar
-        currentFood = food;
+        if (DistributionChoice.instance.GetDistributionChoice() == "BF")
+        {
+            currentFood += (food * 1.5f);
+            food = 0;
+        }
+        else if (DistributionChoice.instance.GetDistributionChoice() == "P")
+        {
+            currentFood += food;
+            food = 0;
+        }
+        else if (DistributionChoice.instance.GetDistributionChoice() == "GG")
+        {
+            currentFood += (food * 0.5f);
+            food = 0;
+        }
+
         foodBar.fillAmount = currentFood / quotaAmount[quotaCount];
 
         if (currentFood > quotaAmount[quotaCount])
@@ -70,7 +91,7 @@ public class FoodScript : MonoBehaviour
         else
         {
             overQuota = false;
-        }
+        }   
 
         if (overQuota == false)
         {
@@ -115,10 +136,23 @@ public class FoodScript : MonoBehaviour
                 if (currentFood > quotaAmount[quotaCount])
                 {
                     foodOver = currentFood - quotaAmount[quotaCount];
-
+                
                     moneyGain = (int)foodOver;
 
-                    moneyGain = Mathf.RoundToInt(moneyGain / 10) * 10;
+                    if (DistributionChoice.instance.GetDistributionChoice() == "BF")
+                    {
+                        moneyGain = Mathf.RoundToInt(moneyGain / 10) * 15;
+                    }
+                    else if (DistributionChoice.instance.GetDistributionChoice() == "P")
+                    {
+                        moneyGain = Mathf.RoundToInt(moneyGain / 10) * 10;
+                    }
+                    else if (DistributionChoice.instance.GetDistributionChoice() == "GG")
+                    {
+                        moneyGain = Mathf.RoundToInt(moneyGain / 10) * 5;
+                    }
+
+                    moneyGain = Mathf.RoundToInt(moneyGain / 10) * 15;
 
                     gameManager.GetComponent<Currency>().AddMoney(moneyGain);
 
@@ -127,7 +161,6 @@ public class FoodScript : MonoBehaviour
                         Debug.Log("Quota " + quotaCount + " completed");
                         quotaCount++;
                         currentQuota = quotaCount;
-                        
                     }
                     else
                     {
@@ -167,8 +200,6 @@ public class FoodScript : MonoBehaviour
 
                 time = 0;
                 currentFood = 0;
-
-                food -= food;
             }
         }
     }
