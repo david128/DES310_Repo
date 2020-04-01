@@ -419,7 +419,7 @@ public class Events : MonoBehaviour
             ValueMinOrMax minValue = new ValueMinOrMax(true, 0);
             ValueMinOrMax maxValue = new ValueMinOrMax(false, 0);
             ValueRange rangeValue = new ValueRange();
-            EventEffects newEffect = new EventEffects(0, ObjectFill.FillType.NONE, EventEffectType.MONEY); ;
+            EventEffects newEffect = new EventEffects(0, ObjectFill.FillType.NONE, EventEffectType.MONEY_EFFECT); ;
             eventDone = false;
             bool subReq = false;
             List<dynamic> subReqierment = new List<dynamic>();
@@ -579,7 +579,7 @@ public class Events : MonoBehaviour
                         }
                         break;
                     case ("EFFECT"):
-                        newEffect = new EventEffects(0, ObjectFill.FillType.NONE, EventEffectType.MONEY);
+                        newEffect = new EventEffects(0, ObjectFill.FillType.NONE, EventEffectType.MONEY_EFFECT);
                         i += 1;
                         break;
                     case ("EFFECTING"):
@@ -770,8 +770,8 @@ public class EventEffects //effects of an effect
 
 public enum EventEffectType
 {
-    MONEY =0,
-    FOOD = 1,
+    MONEY_EFFECT =0,
+    FOOD_EFFECT = 1,
     DESTROY_RANDOM =2
 }
 
