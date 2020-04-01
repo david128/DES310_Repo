@@ -405,7 +405,7 @@ public class Events : MonoBehaviour
     public void HandleEventFile()
     {
         TextAsset eventsAsset = Resources.Load("files/events") as TextAsset;
-
+        gameEvents.Clear(); //clear stored events
 
         string[] lines = eventsAsset.text.Split("\n"[0]);
         int i = 0;
@@ -783,5 +783,6 @@ public enum EventRequirementName //different requirement types
     FILL=3,
     LEVEL =4,
     COUNT=5,
-    RANDOM_CHANCE = 6
+    RANDOM_CHANCE = 6,
+    SUB_REQ = 7
 }
