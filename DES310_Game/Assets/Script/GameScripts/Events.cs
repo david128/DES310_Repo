@@ -676,6 +676,105 @@ public class GameEvent
     {
         eventDescription = description;
     }
+
+    public void ConvertRequirement(int i, EventRequirementName convertTo)
+    {
+        if (convertTo == EventRequirementName.FILL )
+        {
+            ObjectFill.FillType newFill = ObjectFill.FillType.NONE;
+            eventRequirements.RemoveAt(i);
+            eventRequirements.Insert(i, newFill);
+        }
+        else if (convertTo == EventRequirementName.SUB_REQ)
+        {
+            List<dynamic> newSub = new List<dynamic>();
+            ObjectFill.FillType newFill = ObjectFill.FillType.NONE;
+            newSub.Add(newFill);
+            eventRequirements.RemoveAt(i);
+            eventRequirements.Insert(i, newSub);
+
+        }
+        else
+        {
+
+            ValueMinOrMax newVal = new ValueMinOrMax(true, 0);
+            newVal.SetRequirementType(convertTo);
+            eventRequirements.RemoveAt(i);
+            eventRequirements.Insert(i, newVal);
+
+        }
+
+
+    }
+
+    public void ConvertSubRequirement(int i, int j, EventRequirementName convertTo)
+    {
+        if (convertTo == EventRequirementName.FILL)
+        {
+            ObjectFill.FillType newFill = ObjectFill.FillType.NONE;
+            eventRequirements[i].RemoveAt(j);
+            eventRequirements[i].Insert(j, newFill);
+        }
+        else
+        {
+
+            ValueMinOrMax newVal = new ValueMinOrMax(true, 0);
+            newVal.SetRequirementType(convertTo);
+            eventRequirements[i].RemoveAt(j);
+            eventRequirements[i].Insert(j, newVal);
+
+        }
+
+
+    }
+
+    public void ConnectNewRequirement()
+    {
+        AddRequirement("AND");
+        ValueMinOrMax newVal = new ValueMinOrMax(true, 0);
+        newVal.SetRequirementType(EventRequirementName.COUNT);
+        AddRequirement(newVal);
+    }
+
+    public void DeleteRequirement(int i)
+    {
+        if (i != eventRequirements.Count - 1)
+        {
+            eventRequirements.RemoveAt(i);//remove req
+            eventRequirements.RemoveAt(i);//remove connector
+        }
+        else
+        {
+            eventRequirements.RemoveAt(i);//remove req
+        }
+
+    }
+
+    public void ConnectNewSubRequirement(int i)
+    {
+        eventRequirements[i].Add("AND");
+        ValueMinOrMax newVal = new ValueMinOrMax(true, 0);
+        newVal.SetRequirementType(EventRequirementName.COUNT);
+        eventRequirements[i].Add(newVal);
+    }
+
+    public void DeleteSubRequirement(int i, int j)
+    {
+        if (eventRequirements[i].Count == 0)
+        {
+            DeleteRequirement(i);            
+        }
+        else if (j != eventRequirements[i].Count - 1)
+        {
+            eventRequirements[i].RemoveAt(j);//remove req
+            eventRequirements[i].RemoveAt(j);//remove connector
+        }
+        else
+        {
+            eventRequirements[i].RemoveAt(j);//remove req
+        }
+
+    }
 }
 
 public class EventRequirement
