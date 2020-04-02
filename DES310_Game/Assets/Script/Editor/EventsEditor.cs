@@ -57,142 +57,6 @@ public class EventsEditor : EditorWindow
 
         }
 
-        prevIndex = index;
-        index = EditorGUILayout.Popup(index, eventNames.ToArray());
-
-        if (initialLoad)
-        {
-            name = EditorGUILayout.TextField("Name", name);
-            desc = EditorGUILayout.TextField("Description", desc);
-
-            EditorGUI.indentLevel++; //lvl 1
-
-            //requirements
-            GUILayout.Label("Requirements", EditorStyles.boldLabel);
-
-            for (int i = 0; i < requirements.Count; i++)
-            {
-                GUILayout.Label("", EditorStyles.label);
-                                               
-                EditorGUI.indentLevel++; //lvl 2
-
-                if (requirements[i] is ValueMinOrMax)
-                {
-
-                    if (requirements[i].GetMin() == true)
-                    {
-                        EventRequirementName selected  = (EventRequirementName) reqIndex[i];
-                        EventRequirementName temp;
-                        temp = EditorGUILayout.EnumPopup(selected);
-                        EditorGUILayout.TextField("Min Value", requirements[i].GetValue().ToString());
-
-
-
-                        using (new GUILayout.HorizontalScope())
-                        {
-                            GUILayout.Space(35f); // horizontal indent size of 35 (pixels)
-
-                            GUILayout.Button("Delete", GUILayout.Width(50));
-                        }
-
-                        //Rect lastRect = GUILayoutUtility.GetLastRect();
-                        //Rect buttonRect = new Rect(lastRect.x, lastRect.y + EditorGUIUtility.singleLineHeight, 100, 30);
-
-                        //if (GUI.Button(buttonRect, "Delete"))
-                        //{
-
-                        //}
-                    }
-                    else
-                    {
-                        reqIndex[i] = (int)EditorGUILayout.EnumPopup(requirements[i].GetRequirementType());
-                        EditorGUILayout.TextField("Max Value", requirements[i].GetValue().ToString());
-                        GUILayout.Button("Delete");
-                    }
-
-                }
-                else if (requirements[i] is string)
-                {
-                    if (requirements[i] == "AND")
-                    {
-                        EditorGUILayout.EnumPopup(Connection.AND);
-                        reqIndex[i] = 0;
-                    }
-                    else
-                    {
-                        EditorGUILayout.EnumPopup(Connection.OR);
-                        reqIndex[i] = 1;
-                    }
-
-
-                }
-                else
-                {
-
-                    reqIndex[i] = 7;
-                    EditorGUILayout.EnumPopup(EventRequirementName.SUB_REQ);
-
-
-                    for (int j = 0; j < requirements[i].Count; j++)
-                    {
-                        EditorGUI.indentLevel++; //lvl 2
-                        GUILayout.Label("", EditorStyles.label);
-                        if (requirements[i][j] is ValueMinOrMax)
-                        {
-
-                            if (requirements[i][j].GetMin() == true)
-                            {
-
-                                EditorGUILayout.EnumPopup(requirements[i][j].GetRequirementType());
-                                EditorGUILayout.TextField("Min Value", requirements[i][j].GetValue().ToString());
-                            }
-                            else
-                            {
-                                EditorGUILayout.EnumPopup(requirements[i][j].GetRequirementType());
-                                EditorGUILayout.TextField("Max Value", requirements[i][j].GetValue().ToString());
-                            }
-
-                        }
-                        else if (requirements[i][j] is ObjectFill.FillType)
-                        {
-                            EditorGUILayout.EnumPopup(EventRequirementName.FILL);
-                            EditorGUILayout.EnumPopup(requirements[i][j]);
-                        }
-                        else if (requirements[i][j] is string)
-                        {
-
-                            if (requirements[i][j] == "AND")
-                            {
-                                EditorGUILayout.EnumPopup(Connection.AND);
-                            }
-                            else
-                            {
-                                EditorGUILayout.EnumPopup(Connection.OR);
-                            }
-
-                        }
-
-                        EditorGUI.indentLevel--; //lvl 1
-
-                    }
-                }
-                EditorGUI.indentLevel--; //lvl 1
-
-            }
-            EditorGUI.indentLevel--; //lvl 0
-
-            using (new GUILayout.HorizontalScope())
-            {
-                GUILayout.Space(35f); // horizontal indent size of 20 (pixels)
-
-                GUILayout.Button("AddNew");
-            }
-
-
-
-            //effects
-            GUILayout.Label("Effects", EditorStyles.boldLabel);
-        }
 
         if (prevIndex != index)
         {
@@ -231,12 +95,12 @@ public class EventsEditor : EditorWindow
 
 
 
-                        using (new GUILayout.HorizontalScope())
-                        {
-                            GUILayout.Space(35f); // horizontal indent size of 20 (pixels)
 
-                            GUILayout.Button("Delete", GUILayout.Width(50));
-                        }
+                        GUILayout.BeginHorizontal();
+                        GUILayout.Space(35f); // horizontal indent size of 20 (pixels)
+
+                        GUILayout.Button("Delete", GUILayout.Width(50));
+                        GUILayout.EndHorizontal();
 
                         //Rect lastRect = GUILayoutUtility.GetLastRect();
                         //Rect buttonRect = new Rect(lastRect.x, lastRect.y + EditorGUIUtility.singleLineHeight, 100, 30);
@@ -336,6 +200,146 @@ public class EventsEditor : EditorWindow
             //effects
             GUILayout.Label("Effects", EditorStyles.boldLabel);
         }
+
+        prevIndex = index;
+        index = EditorGUILayout.Popup(index, eventNames.ToArray());
+
+        if (initialLoad)
+        {
+            name = EditorGUILayout.TextField("Name", name);
+            desc = EditorGUILayout.TextField("Description", desc);
+
+            EditorGUI.indentLevel++; //lvl 1
+
+            //requirements
+            GUILayout.Label("Requirements", EditorStyles.boldLabel);
+
+            for (int i = 0; i < requirements.Count; i++)
+            {
+                GUILayout.Label("", EditorStyles.label);
+                                               
+                EditorGUI.indentLevel++; //lvl 2
+
+                if (requirements[i] is ValueMinOrMax)
+                {
+
+                    if (requirements[i].GetMin() == true)
+                    {
+                        EventRequirementName selected  = (EventRequirementName) reqIndex[i]; //convert int to enum
+                        selected = (EventRequirementName)EditorGUILayout.EnumPopup(selected);
+                        reqIndex[i] = (int)selected; //store as int
+                        EditorGUILayout.TextField("Min Value", requirements[i].GetValue().ToString());
+
+
+
+                        //using (new GUILayout.HorizontalScope())
+                        //GUILayout.BeginHorizontal();
+                        
+                        //GUILayout.Space(35f); // horizontal indent size of 35 (pixels)
+
+                        GUILayout.Button("Delete", GUILayout.Width(50));
+                        //GUILayout.EndHorizontal();
+                    }   
+                    else
+                    {
+                        EventRequirementName selected = (EventRequirementName)reqIndex[i]; //convert int to enum
+                        selected = (EventRequirementName)EditorGUILayout.EnumPopup(selected);
+                        reqIndex[i] = (int)selected; //store as int
+                        EditorGUILayout.TextField("Min Value", requirements[i].GetValue().ToString());
+
+
+
+                        using (new GUILayout.HorizontalScope())
+                        {
+                            GUILayout.Space(35f); // horizontal indent size of 35 (pixels)
+
+                            GUILayout.Button("Delete", GUILayout.Width(50));
+                        }
+                    }
+
+                }
+                else if (requirements[i] is string)
+                {
+                    if (requirements[i] == "AND")
+                    {
+                        EditorGUILayout.EnumPopup(Connection.AND);
+                        reqIndex[i] = 0;
+                    }
+                    else
+                    {
+                        EditorGUILayout.EnumPopup(Connection.OR);
+                        reqIndex[i] = 1;
+                    }
+
+
+                }
+                else
+                {
+
+                    reqIndex[i] = 7;
+                    EditorGUILayout.EnumPopup(EventRequirementName.SUB_REQ);
+
+
+                    for (int j = 0; j < requirements[i].Count; j++)
+                    {
+                        EditorGUI.indentLevel++; //lvl 2
+                        GUILayout.Label("", EditorStyles.label);
+                        if (requirements[i][j] is ValueMinOrMax)
+                        {
+
+                            if (requirements[i][j].GetMin() == true)
+                            {
+
+                                EditorGUILayout.EnumPopup(requirements[i][j].GetRequirementType());
+                                EditorGUILayout.TextField("Min Value", requirements[i][j].GetValue().ToString());
+                            }
+                            else
+                            {
+                                EditorGUILayout.EnumPopup(requirements[i][j].GetRequirementType());
+                                EditorGUILayout.TextField("Max Value", requirements[i][j].GetValue().ToString());
+                            }
+
+                        }
+                        else if (requirements[i][j] is ObjectFill.FillType)
+                        {
+                            EditorGUILayout.EnumPopup(EventRequirementName.FILL);
+                            EditorGUILayout.EnumPopup(requirements[i][j]);
+                        }
+                        else if (requirements[i][j] is string)
+                        {
+
+                            if (requirements[i][j] == "AND")
+                            {
+                                EditorGUILayout.EnumPopup(Connection.AND);
+                            }
+                            else
+                            {
+                                EditorGUILayout.EnumPopup(Connection.OR);
+                            }
+
+                        }
+
+                        EditorGUI.indentLevel--; //lvl 1
+
+                    }
+                }
+                EditorGUI.indentLevel--; //lvl 1
+
+            }
+            EditorGUI.indentLevel--; //lvl 0
+
+            //GUILayout.BeginHorizontal();
+            //GUILayout.Space(35f); // horizontal indent size of 20 (pixels)
+
+            GUILayout.Button("AddNew");
+            //GUILayout.EndHorizontal();
+
+
+            //effects
+            GUILayout.Label("Effects", EditorStyles.boldLabel);
+        }
+
+       
         
         
     }
