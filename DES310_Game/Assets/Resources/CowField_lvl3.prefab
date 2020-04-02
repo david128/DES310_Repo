@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -3709905768611156393}
   - component: {fileID: 3415213256154558953}
   - component: {fileID: 5554401831446316295}
+  - component: {fileID: 3775710336015899647}
   m_Layer: 0
   m_Name: CowField_lvl3
   m_TagString: Untagged
@@ -107,8 +108,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttatchedToFill: 0
-  moneyOutput: 45010000
-  foodOutput: 73000000
+  moneyOutput: 000000000000000045010000
+  foodOutput: 000000000000000073000000
 --- !u!65 &3415213256154558953
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -141,6 +142,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3775710336015899647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45647619825908710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16a9890003ad75e44a2160c8797ef730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pol_lvl1: 0
+  pol_lvl2: 0
+  pol_lvl3: 25
 --- !u!1 &118469193179504010
 GameObject:
   m_ObjectHideFlags: 0

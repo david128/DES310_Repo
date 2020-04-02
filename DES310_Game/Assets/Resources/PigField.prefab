@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 8791293845186281312}
   - component: {fileID: 4684523645042409135}
   - component: {fileID: -2821459963274898075}
+  - component: {fileID: -2213359180710114523}
   m_Layer: 0
   m_Name: PigField
   m_TagString: Untagged
@@ -244,5 +245,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttatchedToFill: 0
-  moneyOutput: 3c000000
-  foodOutput: 3c000000
+  moneyOutput: 3c0000000000000000000000
+  foodOutput: 3c0000000000000000000000
+--- !u!114 &-2213359180710114523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8534845734462076009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16a9890003ad75e44a2160c8797ef730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pol_lvl1: 14
+  pol_lvl2: 0
+  pol_lvl3: 0

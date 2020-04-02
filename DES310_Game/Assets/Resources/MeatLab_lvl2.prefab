@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 6633676446609043791}
   - component: {fileID: -3514769147283890486}
   - component: {fileID: -91244522160436823}
-  - component: {fileID: -454554449694159147}
   - component: {fileID: -177991207880965030}
   - component: {fileID: 256198821010649061}
   - component: {fileID: 6209907133963222920}
@@ -144,21 +143,6 @@ MonoBehaviour:
   ID: 0
   objectType: 12
   level: 2
---- !u!114 &-454554449694159147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 231036337485772616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edf237b14a943894d876bad565af84e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AttatchedToFill: 0
-  moneyOutput: 000000000000000000000000
-  foodOutput: 000000000000000000000000
 --- !u!65 &-177991207880965030
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -204,7 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pol_lvl1: 0
-  pol_lvl2: 0
+  pol_lvl2: -15
   pol_lvl3: 0
 --- !u!114 &2522748788420990427
 MonoBehaviour:
@@ -219,5 +203,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttatchedToFill: 0
-  moneyOutput: 00000000
-  foodOutput: 90010000
+  moneyOutput: 000000000000000000000000
+  foodOutput: 000000009001000000000000

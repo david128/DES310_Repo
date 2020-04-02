@@ -14,11 +14,10 @@ GameObject:
   - component: {fileID: -6343148157687289161}
   - component: {fileID: -2096106193559714527}
   - component: {fileID: 3649078145725338538}
-  - component: {fileID: -5709510349799493336}
   - component: {fileID: 3643920674341741544}
   - component: {fileID: 22432248437806342}
   - component: {fileID: 1002444358569219682}
-  - component: {fileID: -1493581984071299906}
+  - component: {fileID: 8801002695877448058}
   m_Layer: 0
   m_Name: RiceField
   m_TagString: Untagged
@@ -131,23 +130,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttatchedToFill: 0
-  moneyOutput: 14000000
-  foodOutput: 96000000
---- !u!114 &-5709510349799493336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2575242287168563192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16a9890003ad75e44a2160c8797ef730, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pol_lvl1: 0
-  pol_lvl2: 0
-  pol_lvl3: 0
+  moneyOutput: 140000000000000000000000
+  foodOutput: 960000000000000000000000
 --- !u!114 &3643920674341741544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,7 +187,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-1493581984071299906
+--- !u!114 &8801002695877448058
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -212,9 +196,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2575242287168563192}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edf237b14a943894d876bad565af84e4, type: 3}
+  m_Script: {fileID: 11500000, guid: 16a9890003ad75e44a2160c8797ef730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttatchedToFill: 0
-  moneyOutput: 140000001e00000032000000
-  foodOutput: 96000000e100000090010000
+  pol_lvl1: 6
+  pol_lvl2: 0
+  pol_lvl3: 0

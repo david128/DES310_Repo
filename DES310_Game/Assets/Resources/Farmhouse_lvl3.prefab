@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 4892282002193222012}
   - component: {fileID: -6545920769084966244}
   - component: {fileID: 8088322239670929843}
-  - component: {fileID: 4316122765465410010}
   - component: {fileID: -6336340241781335808}
   m_Layer: 0
   m_Name: Farmhouse_lvl3
@@ -166,22 +165,6 @@ MonoBehaviour:
   pol_lvl1: 0
   pol_lvl2: 0
   pol_lvl3: 0
---- !u!114 &4316122765465410010
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5030813248048364716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edf237b14a943894d876bad565af84e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AttatchedToFill: 0
-  moneyOutput: 000000000000000000000000
-  foodOutput: 000000000000000000000000
-  level: 0
 --- !u!95 &-6336340241781335808
 Animator:
   serializedVersion: 3
