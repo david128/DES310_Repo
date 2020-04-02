@@ -11,7 +11,7 @@ public class MainMenu : MonoBehaviour
 
     public bool GetFromLoad() { return fromLoad; }
 
-    private void Start()
+    void Start()
     {
         instance = this;
     }

@@ -25,11 +25,11 @@ public class GameLoop : MonoBehaviour
         //Creates grid at the start
         gameManager.GetComponent<GridScript>().CreateGrid();
 
-        //Checks if the player is trying to load their saved game
-        if (MainMenu.instance.GetFromLoad() == true)
-        {
-            gameManager.GetComponent<Save>().LoadGameData();
-        }
+        ////Checks if the player is trying to load their saved game
+        //if (MainMenu.instance.GetFromLoad() == true)
+        //{
+        //    gameManager.GetComponent<Save>().LoadGameData();
+        //}
     }
 
     // Update is called once per frame
