@@ -44,7 +44,7 @@ public class FoodScript : MonoBehaviour
 
     private void Start()
     {
-        DistributionChoice.instance.SetDefDistributionChoice();
+        //DistributionChoice.instance.SetDefDistributionChoice();
 
         //Delay starting the functions
         InvokeRepeating("UpdateTimeBar", 10.0f, 0.1f);
