@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameLoop : MonoBehaviour
 {
@@ -22,8 +23,16 @@ public class GameLoop : MonoBehaviour
         //load events
         gameManager.GetComponent<Events>().HandleEventFile();
 
-        //Creates grid at the start
-        gameManager.GetComponent<GridScript>().CreateGrid();
+        //checks if the tutorial scene i
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("TutorialScene"))
+        {
+            //Creates grid at the start
+            gameManager.GetComponent<GridScript>().CreateGrid(true);
+        }
+        else
+        {
+            gameManager.GetComponent<GridScript>().CreateGrid(false);
+        }
 
         ////Checks if the player is trying to load their saved game
         //if (MainMenu.instance.GetFromLoad() == true)

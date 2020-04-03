@@ -54,7 +54,7 @@ public class GridScript : MonoBehaviour
     }
 
     //Creates the grid with the tiles and spacing betwen them
-    public void CreateGrid()
+    public void CreateGrid(bool tutorial)
     {
         //Declares variable
         int id = 0;
@@ -85,7 +85,7 @@ public class GridScript : MonoBehaviour
             for (int j = 0; j < rowLength; j++)
             {
                 //Calls Create Square function to place a unique tile
-                CreateSquare(new Vector3((xSpacing * (i % columnLength)), 1.0f, (zSpacing * (j % rowLength))), id);
+                CreateSquare(new Vector3((xSpacing * (i % columnLength)), 1.0f, (zSpacing * (j % rowLength))), id, tutorial);
 
                 id++;
             }
@@ -93,7 +93,7 @@ public class GridScript : MonoBehaviour
     }
 
     //creates individual tiles, setting ID and types
-    void CreateSquare(Vector3 pos, int ID)
+    void CreateSquare(Vector3 pos, int ID, bool tutorial)
     {
         //Sets default grids components and locations of assets
         if (ID == 10)
@@ -119,6 +119,30 @@ public class GridScript : MonoBehaviour
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectType(ObjectInfo.ObjectType.RESEARCH);
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectLevel(1);
 
+        }
+        else if (tutorial == true)
+        {
+            CreateTutSquare(pos, ID);
+        }
+        else
+        {   
+            gridSquare.GetComponent<ObjectInfo>().SetObjectID(ID);
+            gridSquare.GetComponent<ObjectInfo>().SetObjectType(ObjectInfo.ObjectType.EMPTY);
+            gridSquares.Add((GameObject)Instantiate(gridSquare, pos, Quaternion.identity));
+        }
+    }
+
+    //creates individual tiles, setting ID and types
+    void CreateTutSquare(Vector3 pos, int ID)
+    {
+        if (ID == 24)
+        {
+            gridSquares.Add((GameObject)Instantiate(Resources.Load("Field"), pos, Quaternion.identity));
+            gridSquares[ID].GetComponent<ObjectInfo>().SetObjectID(ID);
+            gridSquares[ID].GetComponent<ObjectInfo>().SetObjectType(ObjectInfo.ObjectType.FIELD);
+            gridSquares[ID].GetComponent<ObjectInfo>().SetObjectLevel(1);
+            Instantiate(Resources.Load("Corn"), pos, Quaternion.identity, gridSquares[ID].transform);
+            gridSquares[ID].GetComponent<ObjectFill>().SetFillType(ObjectFill.FillType.CORN);
         }
         else
         {
