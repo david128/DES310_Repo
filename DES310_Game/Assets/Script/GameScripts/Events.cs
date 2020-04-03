@@ -603,14 +603,17 @@ public class Events : MonoBehaviour
                         newEffect.SetEventEffectType(fe);
                         i += 1;
                         newEffect.SetReduction(float.Parse(lines[i]));
+                        i += 1;
                         break;
 
                     case ("DESTROY_EFFECT"):
                         EventEffectType de;
                         if (EventEffectType.TryParse((lines[i]).ToUpper(), out de) != true) { Debug.LogError("Error: fill type does not match fill enum in events file"); } //check that this
                         newEffect.SetEventEffectType(de);
+                        i += 1;
                         break;
                     case ("EFFECT_END"):
+                        newGameEvent.AddEfffect(newEffect);
                         i += 1;
                         break;
 
