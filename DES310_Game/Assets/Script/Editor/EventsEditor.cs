@@ -201,9 +201,44 @@ public class EventsEditor : EditorWindow
         prevIndex = index;
         index = EditorGUILayout.Popup(index, eventNames.ToArray());
 
+        if (GUILayout.Button("Add New Event"))
+        {
+            GameEvent newGameEvent = new GameEvent();
+            
+            newGameEvent.setEventName("Event" + gameEvents.Count.ToString());
+            newGameEvent.setEventDescription("Description of Event" + gameEvents.Count.ToString());
+            gameEvents.Add(newGameEvent);
+            
+        }
+
+
+
         //after init load display the following
         if (initialLoad)
         {
+            if (GUILayout.Button("Delete Event"))
+            {
+                gameEvents.RemoveAt(index);
+                index = 0;
+                if (gameEvents.Count == 0)
+                {
+                    GameEvent newGameEvent = new GameEvent();
+
+                    newGameEvent.setEventName("Event" + gameEvents.Count.ToString());
+                    newGameEvent.setEventDescription("Description of Event" + gameEvents.Count.ToString());
+                    gameEvents.Add(newGameEvent);
+                    prevIndex = 200;
+                }
+            }
+
+            eventNames.Clear();
+            for (int i = 0; i < gameEvents.Count; i++)
+            {
+
+                eventNames.Add(gameEvents[i].getEVentName());
+
+            }
+
             gameEvents[index].setEventName(EditorGUILayout.TextField("Name", gameEvents[index].getEVentName()));
             gameEvents[index].setEventDescription(EditorGUILayout.TextField("Description", gameEvents[index].GetEventDescription()));
 
