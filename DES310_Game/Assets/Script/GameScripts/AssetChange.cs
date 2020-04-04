@@ -248,7 +248,6 @@ public class AssetChange : MonoBehaviour
 
                 return (GameObject)Instantiate(Resources.Load("Pig"), new Vector3(transform.position.x - 2.19f, transform.position.y, transform.position.z + 1.24f), new Quaternion(0.0f, 0.999f, 0.0f, 0.041f), newAsset.transform);
 
-
             case ObjectFill.FillType.CHICKEN:
 
                 if (level == 3)
@@ -263,12 +262,11 @@ public class AssetChange : MonoBehaviour
 
                 return (GameObject)Instantiate(Resources.Load("Chicken"), new Vector3(transform.position.x + 2.818f, transform.position.y, transform.position.z - 1.299f), new Quaternion(0.0f, -0.625f, 0.0f, 0.780f), newAsset.transform);
 
-
             case ObjectFill.FillType.SUNFLOWER:
                 return (GameObject)Instantiate(Resources.Load("Sunflower"), transform.position, Quaternion.identity, newAsset.transform);
                
             case ObjectFill.FillType.SUGARCANE:
-                return (GameObject)Instantiate(Resources.Load("Sugarcane_Optimised"), transform.position, Quaternion.identity, newAsset.transform);
+                return (GameObject)Instantiate(Resources.Load("Sugarcane"), transform.position, Quaternion.identity, newAsset.transform);
 
             case ObjectFill.FillType.COCCOA:
                 return (GameObject)Instantiate(Resources.Load("Cocoa"), transform.position, Quaternion.identity, newAsset.transform);

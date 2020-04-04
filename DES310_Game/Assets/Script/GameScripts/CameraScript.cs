@@ -6,7 +6,7 @@ public class CameraScript : MonoBehaviour
 {
     // Update is called once per frame
     //Inputs for the main camera of the game
-
+   
     public void MoveCamera(Vector2 m)
     {
         if(m.x > 0)
@@ -30,22 +30,22 @@ public class CameraScript : MonoBehaviour
 
     public void MoveUp(float v)
     {
-        transform.position = new Vector3(transform.position.x + v, transform.position.y, transform.position.z + v);
+        Camera.main.transform.position = new Vector3(transform.position.x + v, transform.position.y, transform.position.z + v);
     }
 
     public void MoveDown(float v)
     {
-        transform.position = new Vector3(transform.position.x - v, transform.position.y, transform.position.z - v);
+        Camera.main.transform.position = new Vector3(transform.position.x - v, transform.position.y, transform.position.z - v);
     }
 
     public void MoveRight(float v)
     {
-        transform.position = new Vector3(transform.position.x - v, transform.position.y, transform.position.z + v);
+        Camera.main.transform.position = new Vector3(transform.position.x - v, transform.position.y, transform.position.z + v);
     }
 
     public void MoveLeft(float v)
     {
-        transform.position = new Vector3(transform.position.x + v, transform.position.y, transform.position.z - v);
+        Camera.main.transform.position = new Vector3(transform.position.x + v, transform.position.y, transform.position.z - v);
     }
 }
 

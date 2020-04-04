@@ -11,6 +11,10 @@ public class GameLoop : MonoBehaviour
     public float time;
     public float FPS;
 
+    bool inTutorial;
+
+    public bool GetInTutorial() { return inTutorial; }
+
     //Frames per second
     public float GetFPS() { return FPS; }
 
@@ -26,19 +30,21 @@ public class GameLoop : MonoBehaviour
         //checks if the tutorial scene i
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("TutorialScene"))
         {
+            inTutorial = true;
             //Creates grid at the start
             gameManager.GetComponent<GridScript>().CreateGrid(true);
         }
         else
         {
+            inTutorial = false;
             gameManager.GetComponent<GridScript>().CreateGrid(false);
         }
 
-        ////Checks if the player is trying to load their saved game
-        //if (MainMenu.instance.GetFromLoad() == true)
-        //{
-        //    gameManager.GetComponent<Save>().LoadGameData();
-        //}
+        //Checks if the player is trying to load their saved game
+        if (MainMenu.instance.GetFromLoad() == true)
+        {
+            gameManager.GetComponent<Save>().LoadGameData();
+        }
     }
 
     // Update is called once per frame
@@ -78,7 +84,5 @@ public class GameLoop : MonoBehaviour
 
         //Quits application
         Application.Quit();
-
-       
     }
 }
