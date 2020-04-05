@@ -40,11 +40,11 @@ public class GameLoop : MonoBehaviour
             gameManager.GetComponent<GridScript>().CreateGrid(false);
         }
 
-        //Checks if the player is trying to load their saved game
-        if (MainMenu.instance.GetFromLoad() == true)
-        {
-            gameManager.GetComponent<Save>().LoadGameData();
-        }
+        ////Checks if the player is trying to load their saved game
+        //if (MainMenu.instance.GetFromLoad() == true)
+        //{
+        //    gameManager.GetComponent<Save>().LoadGameData();
+        //}
     }
 
     // Update is called once per frame

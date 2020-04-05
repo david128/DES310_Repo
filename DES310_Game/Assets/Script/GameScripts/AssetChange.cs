@@ -130,7 +130,7 @@ public class AssetChange : MonoBehaviour
         if (type == ObjectInfo.ObjectType.FARMHOUSE && level >= 2)
         {
             locked = gameManager.GetComponent<GridScript>().lockLvl2;
-            Destroy(locked);
+            DestroyImmediate(locked);
         }
         if (type == ObjectInfo.ObjectType.FARMHOUSE && level == 3)
         {

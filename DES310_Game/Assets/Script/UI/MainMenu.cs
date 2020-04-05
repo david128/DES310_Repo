@@ -16,7 +16,7 @@ public class MainMenu : MonoBehaviour
         instance = this;
     }
 
-    public void PlayGame()
+    public void PlayNewGame()
     {
         //loads game scene at same time as unloading the menu and sets from load to false
         SceneLoader.instance.LoadScene(1);
@@ -27,7 +27,7 @@ public class MainMenu : MonoBehaviour
     public void LoadSavedGame()
     {
         //loads game scene at same time as unloading the menu and sets from load to true
-        SceneLoader.instance.LoadScene(1);
+        SceneLoader.instance.LoadScene(2);
         fromLoad = true;
        // SceneManager.UnloadSceneAsync(0);
     }

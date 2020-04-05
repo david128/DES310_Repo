@@ -9,14 +9,22 @@ public class TutorialManager : MonoBehaviour
     public GameObject cam;
     public GameObject TutorialBox;
 
-    public List<Button> tutMsgs;
+    public Button[] tutMsgs;
+
+    Button currentTut;
+    Button prevTut;
+    Button nextTut;
 
     public static TutorialManager instance;
 
     bool inTutorial;
-    bool updateTutorial;
+    bool updateTutorial = false;
 
     public bool GetTutorial() { return inTutorial; }
+
+    public void SetCurrentTut(Button c) { currentTut = c; }
+    public void SetPreviousTut(Button p) { prevTut = p; }
+    public void UpdateTutorialBox(bool b) { updateTutorial = b; }
 
     void Awake()
     {
@@ -40,9 +48,9 @@ public class TutorialManager : MonoBehaviour
         if (gameManager.GetComponent<GameLoop>().GetInTutorial() == true && cam.TryGetComponent(out camAnim))
         {
             //Waits until animation is done to perform next task
-           StartCoroutine(WaitForAnimationToShowTutorialBox(camAnim, "TutorialStartPan", true));
-           updateTutorial = true;
-
+            currentTut = tutMsgs[0];
+            prevTut = currentTut;
+            StartCoroutine(WaitForAnimationToShowTutorialBox(camAnim, "TutorialStartPan", true));
         }
     }
 
@@ -51,13 +59,18 @@ public class TutorialManager : MonoBehaviour
     {
         if(updateTutorial)
         {
-            ChangeTutMsg(tutMsgs);
+            ChangeTutMsg();
+            updateTutorial = false;
         }
     }
 
-    void ChangeTutMsg(List<Button> tutMsg)
+    public void ChangeTutMsg()
     {
+        ///Destroy(prevTut);
 
+        //Changes what is being shown in the tutorial box
+        prevTut.gameObject.SetActive(false);
+        currentTut.gameObject.SetActive(true);
     }
 
     IEnumerator WaitForAnimationToShowTutorialBox(Animator anim, string stateName, bool showTutBox)
@@ -82,5 +95,24 @@ public class TutorialManager : MonoBehaviour
         {
             TutorialBox.SetActive(false);
         }
+
+        updateTutorial = true;
+    }
+
+    IEnumerator WaitForAnimationTo(Animator anim, string stateName)
+    {
+        anim.Play(stateName);
+
+        float counter = 0;
+        float waitTime = anim.GetCurrentAnimatorStateInfo(0).length;
+
+        //Now, Wait until the current state is done playing
+        while (counter < (waitTime))
+        {
+            counter += Time.deltaTime;
+            yield return null;
+        }
+
+
     }
 }
