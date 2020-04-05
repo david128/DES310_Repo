@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 
 public class EventsEditor : EditorWindow
 {
@@ -17,6 +18,7 @@ public class EventsEditor : EditorWindow
     int[] deleteSub = { 100, 100 };
     int[] convertSub =  { 100 ,100};
     EventRequirementName convertSubTo;
+    
 
     string name = "";
     string desc = "";
@@ -24,6 +26,8 @@ public class EventsEditor : EditorWindow
     int index = 0;
 
     int prevIndex = 0;
+
+    Vector2 sPos;
 
     [MenuItem("Tools/Events Editor")]
     public static void ShowWindow()
@@ -73,6 +77,10 @@ public class EventsEditor : EditorWindow
 
             name = EditorGUILayout.TextField("Name", name);
             desc = EditorGUILayout.TextField("Description", desc);
+
+            EditorGUILayout.BeginVertical();
+
+            sPos = GUILayout.BeginScrollView(sPos, true, true, GUILayout.Width(100), GUILayout.Height(100));
 
             EditorGUI.indentLevel++; //lvl 1
 
@@ -195,6 +203,27 @@ public class EventsEditor : EditorWindow
 
             //effects
             GUILayout.Label("Effects", EditorStyles.boldLabel);
+
+            for (int i = 0; i < effects.Count; i++)
+            {
+                GUILayout.Label("", EditorStyles.label);
+
+                if (effects[i].GetEventEffectType() != EventEffectType.DESTROY_RANDOM)
+                {
+                    EditorGUILayout.EnumPopup(effects[i].GetEventEffectType());
+                    EditorGUILayout.EnumPopup(effects[i].GetFillEffected());
+                    EditorGUILayout.TextField("Reduction", effects[i].GetReduction().ToString());
+                }
+                else
+                {
+                    EditorGUILayout.EnumPopup(effects[i].GetEventEffectType());
+                    EditorGUILayout.EnumPopup(effects[i].GetFillEffected());
+                }
+
+            }
+
+            EditorGUILayout.EndScrollView();
+            EditorGUILayout.EndVertical();
         }
 
         //set index to prev index so nothing is updated until event is chaanged
@@ -211,7 +240,10 @@ public class EventsEditor : EditorWindow
             
         }
 
-
+        if (GUILayout.Button("Write Changes"))
+        {
+            WriteChanges();
+        }
 
         //after init load display the following
         if (initialLoad)
@@ -241,6 +273,10 @@ public class EventsEditor : EditorWindow
 
             gameEvents[index].setEventName(EditorGUILayout.TextField("Name", gameEvents[index].getEVentName()));
             gameEvents[index].setEventDescription(EditorGUILayout.TextField("Description", gameEvents[index].GetEventDescription()));
+
+            EditorGUILayout.BeginVertical();
+            
+            sPos = GUILayout.BeginScrollView(sPos, true, true);
 
 
             EditorGUI.indentLevel++; //lvl 1
@@ -443,9 +479,42 @@ public class EventsEditor : EditorWindow
 
             //GUILayout.EndHorizontal();
 
-
             //effects
             GUILayout.Label("Effects", EditorStyles.boldLabel);
+
+            for (int i = 0; i < effects.Count; i++)
+            {
+                GUILayout.Label("", EditorStyles.label);
+
+                if (effects[i].GetEventEffectType() != EventEffectType.DESTROY_RANDOM)
+                {
+                    effects[i].SetEventEffectType((EventEffectType)EditorGUILayout.EnumPopup(effects[i].GetEventEffectType()));
+                    effects[i].SetFillEffected((ObjectFill.FillType)EditorGUILayout.EnumPopup(effects[i].GetFillEffected()));
+                    effects[i].SetReduction(float.Parse(EditorGUILayout.TextField("Reduction", effects[i].GetReduction().ToString())));
+                }
+                else
+                {
+                    effects[i].SetEventEffectType((EventEffectType)EditorGUILayout.EnumPopup(effects[i].GetEventEffectType()));
+                    effects[i].SetFillEffected((ObjectFill.FillType)EditorGUILayout.EnumPopup(effects[i].GetFillEffected()));
+                    effects[i].SetReduction(0);
+                }
+
+                if (GUILayout.Button("Delete Effect"))
+                {
+                    effects.RemoveAt(i);
+                }
+
+
+            }
+
+            if (GUILayout.Button("Add New Effect"))
+            {
+                EventEffects newEffect = new EventEffects(0, ObjectFill.FillType.NONE, EventEffectType.MONEY_EFFECT);
+                effects.Add(newEffect);
+            }
+
+            EditorGUILayout.EndScrollView();
+            EditorGUILayout.EndVertical();
         }
 
         if (delete != 100)
@@ -472,6 +541,61 @@ public class EventsEditor : EditorWindow
             gameEvents[index].ConvertSubRequirement(convertSub[0],convertSub[1], convertSubTo);
             convertSub [0] = 100;
             convertSub [1] = 100;
+        }
+
+
+        void WriteChanges()
+        {
+            string path = "Assets/Resources/files/eventsNEW.txt";
+
+            File.WriteAllText(path, "");
+           
+
+            
+            for (int index = 0; index < gameEvents.Count; index++)
+            {
+                File.AppendAllText(path, "\nEVENTNAME\n");
+                File.AppendAllText(path, gameEvents[index].getEVentName().ToString() + "\n");
+                
+                File.AppendAllText(path, "DESCRIPTION\n");
+                File.AppendAllText(path, gameEvents[index].GetEventDescription().ToString() + "\n");
+
+                List<dynamic> reqs = gameEvents[index].getEventRequirements();
+                for (int i = 0; i < reqs.Count; i++)
+                {
+                    ValueMinOrMax v;
+                    if (reqs[i] is ValueMinOrMax)
+                    {
+
+                        if (reqs[i].GetRequirementType() == EventRequirementName.TIME)
+                        {
+                            //write time min
+
+                        }
+                        else if (reqs[i].GetRequirementType() == EventRequirementName.LEVEL)
+                        {
+                            //write lvl
+                        }
+                        else
+                        {
+                            //write value
+                        }
+
+                        File.AppendAllText(path, reqs[i].GetRequirementType().ToString() + "\n");
+
+
+                    else if (reqs[i] is string)
+                        {
+                            // write value
+                        }
+                        else
+                        {
+
+                        }
+                    }
+                }
+            }
+            File.AppendAllText(path, "\n");
         }
 
     }
