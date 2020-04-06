@@ -651,8 +651,9 @@ public class EventsEditor : EditorWindow
                 {
                     File.AppendAllText(path, "EFFECT\n");
                     File.AppendAllText(path, "EFFECTING\n");
-                    File.AppendAllText(path, eff[i].GetEventEffectType().ToString() + "\n");
                     File.AppendAllText(path, eff[i].GetFillEffected().ToString() + "\n");
+                    File.AppendAllText(path, eff[i].GetEventEffectType().ToString() + "\n");
+                    
                     if (eff[i].GetEventEffectType() != EventEffectType.DESTROY_RANDOM)
                     {
                         File.AppendAllText(path, eff[i].GetReduction().ToString() + "\n");
