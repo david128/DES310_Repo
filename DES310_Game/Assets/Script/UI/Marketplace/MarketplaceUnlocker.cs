@@ -40,7 +40,16 @@ public class MarketplaceUnlocker : MonoBehaviour
             {
                 marketButtons[i].interactable = true;
             }
-        }
-    }
 
+            if (TutorialManager.instance != null && TutorialManager.instance.GetTutorial() == true)
+            {
+                if (marketButtons[i].name == "Chick")
+                {
+                    marketButtons[i].onClick.AddListener(delegate { TutorialEvents.instance.SetChickenBuilt(true); });
+                }
+            }
+        }
+
+       
+    }
 }

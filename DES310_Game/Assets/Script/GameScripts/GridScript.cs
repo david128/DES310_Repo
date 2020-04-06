@@ -74,10 +74,7 @@ public class GridScript : MonoBehaviour
         Instantiate(Resources.Load("Grid"), new Vector3(36.0f, 1.0f, 25.9f), Quaternion.identity);
 
         //Spawns locked area blockers
-        if (tutorial == false)
-        {
-            lockLvl2 = Instantiate(lockLvl2, new Vector3(76.64f, 12.0f, -14.213f), Quaternion.identity);
-        }
+        lockLvl2 = Instantiate(lockLvl2, new Vector3(76.64f, 12.0f, -14.213f), Quaternion.identity);
 
         lockLvl3 = Instantiate(lockLvl3, new Vector3(-11.89f, 12.0f, 87.5f), new Quaternion(0.0f, 0.7071f, 0.0f, 0.7071f));
 
@@ -216,24 +213,6 @@ public class GridScript : MonoBehaviour
             Instantiate(Resources.Load("Pig"), pos, Quaternion.identity, gridSquares[ID].transform);
             Instantiate(Resources.Load("Pig"), pos, Quaternion.identity, gridSquares[ID].transform);
             gridSquares[ID].GetComponent<ObjectFill>().SetFillType(ObjectFill.FillType.PIG);
-        }
-        else if(ID == 17)
-        {
-            gridSquares.Add((GameObject)Instantiate(Resources.Load("Field"), pos, Quaternion.identity));
-            gridSquares[ID].GetComponent<ObjectInfo>().SetObjectID(ID);
-            gridSquares[ID].GetComponent<ObjectInfo>().SetObjectType(ObjectInfo.ObjectType.FIELD);
-            gridSquares[ID].GetComponent<ObjectInfo>().SetObjectLevel(1);
-            Instantiate(Resources.Load("Corn"), pos, Quaternion.identity, gridSquares[ID].transform);
-            gridSquares[ID].GetComponent<ObjectFill>().SetFillType(ObjectFill.FillType.CORN);
-        }
-        else if(ID == 18)
-        {
-            gridSquares.Add((GameObject)Instantiate(Resources.Load("Field"), pos, Quaternion.identity));
-            gridSquares[ID].GetComponent<ObjectInfo>().SetObjectID(ID);
-            gridSquares[ID].GetComponent<ObjectInfo>().SetObjectType(ObjectInfo.ObjectType.FIELD);
-            gridSquares[ID].GetComponent<ObjectInfo>().SetObjectLevel(1);
-            Instantiate(Resources.Load("Corn"), pos, Quaternion.identity, gridSquares[ID].transform);
-            gridSquares[ID].GetComponent<ObjectFill>().SetFillType(ObjectFill.FillType.CORN);
         }
         else if(ID == 19)
         {

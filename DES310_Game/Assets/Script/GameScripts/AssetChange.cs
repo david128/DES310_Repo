@@ -147,7 +147,8 @@ public class AssetChange : MonoBehaviour
 
         if (asset.TryGetComponent<Animator>(out anim))
         {
-            StartCoroutine(DestroyAnimation(anim, "DestroyAnim", asset));
+            anim.Play("DestroyAnim");
+            StartCoroutine(UpdateClipLength(anim, asset));
         }
         else
         {
@@ -175,14 +176,12 @@ public class AssetChange : MonoBehaviour
         gameManager.GetComponent<SustainabilityScript>().CheckPollution();
     }
 
-    IEnumerator DestroyAnimation(Animator anim, string stateName, GameObject asset)
+    IEnumerator DestroyAnimation(Animator anim, GameObject asset)
     {
-        anim.Play(stateName);
-
         Destroy(asset.GetComponent<BoxCollider>());
         
         float counter = 0;
-        float waitTime = anim.GetCurrentAnimatorStateInfo(0).length + (anim.GetCurrentAnimatorStateInfo(0).speedMultiplier * anim.GetCurrentAnimatorStateInfo(0).length);
+        float waitTime = anim.GetCurrentAnimatorStateInfo(0).length;
 
         //Now, Wait until the current state is done playing
         while (counter < (waitTime))
@@ -196,6 +195,21 @@ public class AssetChange : MonoBehaviour
 
         //Destroy shape to be replaced
         GameObject.Destroy(asset);
+    }
+
+    private IEnumerator UpdateClipLength(Animator anim, GameObject asset)
+    {
+        bool newFrame = false;
+
+        while (!newFrame)
+        {
+            newFrame = true;
+            yield return new WaitForEndOfFrame();
+        }
+
+        print("current clip length = " + anim.GetCurrentAnimatorStateInfo(0).length);
+
+        StartCoroutine(DestroyAnimation(anim, asset));
     }
 
     GameObject LoadFill(ObjectFill.FillType fill, Transform transform, int level)

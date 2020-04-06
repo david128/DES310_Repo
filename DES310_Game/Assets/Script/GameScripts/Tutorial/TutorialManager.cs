@@ -19,24 +19,25 @@ public class TutorialManager : MonoBehaviour
 
     bool inTutorial;
     bool updateTutorial = false;
+    bool showTutorialBox;
 
     public bool GetTutorial() { return inTutorial; }
-
     public void SetCurrentTut(Button c) { currentTut = c; }
     public void SetPreviousTut(Button p) { prevTut = p; }
     public void UpdateTutorialBox(bool b) { updateTutorial = b; }
+    public void SetTutorialBox(bool t) { showTutorialBox = t; }
 
     void Awake()
     {
         instance = this;
     }
 
-    Animator camAnim;
-
     // Start is called before the first frame update
     void Start()
     {
-        if(gameManager.GetComponent<MainMenu>().GetFromLoad() == false)
+        Animator camAnim;
+
+        if (gameManager.GetComponent<MainMenu>().GetFromLoad() == false)
         {
             inTutorial = true;
         }
@@ -47,10 +48,12 @@ public class TutorialManager : MonoBehaviour
 
         if (gameManager.GetComponent<GameLoop>().GetInTutorial() == true && cam.TryGetComponent(out camAnim))
         {
-            //Waits until animation is done to perform next task
             currentTut = tutMsgs[0];
             prevTut = currentTut;
-            StartCoroutine(WaitForAnimationToShowTutorialBox(camAnim, "TutorialStartPan", true));
+            //Waits until animation is done to perform next task
+            camAnim.enabled = true;
+            camAnim.Play("TutorialStartPan");
+            StartCoroutine(UpdateClipLength(camAnim));
         }
     }
 
@@ -61,6 +64,10 @@ public class TutorialManager : MonoBehaviour
         {
             ChangeTutMsg();
             updateTutorial = false;
+        }
+        if(showTutorialBox == true)
+        {
+            TutorialBox.SetActive(true);
         }
     }
 
@@ -73,10 +80,8 @@ public class TutorialManager : MonoBehaviour
         currentTut.gameObject.SetActive(true);
     }
 
-    IEnumerator WaitForAnimationToShowTutorialBox(Animator anim, string stateName, bool showTutBox)
+    public IEnumerator WaitForAnimationToShowTutorialBox(Animator anim, bool showTutBox)
     {
-        anim.Play(stateName);
-
         float counter = 0;
         float waitTime = anim.GetCurrentAnimatorStateInfo(0).length;
 
@@ -97,22 +102,22 @@ public class TutorialManager : MonoBehaviour
         }
 
         updateTutorial = true;
+
+        anim.enabled = false;
     }
 
-    IEnumerator WaitForAnimationTo(Animator anim, string stateName)
+    public IEnumerator UpdateClipLength(Animator anim)
     {
-        anim.Play(stateName);
+        bool newFrame = false;
 
-        float counter = 0;
-        float waitTime = anim.GetCurrentAnimatorStateInfo(0).length;
-
-        //Now, Wait until the current state is done playing
-        while (counter < (waitTime))
+        while (!newFrame)
         {
-            counter += Time.deltaTime;
-            yield return null;
+            newFrame = true;
+            yield return new WaitForEndOfFrame();
         }
 
+        print("current clip length = " + anim.GetCurrentAnimatorStateInfo(0).length);
 
+        StartCoroutine(WaitForAnimationToShowTutorialBox(anim, true));
     }
 }
