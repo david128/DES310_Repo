@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GridScript : MonoBehaviour
 {
@@ -72,6 +73,11 @@ public class GridScript : MonoBehaviour
 
         //spawns outside ground
         Instantiate(Resources.Load("Grid"), new Vector3(36.0f, 1.0f, 25.9f), Quaternion.identity);
+
+        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("TutorialScene"))
+        {
+            Instantiate(Resources.Load("TutorialBlockers"), new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
+        }
 
         //Spawns locked area blockers
         lockLvl2 = Instantiate(lockLvl2, new Vector3(76.64f, 12.0f, -14.213f), Quaternion.identity);
