@@ -664,11 +664,12 @@ public class EventsEditor : EditorWindow
 
                 }
 
+                //write end and blank line
+                File.AppendAllText(path, "END\n");
             }
 
 
-            //write end and blank line
-            File.AppendAllText(path, "END\n");
+            
         }
     }
 
