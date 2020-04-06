@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &231036337485772616
+--- !u!1 &6703813790397825470
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,17 +8,14 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3850462832996713819}
-  - component: {fileID: 5202943125589475181}
-  - component: {fileID: 1947833637816353684}
-  - component: {fileID: 6633676446609043791}
-  - component: {fileID: -3514769147283890486}
-  - component: {fileID: -91244522160436823}
-  - component: {fileID: -454554449694159147}
-  - component: {fileID: -177991207880965030}
-  - component: {fileID: 256198821010649061}
-  - component: {fileID: 6209907133963222920}
-  - component: {fileID: 2522748788420990427}
+  - component: {fileID: 7733774330232959917}
+  - component: {fileID: 1587770073641044379}
+  - component: {fileID: 4986730617733723490}
+  - component: {fileID: 3326284400731081149}
+  - component: {fileID: 3326284400731081122}
+  - component: {fileID: 3326284400731081121}
+  - component: {fileID: 3326284400731081120}
+  - component: {fileID: 3326284400731081123}
   m_Layer: 0
   m_Name: MeatLab_lvl2
   m_TagString: Untagged
@@ -26,35 +23,35 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3850462832996713819
+--- !u!4 &7733774330232959917
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 231036337485772616}
+  m_GameObject: {fileID: 6703813790397825470}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.603003, y: 8.47, z: 75.59}
+  m_LocalPosition: {x: -59.62, y: 2, z: -25.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5202943125589475181
+--- !u!33 &1587770073641044379
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 231036337485772616}
-  m_Mesh: {fileID: 1932616432471228048, guid: e699204911d040344900c4cb9c537f84, type: 3}
---- !u!23 &1947833637816353684
+  m_GameObject: {fileID: 6703813790397825470}
+  m_Mesh: {fileID: 3620999561706935866, guid: c5f08db345c8fe34e9486b4e4c392e95, type: 3}
+--- !u!23 &4986730617733723490
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 231036337485772616}
+  m_GameObject: {fileID: 6703813790397825470}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -65,14 +62,13 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 2100000, guid: 69dd36af093b33c4bbcf94e097dcaa51, type: 2}
   - {fileID: 2100000, guid: 7eac8f36072f122419a0b6ea55db7d7c, type: 2}
   - {fileID: 2100000, guid: 69dd36af093b33c4bbcf94e097dcaa51, type: 2}
-  - {fileID: 2100000, guid: e9e42fd411fe66549903241181541cad, type: 2}
+  - {fileID: 2100000, guid: ba0ed77097f0023429517d98f52249f5, type: 2}
   - {fileID: 2100000, guid: 7eac8f36072f122419a0b6ea55db7d7c, type: 2}
   - {fileID: 2100000, guid: df3bb744bef17ba4c850ce801391ce01, type: 2}
-  - {fileID: 2100000, guid: e9e42fd411fe66549903241181541cad, type: 2}
-  - {fileID: 2100000, guid: ba0ed77097f0023429517d98f52249f5, type: 2}
-  - {fileID: 2100000, guid: df3bb744bef17ba4c850ce801391ce01, type: 2}
+  - {fileID: 2100000, guid: 4674bae256f6a0749b335f1ee8e849b1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -93,93 +89,27 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &6633676446609043791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 231036337485772616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c39e48ac04108ff439ee1b74af5371b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  title: Meat Lab
-  options:
-  - Color: {r: 0, g: 0, b: 0, a: 0}
-    Symbol: {fileID: 21300000, guid: aca4cbc874326ab478a020a0696caeed, type: 3}
-    Title: Upgrade
-  - Color: {r: 0, g: 0, b: 0, a: 0}
-    Symbol: {fileID: 21300000, guid: 59f671ec53a8d5843b6ef4ff9378c2d3, type: 3}
-    Title: Demolish
-  - Color: {r: 0, g: 0, b: 0, a: 0}
-    Symbol: {fileID: 21300000, guid: 72405e6d4b5b3494b9b4209d48bdb377, type: 3}
-    Title: Back
---- !u!114 &-3514769147283890486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 231036337485772616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea5c64a0edbc99b44870f36e22d14ba0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fillType: 0
---- !u!114 &-91244522160436823
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 231036337485772616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 155482db5d7f9994fbe59fb2639247e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: 0
-  objectType: 12
-  level: 2
---- !u!114 &-454554449694159147
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 231036337485772616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edf237b14a943894d876bad565af84e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AttatchedToFill: 0
-  moneyOutput: 000000000000000000000000
-  foodOutput: 000000000000000000000000
---- !u!65 &-177991207880965030
+--- !u!65 &3326284400731081149
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 231036337485772616}
+  m_GameObject: {fileID: 6703813790397825470}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 13.14043, y: 0.40692, z: 8.245068}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!95 &256198821010649061
+--- !u!95 &3326284400731081122
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 231036337485772616}
+  m_GameObject: {fileID: 6703813790397825470}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: de994223fa91acb4daf552afbe2c554e, type: 2}
@@ -191,13 +121,51 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6209907133963222920
+--- !u!114 &3326284400731081121
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 231036337485772616}
+  m_GameObject: {fileID: 6703813790397825470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 155482db5d7f9994fbe59fb2639247e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: 0
+  objectType: 12
+  level: 2
+--- !u!114 &3326284400731081120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6703813790397825470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c39e48ac04108ff439ee1b74af5371b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: Meat Lab
+  options:
+  - Color: {r: 0, g: 0, b: 0, a: 0}
+    Symbol: {fileID: 21300000, guid: 0f630a0a22b4e164b8555e2d166bb8f9, type: 3}
+    Title: Upgrade
+  - Color: {r: 0, g: 0, b: 0, a: 0}
+    Symbol: {fileID: 21300000, guid: 250cbb2e5fad9f642b5b390dfc38ace9, type: 3}
+    Title: Demolish
+  - Color: {r: 0, g: 0, b: 0, a: 0}
+    Symbol: {fileID: 21300000, guid: ca82c9da83539304487a4b5ec8b8c3d9, type: 3}
+    Title: Back
+--- !u!114 &3326284400731081123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6703813790397825470}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16a9890003ad75e44a2160c8797ef730, type: 3}

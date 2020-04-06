@@ -16,7 +16,7 @@ public class GameInfo : MonoBehaviour
 
     public ObjectData GetTypeInfo(ObjectInfo.ObjectType type, ObjectFill.FillType fill) //ret
     {
-        switch(type)
+        switch (type)
         {
             case ObjectInfo.ObjectType.BARN:
                 data.purchaseCost = 0;
@@ -41,7 +41,7 @@ public class GameInfo : MonoBehaviour
 
             case ObjectInfo.ObjectType.FIELD:
 
-                switch(fill)
+                switch (fill)
                 {
                     case ObjectFill.FillType.CARROT:
                         data.purchaseCost = 250;
@@ -147,7 +147,5 @@ public class GameInfo : MonoBehaviour
         return data;
 
     }
-
-
 }
 

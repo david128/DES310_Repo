@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2069631338842431290
+--- !u!1 &145021427631414697
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,76 +8,45 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6868092991757422503}
+  - component: {fileID: 2069725620740346677}
+  - component: {fileID: 4472876622291714722}
+  - component: {fileID: 4104859174541205628}
   m_Layer: 0
-  m_Name: Field_Levels
+  m_Name: PIgFieldLVL3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6868092991757422503
+--- !u!4 &2069725620740346677
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2069631338842431290}
+  m_GameObject: {fileID: 145021427631414697}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 3076642391553465579}
-  m_Father: {fileID: 1338463315392788884}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2149525983215333422
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3076642391553465579}
-  - component: {fileID: 1449058345586087038}
-  - component: {fileID: 2523406159973315055}
-  m_Layer: 0
-  m_Name: Pig_Field_Optimized
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3076642391553465579
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2149525983215333422}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.07137132, y: 0, z: 0.013713837}
-  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 6868092991757422503}
+  m_Father: {fileID: 6173270214856687135}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &1449058345586087038
+--- !u!33 &4472876622291714722
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2149525983215333422}
-  m_Mesh: {fileID: -6049783828759930352, guid: b0b5e390f00579442a6faeb540fd0751, type: 3}
---- !u!23 &2523406159973315055
+  m_GameObject: {fileID: 145021427631414697}
+  m_Mesh: {fileID: -3756410008099273600, guid: 4dde69e81566cf24bb4b4951a4d66dad, type: 3}
+--- !u!23 &4104859174541205628
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2149525983215333422}
+  m_GameObject: {fileID: 145021427631414697}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -88,6 +57,10 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+  - {fileID: 2100000, guid: ae1dd880f06e0b04c94189e3738540c0, type: 2}
+  - {fileID: 2100000, guid: 7eac8f36072f122419a0b6ea55db7d7c, type: 2}
+  - {fileID: 2100000, guid: df6d74c9bd227ab4ca0f48acc16b7811, type: 2}
+  - {fileID: 2100000, guid: 5170b9dabc8d00f4d80732f6781e6dc3, type: 2}
   - {fileID: 2100000, guid: 4674bae256f6a0749b335f1ee8e849b1, type: 2}
   - {fileID: 2100000, guid: ba0ed77097f0023429517d98f52249f5, type: 2}
   - {fileID: 2100000, guid: 69dd36af093b33c4bbcf94e097dcaa51, type: 2}
@@ -111,7 +84,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!1 &2650496558997834631
+--- !u!1 &2110740803088937932
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,13 +92,44 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1338463315392788884}
-  - component: {fileID: 5006601902392258753}
-  - component: {fileID: 330927659218458357}
-  - component: {fileID: 6175001297537738095}
-  - component: {fileID: 5519526851283016615}
-  - component: {fileID: 2934476990634213518}
-  - component: {fileID: 1421849977730302273}
+  - component: {fileID: 6173270214856687135}
+  m_Layer: 0
+  m_Name: PigFields
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6173270214856687135
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110740803088937932}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2069725620740346677}
+  m_Father: {fileID: 708338547884041553}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4580125571850098498
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 708338547884041553}
+  - component: {fileID: 6360733825518158241}
+  - component: {fileID: 7983259214375072283}
+  - component: {fileID: 2336942790205239283}
+  - component: {fileID: 4124568589196735505}
+  - component: {fileID: 4115008662371232308}
+  - component: {fileID: 5940208514140607691}
   m_Layer: 0
   m_Name: PigField_lvl3
   m_TagString: Untagged
@@ -133,28 +137,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1338463315392788884
+--- !u!4 &708338547884041553
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2650496558997834631}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 32.57421, y: 3.31, z: 34.827328}
+  m_GameObject: {fileID: 4580125571850098498}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.12, y: 2, z: 14.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 6868092991757422503}
+  - {fileID: 6173270214856687135}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5006601902392258753
+--- !u!114 &6360733825518158241
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2650496558997834631}
+  m_GameObject: {fileID: 4580125571850098498}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 155482db5d7f9994fbe59fb2639247e6, type: 3}
@@ -163,13 +167,13 @@ MonoBehaviour:
   ID: 0
   objectType: 7
   level: 3
---- !u!114 &330927659218458357
+--- !u!114 &7983259214375072283
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2650496558997834631}
+  m_GameObject: {fileID: 4580125571850098498}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c39e48ac04108ff439ee1b74af5371b5, type: 3}
@@ -178,31 +182,31 @@ MonoBehaviour:
   title: Pig Field
   options:
   - Color: {r: 0, g: 0, b: 0, a: 0}
-    Symbol: {fileID: 21300000, guid: 59f671ec53a8d5843b6ef4ff9378c2d3, type: 3}
+    Symbol: {fileID: 21300000, guid: 250cbb2e5fad9f642b5b390dfc38ace9, type: 3}
     Title: Demolish
   - Color: {r: 0, g: 0, b: 0, a: 0}
-    Symbol: {fileID: 21300000, guid: 72405e6d4b5b3494b9b4209d48bdb377, type: 3}
+    Symbol: {fileID: 21300000, guid: ca82c9da83539304487a4b5ec8b8c3d9, type: 3}
     Title: Back
---- !u!114 &6175001297537738095
+--- !u!114 &2336942790205239283
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2650496558997834631}
+  m_GameObject: {fileID: 4580125571850098498}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea5c64a0edbc99b44870f36e22d14ba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fillType: 7
---- !u!114 &5519526851283016615
+--- !u!114 &4124568589196735505
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2650496558997834631}
+  m_GameObject: {fileID: 4580125571850098498}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: edf237b14a943894d876bad565af84e4, type: 3}
@@ -211,27 +215,27 @@ MonoBehaviour:
   AttatchedToFill: 0
   moneyOutput: 000000000000000000000000
   foodOutput: 000000000000000000000000
---- !u!65 &2934476990634213518
+--- !u!65 &4115008662371232308
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2650496558997834631}
+  m_GameObject: {fileID: 4580125571850098498}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 14, y: 1, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!95 &1421849977730302273
+--- !u!95 &5940208514140607691
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2650496558997834631}
+  m_GameObject: {fileID: 4580125571850098498}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: de994223fa91acb4daf552afbe2c554e, type: 2}
