@@ -242,7 +242,11 @@ public class EventsEditor : EditorWindow
 
         if (GUILayout.Button("Write Changes"))
         {
-            WriteChanges();
+            if (initialLoad == true)
+            {
+                WriteChanges();
+            }
+            
         }
 
         //after init load display the following
@@ -546,58 +550,125 @@ public class EventsEditor : EditorWindow
 
         void WriteChanges()
         {
-            string path = "Assets/Resources/files/eventsNEW.txt";
+            string path = "Assets/Resources/files/events.txt";
 
             File.WriteAllText(path, "");
-           
+
 
             
             for (int index = 0; index < gameEvents.Count; index++)
             {
-                File.AppendAllText(path, "\nEVENTNAME\n");
+                File.AppendAllText(path, "EVENTNAME\n");
                 File.AppendAllText(path, gameEvents[index].getEVentName().ToString() + "\n");
-                
+
                 File.AppendAllText(path, "DESCRIPTION\n");
                 File.AppendAllText(path, gameEvents[index].GetEventDescription().ToString() + "\n");
 
                 List<dynamic> reqs = gameEvents[index].getEventRequirements();
                 for (int i = 0; i < reqs.Count; i++)
                 {
-                    ValueMinOrMax v;
+                    
+                    
                     if (reqs[i] is ValueMinOrMax)
                     {
 
                         if (reqs[i].GetRequirementType() == EventRequirementName.TIME)
                         {
                             //write time min
+                            File.AppendAllText(path, "TIME_MIN\n");
 
                         }
                         else if (reqs[i].GetRequirementType() == EventRequirementName.LEVEL)
                         {
                             //write lvl
+                            File.AppendAllText(path, "LVL\n");
                         }
                         else
                         {
-                            //write value
+                            //write enum
+                            File.AppendAllText(path, reqs[i].GetRequirementType().ToString() + "\n");
                         }
 
-                        File.AppendAllText(path, reqs[i].GetRequirementType().ToString() + "\n");
+                        //write val
+                        File.AppendAllText(path, reqs[i].GetValue().ToString() + "\n");
 
-
-                    else if (reqs[i] is string)
-                        {
-                            // write value
-                        }
-                        else
-                        {
-
-                        }
                     }
-                }
-            }
-            File.AppendAllText(path, "\n");
-        }
+                    else if (reqs[i] is string)
+                    {
+                        // write value
+                        File.AppendAllText(path, reqs[i] + "\n");
+                    }
+                    else
+                    {
+                        //sub req
+                        File.AppendAllText(path, "SUB_REQ\n");
 
+                        for (int j = 0; j < reqs[i].Count; j++)
+                        {
+                            if (reqs[i][j] is ValueMinOrMax)
+                            {
+                                if (reqs[i][j].GetRequirementType() == EventRequirementName.TIME)
+                                {
+                                    //write time min
+                                    File.AppendAllText(path, "TIME_MIN\n");
+
+                                }
+                                else if (reqs[i][j].GetRequirementType() == EventRequirementName.LEVEL)
+                                {
+                                    //write lvl
+                                    File.AppendAllText(path, "LVL\n");
+                                }
+                                else
+                                {
+                                    //write enum
+                                    File.AppendAllText(path, reqs[i][j].GetRequirementType().ToString() + "\n");
+                                }
+
+                                File.AppendAllText(path, reqs[i][j].GetValue().ToString() + "\n");
+                            }
+                            else if (reqs[i][j] is string)
+                            {
+                                File.AppendAllText(path, reqs[i][j] + "\n");
+                            }
+                            else if (reqs[i][j] is ObjectFill.FillType)
+                            {
+                                File.AppendAllText(path, "FILL_TYPE\n");
+                                File.AppendAllText(path, reqs[i][j] + "\n");
+                            }
+                            
+
+                        }
+
+                        //end sub req
+                        File.AppendAllText(path, "END_SUB_REQ\n");
+
+                    }
+
+                }
+
+                List<EventEffects> eff = gameEvents[index].getEffects();
+                for (int i= 0; i < eff.Count; i++)
+                {
+                    File.AppendAllText(path, "EFFECT\n");
+                    File.AppendAllText(path, "EFFECTING\n");
+                    File.AppendAllText(path, eff[i].GetEventEffectType().ToString() + "\n");
+                    File.AppendAllText(path, eff[i].GetFillEffected().ToString() + "\n");
+                    if (eff[i].GetEventEffectType() != EventEffectType.DESTROY_RANDOM)
+                    {
+                        File.AppendAllText(path, eff[i].GetReduction().ToString() + "\n");
+                                                
+                    }
+
+                    File.AppendAllText(path, "EFFECT_END\n");
+
+                }
+
+            }
+
+
+            //write end and blank line
+            File.AppendAllText(path, "END\n");
+        }
     }
 
 

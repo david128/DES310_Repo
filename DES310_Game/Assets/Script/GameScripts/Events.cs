@@ -426,6 +426,12 @@ public class Events : MonoBehaviour
 
             while ((i + 1) <= lines.Length && eventDone != true)
             {
+                if (lines[i].EndsWith("\r"))
+                {
+                    lines[i]= lines[i].Remove(lines[i].Length - 1); ;
+
+
+                }
                 switch (lines[i])
                 {
                     case ("EVENTNAME"):
