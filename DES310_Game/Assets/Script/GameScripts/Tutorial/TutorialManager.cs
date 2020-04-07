@@ -20,12 +20,14 @@ public class TutorialManager : MonoBehaviour
     bool inTutorial;
     bool updateTutorial = false;
     bool showTutorialBox;
+    bool endOfTut = false;
 
     public bool GetTutorial() { return inTutorial; }
     public void SetCurrentTut(Button c) { currentTut = c; }
     public void SetPreviousTut(Button p) { prevTut = p; }
     public void UpdateTutorialBox(bool b) { updateTutorial = b; }
     public void SetTutorialBox(bool t) { showTutorialBox = t; }
+    public void SetEndOfTut(bool e) { endOfTut = e; }
 
     void Awake()
     {
@@ -36,6 +38,9 @@ public class TutorialManager : MonoBehaviour
     void Start()
     {
         Animator camAnim;
+
+        InputScript.instance.SetCanMove(false);
+        InputScript.instance.SetAllowSelecting(false);
 
         if (gameManager.GetComponent<MainMenu>().GetFromLoad() == false)
         {
@@ -65,9 +70,12 @@ public class TutorialManager : MonoBehaviour
             ChangeTutMsg();
             updateTutorial = false;
         }
+
         if(showTutorialBox == true)
         {
+            InputScript.instance.SetAllowSelecting(false);
             TutorialBox.SetActive(true);
+            showTutorialBox = false;
         }
     }
 

@@ -9,7 +9,7 @@ public class CameraScript : MonoBehaviour
    
     public void MoveCamera(Vector2 m)
     {
-        if(m.x > 0)
+        if (m.x > 0)
         {
             MoveLeft(Mathf.Abs(m.x) * 0.001f);
         }

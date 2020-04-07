@@ -5,6 +5,11 @@ using UnityEngine.UI;
 
 public class MarketplaceUnlocker : MonoBehaviour
 {
+    public GameObject VeggieTab;
+    public GameObject AnimalTab;
+    public Button ChickenConfirm;
+    public Button CarrotConfirm;
+
     //This field should be set by the inspector
     public int[] farmhouseRequirement;
     public int[] barnRequirement;
@@ -43,9 +48,33 @@ public class MarketplaceUnlocker : MonoBehaviour
 
             if (TutorialManager.instance != null && TutorialManager.instance.GetTutorial() == true)
             {
-                if (marketButtons[i].name == "Chick")
+                if (TutorialEvents.instance.GetChickenBuilt() == false)
                 {
-                    marketButtons[i].onClick.AddListener(delegate { TutorialEvents.instance.SetChickenBuilt(true); });
+                    VeggieTab.SetActive(false);
+                    AnimalTab.SetActive(true);
+
+                    bool tempTrue = true;
+
+                    if (marketButtons[i].name == "Chick")
+                    {
+                        marketButtons[i].onClick.AddListener(delegate { TutorialEvents.instance.SetChickenMenuOpen(tempTrue); });
+                        ChickenConfirm.onClick.AddListener(delegate { TutorialEvents.instance.SetChickenBuilt(tempTrue); });
+                        ChickenConfirm.onClick.AddListener(delegate { TutorialManager.instance.SetTutorialBox(tempTrue); });
+                    }
+                }
+
+                if (TutorialEvents.instance.GetCarrotBuilt() == false && TutorialEvents.instance.GetChickenBuilt() == true)
+                {
+                    VeggieTab.SetActive(true);
+                    AnimalTab.SetActive(false);
+
+                    bool tempTrue = true;
+                    if (marketButtons[i].name == "Carrot")
+                    {
+                        marketButtons[i].onClick.AddListener(delegate { TutorialEvents.instance.SetCarrotMenuOpen(tempTrue); });
+                        CarrotConfirm.onClick.AddListener(delegate { TutorialEvents.instance.SetChickenBuilt(tempTrue); });
+                        CarrotConfirm.onClick.AddListener(delegate { TutorialManager.instance.SetTutorialBox(tempTrue); });
+                    }
                 }
             }
         }
