@@ -18,10 +18,7 @@ public class Events : MonoBehaviour
     void setUpEvents()
     {
         currentEventEffects.Add(new EventEffects(0, 0, 0, ObjectFill.FillType.NONE));
-
     }
-    
-
     
     void AddNewEvent(GameEvent gameEvent) //add new event to list of events
     {
