@@ -9,11 +9,12 @@ public class TutorialManager : MonoBehaviour
     public GameObject cam;
     public GameObject TutorialBox;
 
+    public RuntimeAnimatorController animContr;
+
     public Button[] tutMsgs;
 
     Button currentTut;
     Button prevTut;
-    Button nextTut;
 
     public static TutorialManager instance;
 
@@ -23,6 +24,10 @@ public class TutorialManager : MonoBehaviour
     bool endOfTut = false;
 
     public bool GetTutorial() { return inTutorial; }
+    public GameObject GetTutorialBox() { return TutorialBox; }
+    public RuntimeAnimatorController GetAnimContr() { return animContr; }
+
+    //Setters
     public void SetCurrentTut(Button c) { currentTut = c; }
     public void SetPreviousTut(Button p) { prevTut = p; }
     public void UpdateTutorialBox(bool b) { updateTutorial = b; }
@@ -58,7 +63,7 @@ public class TutorialManager : MonoBehaviour
             //Waits until animation is done to perform next task
             camAnim.enabled = true;
             camAnim.Play("TutorialStartPan");
-            StartCoroutine(UpdateClipLength(camAnim));
+            StartCoroutine(UpdateClipLength(camAnim, true));
         }
     }
 
@@ -114,7 +119,22 @@ public class TutorialManager : MonoBehaviour
         anim.enabled = false;
     }
 
-    public IEnumerator UpdateClipLength(Animator anim)
+    public IEnumerator WaitForAnimation(Animator anim)
+    {
+        float counter = 0;
+        float waitTime = anim.GetCurrentAnimatorStateInfo(0).length;
+
+        //Now, Wait until the current state is done playing
+        while (counter < (waitTime))
+        {
+            counter += Time.deltaTime;
+            yield return null;
+        }
+
+        updateTutorial = true;
+    }
+
+    public IEnumerator UpdateClipLength(Animator anim, bool waitFortutBox)
     {
         bool newFrame = false;
 
@@ -126,6 +146,13 @@ public class TutorialManager : MonoBehaviour
 
         print("current clip length = " + anim.GetCurrentAnimatorStateInfo(0).length);
 
-        StartCoroutine(WaitForAnimationToShowTutorialBox(anim, true));
+        if (waitFortutBox == true)
+        {
+            StartCoroutine(WaitForAnimationToShowTutorialBox(anim, true));
+        }
+        else
+        {
+            StartCoroutine(WaitForAnimation(anim));
+        }
     }
 }
