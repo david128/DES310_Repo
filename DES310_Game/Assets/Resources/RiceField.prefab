@@ -8,16 +8,16 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7138703315467770398}
-  - component: {fileID: 2182770725064220712}
-  - component: {fileID: 5581731266867813585}
-  - component: {fileID: 5745386741871479355}
-  - component: {fileID: 6561094433084362051}
-  - component: {fileID: 9211695125409063674}
-  - component: {fileID: 543709649385247724}
-  - component: {fileID: 7713898562877966838}
-  - component: {fileID: 2541604930898083712}
-  - component: {fileID: 8659646738342198105}
+  - component: {fileID: 1578020117477447147}
+  - component: {fileID: 7547265862913683421}
+  - component: {fileID: 4287936176782644004}
+  - component: {fileID: -6343148157687289161}
+  - component: {fileID: -2096106193559714527}
+  - component: {fileID: 3649078145725338538}
+  - component: {fileID: 3643920674341741544}
+  - component: {fileID: 22432248437806342}
+  - component: {fileID: 1002444358569219682}
+  - component: {fileID: 8801002695877448058}
   m_Layer: 0
   m_Name: RiceField
   m_TagString: Untagged
@@ -130,24 +130,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttatchedToFill: 0
-  moneyOutput: c8000000c8000000c8000000
-  foodOutput: c8000000c8000000c8000000
---- !u!114 &543709649385247724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6145897329867810829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16a9890003ad75e44a2160c8797ef730, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pol_lvl1: 0
-  pol_lvl2: 0
-  pol_lvl3: 0
---- !u!114 &7713898562877966838
+  moneyOutput: 140000000000000000000000
+  foodOutput: 960000000000000000000000
+--- !u!114 &3643920674341741544
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -202,3 +187,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8801002695877448058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2575242287168563192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16a9890003ad75e44a2160c8797ef730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pol_lvl1: 6
+  pol_lvl2: 0
+  pol_lvl3: 0

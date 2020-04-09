@@ -7,6 +7,8 @@ using System.IO;
 
 public class Events : MonoBehaviour
 {
+    public GameObject gameManager;
+
     string path =  "/events.txt";
 
     List<GameEvent> gameEvents = new List<GameEvent>(); //list of all gameEvents
@@ -15,60 +17,15 @@ public class Events : MonoBehaviour
 
     List<EventEffects> currentEventEffects = new List<EventEffects>();
     
-    void setUpEvents()
+    public List<GameEvent> GetEvents()
     {
-        currentEventEffects.Add(new EventEffects(0, 0, 0, ObjectFill.FillType.NONE));
+        return gameEvents;
     }
-    
+
     void AddNewEvent(GameEvent gameEvent) //add new event to list of events
     {
         gameEvents.Add(gameEvent);
     }   
-
-    void FindCurrentLevels() //gets the current levels to be compared to requirements
-    {
-        //EventRequirement newRequirement = new EventRequirement();
-
-        //newRequirement.SetRequirementType(EventRequirementName.FOOD);
-        //newRequirement.SetMax(0); //replace with getter
-        //newRequirement.SetMin(0); //replace with getter
-
-        //currentLevels.Add(newRequirement);
-
-        //newRequirement = new EventRequirement();
-        //newRequirement.SetRequirementType(EventRequirementName.SUSTAINABILITY);
-        //newRequirement.SetMax(0); //replace with getter
-        //newRequirement.SetMin(0); //replace with getter
-
-        //currentLevels.Add(newRequirement);
-
-        //newRequirement = new EventRequirement();
-        //newRequirement.SetRequirementType(EventRequirementName.TIME);
-        //newRequirement.SetMax(0); //replace with getter
-        //newRequirement.SetMin(0); //replace with getter
-
-        //currentLevels.Add(newRequirement);
-
-        //newRequirement = new EventRequirement();
-
-        //newRequirement.SetRequirementType(EventRequirementName.FILL);
-        //newRequirement.SetMax(0); //replace with getter
-        //newRequirement.SetMin(0); //replace with getter
-
-        //currentLevels.Add(newRequirement);
-    }
-    
-    EventRequirement FindCurrentLevelOfType(EventRequirementName type) //finds the level for requirement as given
-    {
-        //for (int i = 0; i < currentLevels.Count; i++)
-        //{
-        //    if (currentLevels[i].getRequirementType() == type)
-        //    {
-        //        return (currentLevels[i]);
-        //    }
-        //}
-        return (currentLevels[0]);
-    }
 
     float FindValue(ObjectFill.FillType fill, EventRequirementName req, int minLevel, int maxLevel )
     {
@@ -76,21 +33,198 @@ public class Events : MonoBehaviour
         //make this get current values based on paramaters.
         if (req == EventRequirementName.COUNT)
         {
+            
+            if (fill == ObjectFill.FillType.NONE) //if fill is none then do not compare to anything else
+            {
+                float count = 0;
+                List<GameObject> grid = gameManager.GetComponent<GridScript>().GetGrid();
+                for (int i = 0; i < grid.Count; i++)
+                {
+                    ObjectInfo objectInfo = grid[i].GetComponent<ObjectInfo>();
+                    if (objectInfo.GetObjectType() != ObjectInfo.ObjectType.EMPTY && objectInfo.level >= minLevel && objectInfo.level <= maxLevel)
+                    {
+                        count = count + 1.0f; //count all non empty grid tiles that are between the min and max level
+                    }
+                }
 
+                return count;
+            }
+            else //else find with fill type passed
+            {
+                float count = 0;
+                List<GameObject> grid = gameManager.GetComponent<GridScript>().GetGrid();
+                for (int i = 0; i < grid.Count; i++)
+                {
+                    ObjectInfo objectInfo = grid[i].GetComponent<ObjectInfo>();
+                    if (grid[i].GetComponent<ObjectFill>().GetFillType() == fill && objectInfo.level >= minLevel && objectInfo.level <= maxLevel)
+                    {
+                        count = count + 1.0f; //count all grid tiles that have the fill and are between the min and max level
+                    }
+                }
+
+                return count;
+            }
         }
         else if (req == EventRequirementName.FOOD)
         {
+            if (fill == ObjectFill.FillType.NONE) //if fill is none then do not compare to anything else
+            {
+                float food = 0;
+                List<GameObject> grid = gameManager.GetComponent<GridScript>().GetGrid();
+                for (int i = 0; i < grid.Count; i++)
+                {
+                    ObjectInfo objectInfo = grid[i].GetComponent<ObjectInfo>();
+                    if (objectInfo.GetObjectType() != ObjectInfo.ObjectType.EMPTY && objectInfo.level >= minLevel && objectInfo.level <= maxLevel)
+                    {
+                        if (objectInfo.objectType == ObjectInfo.ObjectType.FIELD)
+                        {
+                            //need to get component from child
+                            food = food + grid[i].GetComponentInChildren<ObjectOutput>().foodOutput[objectInfo.level - 1]; //add up food from all grid tiles that are between the min and max level
+                        }
+                        else
+                        {
+                            food = food + grid[i].GetComponent<ObjectOutput>().foodOutput[objectInfo.level - 1]; //add up food from all grid tiles that are between the min and max level
+                        }
+                    }
+                }
 
+                return food;
+            }
+            else //else find with fill type passed
+            {
+                float food = 0;
+                List<GameObject> grid = gameManager.GetComponent<GridScript>().GetGrid();
+                for (int i = 0; i < grid.Count; i++)
+                {
+                    ObjectInfo objectInfo = grid[i].GetComponent<ObjectInfo>();
+                    if (grid[i].GetComponent<ObjectFill>().GetFillType() == fill && objectInfo.level >= minLevel && objectInfo.level <= maxLevel)
+                    {
+                        if (objectInfo.objectType == ObjectInfo.ObjectType.FIELD)
+                        {
+                            //need to get component from child
+                            food = food + grid[i].GetComponentInChildren<ObjectOutput>().foodOutput[objectInfo.level - 1]; //add up food from all grid tiles that have the fill and are between the min and max level
+                        }
+                        else
+                        {
+                            food = food + grid[i].GetComponent<ObjectOutput>().foodOutput[objectInfo.level - 1]; //add up food from all grid tiles that have the fill and are between the min and max level
+                        }
+                            
+                    }
+                }
+
+                return food;
+            }
         }
         else if (req == EventRequirementName.SUSTAINABILITY)
         {
+            if (fill == ObjectFill.FillType.NONE) //if fill is none then do not compare to anything else
+            {
+                float sust = 0;
+                List<GameObject> grid = gameManager.GetComponent<GridScript>().GetGrid();
+                for (int i = 0; i < grid.Count; i++)
+                {
+                    ObjectInfo objectInfo = grid[i].GetComponent<ObjectInfo>();
+                    if (objectInfo.GetObjectType() != ObjectInfo.ObjectType.EMPTY && objectInfo.level >= minLevel && objectInfo.level <= maxLevel)
+                    {
+                        if (objectInfo.objectType == ObjectInfo.ObjectType.FIELD)
+                        {
+                            //need to get component from child and add up appropriate pol from object
+                            if (objectInfo.level == 1)
+                            {
+                                sust = sust + grid[i].GetComponentInChildren<ObjectPollution>().pol_lvl1;
+                            }
+                            else if (objectInfo.level == 1)
+                            {
+                                sust = sust + grid[i].GetComponentInChildren<ObjectPollution>().pol_lvl2;
+                            }
+                            else
+                            {
+                                sust = sust + grid[i].GetComponentInChildren<ObjectPollution>().pol_lvl3;
+                            }
+                        }
+                        else
+                        {
+                            //add up appropriate pol from object
+                            if (objectInfo.level == 1)
+                            {
+                                sust = sust + grid[i].GetComponent<ObjectPollution>().pol_lvl1;
+                            }
+                            else if (objectInfo.level == 1)
+                            {
+                                sust = sust + grid[i].GetComponent<ObjectPollution>().pol_lvl2;
+                            }
+                            else
+                            {
+                                sust = sust + grid[i].GetComponent<ObjectPollution>().pol_lvl3;
+                            }
+                        }
 
+                    }
+                }
+
+                return sust;
+            }
+            else //else find with fill type passed
+            {
+                float sust = 0;
+                List<GameObject> grid = gameManager.GetComponent<GridScript>().GetGrid();
+                for (int i = 0; i < grid.Count; i++)
+                {
+                    ObjectInfo objectInfo = grid[i].GetComponent<ObjectInfo>();
+                    if (grid[i].GetComponent<ObjectFill>().GetFillType() == fill && objectInfo.level >= minLevel && objectInfo.level <= maxLevel)
+                    {
+                        if (objectInfo.objectType == ObjectInfo.ObjectType.FIELD)
+                        {
+                            //need to get component from child and add up appropriate pol from object
+                            if (objectInfo.level == 1)
+                            {
+                                sust = sust + grid[i].GetComponentInChildren<ObjectPollution>().pol_lvl1;
+                            }
+                            else if (objectInfo.level == 1)
+                            {
+                                sust = sust + grid[i].GetComponentInChildren<ObjectPollution>().pol_lvl2;
+                            }
+                            else
+                            {
+                                sust = sust + grid[i].GetComponentInChildren<ObjectPollution>().pol_lvl3;
+                            }
+                        }
+                        else
+                        {
+                            //add up appropriate pol from object
+                            if (objectInfo.level == 1)
+                            {
+                                sust = sust + grid[i].GetComponent<ObjectPollution>().pol_lvl1;
+                            }
+                            else if (objectInfo.level == 1)
+                            {
+                                sust = sust + grid[i].GetComponent<ObjectPollution>().pol_lvl2;
+                            }
+                            else
+                            {
+                                sust = sust + grid[i].GetComponent<ObjectPollution>().pol_lvl3;
+                            }
+                        }
+
+                    }
+                }
+
+                return sust;
+            }
         }
         else if (req == EventRequirementName.TIME)
         {
-
+            return Time.time;
         }
-        return 100;
+        else if (req == EventRequirementName.RANDOM_CHANCE)
+        {
+            return (Random.Range(1, 100));
+        }
+        else 
+        {
+            return 0;
+        }
+        
     }
 
     public void checkTrigger() //loop through gameEvents here and check for req
@@ -160,14 +294,6 @@ public class Events : MonoBehaviour
                     else if (eventRequirements[i] is ValueRange)
                     {
                         Debug.Log("Range");
-
-                    }
-                    else if (eventRequirements[i] is ObjectFill.FillType)
-                    {
-                        //req is fill type
-
-                        //wont have fill in non sub req so wont need this probs?
-                        
 
                     }
                     else
@@ -244,6 +370,7 @@ public class Events : MonoBehaviour
                                 //req is fill type
                                 currentFill = eventRequirements[i][j];
 
+                                
                                 Debug.Log("fill");
 
                             }
@@ -274,7 +401,7 @@ public class Events : MonoBehaviour
     public void HandleEventFile()
     {
         TextAsset eventsAsset = Resources.Load("files/events") as TextAsset;
-
+        gameEvents.Clear(); //clear stored events
 
         string[] lines = eventsAsset.text.Split("\n"[0]);
         int i = 0;
@@ -288,13 +415,19 @@ public class Events : MonoBehaviour
             ValueMinOrMax minValue = new ValueMinOrMax(true, 0);
             ValueMinOrMax maxValue = new ValueMinOrMax(false, 0);
             ValueRange rangeValue = new ValueRange();
-            EventEffects newEffects = new EventEffects(0, 0, 0,ObjectFill.FillType.NONE);
+            EventEffects newEffect = new EventEffects(0, ObjectFill.FillType.NONE, EventEffectType.MONEY_EFFECT); ;
             eventDone = false;
             bool subReq = false;
             List<dynamic> subReqierment = new List<dynamic>();
 
             while ((i + 1) <= lines.Length && eventDone != true)
             {
+                if (lines[i].EndsWith("\r"))
+                {
+                    lines[i]= lines[i].Remove(lines[i].Length - 1); ;
+
+
+                }
                 switch (lines[i])
                 {
                     case ("EVENTNAME"):
@@ -383,6 +516,20 @@ public class Events : MonoBehaviour
                             newGameEvent.AddRequirement(minValue);
                         }
                         break;
+                    case ("RANDOM_CHANCE"):
+                        minValue = new ValueMinOrMax(true, 0);
+                        minValue.SetRequirementType(EventRequirementName.RANDOM_CHANCE);
+                        i += 1;
+                        minValue.SetValue(float.Parse(lines[i]));
+                        if (subReq)
+                        {
+                            subReqierment.Add(minValue);
+                        }
+                        else
+                        {
+                            newGameEvent.AddRequirement(minValue);
+                        }
+                        break;
                     case ("TIME_RANGE"):
                         //newReq = new EventRequirement();
                         //newReq.SetRequirementType(EventRequirementName.TIME);
@@ -433,30 +580,41 @@ public class Events : MonoBehaviour
                             newGameEvent.AddRequirement(minValue);
                         }
                         break;
+                    case ("EFFECT"):
+                        newEffect = new EventEffects(0, ObjectFill.FillType.NONE, EventEffectType.MONEY_EFFECT);
+                        i += 1;
+                        break;
                     case ("EFFECTING"):
                         i += 1;
-                        ObjectFill.FillType e;
-                        if (ObjectFill.FillType.TryParse((lines[i]).ToUpper(), out e) != true) { Debug.LogError("Error: Effecting type does not match fill enum in events file"); } //check that this passes
-                        newEffects.SetFillEffected(e);
+                        ObjectFill.FillType et;
+                        if (ObjectFill.FillType.TryParse((lines[i]).ToUpper(), out et) != true) { Debug.LogError("Error: effect fill type does not match fill enum in events file"); } //check that this
                         break;
 
-                    case ("GROWTH_REDUCTION"):
+                    case ("MONEY_EFFECT"):
+                        EventEffectType me;
+                        if (EventEffectType.TryParse((lines[i]).ToUpper(), out me) != true) { Debug.LogError("Error: effect type does not match fill enum in events file"); } //check that this
+                        newEffect.SetEventEffectType(me);
                         i += 1;
-                        newEffects.SetGrowthReduction(float.Parse(lines[i]));
+                        newEffect.SetReduction(float.Parse(lines[i]));
+                        i += 1;
+                        break;
+                    case ("FOOD_EFFECT"):
+                        EventEffectType fe;
+                        if (EventEffectType.TryParse((lines[i]).ToUpper(), out fe) != true) { Debug.LogError("Error: fill type does not match fill enum in events file"); } //check that this
+                        newEffect.SetEventEffectType(fe);
+                        i += 1;
+                        newEffect.SetReduction(float.Parse(lines[i]));
+                        i += 1;
                         break;
 
-                    case ("MONEY_REDUCTION"):
+                    case ("DESTROY_EFFECT"):
+                        EventEffectType de;
+                        if (EventEffectType.TryParse((lines[i]).ToUpper(), out de) != true) { Debug.LogError("Error: fill type does not match fill enum in events file"); } //check that this
+                        newEffect.SetEventEffectType(de);
                         i += 1;
-
-                        newEffects.SetMoneyReduction(float.Parse(lines[i]));
-                        break;
-                    case ("SUSTAINABILITY_REDUCTION"):
-                        i += 1;
-                        newEffects.SetSustainabillityReduction(float.Parse(lines[i]));
                         break;
                     case ("EFFECT_END"):
-                        newGameEvent.AddEfffect(newEffects);
-                        newEffects.ClearEffects();
+                        newGameEvent.AddEfffect(newEffect);
                         i += 1;
                         break;
 
@@ -482,9 +640,7 @@ public class Events : MonoBehaviour
 
 
 
-
-
-class GameEvent
+public class GameEvent
 {
     bool triggered = false; //if the event has been triggered
     List<dynamic> eventRequirements = new List<dynamic>(); //requirements for triggering
@@ -524,9 +680,126 @@ class GameEvent
     {
         eventDescription = description;
     }
+
+    public void ConvertRequirement(int i, EventRequirementName convertTo)
+    {
+        if (convertTo != EventRequirementName.FILL)
+        {
+            if (convertTo == EventRequirementName.FILL)
+            {
+                ObjectFill.FillType newFill = ObjectFill.FillType.NONE;
+                eventRequirements.RemoveAt(i);
+                eventRequirements.Insert(i, newFill);
+            }
+            else if (convertTo == EventRequirementName.SUB_REQ)
+            {
+                List<dynamic> newSub = new List<dynamic>();
+                ObjectFill.FillType newFill = ObjectFill.FillType.NONE;
+                newSub.Add(newFill);
+                eventRequirements.RemoveAt(i);
+                eventRequirements.Insert(i, newSub);
+
+            }
+            else
+            {
+
+                ValueMinOrMax newVal = new ValueMinOrMax(true, 0);
+                newVal.SetRequirementType(convertTo);
+                eventRequirements.RemoveAt(i);
+                eventRequirements.Insert(i, newVal);
+
+            }
+
+        }
+
+
+    }
+
+    public void ConvertSubRequirement(int i, int j, EventRequirementName convertTo)
+    {
+        if (convertTo == EventRequirementName.FILL)
+        {
+            ObjectFill.FillType newFill = ObjectFill.FillType.NONE;
+            eventRequirements[i].RemoveAt(j);
+            eventRequirements[i].Insert(j, newFill);
+        }
+        else
+        {
+
+            ValueMinOrMax newVal = new ValueMinOrMax(true, 0);
+            newVal.SetRequirementType(convertTo);
+            eventRequirements[i].RemoveAt(j);
+            eventRequirements[i].Insert(j, newVal);
+
+        }
+
+
+    }
+
+    public void ConnectNewRequirement()
+    {
+        if (eventRequirements.Count != 0)
+        {
+           //only add connection if not first req
+            AddRequirement("AND");
+           
+        }
+
+        ValueMinOrMax newVal = new ValueMinOrMax(true, 0);
+        newVal.SetRequirementType(EventRequirementName.COUNT);
+        AddRequirement(newVal);
+
+    }
+
+    public void DeleteRequirement(int i)
+    {
+        if (i != eventRequirements.Count - 1)
+        {
+            eventRequirements.RemoveAt(i);//remove req
+            eventRequirements.RemoveAt(i);//remove connector
+        }
+        else if (eventRequirements.Count == 1)
+        {
+            eventRequirements.RemoveAt(i);//remove req
+        }
+        else
+        {
+            eventRequirements.RemoveAt(i);//remove req
+            eventRequirements.RemoveAt(i - 1);//remove connector
+        }
+        
+
+    }
+
+    public void ConnectNewSubRequirement(int i)
+    {
+        eventRequirements[i].Add("AND");
+        ValueMinOrMax newVal = new ValueMinOrMax(true, 0);
+        newVal.SetRequirementType(EventRequirementName.COUNT);
+        eventRequirements[i].Add(newVal);
+    }
+
+    public void DeleteSubRequirement(int i, int j)
+    {
+        if (eventRequirements[i].Count == 1)
+        {
+            DeleteRequirement(i);            
+        }
+        else if (j != eventRequirements[i].Count - 1)
+        {
+            eventRequirements[i].RemoveAt(j);//remove req
+            eventRequirements[i].RemoveAt(j);//remove connector
+        }
+        else
+        {
+            eventRequirements[i].RemoveAt(j);//remove req
+            eventRequirements[i].RemoveAt(j-1);//remove connector
+        }
+
+    }
 }
 
-class EventRequirement
+public class EventRequirement
 {
     public EventRequirement()
     {
@@ -541,7 +814,7 @@ class EventRequirement
 /// Allows a value to be checked
 /// pass true to make it a min, false for a max
 /// </summary>
-class ValueMinOrMax
+public class ValueMinOrMax
 {
     public ValueMinOrMax(bool m, float v)
     {
@@ -565,7 +838,7 @@ class ValueMinOrMax
 /// Allows a value range to be checked
 /// pass min and max range and type
 /// </summary>
-class ValueRange
+public class ValueRange
 {
     public ValueRange(float minValue, float maxValue, EventRequirementName eventType)
     {
@@ -592,46 +865,35 @@ class ValueRange
 
 
 
-class EventEffects //effects of an effect
+public class EventEffects //effects of an effect
 {
-    public EventEffects(float g, float s, float m, ObjectFill.FillType f)
+    public EventEffects(float r,  ObjectFill.FillType f, EventEffectType t)
     {
-        growthReduction = g;
-        sustainabillityReduction = s;
-        moneyReduction = m;
+        reduction = r;
         fillEffected = f;
+        effectType = t;
     }
 
     ObjectFill.FillType fillEffected;
-    float growthReduction;
-    float sustainabillityReduction;
-    float moneyReduction;
+    EventEffectType effectType;
+    float reduction;
 
-    public float GetGrowthReduction() { return growthReduction; }
-    public float GetSustainabillityReduction() { return sustainabillityReduction; }
-    public float GetMoneyReduction() { return moneyReduction; }
+    public float GetReduction() { return reduction; }
+    public EventEffectType GetEventEffectType() { return effectType; }
     public ObjectFill.FillType GetFillEffected() { return fillEffected; }
 
-    public void SetGrowthReduction(float g) { growthReduction = g; }
-    public void SetSustainabillityReduction(float s) { sustainabillityReduction = s; }
-    public void SetMoneyReduction(float m) { moneyReduction = m; }
+    public void SetReduction(float r) { reduction = r; }
     public void SetFillEffected(ObjectFill.FillType f) { fillEffected= f; }
+    public void SetEventEffectType(EventEffectType t) { effectType = t; }
 
-    public void AddEffects(EventEffects e)
-    {
-        growthReduction += e.growthReduction;
-        sustainabillityReduction += e.sustainabillityReduction;
-        moneyReduction += e.moneyReduction;
-    }
 
-    public void ClearEffects()//clear effects
-    {
-        growthReduction = 0.0f;
-        sustainabillityReduction = 0.0f;
-        moneyReduction = 0.0f;
-        fillEffected = ObjectFill.FillType.NONE;
-    }
+}
 
+public enum EventEffectType
+{
+    MONEY_EFFECT =0,
+    FOOD_EFFECT = 1,
+    DESTROY_RANDOM =2
 }
 
 public enum EventRequirementName //different requirement types
@@ -641,5 +903,7 @@ public enum EventRequirementName //different requirement types
     TIME = 2,
     FILL=3,
     LEVEL =4,
-    COUNT=5
+    COUNT=5,
+    RANDOM_CHANCE = 6,
+    SUB_REQ = 7
 }
