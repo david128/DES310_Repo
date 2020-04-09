@@ -7,7 +7,7 @@ using System.IO;
 
 public class Events : MonoBehaviour
 {
-    GameObject gameManager;
+    public GameObject gameManager;
 
     string path =  "/events.txt";
 

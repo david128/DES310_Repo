@@ -8,14 +8,16 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7733774330232959917}
-  - component: {fileID: 1587770073641044379}
-  - component: {fileID: 4986730617733723490}
-  - component: {fileID: 3326284400731081149}
-  - component: {fileID: 3326284400731081122}
-  - component: {fileID: 3326284400731081121}
-  - component: {fileID: 3326284400731081120}
-  - component: {fileID: 3326284400731081123}
+  - component: {fileID: 3850462832996713819}
+  - component: {fileID: 5202943125589475181}
+  - component: {fileID: 1947833637816353684}
+  - component: {fileID: 6633676446609043791}
+  - component: {fileID: -3514769147283890486}
+  - component: {fileID: -91244522160436823}
+  - component: {fileID: -177991207880965030}
+  - component: {fileID: 256198821010649061}
+  - component: {fileID: 6209907133963222920}
+  - component: {fileID: 2522748788420990427}
   m_Layer: 0
   m_Name: MeatLab_lvl2
   m_TagString: Untagged
@@ -136,30 +138,39 @@ MonoBehaviour:
   ID: 0
   objectType: 12
   level: 2
---- !u!114 &3326284400731081120
-MonoBehaviour:
+--- !u!65 &-177991207880965030
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6703813790397825470}
+  m_GameObject: {fileID: 231036337485772616}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c39e48ac04108ff439ee1b74af5371b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  title: Meat Lab
-  options:
-  - Color: {r: 0, g: 0, b: 0, a: 0}
-    Symbol: {fileID: 21300000, guid: 0f630a0a22b4e164b8555e2d166bb8f9, type: 3}
-    Title: Upgrade
-  - Color: {r: 0, g: 0, b: 0, a: 0}
-    Symbol: {fileID: 21300000, guid: 250cbb2e5fad9f642b5b390dfc38ace9, type: 3}
-    Title: Demolish
-  - Color: {r: 0, g: 0, b: 0, a: 0}
-    Symbol: {fileID: 21300000, guid: ca82c9da83539304487a4b5ec8b8c3d9, type: 3}
-    Title: Back
---- !u!114 &3326284400731081123
+  serializedVersion: 2
+  m_Size: {x: 13.14043, y: 0.40692, z: 8.245068}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &256198821010649061
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231036337485772616}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: de994223fa91acb4daf552afbe2c554e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6209907133963222920
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,7 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pol_lvl1: 0
-  pol_lvl2: 0
+  pol_lvl2: -15
   pol_lvl3: 0
 --- !u!114 &2522748788420990427
 MonoBehaviour:
@@ -187,5 +198,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttatchedToFill: 0
-  moneyOutput: 00000000
-  foodOutput: 90010000
+  moneyOutput: 000000000000000000000000
+  foodOutput: 000000009001000000000000

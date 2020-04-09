@@ -15,8 +15,9 @@ GameObject:
   - component: {fileID: 4713130951660380172}
   - component: {fileID: 4255096677332407031}
   - component: {fileID: 3711227859531572655}
-  - component: {fileID: 1524904443553133755}
   - component: {fileID: 3324414718343167268}
+  - component: {fileID: 5008003589013331993}
+  - component: {fileID: -8362074391076185447}
   m_Layer: 0
   m_Name: ChickenCoop_lvl2
   m_TagString: Untagged
@@ -154,21 +155,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttatchedToFill: 0
-  moneyOutput: 7d000000
-  foodOutput: af000000
---- !u!65 &5008003589013331993
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5978925487163336001}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 12, y: 2, z: 8}
-  m_Center: {x: 0, y: 0, z: 0}
+  moneyOutput: 000000007d00000000000000
+  foodOutput: 00000000af00000000000000
 --- !u!95 &3324414718343167268
 Animator:
   serializedVersion: 3
@@ -188,3 +176,31 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &5008003589013331993
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5978925487163336001}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12, y: 2, z: 8}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-8362074391076185447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5978925487163336001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16a9890003ad75e44a2160c8797ef730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pol_lvl1: 0
+  pol_lvl2: 7
+  pol_lvl3: 0
