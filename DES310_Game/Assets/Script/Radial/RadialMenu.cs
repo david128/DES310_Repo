@@ -9,7 +9,7 @@ public class RadialMenu : MonoBehaviour
     public RadialButtonScript buttonPrefab;
     public RadialButtonScript selected;
     GameObject gameManager;
-
+  
     public void SpawnButtons(RadialPressable obj)
     {
         //finds game manager
@@ -18,7 +18,7 @@ public class RadialMenu : MonoBehaviour
         StartCoroutine(AnimateButtons(obj));
     }
 
-    IEnumerator AnimateButtons (RadialPressable obj)
+    IEnumerator AnimateButtons(RadialPressable obj)
     {
         for (int i = 0; i < obj.options.Length; i++)
         {
@@ -34,6 +34,24 @@ public class RadialMenu : MonoBehaviour
             newButton.circle.color = obj.options[i].Color;
             newButton.symbol.sprite = obj.options[i].Symbol;
             newButton.title = obj.options[i].Title;
+
+            if (TutorialEvents.instance != null && TutorialEvents.instance.GetCurrentEvent() == TutorialEvents.TutEvents.RadialFlash)
+            {
+                if (newButton.title == "Demolish")
+                {
+                    //Gives button an animator compnent to flash only if its the destroy button
+                    newButton.gameObject.AddComponent<Animator>();
+
+                    Animator butAnim = newButton.GetComponent<Animator>();
+
+                    //sets animator
+                    butAnim.runtimeAnimatorController = TutorialManager.instance.GetAnimContr();
+
+                    //plays animation
+                    butAnim.Play("UIFlashAnim");
+                }
+            }
+
             newButton.myMenu = this;
             newButton.Anim();
 
@@ -62,6 +80,12 @@ public class RadialMenu : MonoBehaviour
             else if (selected.title == "Demolish")
             {
                 gameManager.GetComponent<InputScript>().AttemptDemolish(selectedID);
+
+                if (TutorialEvents.instance != null && TutorialEvents.instance.GetCurrentEvent() == TutorialEvents.TutEvents.RadialFlash)
+                {
+                    TutorialEvents.instance.SetDestroyedCarrot(true);
+                    TutorialEvents.instance.RunEvent(3);
+                }
             }
 
             Destroy(gameObject);

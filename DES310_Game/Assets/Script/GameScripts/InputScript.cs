@@ -40,6 +40,7 @@ public class InputScript : MonoBehaviour
     //Declare variables
     public static InputScript instance;
     public bool controlType;//true for mobile, false for pc
+    public bool canMove;
     public GameObject gameManager;
 
     //Selection variables
@@ -56,6 +57,7 @@ public class InputScript : MonoBehaviour
     {
         instance = this;
         cameraMovement = Camera.main.GetComponent<CameraScript>();
+        canMove = true;
     }
 
     //Selecting Variables
@@ -65,6 +67,9 @@ public class InputScript : MonoBehaviour
     public bool GetAllowSelecting() { return selecting; }
 
     public void SetAllowSelecting(bool s) { selecting = s; }
+
+    public void SetCanMove(bool c) { canMove = c; }
+    public bool GetCanMove() { return canMove; }
 
     public int GetSelectedID() { return selectedID; }
 
@@ -80,21 +85,24 @@ public class InputScript : MonoBehaviour
                 Select(Input.mousePosition);
             }
 
-            if (Input.GetKey("w") && Camera.main.transform.position.z <= 41 && Camera.main.transform.position.x <= 58)
+            if (canMove == true)
             {
-                cameraMovement.MoveUp(0.5f);
-            }
-            if (Input.GetKey("s") && Camera.main.transform.position.z >= -15 && Camera.main.transform.position.x >= -16)
-            {
-                cameraMovement.MoveDown(0.5f);
-            }
-            if (Input.GetKey("d") && Camera.main.transform.position.z >= -15 && Camera.main.transform.position.x <= 58)
-            {
-                cameraMovement.MoveLeft(0.5f);
-            }
-            if (Input.GetKey("a") && Camera.main.transform.position.z <= 41 && Camera.main.transform.position.x >= -16)
-            {
-                cameraMovement.MoveRight(0.5f);
+                if (Input.GetKey("w") && Camera.main.transform.position.z <= 41 && Camera.main.transform.position.x <= 58)
+                {
+                    cameraMovement.MoveUp(0.5f);
+                }
+                if (Input.GetKey("s") && Camera.main.transform.position.z >= -15 && Camera.main.transform.position.x >= -16)
+                {
+                    cameraMovement.MoveDown(0.5f);
+                }
+                if (Input.GetKey("d") && Camera.main.transform.position.z >= -15 && Camera.main.transform.position.x <= 58)
+                {
+                    cameraMovement.MoveLeft(0.5f);
+                }
+                if (Input.GetKey("a") && Camera.main.transform.position.z <= 41 && Camera.main.transform.position.x >= -16)
+                {
+                    cameraMovement.MoveRight(0.5f);
+                }
             }
 
             if (Input.GetKey("i") && Camera.main.orthographicSize >= 5.0f)
@@ -103,16 +111,6 @@ public class InputScript : MonoBehaviour
             }
 
             if (Input.GetKey("o") && Camera.main.orthographicSize <= 15.0f)
-            {
-                Camera.main.orthographicSize += .1f;
-            }
-
-            if (Input.GetKey("m"))
-            {
-                Camera.main.orthographicSize += .1f;
-            }
-
-            if (Input.GetKey("n"))
             {
                 Camera.main.orthographicSize += .1f;
             }
@@ -227,7 +225,7 @@ public class InputScript : MonoBehaviour
         float newX = Camera.main.ScreenToWorldPoint(deltaPosition).x - Camera.main.ScreenToWorldPoint(Vector2.zero).x;
         float newZ = Camera.main.ScreenToWorldPoint(deltaPosition).y - Camera.main.ScreenToWorldPoint(Vector2.zero).y;
 
-        if(selecting == true)
+        if(selecting == true && canMove == true)
         {
             if (Camera.main.transform.position.x <= 58 && Camera.main.transform.position.x >= -15 || Camera.main.transform.position.z <= 41 && Camera.main.transform.position.z >= -16)
             {

@@ -27,10 +27,6 @@ public class Events : MonoBehaviour
         gameEvents.Add(gameEvent);
     }   
 
-
-    
-
-
     float FindValue(ObjectFill.FillType fill, EventRequirementName req, int minLevel, int maxLevel )
     {
 

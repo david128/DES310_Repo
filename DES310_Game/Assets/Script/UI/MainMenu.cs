@@ -16,10 +16,10 @@ public class MainMenu : MonoBehaviour
         instance = this;
     }
 
-    public void PlayGame()
+    public void PlayNewGame()
     {
         //loads game scene at same time as unloading the menu and sets from load to false
-        SceneManager.LoadSceneAsync(1);
+        SceneLoader.instance.LoadScene(1);
         fromLoad = false;
        // SceneManager.UnloadSceneAsync(0);
     }
@@ -27,7 +27,7 @@ public class MainMenu : MonoBehaviour
     public void LoadSavedGame()
     {
         //loads game scene at same time as unloading the menu and sets from load to true
-        SceneManager.LoadSceneAsync(1);
+        SceneLoader.instance.LoadScene(2);
         fromLoad = true;
        // SceneManager.UnloadSceneAsync(0);
     }
@@ -35,7 +35,7 @@ public class MainMenu : MonoBehaviour
     public void BackToMenu()
     {
         //loads menu scene at same time as unloading the game and sets from load to false
-        SceneManager.LoadSceneAsync(0);
+        SceneLoader.instance.LoadScene(0);
         //SceneManager.UnloadSceneAsync(1);
     }
 

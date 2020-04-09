@@ -26,7 +26,15 @@ public class RadialMenuSpawner : MonoBehaviour
         newMenu.transform.position = new Vector3(Screen.width * 0.5f, Screen.height * 0.5f, 0.0f);
 
         newMenu.label.text = obj.title.ToUpper();
+
+        if (TutorialEvents.instance != null && TutorialEvents.instance.GetCurrentEvent() == TutorialEvents.TutEvents.RadialFlash)
+        {
+            TutorialManager.instance.SetTutorialBox(true);
+        }
+
         newMenu.SpawnButtons(obj);
+
+        newMenu.transform.SetSiblingIndex(0);
 
         SetAwake(true);
     }

@@ -6,10 +6,10 @@ public class MarketplaceSpawner : MonoBehaviour
 {
     public GameObject menuPrefab;
 
-
     public void SpawnMenu()
     {
         GameObject newMenu = Instantiate(menuPrefab,GameObject.FindGameObjectWithTag("Canvas").transform) as GameObject;
-    }
 
+        newMenu.transform.SetSiblingIndex(6);
+    }
 }

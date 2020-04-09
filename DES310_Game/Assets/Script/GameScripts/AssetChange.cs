@@ -130,7 +130,7 @@ public class AssetChange : MonoBehaviour
         if (type == ObjectInfo.ObjectType.FARMHOUSE && level >= 2)
         {
             locked = gameManager.GetComponent<GridScript>().lockLvl2;
-            Destroy(locked);
+            DestroyImmediate(locked);
         }
         if (type == ObjectInfo.ObjectType.FARMHOUSE && level == 3)
         {
@@ -147,7 +147,8 @@ public class AssetChange : MonoBehaviour
 
         if (asset.TryGetComponent<Animator>(out anim))
         {
-            StartCoroutine(DestroyAnimation(anim, "DestroyAnim", asset));
+            anim.Play("DestroyAnim");
+            StartCoroutine(UpdateClipLength(anim, asset));
         }
         else
         {
@@ -175,14 +176,12 @@ public class AssetChange : MonoBehaviour
         gameManager.GetComponent<SustainabilityScript>().CheckPollution();
     }
 
-    IEnumerator DestroyAnimation(Animator anim, string stateName, GameObject asset)
+    IEnumerator DestroyAnimation(Animator anim, GameObject asset)
     {
-        anim.Play(stateName);
-
         Destroy(asset.GetComponent<BoxCollider>());
         
         float counter = 0;
-        float waitTime = anim.GetCurrentAnimatorStateInfo(0).length + (anim.GetCurrentAnimatorStateInfo(0).speedMultiplier * anim.GetCurrentAnimatorStateInfo(0).length);
+        float waitTime = anim.GetCurrentAnimatorStateInfo(0).length;
 
         //Now, Wait until the current state is done playing
         while (counter < (waitTime))
@@ -196,6 +195,21 @@ public class AssetChange : MonoBehaviour
 
         //Destroy shape to be replaced
         GameObject.Destroy(asset);
+    }
+
+    private IEnumerator UpdateClipLength(Animator anim, GameObject asset)
+    {
+        bool newFrame = false;
+
+        while (!newFrame)
+        {
+            newFrame = true;
+            yield return new WaitForEndOfFrame();
+        }
+
+        print("current clip length = " + anim.GetCurrentAnimatorStateInfo(0).length);
+
+        StartCoroutine(DestroyAnimation(anim, asset));
     }
 
     GameObject LoadFill(ObjectFill.FillType fill, Transform transform, int level)
@@ -248,7 +262,6 @@ public class AssetChange : MonoBehaviour
 
                 return (GameObject)Instantiate(Resources.Load("Pig"), new Vector3(transform.position.x - 2.19f, transform.position.y, transform.position.z + 1.24f), new Quaternion(0.0f, 0.999f, 0.0f, 0.041f), newAsset.transform);
 
-
             case ObjectFill.FillType.CHICKEN:
 
                 if (level == 3)
@@ -263,12 +276,11 @@ public class AssetChange : MonoBehaviour
 
                 return (GameObject)Instantiate(Resources.Load("Chicken"), new Vector3(transform.position.x + 2.818f, transform.position.y, transform.position.z - 1.299f), new Quaternion(0.0f, -0.625f, 0.0f, 0.780f), newAsset.transform);
 
-
             case ObjectFill.FillType.SUNFLOWER:
                 return (GameObject)Instantiate(Resources.Load("Sunflower"), transform.position, Quaternion.identity, newAsset.transform);
                
             case ObjectFill.FillType.SUGARCANE:
-                return (GameObject)Instantiate(Resources.Load("Sugarcane_Optimised"), transform.position, Quaternion.identity, newAsset.transform);
+                return (GameObject)Instantiate(Resources.Load("Sugarcane"), transform.position, Quaternion.identity, newAsset.transform);
 
             case ObjectFill.FillType.COCCOA:
                 return (GameObject)Instantiate(Resources.Load("Cocoa"), transform.position, Quaternion.identity, newAsset.transform);

@@ -21,10 +21,10 @@ public class DistributionChoice : MonoBehaviour
     public void SetDefDistributionChoice() { distributerChoice = "P"; }
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        distributerChoice = "P";
         instance = this;
+        distributerChoice = "P";
     }
 
     // Chooses current Distributor
