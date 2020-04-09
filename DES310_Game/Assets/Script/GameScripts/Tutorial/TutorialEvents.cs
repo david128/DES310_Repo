@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class TutorialEvents : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class TutorialEvents : MonoBehaviour
     public Image MoneyPanel;
     public Image MoneyIcon;
     public GameObject DistributionPanel;
+    public TextMeshProUGUI objectiveText;
 
     bool eventActive;
 
@@ -132,6 +134,8 @@ public class TutorialEvents : MonoBehaviour
 
     void BuildChicken()
     {
+        objectiveText.text = "Build a chicken field";
+
         if (cam.TryGetComponent(out camAnim))
         {
             camAnim.enabled = true;
@@ -147,6 +151,8 @@ public class TutorialEvents : MonoBehaviour
 
     void BuildCarrot()
     {
+        objectiveText.text = "Plant a carrot field";
+
         if (cam.TryGetComponent(out camAnim))
         {
             camAnim.enabled = true;
@@ -162,6 +168,8 @@ public class TutorialEvents : MonoBehaviour
 
     void RadialFlash()
     {
+        objectiveText.text = "Destroy carrot field";
+
         Instantiate(Resources.Load("Blocker"), new Vector3(56.07f, 10.0f, 31.52f), Quaternion.identity);
 
         light.SetActive(true);
@@ -186,6 +194,8 @@ public class TutorialEvents : MonoBehaviour
 
     void FoodUIFlash()
     {
+        objectiveText.text = "Look at food";
+
         if (FoodPanel.TryGetComponent(out Animator UIPanelAnim) && FoodIcon.TryGetComponent(out Animator UIIconAnim))
         {
             UIPanelAnim.Play("UIFlashAnim");
@@ -200,6 +210,8 @@ public class TutorialEvents : MonoBehaviour
 
     void MoneyUIFlash()
     {
+        objectiveText.text = "Look at money";
+
         if (MoneyPanel.TryGetComponent(out Animator UIPanelAnim) && MoneyIcon.TryGetComponent(out Animator UIIconAnim))
         {
             UIPanelAnim.Play("UIFlashAnim");
@@ -212,6 +224,8 @@ public class TutorialEvents : MonoBehaviour
 
     void DistributionIn()
     {
+        objectiveText.text = "Select a distributer";
+
         if (DistributionPanel.TryGetComponent(out Animator UIPanelAnim))
         {
             UIPanelAnim.Play("DistributionAnim");
@@ -244,6 +258,8 @@ public class TutorialEvents : MonoBehaviour
 
     void RevertCamera()
     {
+        objectiveText.text = "Prepare for new beginnings";
+
         if (cam.TryGetComponent(out camAnim))
         {
             camAnim.enabled = false;

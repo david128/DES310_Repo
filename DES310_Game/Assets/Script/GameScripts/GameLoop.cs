@@ -38,11 +38,6 @@ public class GameLoop : MonoBehaviour
         {
             inTutorial = false;
             gameManager.GetComponent<GridScript>().CreateGrid(false);
-        }
-
-        //Checks if the player is trying to load their saved game
-        if (MainMenu.instance != null && MainMenu.instance.GetFromLoad() == true)
-        {
             gameManager.GetComponent<Save>().LoadGameData();
         }
     }

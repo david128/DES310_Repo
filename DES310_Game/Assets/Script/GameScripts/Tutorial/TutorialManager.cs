@@ -2,26 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class TutorialManager : MonoBehaviour
 {
+    //Public variables
     public GameObject gameManager;
     public GameObject cam;
     public GameObject TutorialBox;
-
     public RuntimeAnimatorController animContr;
-
     public Button[] tutMsgs;
+    public TextMeshProUGUI countdownText;
+    public static TutorialManager instance;
 
+    //Tutorial buttons
     Button currentTut;
     Button prevTut;
 
-    public static TutorialManager instance;
-
+    //Tutorial varibales
     bool inTutorial;
     bool updateTutorial = false;
     bool showTutorialBox;
+
+    //End of tutorail varibales
     bool endOfTut = false;
+    float endOfTutCountdown;
+    float endCountdownTime;
+    bool showCountdown;
 
     public bool GetTutorial() { return inTutorial; }
     public GameObject GetTutorialBox() { return TutorialBox; }
@@ -65,22 +72,46 @@ public class TutorialManager : MonoBehaviour
             camAnim.Play("TutorialStartPan");
             StartCoroutine(UpdateClipLength(camAnim, true));
         }
+
+        endCountdownTime = 15;
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Updates button to be displayed
         if(updateTutorial)
         {
             ChangeTutMsg();
             updateTutorial = false;
         }
 
+        //Displays tutorial box
         if(showTutorialBox == true)
         {
             InputScript.instance.SetAllowSelecting(false);
             TutorialBox.SetActive(true);
             showTutorialBox = false;
+        }
+
+        //End of tutorial
+        if(endOfTut == true)
+        {
+            if(showCountdown == false)
+            {
+                showCountdown = true;
+                countdownText.gameObject.SetActive(true);
+            }
+         
+            endOfTutCountdown += Time.deltaTime;
+            endCountdownTime -= 1 * endOfTutCountdown;
+
+            countdownText.text = "Time until game starts:" + endCountdownTime;
+
+            if (endCountdownTime <= 0)
+            {
+                EndTutorial();
+            }
         }
     }
 
@@ -154,5 +185,11 @@ public class TutorialManager : MonoBehaviour
         {
             StartCoroutine(WaitForAnimation(anim));
         }
+    }
+
+    public void EndTutorial()
+    {
+        SceneLoader.instance.LoadScene(2);
+        inTutorial = false;
     }
 }
