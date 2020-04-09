@@ -123,14 +123,13 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1338463315392788884}
-  - component: {fileID: 5006601902392258753}
-  - component: {fileID: 330927659218458357}
-  - component: {fileID: 6175001297537738095}
-  - component: {fileID: 5519526851283016615}
-  - component: {fileID: 2934476990634213518}
-  - component: {fileID: 1421849977730302273}
-  - component: {fileID: 365796294755388430}
+  - component: {fileID: 708338547884041553}
+  - component: {fileID: 6360733825518158241}
+  - component: {fileID: 7983259214375072283}
+  - component: {fileID: 2336942790205239283}
+  - component: {fileID: 4124568589196735505}
+  - component: {fileID: 4115008662371232308}
+  - component: {fileID: 5940208514140607691}
   m_Layer: 0
   m_Name: PigField_lvl3
   m_TagString: Untagged
@@ -214,9 +213,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttatchedToFill: 0
-  moneyOutput: 0000000000000000b4000000
-  foodOutput: 0000000000000000b4000000
---- !u!65 &2934476990634213518
+  moneyOutput: 000000000000000000000000
+  foodOutput: 000000000000000000000000
+--- !u!65 &4115008662371232308
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -248,18 +247,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &365796294755388430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2650496558997834631}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16a9890003ad75e44a2160c8797ef730, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pol_lvl1: 0
-  pol_lvl2: 0
-  pol_lvl3: 20
