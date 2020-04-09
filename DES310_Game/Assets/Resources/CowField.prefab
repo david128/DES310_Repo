@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1084841180790660749
+--- !u!1 &3846567324094962266
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,23 +8,29 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5541311955061116432}
+  - component: {fileID: 232666835262695497}
+  - component: {fileID: 7590126233934176517}
+  - component: {fileID: 7257448636026374030}
+  - component: {fileID: 8084669290711652840}
+  - component: {fileID: 8545061436015461361}
+  - component: {fileID: 5899428758277490488}
+  - component: {fileID: 4416824525577839122}
   m_Layer: 0
-  m_Name: Field_Levels
+  m_Name: CowFIeldLVL1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5541311955061116432
+--- !u!4 &232666835262695497
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1084841180790660749}
+  m_GameObject: {fileID: 3846567324094962266}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 3.28, y: 2, z: 2.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 663531863733340753}
@@ -149,13 +155,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7239571766946013607
+--- !u!114 &7590126233934176517
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3998804360207272496}
+  m_GameObject: {fileID: 3846567324094962266}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 155482db5d7f9994fbe59fb2639247e6, type: 3}
@@ -164,34 +170,26 @@ MonoBehaviour:
   ID: 0
   objectType: 8
   level: 1
---- !u!114 &976775740192917945
+--- !u!114 &7257448636026374030
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3998804360207272496}
+  m_GameObject: {fileID: 3846567324094962266}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea5c64a0edbc99b44870f36e22d14ba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fillType: 6
---- !u!33 &-6663343571656907340
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3998804360207272496}
-  m_Mesh: {fileID: -6565893420450701445, guid: 76865c66309f0fb4da59541304a13f66, type: 3}
---- !u!114 &7809824007513423996
+--- !u!114 &8084669290711652840
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3998804360207272496}
+  m_GameObject: {fileID: 3846567324094962266}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c39e48ac04108ff439ee1b74af5371b5, type: 3}
@@ -200,21 +198,21 @@ MonoBehaviour:
   title: Cow Field
   options:
   - Color: {r: 0, g: 0, b: 0, a: 0}
-    Symbol: {fileID: 21300000, guid: aca4cbc874326ab478a020a0696caeed, type: 3}
+    Symbol: {fileID: 21300000, guid: 0f630a0a22b4e164b8555e2d166bb8f9, type: 3}
     Title: Upgrade
   - Color: {r: 0, g: 0, b: 0, a: 0}
-    Symbol: {fileID: 21300000, guid: 59f671ec53a8d5843b6ef4ff9378c2d3, type: 3}
+    Symbol: {fileID: 21300000, guid: 250cbb2e5fad9f642b5b390dfc38ace9, type: 3}
     Title: Demolish
   - Color: {r: 0, g: 0, b: 0, a: 0}
-    Symbol: {fileID: 21300000, guid: 72405e6d4b5b3494b9b4209d48bdb377, type: 3}
+    Symbol: {fileID: 21300000, guid: ca82c9da83539304487a4b5ec8b8c3d9, type: 3}
     Title: Back
---- !u!114 &8806365785328167447
+--- !u!114 &8545061436015461361
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3998804360207272496}
+  m_GameObject: {fileID: 3846567324094962266}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: edf237b14a943894d876bad565af84e4, type: 3}
@@ -229,21 +227,21 @@ BoxCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3998804360207272496}
+  m_GameObject: {fileID: 3846567324094962266}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 15, y: 0.90571713, z: 10}
   m_Center: {x: -0.00000023841858, y: 0.27588713, z: 0}
---- !u!95 &-375623768392616751
+--- !u!95 &4416824525577839122
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3998804360207272496}
+  m_GameObject: {fileID: 3846567324094962266}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: de994223fa91acb4daf552afbe2c554e, type: 2}
@@ -256,12 +254,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &4139530917348200079
-MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3998804360207272496}
+  m_GameObject: {fileID: 5701778670309497506}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16a9890003ad75e44a2160c8797ef730, type: 3}

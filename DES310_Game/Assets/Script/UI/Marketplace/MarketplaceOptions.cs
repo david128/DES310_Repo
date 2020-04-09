@@ -14,6 +14,7 @@ public class MarketplaceOptions : MonoBehaviour
         i.AllowSelecting();
         Destroy( GameObject.FindGameObjectWithTag("Marketplace"));
     }
+
     public void Build()
     {
         InputScript i = GameObject.FindGameObjectWithTag("GameController").GetComponent<InputScript>();

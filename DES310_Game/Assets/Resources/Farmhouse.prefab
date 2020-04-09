@@ -144,10 +144,10 @@ MonoBehaviour:
   title: Farmhouse
   options:
   - Color: {r: 0, g: 0, b: 0, a: 0}
-    Symbol: {fileID: 21300000, guid: aca4cbc874326ab478a020a0696caeed, type: 3}
+    Symbol: {fileID: 21300000, guid: 0f630a0a22b4e164b8555e2d166bb8f9, type: 3}
     Title: Upgrade
   - Color: {r: 0, g: 0, b: 0, a: 0}
-    Symbol: {fileID: 21300000, guid: 72405e6d4b5b3494b9b4209d48bdb377, type: 3}
+    Symbol: {fileID: 21300000, guid: ca82c9da83539304487a4b5ec8b8c3d9, type: 3}
     Title: Back
 --- !u!114 &3374555382166444701
 MonoBehaviour:
@@ -164,3 +164,18 @@ MonoBehaviour:
   pol_lvl1: 0
   pol_lvl2: 0
   pol_lvl3: 0
+--- !u!114 &3114219671523403463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4892788335946020580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf237b14a943894d876bad565af84e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttatchedToFill: 0
+  moneyOutput: 000000000000000000000000
+  foodOutput: 000000000000000000000000
