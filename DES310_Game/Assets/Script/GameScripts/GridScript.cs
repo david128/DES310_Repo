@@ -73,8 +73,9 @@ public class GridScript : MonoBehaviour
 
         //spawns outside ground
         Instantiate(Resources.Load("Grid"), new Vector3(36.0f, 1.0f, 25.9f), Quaternion.identity);
+        Instantiate(Resources.Load("GridFill"), new Vector3(36.0f, 1.0f, 25.9f), Quaternion.identity);
 
-        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("TutorialScene"))
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("TutorialScene"))
         {
             Instantiate(Resources.Load("TutorialBlockers"), new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
         }
