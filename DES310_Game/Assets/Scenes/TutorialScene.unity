@@ -8776,7 +8776,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1631216562
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11704,6 +11704,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4641917889950209095, guid: f54eb06d304cfee48840359ba1def779,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f54eb06d304cfee48840359ba1def779, type: 3}
 --- !u!1 &2116938531
@@ -11763,7 +11768,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 43b73b6a2ae94ee4f85d75d14e40f4af, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9691baec1410e7f488e6216f8ef560a0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
