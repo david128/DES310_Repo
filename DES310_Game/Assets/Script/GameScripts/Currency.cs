@@ -13,11 +13,4 @@ public class Currency : MonoBehaviour
 
     //Add to current money
     public void AddMoney(int m) { money = money + m; }
-
-
-    public void CheckLevel()
-    {
-
-    }
-
 }

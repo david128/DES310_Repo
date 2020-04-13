@@ -89,7 +89,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3169412214549514554}
   - component: {fileID: 6353860270979639269}
-  - component: {fileID: 5803064835692372962}
   - component: {fileID: -8459152388815560697}
   m_Layer: 0
   m_Name: Carrots
@@ -128,15 +127,6 @@ MonoBehaviour:
   AttatchedToFill: 1
   moneyOutput: 000000000000000000000000
   foodOutput: 000000000000000000000000
-  level: 0
---- !u!33 &5803064835692372962
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2136775800686705449}
-  m_Mesh: {fileID: -806544576580282028, guid: 77f3789f21652314daa13bf28766aae1, type: 3}
 --- !u!114 &-8459152388815560697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,9 +139,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16a9890003ad75e44a2160c8797ef730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pol_lvl1: 3
-  pol_lvl2: 1
-  pol_lvl3: 1
+  pol_lvl1: 4
+  pol_lvl2: 3
+  pol_lvl3: 2
 --- !u!1 &6575149148842002661
 GameObject:
   m_ObjectHideFlags: 0

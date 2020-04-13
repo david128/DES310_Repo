@@ -12,6 +12,7 @@ public class RadialPressable : MonoBehaviour
         public Sprite Symbol;
         public string Title;
     }
+
     public string title;
     public Action[] options;
 

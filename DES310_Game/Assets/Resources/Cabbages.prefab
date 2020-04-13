@@ -120,7 +120,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5001957018110704560}
   - component: {fileID: 6264857908932351269}
-  - component: {fileID: 682342902595604091}
   - component: {fileID: -5082293237360322187}
   m_Layer: 0
   m_Name: Cabbages
@@ -159,15 +158,6 @@ MonoBehaviour:
   AttatchedToFill: 1
   moneyOutput: 000000000000000000000000
   foodOutput: 000000000000000000000000
-  level: 0
---- !u!33 &682342902595604091
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8300658240481675683}
-  m_Mesh: {fileID: 3760286561286826541, guid: 86c857e59d4a34941bafa4d79f13869a, type: 3}
 --- !u!114 &-5082293237360322187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,6 +170,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16a9890003ad75e44a2160c8797ef730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pol_lvl1: 3
+  pol_lvl1: 2
   pol_lvl2: 2
   pol_lvl3: 1
