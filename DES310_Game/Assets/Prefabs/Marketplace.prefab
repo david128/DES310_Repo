@@ -1736,7 +1736,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1116816644115862059}
   m_LocalRotation: {x: 0, y: 0, z: 0.03289348, w: 0.99945885}
-  m_LocalPosition: {x: 0, y: 0, z: -5.3}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.59, y: 4.6, z: 3.99}
   m_Children: []
   m_Father: {fileID: 1116816644820363421}
@@ -10566,6 +10566,11 @@ PrefabInstance:
       propertyPath: m_Text
       value: Cocoa
       objectReference: {fileID: 0}
+    - target: {fileID: 7184938504681429807, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4,
+        type: 3}
+      propertyPath: m_Text
+      value: Sunflower
+      objectReference: {fileID: 0}
     - target: {fileID: 709130786142309312, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -10903,6 +10908,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: Carrot
+      objectReference: {fileID: 0}
+    - target: {fileID: 7184938504681429807, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4,
+        type: 3}
+      propertyPath: m_Text
+      value: Turnip
       objectReference: {fileID: 0}
     - target: {fileID: 709130786142309312, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4,
         type: 3}
@@ -11269,6 +11279,16 @@ PrefabInstance:
       propertyPath: m_Text
       value: Cocoa
       objectReference: {fileID: 0}
+    - target: {fileID: 3137354474207493656, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7184938504681429807, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4,
+        type: 3}
+      propertyPath: m_Text
+      value: Carrot
+      objectReference: {fileID: 0}
     - target: {fileID: 709130786142309312, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -11602,6 +11622,11 @@ PrefabInstance:
       propertyPath: m_Text
       value: Cocoa
       objectReference: {fileID: 0}
+    - target: {fileID: 7184938504681429807, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4,
+        type: 3}
+      propertyPath: m_Text
+      value: Cocoa
+      objectReference: {fileID: 0}
     - target: {fileID: 709130786142309312, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -11910,6 +11935,11 @@ PrefabInstance:
       propertyPath: m_Text
       value: Cow
       objectReference: {fileID: 0}
+    - target: {fileID: 7184938504681429807, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4,
+        type: 3}
+      propertyPath: m_Text
+      value: Cow
+      objectReference: {fileID: 0}
     - target: {fileID: 709130786142309312, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -12202,6 +12232,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 44.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7184938504681429807, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4,
+        type: 3}
+      propertyPath: m_Text
+      value: Chicken
+      objectReference: {fileID: 0}
+    - target: {fileID: 1326244842808723304, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7184938504681429807, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4,
         type: 3}
@@ -12528,6 +12568,11 @@ PrefabInstance:
       propertyPath: m_Text
       value: Pig
       objectReference: {fileID: 0}
+    - target: {fileID: 7184938504681429807, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4,
+        type: 3}
+      propertyPath: m_Text
+      value: Pig
+      objectReference: {fileID: 0}
     - target: {fileID: 709130786142309312, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -12836,6 +12881,11 @@ PrefabInstance:
       propertyPath: m_Text
       value: Cabbage
       objectReference: {fileID: 0}
+    - target: {fileID: 7184938504681429807, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4,
+        type: 3}
+      propertyPath: m_Text
+      value: Cabbage
+      objectReference: {fileID: 0}
     - target: {fileID: 709130786142309312, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -13138,6 +13188,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 54.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7184938504681429807, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4,
+        type: 3}
+      propertyPath: m_Text
+      value: Maize
       objectReference: {fileID: 0}
     - target: {fileID: 7184938504681429807, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4,
         type: 3}
@@ -14047,6 +14102,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 56.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7184938504681429807, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4,
+        type: 3}
+      propertyPath: m_Text
+      value: Sugar
       objectReference: {fileID: 0}
     - target: {fileID: 7184938504681429807, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4,
         type: 3}
