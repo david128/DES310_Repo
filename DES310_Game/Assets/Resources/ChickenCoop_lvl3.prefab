@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8027435178987956754}
   - component: {fileID: 2101601372082285546}
   - component: {fileID: 8825054442957758373}
+  - component: {fileID: -7871201293627811608}
   m_Layer: 0
   m_Name: ChickenCoop_lvl3
   m_TagString: Untagged
@@ -155,6 +156,19 @@ MonoBehaviour:
   pol_lvl1: 0
   pol_lvl2: 0
   pol_lvl3: 10
+--- !u!65 &-7871201293627811608
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285733469376572589}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12, y: 2, z: 8}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &349493204513473441
 GameObject:
   m_ObjectHideFlags: 0
