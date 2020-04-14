@@ -27,7 +27,7 @@ public static class SaveGame
     {
         string path = Application.persistentDataPath + "/saveData.SaveData";
 
-        if(File.Exists(path))
+        if (File.Exists(path))
         {
             BinaryFormatter formatter = new BinaryFormatter();
 
@@ -45,6 +45,23 @@ public static class SaveGame
         {
             Debug.LogError("Save file not found in " + path);
             return null;
+        }
+    }
+
+    public static void DeleteGameData()
+    {
+        string path = Application.persistentDataPath + "/saveData.SaveData";
+
+        if (File.Exists(path))
+        {
+            File.Delete(path);
+
+            Debug.LogError("File has been removed at " + path);
+        }
+        else
+        {
+            Debug.LogError("No save file to overwrite in " + path);
+            return;
         }
     }
 }

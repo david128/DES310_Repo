@@ -54,16 +54,9 @@ public class TutorialManager : MonoBehaviour
         InputScript.instance.SetCanMove(false);
         InputScript.instance.SetAllowSelecting(false);
 
-        if (gameManager.GetComponent<MainMenu>().GetFromLoad() == false)
-        {
-            inTutorial = true;
-        }
-        else
-        {
-            inTutorial = false;
-        }
+        inTutorial = true;
 
-        if (gameManager.GetComponent<GameLoop>().GetInTutorial() == true && cam.TryGetComponent(out camAnim))
+        if (cam.TryGetComponent(out camAnim))
         {
             currentTut = tutMsgs[0];
             prevTut = currentTut;
@@ -111,6 +104,8 @@ public class TutorialManager : MonoBehaviour
             if (endCountdownTime <= 0)
             {
                 EndTutorial();
+
+                endOfTut = false;
             }
         }
     }

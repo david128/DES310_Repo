@@ -170,8 +170,6 @@ public class TutorialEvents : MonoBehaviour
     {
         objectiveText.text = "Destroy carrot field";
 
-        Instantiate(Resources.Load("Blocker"), new Vector3(56.07f, 10.0f, 31.52f), Quaternion.identity);
-
         light.SetActive(true);
 
         StartCoroutine(WaitForEventToFinish(RadialFlashEvent()));
@@ -311,6 +309,8 @@ public class TutorialEvents : MonoBehaviour
 
             yield return null;
         }
+
+        Instantiate(Resources.Load("Blocker"), new Vector3(46.76f, 10.0f, 31.95f), Quaternion.identity);
 
         eventActive = false;
 
