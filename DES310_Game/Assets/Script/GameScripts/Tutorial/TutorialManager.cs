@@ -54,16 +54,9 @@ public class TutorialManager : MonoBehaviour
         InputScript.instance.SetCanMove(false);
         InputScript.instance.SetAllowSelecting(false);
 
-        if (gameManager.GetComponent<MainMenu>().GetFromLoad() == false)
-        {
-            inTutorial = true;
-        }
-        else
-        {
-            inTutorial = false;
-        }
+        inTutorial = true;
 
-        if (gameManager.GetComponent<GameLoop>().GetInTutorial() == true && cam.TryGetComponent(out camAnim))
+        if (cam.TryGetComponent(out camAnim))
         {
             currentTut = tutMsgs[0];
             prevTut = currentTut;
@@ -111,6 +104,8 @@ public class TutorialManager : MonoBehaviour
             if (endCountdownTime <= 0)
             {
                 EndTutorial();
+
+                endOfTut = false;
             }
         }
     }
@@ -121,7 +116,10 @@ public class TutorialManager : MonoBehaviour
 
         //Changes what is being shown in the tutorial box
         prevTut.gameObject.SetActive(false);
+
         currentTut.gameObject.SetActive(true);
+        currentTut.interactable = false;
+        StartCoroutine(WaitForButton());
     }
 
     public IEnumerator WaitForAnimationToShowTutorialBox(Animator anim, bool showTutBox)
@@ -163,6 +161,21 @@ public class TutorialManager : MonoBehaviour
         }
 
         updateTutorial = true;
+    }
+
+    public IEnumerator WaitForButton()
+    {
+        float counter = 0;
+        float waitTime = 1.0f;
+
+        //Now, Wait until the current state is done playing
+        while (counter < (waitTime))
+        {
+            counter += Time.deltaTime;
+            yield return null;
+        }
+
+        currentTut.interactable = true;
     }
 
     public IEnumerator UpdateClipLength(Animator anim, bool waitFortutBox)

@@ -17,7 +17,7 @@ public class Save : MonoBehaviour
     {
         SaveData data = SaveGame.LoadGameData();
 
-        if (data != null)
+        if (data != null && SaveGame.LoadGameData() != null)
         {
             gameManager.GetComponent<Currency>().SetMoney(data.money);
             gameManager.GetComponent<FoodScript>().SetFood(data.food);
@@ -51,5 +51,10 @@ public class Save : MonoBehaviour
         {
             return;
         }
+    }
+
+    public void DeleteGameData()
+    {
+        SaveGame.DeleteGameData();
     }
 }

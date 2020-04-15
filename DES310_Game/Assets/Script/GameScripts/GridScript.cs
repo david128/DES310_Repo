@@ -75,17 +75,17 @@ public class GridScript : MonoBehaviour
         Instantiate(Resources.Load("Grid"), new Vector3(36.0f, 1.0f, 25.9f), Quaternion.identity);
         Instantiate(Resources.Load("GridFill"), new Vector3(36.0f, 1.0f, 25.9f), Quaternion.identity);
 
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("TutorialScene"))
-        {
-            Instantiate(Resources.Load("TutorialBlockers"), new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
-        }
+        Instantiate(Resources.Load("Tractor"), new Vector3(64.0f, 2.0f, 33.0f), new Quaternion(0.0f, 0.225f, 0.0f, 0.974f));
 
         //Spawns locked area blockers
         lockLvl2 = Instantiate(lockLvl2, new Vector3(76.64f, 12.0f, -14.213f), Quaternion.identity);
 
         lockLvl3 = Instantiate(lockLvl3, new Vector3(-11.89f, 12.0f, 87.5f), new Quaternion(0.0f, 0.7071f, 0.0f, 0.7071f));
 
-        Instantiate(Resources.Load("Tractor"), new Vector3(64.0f, 2.0f, 33.0f), new Quaternion(0.0f, 0.225f, 0.0f, 0.974f));
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("TutorialScene"))
+        {
+            Instantiate(Resources.Load("TutorialBlockers"), new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
+        }
 
         //creates and instantiates each tile, giving them a unique ID
         for (int i = 0; i < columnLength; i++)
@@ -126,11 +126,17 @@ public class GridScript : MonoBehaviour
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectID(ID);
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectType(ObjectInfo.ObjectType.RESEARCH);
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectLevel(1);
-
         }
         else if (tutorial == true)
         {
             CreateTutSquare(pos, ID);
+        }
+        else if (ID == 18)
+        {
+            gridSquares.Add((GameObject)Instantiate(Resources.Load("ChickenCoop"), pos, Quaternion.identity));
+            gridSquares[ID].GetComponent<ObjectInfo>().SetObjectID(ID);
+            gridSquares[ID].GetComponent<ObjectInfo>().SetObjectType(ObjectInfo.ObjectType.CHICKEN_COOP);
+            gridSquares[ID].GetComponent<ObjectInfo>().SetObjectLevel(1);
         }
         else
         {   
