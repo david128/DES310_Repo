@@ -9,13 +9,13 @@ public class MainMenu : MonoBehaviour
     public GameObject NewGameConfirm;
     public GameObject NoSaveNotice;
 
-    public void PlayNewGame()
+    public void CheckNewGame()
     {
         string path = Application.persistentDataPath + "/saveData.SaveData";
 
         //loads game scene at same time as unloading the menu and sets from load to false
 
-        if(File.Exists(path))
+        if (File.Exists(path))
         {
             NewGameConfirm.SetActive(true);
         }
@@ -24,8 +24,14 @@ public class MainMenu : MonoBehaviour
             SceneLoader.instance.LoadScene(1);
             PlayerPrefs.SetInt("loadGame", 0);
         }
-      
+
         // SceneManager.UnloadSceneAsync(0);
+    }
+
+    public void PlayNewGame()
+    {
+        SceneLoader.instance.LoadScene(1);
+        PlayerPrefs.SetInt("loadGame", 0);
     }
 
     public void LoadSavedGame()
