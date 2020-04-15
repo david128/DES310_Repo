@@ -120,24 +120,23 @@ public class GridScript : MonoBehaviour
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectLevel(1);
 
         }
-        else if (ID == 18)
-        {
-            gridSquares.Add((GameObject)Instantiate(Resources.Load("ChickenCoop"), pos, Quaternion.identity));
-            gridSquares[ID].GetComponent<ObjectInfo>().SetObjectID(ID);
-            gridSquares[ID].GetComponent<ObjectInfo>().SetObjectType(ObjectInfo.ObjectType.FARMHOUSE);
-            gridSquares[ID].GetComponent<ObjectInfo>().SetObjectLevel(1);
-        }
         else if (ID == 9)
         {
             gridSquares.Add((GameObject)Instantiate(Resources.Load("ResearchLab"), pos, Quaternion.identity));
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectID(ID);
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectType(ObjectInfo.ObjectType.RESEARCH);
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectLevel(1);
-
         }
         else if (tutorial == true)
         {
             CreateTutSquare(pos, ID);
+        }
+        else if (ID == 18)
+        {
+            gridSquares.Add((GameObject)Instantiate(Resources.Load("ChickenCoop"), pos, Quaternion.identity));
+            gridSquares[ID].GetComponent<ObjectInfo>().SetObjectID(ID);
+            gridSquares[ID].GetComponent<ObjectInfo>().SetObjectType(ObjectInfo.ObjectType.FARMHOUSE);
+            gridSquares[ID].GetComponent<ObjectInfo>().SetObjectLevel(1);
         }
         else
         {   

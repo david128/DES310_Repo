@@ -116,7 +116,10 @@ public class TutorialManager : MonoBehaviour
 
         //Changes what is being shown in the tutorial box
         prevTut.gameObject.SetActive(false);
+
         currentTut.gameObject.SetActive(true);
+        currentTut.interactable = false;
+        StartCoroutine(WaitForButton());
     }
 
     public IEnumerator WaitForAnimationToShowTutorialBox(Animator anim, bool showTutBox)
@@ -158,6 +161,21 @@ public class TutorialManager : MonoBehaviour
         }
 
         updateTutorial = true;
+    }
+
+    public IEnumerator WaitForButton()
+    {
+        float counter = 0;
+        float waitTime = 1.0f;
+
+        //Now, Wait until the current state is done playing
+        while (counter < (waitTime))
+        {
+            counter += Time.deltaTime;
+            yield return null;
+        }
+
+        currentTut.interactable = true;
     }
 
     public IEnumerator UpdateClipLength(Animator anim, bool waitFortutBox)

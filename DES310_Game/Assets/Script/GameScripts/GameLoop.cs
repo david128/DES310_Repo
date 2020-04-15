@@ -13,7 +13,12 @@ public class GameLoop : MonoBehaviour
 
     bool fromTutorial = false;
 
+    bool loadGame;
+
     public bool GetFromTutorial() { return fromTutorial; }
+
+    public void SetFromTutorial(bool f) { fromTutorial = f; }
+    public void SetLoadGame(bool l) { loadGame = l; }
 
     //Frames per second
     public float GetFPS() { return FPS; }
@@ -30,8 +35,6 @@ public class GameLoop : MonoBehaviour
         //checks if the tutorial scene i
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("TutorialScene"))
         {
-            fromTutorial = true;
-
             //deletes old save data
             gameManager.GetComponent<Save>().DeleteGameData();
 
@@ -41,11 +44,14 @@ public class GameLoop : MonoBehaviour
         else
         {
             gameManager.GetComponent<GridScript>().CreateGrid(false);
+        }
 
-            //if(loadGame == true)
-            //{
-            //    //gameManager.GetComponent<Save>().LoadGameData();
-            //}
+        if(loadGame == true)
+        {
+            if (loadGame == true)
+            {
+                gameManager.GetComponent<Save>().LoadGameData();
+            }
         }
     }
 
