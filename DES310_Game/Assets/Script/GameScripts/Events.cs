@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEngine.UI;
 
 
 
 public class Events : MonoBehaviour
 {
     public GameObject gameManager;
+    public Image eventUI;
 
     string path =  "/events.txt";
 
@@ -384,6 +386,8 @@ public class Events : MonoBehaviour
                 if (triggered == true) //if triggered is still true then add effects of this event
                 {
                     Debug.Log("EventOccurred " + gameEvents[count].getEVentName());
+                    eventUI.GetComponent<EventUIChange>().ChangeText(gameEvents[count].getEVentName(), gameEvents[count].GetEventDescription());
+                    eventUI.GetComponent<EventUIChange>().Enable();
                     gameEvents[count].setTriggered(true);
                     //currentEventEffects.AddEffects(gameEvents[count].getEffects());
                 }
