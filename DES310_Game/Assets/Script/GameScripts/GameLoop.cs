@@ -46,12 +46,9 @@ public class GameLoop : MonoBehaviour
             gameManager.GetComponent<GridScript>().CreateGrid(false);
         }
 
-        if(loadGame == true)
+        if(PlayerPrefs.GetInt("loadGame") == 1)
         {
-            if (loadGame == true)
-            {
-                gameManager.GetComponent<Save>().LoadGameData();
-            }
+            gameManager.GetComponent<Save>().LoadGameData();
         }
     }
 

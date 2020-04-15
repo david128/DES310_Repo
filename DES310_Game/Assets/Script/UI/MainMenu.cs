@@ -2,33 +2,48 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class MainMenu : MonoBehaviour
 {
-    GameObject gameManager;
+    public GameObject NewGameConfirm;
+    public GameObject NoSaveNotice;
 
     public void PlayNewGame()
     {
+        string path = Application.persistentDataPath + "/saveData.SaveData";
+
         //loads game scene at same time as unloading the menu and sets from load to false
-        SceneLoader.instance.LoadScene(1);
 
-        //finds game manager
-        gameManager = GameObject.FindWithTag("GameController");
-
-        gameManager.GetComponent<GameLoop>().SetFromTutorial(false);
+        if(File.Exists(path))
+        {
+            NewGameConfirm.SetActive(true);
+        }
+        else
+        {
+            SceneLoader.instance.LoadScene(1);
+            PlayerPrefs.SetInt("loadGame", 0);
+        }
+      
         // SceneManager.UnloadSceneAsync(0);
     }
 
     public void LoadSavedGame()
     {
+        string path = Application.persistentDataPath + "/saveData.SaveData";
+
         //loads game scene at same time as unloading the menu and sets from load to true
-        SceneLoader.instance.LoadScene(2);
+        if (File.Exists(path))
+        {
+            SceneLoader.instance.LoadScene(2);
+            PlayerPrefs.SetInt("loadGame", 1);
+        }
+        else
+        {
+            NoSaveNotice.SetActive(true);
+        }
 
-        //finds game manager
-        gameManager = GameObject.FindWithTag("GameController");
-
-        gameManager.GetComponent<GameLoop>().SetFromTutorial(true);
-       // SceneManager.UnloadSceneAsync(0);
+        // SceneManager.UnloadSceneAsync(0);
     }
 
     public void BackToMenu()

@@ -135,7 +135,7 @@ public class GridScript : MonoBehaviour
         {
             gridSquares.Add((GameObject)Instantiate(Resources.Load("ChickenCoop"), pos, Quaternion.identity));
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectID(ID);
-            gridSquares[ID].GetComponent<ObjectInfo>().SetObjectType(ObjectInfo.ObjectType.FARMHOUSE);
+            gridSquares[ID].GetComponent<ObjectInfo>().SetObjectType(ObjectInfo.ObjectType.CHICKEN_COOP);
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectLevel(1);
         }
         else
