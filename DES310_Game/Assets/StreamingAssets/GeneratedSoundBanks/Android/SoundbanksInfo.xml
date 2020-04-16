@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Android" BasePlatform="Android" SchemaVersion="11" SoundbankVersion="134">
+	<RootPaths>
+		<ProjectRoot>E:\Users\Rizwan\Documents\WwiseProjects\Greener Pastures\</ProjectRoot>
+		<SourceFilesRoot>E:\Users\Rizwan\Documents\WwiseProjects\Greener Pastures\.cache\Android\</SourceFilesRoot>
+		<SoundBanksRoot>E:\Users\Rizwan\Documents\WwiseProjects\Greener Pastures\GeneratedSoundBanks\Android\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>E:\Users\Rizwan\Documents\WwiseProjects\Greener Pastures\GeneratedSoundBanks\Android</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="2005704188" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\Main_Menu</ObjectPath>
+			<ShortName>Main_Menu</ShortName>
+			<Path>Main_Menu.bnk</Path>
+			<IncludedEvents>
+				<Event Id="317641954" Name="ButtonPress" ObjectPath="\Events\Default Work Unit\ButtonPress" DurationType="OneShot" DurationMin="0.114512" DurationMax="0.114512"/>
+				<Event Id="522020387" Name="MenuSong" ObjectPath="\Events\Default Work Unit\MenuSong" DurationType="OneShot" DurationMin="73.010406" DurationMax="73.010406"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="516583319" Language="SFX">
+					<ShortName>Button_FX.wav</ShortName>
+					<Path>SFX\Button_FX_10C4C929.wem</Path>
+				</File>
+				<File Id="1056975954" Language="SFX">
+					<ShortName>MenuSong_FX.wav</ShortName>
+					<Path>SFX\MenuSong_FX_10C4C929.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+		<SoundBank Id="2517215346" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\Sample_Scene</ObjectPath>
+			<ShortName>Sample_Scene</ShortName>
+			<Path>Sample_Scene.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="3842317110" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\Tutorial_Scene</ObjectPath>
+			<ShortName>Tutorial_Scene</ShortName>
+			<Path>Tutorial_Scene.bnk</Path>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

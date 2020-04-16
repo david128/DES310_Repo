@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{402B71D1-5F2B-4165-9DD0-4DC67DC429EA}" SchemaVersion="94">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{402B71D1-5F2B-4165-9DD0-4DC67DC429EA}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="Main_Menu" ID="{9111E986-56BB-441B-88A3-1064F2369C9A}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Button_FX" ID="{D5D435BF-E2B1-4D0A-9604-6D637BBAAB4E}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="MenuSong_FX" ID="{71E748A8-13E2-4FE4-9C8B-BDF8055ACEC0}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}" Filter="7" Origin="Manual"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+				<SoundBank Name="Tutorial_Scene" ID="{C641E9CC-6A3B-4D96-823F-FCC940B0F0EF}">
+					<ObjectInclusionList/>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+				<SoundBank Name="Sample_Scene" ID="{B89FA421-6D90-4CC1-93EC-38EC8EAE3A5B}">
+					<ObjectInclusionList/>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>
