@@ -202,7 +202,7 @@ public class TutorialManager : MonoBehaviour
 
     public void EndTutorial()
     {
-        SceneLoader.instance.LoadScene(2);
+        SceneLoader.instance.LoadScene(3);
         inTutorial = false;
     }
 }
