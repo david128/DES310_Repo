@@ -2,23 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameLoop : MonoBehaviour
 {
     //Declare variables
     public GameObject gameManager, textManager;
 
+    public Image UpgradeWarning;
+    public Image MoneyWarning;
+
     public float time;
     public float FPS;
 
-    bool fromTutorial = false;
-
-    bool loadGame;
-
-    public bool GetFromTutorial() { return fromTutorial; }
-
-    public void SetFromTutorial(bool f) { fromTutorial = f; }
-    public void SetLoadGame(bool l) { loadGame = l; }
+    public Image GetUpgradeWarning() { return UpgradeWarning; }
+    public Image GetMoneyWarning() { return MoneyWarning; }
 
     //Frames per second
     public float GetFPS() { return FPS; }

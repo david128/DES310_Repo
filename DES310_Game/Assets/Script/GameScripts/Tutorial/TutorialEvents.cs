@@ -292,6 +292,10 @@ public class TutorialEvents : MonoBehaviour
     {
         bool done = false;
 
+        Object fieldBlocker;
+
+        fieldBlocker = Instantiate(Resources.Load("Blocker"), new Vector3(46.76f, 10.0f, 19.05f), Quaternion.identity);
+
         //Wait until the event is done
         while (!done)
         {
@@ -309,6 +313,8 @@ public class TutorialEvents : MonoBehaviour
 
             yield return null;
         }
+
+        Destroy(fieldBlocker);
 
         Instantiate(Resources.Load("Blocker"), new Vector3(46.76f, 10.0f, 31.95f), Quaternion.identity);
 

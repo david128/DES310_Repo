@@ -355,7 +355,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dabc5f91634184d4bb6d4305c4275787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fromLoad: 0
+  NewGameConfirm: {fileID: 0}
+  NoSaveNotice: {fileID: 0}
 --- !u!4 &1543891929
 Transform:
   m_ObjectHideFlags: 0
@@ -490,9 +491,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1791368640}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e772e95f86aa5345b1f6e32ccc39412, type: 3}
+  m_Script: {fileID: 11500000, guid: 14be39bec88bf5f47a28ae9626891c5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  videoPlayer: {fileID: 1791368642}
 --- !u!1 &1814908701
 GameObject:
   m_ObjectHideFlags: 0

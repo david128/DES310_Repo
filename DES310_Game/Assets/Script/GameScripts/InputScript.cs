@@ -361,6 +361,11 @@ public class InputScript : MonoBehaviour
 
             gameManager.GetComponent<AssetChange>().Build(selectedID, t, f);
         }
+        else
+        {
+            gameManager.GetComponent<GameLoop>().GetMoneyWarning().gameObject.SetActive(true);
+            gameManager.GetComponent<InputScript>().SetAllowSelecting(false);
+        }
 
     }
 

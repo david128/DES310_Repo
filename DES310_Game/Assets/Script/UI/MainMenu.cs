@@ -21,7 +21,7 @@ public class MainMenu : MonoBehaviour
         }
         else
         {
-            SceneLoader.instance.LoadScene(1);
+            SceneLoader.instance.LoadScene(2);
             PlayerPrefs.SetInt("loadGame", 0);
         }
 
@@ -30,7 +30,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayNewGame()
     {
-        SceneLoader.instance.LoadScene(1);
+        SceneLoader.instance.LoadScene(2);
         PlayerPrefs.SetInt("loadGame", 0);
     }
 
@@ -41,7 +41,7 @@ public class MainMenu : MonoBehaviour
         //loads game scene at same time as unloading the menu and sets from load to true
         if (File.Exists(path))
         {
-            SceneLoader.instance.LoadScene(2);
+            SceneLoader.instance.LoadScene(3);
             PlayerPrefs.SetInt("loadGame", 1);
         }
         else
@@ -55,7 +55,7 @@ public class MainMenu : MonoBehaviour
     public void BackToMenu()
     {
         //loads menu scene at same time as unloading the game and sets from load to false
-        SceneLoader.instance.LoadScene(0);
+        SceneLoader.instance.LoadScene(1);
         //SceneManager.UnloadSceneAsync(1);
     }
 
