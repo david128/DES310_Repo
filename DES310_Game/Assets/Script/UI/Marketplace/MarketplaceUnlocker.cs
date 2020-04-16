@@ -48,6 +48,15 @@ public class MarketplaceUnlocker : MonoBehaviour
 
             if (TutorialManager.instance != null && TutorialManager.instance.GetTutorial() == true)
             {
+                if (marketButtons[i].name == "Chick" || marketButtons[i].name == "Carrot")
+                {
+                    marketButtons[i].interactable = true;
+                }
+                else
+                {
+                    marketButtons[i].interactable = false;
+                }
+
                 if (TutorialEvents.instance.GetChickenBuilt() == false)
                 {
                     VeggieTab.SetActive(false);

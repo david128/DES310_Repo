@@ -8,7 +8,7 @@ public class MarketplaceSpawner : MonoBehaviour
 
     public void SpawnMenu()
     {
-        GameObject newMenu = Instantiate(menuPrefab,GameObject.FindGameObjectWithTag("Canvas").transform) as GameObject;
+        GameObject newMenu = Instantiate(menuPrefab, GameObject.FindGameObjectWithTag("Canvas").transform) as GameObject;
 
         newMenu.transform.SetSiblingIndex(6);
     }
