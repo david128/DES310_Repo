@@ -294,7 +294,7 @@ public class TutorialEvents : MonoBehaviour
 
         Object fieldBlocker;
 
-        fieldBlocker = Instantiate(Resources.Load("Blocker"), new Vector3(46.76f, 10.0f, 19.05f), Quaternion.identity);
+        fieldBlocker = Instantiate(Resources.Load("TutorialResources/Blocker"), new Vector3(46.76f, 10.0f, 19.05f), Quaternion.identity);
 
         //Wait until the event is done
         while (!done)
@@ -316,7 +316,7 @@ public class TutorialEvents : MonoBehaviour
 
         Destroy(fieldBlocker);
 
-        Instantiate(Resources.Load("Blocker"), new Vector3(46.76f, 10.0f, 31.95f), Quaternion.identity);
+        Instantiate(Resources.Load("TutorialResources/Blocker"), new Vector3(46.76f, 10.0f, 31.95f), Quaternion.identity);
 
         eventActive = false;
 

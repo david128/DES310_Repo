@@ -84,7 +84,7 @@ public class GridScript : MonoBehaviour
 
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("TutorialScene"))
         {
-            Instantiate(Resources.Load("TutorialBlockers"), new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
+            Instantiate(Resources.Load("TutorialResources/TutorialBlockers"), new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
         }
 
         //creates and instantiates each tile, giving them a unique ID
