@@ -17,32 +17,44 @@ public class Save : MonoBehaviour
     {
         SaveData data = SaveGame.LoadGameData();
 
-        gameManager.GetComponent<Currency>().SetMoney(data.money);
-        gameManager.GetComponent<FoodScript>().SetFood(data.food);
-
-        Vector3[] pos;
-        pos = new Vector3[25];
-
-        int[] level = new int[25];
-        int[] id = new int[25];
-        string[] type = new string[25];
-        string[] fill = new string[25];
-
-        int count = 0;
-
-        for (int i = 0; i < 25; i++)
+        if (data != null && SaveGame.LoadGameData() != null)
         {
-            type[i] = data.gridType[i];
-            level[i] = data.gridLevel[i];
-            id[i] = data.gridID[i];
-            fill[i] = data.gridFill[i];
-            pos[i].x = data.gridPos[count];
-            pos[i].y = data.gridPos[count + 1];
-            pos[i].z = data.gridPos[count + 2];
+            gameManager.GetComponent<Currency>().SetMoney(data.money);
+            gameManager.GetComponent<FoodScript>().SetFood(data.food);
 
-            count += 3;
+            Vector3[] pos;
+            pos = new Vector3[25];
+
+            int[] level = new int[25];
+            int[] id = new int[25];
+            string[] type = new string[25];
+            string[] fill = new string[25];
+
+            int count = 0;
+
+            for (int i = 0; i < 25; i++)
+            {
+                type[i] = data.gridType[i];
+                level[i] = data.gridLevel[i];
+                id[i] = data.gridID[i];
+                fill[i] = data.gridFill[i];
+                pos[i].x = data.gridPos[count];
+                pos[i].y = data.gridPos[count + 1];
+                pos[i].z = data.gridPos[count + 2];
+
+                count += 3;
+            }
+
+            gameManager.GetComponent<GridScript>().LoadGrid(id, pos, type, level, fill);
         }
+        else
+        {
+            return;
+        }
+    }
 
-        gameManager.GetComponent<GridScript>().LoadGrid(id, pos, type, level, fill);
+    public void DeleteGameData()
+    {
+        SaveGame.DeleteGameData();
     }
 }

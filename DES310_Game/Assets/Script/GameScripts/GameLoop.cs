@@ -1,15 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameLoop : MonoBehaviour
 {
     //Declare variables
     public GameObject gameManager, textManager;
-    
+
+    public Image UpgradeWarning;
+    public Image MoneyWarning;
+    public Image QuotaWarning;
+
     public float time;
     public float FPS;
-    
+
+    public Image GetUpgradeWarning() { return UpgradeWarning; }
+    public Image GetMoneyWarning() { return MoneyWarning; }
+    public Image GetQuotaWarning() { return QuotaWarning; }
+
+    //Frames per second
+    public float GetFPS() { return FPS; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,8 +32,24 @@ public class GameLoop : MonoBehaviour
         //load events
         gameManager.GetComponent<Events>().HandleEventFile();
 
-        //Creates grid at the start
-        gameManager.GetComponent<GridScript>().CreateGrid();
+        //checks if the tutorial scene i
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("TutorialScene"))
+        {
+            //deletes old save data
+            gameManager.GetComponent<Save>().DeleteGameData();
+
+            //Creates grid at the start
+            gameManager.GetComponent<GridScript>().CreateGrid(true);
+        }
+        else
+        {
+            gameManager.GetComponent<GridScript>().CreateGrid(false);
+        }
+
+        if(PlayerPrefs.GetInt("loadGame") == 1)
+        {
+            gameManager.GetComponent<Save>().LoadGameData();
+        }
     }
 
     // Update is called once per frame
@@ -49,5 +78,34 @@ public class GameLoop : MonoBehaviour
         textManager.GetComponent<TextScript>().UpdateText();
     }
 
-    public float GetFPS() { return FPS; }
+    // Quits the player when the user hits escape
+    public void FinishGame()
+    {
+        //gets all stats info
+        //GatherStats();
+
+        SceneLoader.instance.LoadEndScene(4);
+        PlayerPrefs.SetInt("Ending", 1);
+    }
+
+    // looks for and finds end game stats to show player
+    public void GatherStats()
+    {
+        //gets all stats info
+
+    }
+
+
+    // Quits the player when the user hits escape
+    public void QuitGame()
+    {
+        //Saves Game
+        ///Done in button now
+        //saveGame.SaveGameData();
+
+        Debug.Log("Quit Application");
+
+        //Quits application
+        Application.Quit();
+    }
 }
