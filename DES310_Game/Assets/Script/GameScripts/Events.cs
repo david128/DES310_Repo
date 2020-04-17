@@ -682,16 +682,46 @@ public class Events : MonoBehaviour
             else if (effects[i].GetEventEffectType() == EventEffectType.FOOD_EFFECT)
             {
                 List<GameObject> grid = gameManager.GetComponent<GridScript>().GetGrid();
+                float red = effects[i].GetReduction();
 
                 if (effects[i].GetFillEffected() == ObjectFill.FillType.NONE)
                 {
                     //effecting all
+                    //reduce all current fields
                     for (int j = 0; j < grid.Count; j++)
                     {
                         if (grid[j].GetComponent<ObjectInfo>().GetObjectType() == ObjectInfo.ObjectType.FIELD)
                         {
-                           // grid[j].GetComponentInChildren<ObjectOutput>().
+                            grid[j].GetComponentInChildren<ObjectOutput>().reduceFood(red);
                         }
+                        else if (grid[j].GetComponent<ObjectInfo>().GetObjectType() != ObjectInfo.ObjectType.NONE)
+                        {
+                            grid[j].GetComponent<ObjectOutput>().reduceFood(red);
+                        }
+                    }
+
+                }
+                else
+                {
+                    //efecting specific
+
+                    //reduce all current fields
+                    for (int j = 0; j < grid.Count; j++)
+                    {
+
+                        if (grid[j].GetComponent<ObjectFill>().GetFillType() == effects[i].GetFillEffected())
+                        {
+                            if (grid[j].GetComponent<ObjectInfo>().GetObjectType() == ObjectInfo.ObjectType.FIELD)
+                            {
+                                grid[j].GetComponentInChildren<ObjectOutput>().reduceFood(red);
+                            }
+                            else
+                            {
+                                grid[j].GetComponent<ObjectOutput>().reduceFood(red);
+                            }
+                        }
+
+
                     }
                         
 
@@ -699,7 +729,52 @@ public class Events : MonoBehaviour
             }
             else //money effect
             {
-               
+
+                List<GameObject> grid = gameManager.GetComponent<GridScript>().GetGrid();
+                float red = effects[i].GetReduction();
+
+                if (effects[i].GetFillEffected() == ObjectFill.FillType.NONE)
+                {
+                    //effecting all
+                    //reduce all current fields
+                    for (int j = 0; j < grid.Count; j++)
+                    {
+                        if (grid[j].GetComponent<ObjectInfo>().GetObjectType() == ObjectInfo.ObjectType.FIELD)
+                        {
+                            grid[j].GetComponentInChildren<ObjectOutput>().reduceMoney(red);
+                        }
+                        else if (grid[j].GetComponent<ObjectInfo>().GetObjectType() != ObjectInfo.ObjectType.NONE)
+                        {
+                            grid[j].GetComponent<ObjectOutput>().reduceMoney(red);
+                        }
+                    }
+
+                }
+                else
+                {
+                    //efecting specific
+
+                    //reduce all current fields
+                    for (int j = 0; j < grid.Count; j++)
+                    {
+
+                        if (grid[j].GetComponent<ObjectFill>().GetFillType() == effects[i].GetFillEffected())
+                        {
+                            if (grid[j].GetComponent<ObjectInfo>().GetObjectType() == ObjectInfo.ObjectType.FIELD)
+                            {
+                                grid[j].GetComponentInChildren<ObjectOutput>().reduceMoney(red);
+                            }
+                            else
+                            {
+                                grid[j].GetComponent<ObjectOutput>().reduceMoney(red);
+                            }
+                        }
+
+
+                    }
+
+
+                }
             }
         }
     }
