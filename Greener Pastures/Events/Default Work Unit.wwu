@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{21D69E07-D609-42E5-9783-8745921EA438}" SchemaVersion="94">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{21D69E07-D609-42E5-9783-8745921EA438}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Bad_Ending" ID="{A7601D24-1483-41B9-90F5-45A740E769F9}">
+					<ChildrenList>
+						<Action Name="" ID="{5598B5BA-FA74-4ADF-9178-E2BFB91DDBC5}" ShortID="742670745">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BadEnding_FX" ID="{E82B394E-5C41-46BD-8556-E494C788FA84}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Good_Ending" ID="{CAC660DB-3175-430F-B45B-38DD8171162D}">
+					<ChildrenList>
+						<Action Name="" ID="{80381320-1882-4EC7-9241-330D03D21FE4}" ShortID="496694162">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="GoodEnding_FX" ID="{0501595A-9DE5-468D-A24C-E23B927A9FA0}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Destruction" ID="{B789D107-2661-4E96-AFCB-9A2A9F306910}">
+					<ChildrenList>
+						<Action Name="" ID="{80FA2A1A-55FC-4CD6-8B8B-F98E4866B6F1}" ShortID="631999169">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Destruction_FX" ID="{E3972496-0FA7-43AC-BDD5-81679F6AE48D}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="OpenMarket" ID="{F1051F75-941F-4217-880E-B073600B65EF}">
+					<ChildrenList>
+						<Action Name="" ID="{0CF25DAD-AEA2-4BBE-A0E5-8E1208B09E18}" ShortID="228565035">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Marketplace_FX" ID="{93FFC95D-A0A3-4FF8-AAEF-6CDCBB846953}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Ambience_Birds" ID="{5BB39E56-C31B-4485-A6C7-3B12CC7BB09C}">
+					<ChildrenList>
+						<Action Name="" ID="{5DE6FAED-40D8-47CF-B53C-BE6CB80383C4}" ShortID="244114069">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Ambience_FX" ID="{421E7DE2-88A5-46D8-8510-A12A9EB0FABF}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Event_Sound" ID="{10BE2120-3F3E-4F90-BDFF-9F97904A233A}">
+					<ChildrenList>
+						<Action Name="" ID="{E5C245E9-E1AE-4DD1-A078-2296D1B441E6}" ShortID="56723435">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Event_FX" ID="{02E48564-85CC-4CA7-8240-DE260C609E4F}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MenuSong" ID="{C1456CD3-491E-47D0-9358-9874B362310B}">
+					<ChildrenList>
+						<Action Name="" ID="{06161001-93B8-4AC6-AA28-339D694CCBD6}" ShortID="31906187">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MenuSong_FX" ID="{71E748A8-13E2-4FE4-9C8B-BDF8055ACEC0}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="MenuStop" ID="{46B4AF9C-E9C6-410F-B264-6703321EEAAF}">
+					<ChildrenList>
+						<Action Name="" ID="{2D69831E-E3A4-4916-92E2-237130D39CA4}" ShortID="727735684">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="3"/>
+							</PropertyList>
+							<ReferenceList/>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Ambience_Animals" ID="{1138BF9A-7AD3-472D-83AE-29D037FC25BA}">
+					<ChildrenList>
+						<Action Name="" ID="{579C0320-0318-407B-B4FC-E716592CE899}" ShortID="358590131">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Ambient_Animal" ID="{252F55C0-B23B-4D66-8DD6-4C707FB82729}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Ambience_Tractor" ID="{CAE8CEE9-2348-401B-B596-6A519C8EEDF8}">
+					<ChildrenList>
+						<Action Name="" ID="{77CF229E-70D1-4292-A820-1486179FC4BE}" ShortID="461128443">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Tractor_FX" ID="{443759A5-53B0-4252-BB32-852E8949CB92}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Distribution_open" ID="{8FC0B215-746A-4508-8BB6-B15345B372AF}">
+					<ChildrenList>
+						<Action Name="" ID="{08795E98-EB0F-4A4A-AA71-CF01B16C573C}" ShortID="182028164">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Distribution_FX" ID="{BDF6DC93-CB2A-4A70-9AFD-0BB0EE6BE664}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Construction" ID="{E19623EB-4310-48B9-9F8D-30FDC8B1D9BD}">
+					<ChildrenList>
+						<Action Name="" ID="{F135B272-7A6D-436B-AD98-DE2E165478E2}" ShortID="723132242">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Construction2_FX" ID="{691DA8C8-10C7-4CAC-B233-617CDF32FC52}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="ButtonPress" ID="{C871D277-0EE9-4377-B696-E6125ED696CA}">
+					<ChildrenList>
+						<Action Name="" ID="{8BDEAA2A-D687-4563-A616-B4132B938BEB}" ShortID="663268601">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Button_FX" ID="{D5D435BF-E2B1-4D0A-9604-6D637BBAAB4E}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Distribution_Close" ID="{8D6C7595-D036-434A-9F2F-D217AE0FEABF}">
+					<ChildrenList>
+						<Action Name="" ID="{7A2DF8A9-E8D2-4F3B-BD28-91E38359AF33}" ShortID="684963735">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="DistributionClose_FX" ID="{3D3C1DF7-BB95-40F8-9DCE-D151C20BC843}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Upgrade" ID="{57711935-60C2-4B8F-BEBE-703F3A5C64EE}">
+					<ChildrenList>
+						<Action Name="" ID="{49A05C9C-0EC6-4BFA-A9B9-8CABFCE0EAC4}" ShortID="376734195">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Upgrade_FX" ID="{A988F9AC-6D18-46F6-8AAB-6AB02F547AE6}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
