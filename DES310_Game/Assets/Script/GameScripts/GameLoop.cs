@@ -79,6 +79,24 @@ public class GameLoop : MonoBehaviour
     }
 
     // Quits the player when the user hits escape
+    public void FinishGame()
+    {
+        //gets all stats info
+        //GatherStats();
+
+        SceneLoader.instance.LoadEndScene(4);
+        PlayerPrefs.SetInt("Ending", 1);
+    }
+
+    // looks for and finds end game stats to show player
+    public void GatherStats()
+    {
+        //gets all stats info
+
+    }
+
+
+    // Quits the player when the user hits escape
     public void QuitGame()
     {
         //Saves Game
