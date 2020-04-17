@@ -57,7 +57,7 @@ public class SceneLoader : MonoBehaviour
 
         yield return new WaitForSeconds(1.0f);
 
-        SceneManager.LoadScene(sceneIndex);
+        SceneManager.LoadSceneAsync(sceneIndex);
     }
 
 }
