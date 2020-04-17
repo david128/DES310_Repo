@@ -352,8 +352,9 @@ public class TutorialEvents : MonoBehaviour
         {
             if (InputScript.instance.GetAllowSelecting() == false)
             {
-                InputScript.instance.AllowSelecting();
-            }
+                //causing a bug
+                //InputScript.instance.AllowSelecting();
+            } 
 
             if (destroyedCarrot == true)
             {
