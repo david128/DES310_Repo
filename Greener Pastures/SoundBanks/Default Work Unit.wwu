@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{402B71D1-5F2B-4165-9DD0-4DC67DC429EA}" SchemaVersion="94">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{402B71D1-5F2B-4165-9DD0-4DC67DC429EA}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="Main_Menu" ID="{9111E986-56BB-441B-88A3-1064F2369C9A}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Button_FX" ID="{D5D435BF-E2B1-4D0A-9604-6D637BBAAB4E}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="MenuSong_FX" ID="{71E748A8-13E2-4FE4-9C8B-BDF8055ACEC0}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}" Filter="7" Origin="Manual"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+				<SoundBank Name="Game_scene" ID="{7CD7A756-ED68-4734-B328-48CAB6EC24AE}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Ambience_Tractor" ID="{CAE8CEE9-2348-401B-B596-6A519C8EEDF8}" WorkUnitID="{21D69E07-D609-42E5-9783-8745921EA438}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="DistributionClose_FX" ID="{3D3C1DF7-BB95-40F8-9DCE-D151C20BC843}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Bad_Ending" ID="{A7601D24-1483-41B9-90F5-45A740E769F9}" WorkUnitID="{21D69E07-D609-42E5-9783-8745921EA438}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="OpenMarket" ID="{F1051F75-941F-4217-880E-B073600B65EF}" WorkUnitID="{21D69E07-D609-42E5-9783-8745921EA438}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Tractor_FX" ID="{443759A5-53B0-4252-BB32-852E8949CB92}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Good_Ending" ID="{CAC660DB-3175-430F-B45B-38DD8171162D}" WorkUnitID="{21D69E07-D609-42E5-9783-8745921EA438}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Distribution_Close" ID="{8D6C7595-D036-434A-9F2F-D217AE0FEABF}" WorkUnitID="{21D69E07-D609-42E5-9783-8745921EA438}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="ButtonPress" ID="{C871D277-0EE9-4377-B696-E6125ED696CA}" WorkUnitID="{21D69E07-D609-42E5-9783-8745921EA438}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Destruction_FX" ID="{E3972496-0FA7-43AC-BDD5-81679F6AE48D}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="GoodEnding_FX" ID="{0501595A-9DE5-468D-A24C-E23B927A9FA0}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="BadEnding_FX" ID="{E82B394E-5C41-46BD-8556-E494C788FA84}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Ambience_FX" ID="{421E7DE2-88A5-46D8-8510-A12A9EB0FABF}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Upgrade_FX" ID="{A988F9AC-6D18-46F6-8AAB-6AB02F547AE6}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Ambience_Animals" ID="{1138BF9A-7AD3-472D-83AE-29D037FC25BA}" WorkUnitID="{21D69E07-D609-42E5-9783-8745921EA438}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Construction" ID="{E19623EB-4310-48B9-9F8D-30FDC8B1D9BD}" WorkUnitID="{21D69E07-D609-42E5-9783-8745921EA438}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Distribution_FX" ID="{BDF6DC93-CB2A-4A70-9AFD-0BB0EE6BE664}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Upgrade" ID="{57711935-60C2-4B8F-BEBE-703F3A5C64EE}" WorkUnitID="{21D69E07-D609-42E5-9783-8745921EA438}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Event_FX" ID="{02E48564-85CC-4CA7-8240-DE260C609E4F}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Construction2_FX" ID="{691DA8C8-10C7-4CAC-B233-617CDF32FC52}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Button_FX" ID="{D5D435BF-E2B1-4D0A-9604-6D637BBAAB4E}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Destruction" ID="{B789D107-2661-4E96-AFCB-9A2A9F306910}" WorkUnitID="{21D69E07-D609-42E5-9783-8745921EA438}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Event_Sound" ID="{10BE2120-3F3E-4F90-BDFF-9F97904A233A}" WorkUnitID="{21D69E07-D609-42E5-9783-8745921EA438}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Marketplace_FX" ID="{93FFC95D-A0A3-4FF8-AAEF-6CDCBB846953}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}" Filter="7" Origin="Manual"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{4D69277F-0C97-4157-89B2-39B13192AC5D}" SchemaVersion="94">
+	<AudioObjects>
+		<WorkUnit Name="Default Work Unit" ID="{4D69277F-0C97-4157-89B2-39B13192AC5D}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="BadEnding_FX" ID="{E82B394E-5C41-46BD-8556-E494C788FA84}" ShortID="45417423">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{99771541-5794-466C-8385-3E9D19471F82}"/>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="BadEnding_FX" ID="{9B112A6C-A2C1-4532-ADE7-B6F82D3B7EF5}" ShortID="813171452">
+							<Language>SFX</Language>
+							<AudioFile>BadEnding_FX.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="BadEnding_FX" ID="{9B112A6C-A2C1-4532-ADE7-B6F82D3B7EF5}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Button_FX" ID="{D5D435BF-E2B1-4D0A-9604-6D637BBAAB4E}" ShortID="520701667">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>10</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Button_FX" ID="{F9CDB52F-24D4-4D5D-B9EF-725E23F20A49}" ShortID="516583319">
+							<Language>SFX</Language>
+							<AudioFile>Button_FX.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Button_FX" ID="{F9CDB52F-24D4-4D5D-B9EF-725E23F20A49}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Construction_FX" ID="{2E4477BC-EB24-47DE-B3D0-9236C52B0403}" ShortID="760483681">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Construction_FX" ID="{6CC4F6CC-EFD2-4A80-8CDD-836000C82679}" ShortID="344148873">
+							<Language>SFX</Language>
+							<AudioFile>Construction_FX.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Construction_FX" ID="{6CC4F6CC-EFD2-4A80-8CDD-836000C82679}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Destruction_FX" ID="{E3972496-0FA7-43AC-BDD5-81679F6AE48D}" ShortID="843988282">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>18</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Destruction_FX" ID="{D349A87F-6BED-408B-90C5-7FC3779630A9}" ShortID="147969968">
+							<Language>SFX</Language>
+							<AudioFile>Destruction_FX.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Destruction_FX" ID="{D349A87F-6BED-408B-90C5-7FC3779630A9}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Distribution_FX" ID="{BDF6DC93-CB2A-4A70-9AFD-0BB0EE6BE664}" ShortID="96529251">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>40</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Distribution_FX" ID="{C5DF6E2F-A262-48E0-8942-371BC72296E2}" ShortID="247433775">
+							<Language>SFX</Language>
+							<AudioFile>Distribution_FX.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Distribution_FX" ID="{C5DF6E2F-A262-48E0-8942-371BC72296E2}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Event_FX" ID="{02E48564-85CC-4CA7-8240-DE260C609E4F}" ShortID="366213982">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>50</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Event_FX" ID="{94A74971-510D-4627-918D-CCD33C4E8C3C}" ShortID="630696804">
+							<Language>SFX</Language>
+							<AudioFile>Event_FX.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Event_FX" ID="{94A74971-510D-4627-918D-CCD33C4E8C3C}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="GoodEnding_FX" ID="{0501595A-9DE5-468D-A24C-E23B927A9FA0}" ShortID="881786237">
+					<PropertyList>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>15</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="GoodEnding_FX" ID="{5E9860D6-01D6-4F40-9D58-D19D775C2207}" ShortID="901315954">
+							<Language>SFX</Language>
+							<AudioFile>GoodEnding_FX.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="GoodEnding_FX" ID="{5E9860D6-01D6-4F40-9D58-D19D775C2207}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Marketplace_FX" ID="{93FFC95D-A0A3-4FF8-AAEF-6CDCBB846953}" ShortID="281725245">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>40</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Marketplace_FX" ID="{A66CBAC1-FC6C-4EC9-967D-7108C6E5EEA0}" ShortID="298103595">
+							<Language>SFX</Language>
+							<AudioFile>Marketplace_FX.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Marketplace_FX" ID="{A66CBAC1-FC6C-4EC9-967D-7108C6E5EEA0}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Tractor_FX" ID="{443759A5-53B0-4252-BB32-852E8949CB92}" ShortID="346256829">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-5</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Tractor_FX" ID="{164529E6-48AB-4C56-9785-213A0AF315B8}" ShortID="704761648">
+							<Language>SFX</Language>
+							<AudioFile>Tractor_FX.wav</AudioFile>
+						</AudioFileSource>
+						<AudioFileSource Name="DistributionClose_FX" ID="{9C1940A7-02E2-4208-80F0-316ACE467FE2}" ShortID="462020096">
+							<Language>SFX</Language>
+							<AudioFile>DistributionClose_FX.wav</AudioFile>
+						</AudioFileSource>
+						<AudioFileSource Name="Upgrade_FX" ID="{BAE7D445-1F4A-44CB-9889-A025BE088EFB}" ShortID="131375118">
+							<Language>SFX</Language>
+							<AudioFile>Upgrade_FX.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Tractor_FX" ID="{164529E6-48AB-4C56-9785-213A0AF315B8}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="MenuSong_FX" ID="{71E748A8-13E2-4FE4-9C8B-BDF8055ACEC0}" ShortID="593147764">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-10</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="MenuSong_FX" ID="{CE5C216B-DE56-4AF9-9116-83FCD466A67F}" ShortID="1056975954">
+							<Language>SFX</Language>
+							<AudioFile>MenuSong_FX.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="MenuSong_FX" ID="{CE5C216B-DE56-4AF9-9116-83FCD466A67F}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Ambience_FX" ID="{421E7DE2-88A5-46D8-8510-A12A9EB0FABF}" ShortID="649453787">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>30</Value>
+							</ValueList>
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{9B75B9E5-23D0-40F5-87AF-042EC19E7B83}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="15"/>
+											<Property Name="Min" Type="Real64" Value="-15"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Ambience_FX" ID="{C22075CE-06B8-46D8-ADD6-1E0A3AC52CAF}" ShortID="13437860">
+							<Language>SFX</Language>
+							<AudioFile>Ambience_FX.wav</AudioFile>
+							<ConvertedFileIDList>
+								<File Platform="Android" ID="261544477"/>
+							</ConvertedFileIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Ambience_FX" ID="{C22075CE-06B8-46D8-ADD6-1E0A3AC52CAF}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Construction2_FX" ID="{691DA8C8-10C7-4CAC-B233-617CDF32FC52}" ShortID="945619479">
+					<PropertyList>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>2</Value>
+							</ValueList>
+						</Property>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>20</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Construction2_FX" ID="{ADF05848-7332-4793-A094-DAAB5ED5126F}" ShortID="1013786943">
+							<Language>SFX</Language>
+							<AudioFile>Construction2_FX.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Construction2_FX" ID="{ADF05848-7332-4793-A094-DAAB5ED5126F}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<RandomSequenceContainer Name="Ambient_Animal" ID="{252F55C0-B23B-4D66-8DD6-4C707FB82729}" ShortID="581113549">
+					<PropertyList>
+						<Property Name="InitialDelay" Type="Real64">
+							<ValueList>
+								<Value>15</Value>
+							</ValueList>
+						</Property>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+						<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+						<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+						<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="3"/>
+						<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="20">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{621BA309-C497-4E77-AE15-F7BF8DA45398}">
+										<PropertyList>
+											<Property Name="Enabled" Type="bool" Value="True"/>
+											<Property Name="Max" Type="Real64" Value="10"/>
+											<Property Name="Min" Type="Real64" Value="-10"/>
+										</PropertyList>
+									</Modifier>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+						<Property Name="Priority" Type="int16">
+							<ValueList>
+								<Value>10</Value>
+							</ValueList>
+						</Property>
+						<Property Name="PriorityDistanceFactor" Type="bool" Value="True"/>
+						<Property Name="PriorityDistanceOffset" Type="int16">
+							<ValueList>
+								<Value>10</Value>
+							</ValueList>
+						</Property>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Cow_FX" ID="{8582BD9C-1884-4809-91F5-9D082B0EBF50}" ShortID="1061615393">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>20</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{72118ACF-B143-4486-961A-7FB2BDF46F4D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Cow_FX" ID="{AF996C22-3190-47B8-9437-776BF9463F75}" ShortID="58226309">
+									<Language>SFX</Language>
+									<AudioFile>Cow_FX.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Cow_FX" ID="{AF996C22-3190-47B8-9437-776BF9463F75}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Chicken_FX" ID="{63EAC46E-9A30-4659-AFEA-4C23FC9AA231}" ShortID="259834733">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>13</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{72118ACF-B143-4486-961A-7FB2BDF46F4D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Chicken_FX" ID="{E6F6A12B-13A8-49A5-8A07-AED1D16CBEB9}" ShortID="69855631">
+									<Language>SFX</Language>
+									<AudioFile>Chicken_FX.wav</AudioFile>
+								</AudioFileSource>
+								<AudioFileSource Name="Ambience_FX" ID="{57833A07-D517-4070-BE4F-13F03865E2ED}" ShortID="261544477">
+									<Language>SFX</Language>
+									<AudioFile>Ambience_FX.wav</AudioFile>
+									<ConvertedFileIDList>
+										<File Platform="Windows" ID="13437860"/>
+									</ConvertedFileIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Chicken_FX" ID="{E6F6A12B-13A8-49A5-8A07-AED1D16CBEB9}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Sheep_FX" ID="{AEF0B9F3-0B70-4D1D-A2B1-E47045F7C423}" ShortID="239032904">
+							<PropertyList>
+								<Property Name="MaxSoundPerInstance" Type="int16">
+									<ValueList>
+										<Value>3</Value>
+									</ValueList>
+								</Property>
+								<Property Name="UseMaxSoundPerInstance" Type="bool">
+									<ValueList>
+										<Value>True</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>20</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{72118ACF-B143-4486-961A-7FB2BDF46F4D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Sheep_FX" ID="{BD239B33-8409-4805-BC2E-3EACFA74B169}" ShortID="49601565">
+									<Language>SFX</Language>
+									<AudioFile>Sheep_FX.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Sheep_FX" ID="{BD239B33-8409-4805-BC2E-3EACFA74B169}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<Sound Name="Upgrade_FX" ID="{A988F9AC-6D18-46F6-8AAB-6AB02F547AE6}" ShortID="799091347">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Upgrade_FX" ID="{F8A7294F-12AB-488A-9379-21E4DFDD9DC6}" ShortID="860197988">
+							<Language>SFX</Language>
+							<AudioFile>Upgrade_FX.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Upgrade_FX" ID="{F8A7294F-12AB-488A-9379-21E4DFDD9DC6}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="DistributionClose_FX" ID="{3D3C1DF7-BB95-40F8-9DCE-D151C20BC843}" ShortID="477959397">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>35</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="DistributionClose_FX" ID="{1CC23333-6901-4FA7-BD63-D440080AEFBB}" ShortID="898616527">
+							<Language>SFX</Language>
+							<AudioFile>DistributionClose_FX.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="DistributionClose_FX" ID="{1CC23333-6901-4FA7-BD63-D440080AEFBB}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>
