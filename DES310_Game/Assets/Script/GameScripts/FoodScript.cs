@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class FoodScript : MonoBehaviour
 {
     //Sets manager
     public GameObject gameManager;
+    public TextMeshProUGUI quotaFailCountText;
 
     public string Distributer;
 
@@ -45,6 +47,13 @@ public class FoodScript : MonoBehaviour
     private void Start()
     {
         //DistributionChoice.instance.SetDefDistributionChoice();
+
+
+        ///For testing end game screen
+        quotaCount = 9;
+        currentTime = 220;
+        ///
+
 
         //Delay starting the functions
         InvokeRepeating("UpdateTimeBar", 0.0f, 0.1f);
@@ -173,7 +182,9 @@ public class FoodScript : MonoBehaviour
                             Debug.Log("You have completed the game with a bad ending");
                         }
 
-                        quotaCount = 9;
+                        //quotaCount = 9;
+
+                        gameManager.GetComponent<GameLoop>().FinishGame();
                     }
                 }
                 else if (currentFood < quotaAmount[quotaCount])
@@ -188,6 +199,13 @@ public class FoodScript : MonoBehaviour
 
                     //failure count
                     failToFill++;
+
+                    //shows warning message about quota
+
+                    quotaFailCountText.text = "" + failToFill;
+
+                    gameManager.GetComponent<GameLoop>().GetQuotaWarning().gameObject.SetActive(true);
+                    gameManager.GetComponent<InputScript>().SetAllowSelecting(false);
 
                     if (failToFill == 5)
                     {
@@ -207,7 +225,9 @@ public class FoodScript : MonoBehaviour
     void Failure()
     {
         Debug.Log("You have failed to meet the quota too mnay times and the government have asked you to vacate your farm.");
+
+        SceneLoader.instance.LoadEndScene(4);
+        PlayerPrefs.SetInt("Ending", 0);
         //gameManager.GetComponent<Save>().LoadGameData();
     }
-
 }

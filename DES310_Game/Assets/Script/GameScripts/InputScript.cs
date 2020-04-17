@@ -363,6 +363,7 @@ public class InputScript : MonoBehaviour
         }
         else
         {
+            //shows warning message about money
             gameManager.GetComponent<GameLoop>().GetMoneyWarning().gameObject.SetActive(true);
             gameManager.GetComponent<InputScript>().SetAllowSelecting(false);
         }

@@ -11,12 +11,14 @@ public class GameLoop : MonoBehaviour
 
     public Image UpgradeWarning;
     public Image MoneyWarning;
+    public Image QuotaWarning;
 
     public float time;
     public float FPS;
 
     public Image GetUpgradeWarning() { return UpgradeWarning; }
     public Image GetMoneyWarning() { return MoneyWarning; }
+    public Image GetQuotaWarning() { return QuotaWarning; }
 
     //Frames per second
     public float GetFPS() { return FPS; }
@@ -75,6 +77,24 @@ public class GameLoop : MonoBehaviour
         //Updates the UI text
         textManager.GetComponent<TextScript>().UpdateText();
     }
+
+    // Quits the player when the user hits escape
+    public void FinishGame()
+    {
+        //gets all stats info
+        //GatherStats();
+
+        SceneLoader.instance.LoadEndScene(4);
+        PlayerPrefs.SetInt("Ending", 1);
+    }
+
+    // looks for and finds end game stats to show player
+    public void GatherStats()
+    {
+        //gets all stats info
+
+    }
+
 
     // Quits the player when the user hits escape
     public void QuitGame()
