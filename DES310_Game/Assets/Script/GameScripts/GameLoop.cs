@@ -11,12 +11,14 @@ public class GameLoop : MonoBehaviour
 
     public Image UpgradeWarning;
     public Image MoneyWarning;
+    public Image QuotaWarning;
 
     public float time;
     public float FPS;
 
     public Image GetUpgradeWarning() { return UpgradeWarning; }
     public Image GetMoneyWarning() { return MoneyWarning; }
+    public Image GetQuotaWarning() { return QuotaWarning; }
 
     //Frames per second
     public float GetFPS() { return FPS; }

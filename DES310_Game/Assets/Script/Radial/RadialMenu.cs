@@ -96,6 +96,8 @@ public class RadialMenu : MonoBehaviour
                 else
                 {
                     failToUpgrade = true;
+
+                    //shows warning message about upgrading
                     gameManager.GetComponent<GameLoop>().GetUpgradeWarning().gameObject.SetActive(true);
                     gameManager.GetComponent<InputScript>().SetAllowSelecting(false);
                 }

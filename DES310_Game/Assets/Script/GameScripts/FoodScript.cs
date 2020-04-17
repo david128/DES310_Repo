@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class FoodScript : MonoBehaviour
 {
     //Sets manager
     public GameObject gameManager;
+    public TextMeshProUGUI quotaFailCountText;
 
     public string Distributer;
 
@@ -189,6 +191,13 @@ public class FoodScript : MonoBehaviour
                     //failure count
                     failToFill++;
 
+                    //shows warning message about quota
+
+                    quotaFailCountText.text = "" + failToFill;
+
+                    gameManager.GetComponent<GameLoop>().GetQuotaWarning().gameObject.SetActive(true);
+                    gameManager.GetComponent<InputScript>().SetAllowSelecting(false);
+
                     if (failToFill == 5)
                     {
                         currentQuota = quotaCount;
@@ -207,6 +216,9 @@ public class FoodScript : MonoBehaviour
     void Failure()
     {
         Debug.Log("You have failed to meet the quota too mnay times and the government have asked you to vacate your farm.");
+
+        SceneLoader.instance.LoadEndScene(4);
+
         //gameManager.GetComponent<Save>().LoadGameData();
     }
 
