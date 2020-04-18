@@ -37,9 +37,15 @@ public class FoodScript : MonoBehaviour
     //money gained after food extracted
     int failToFill;
 
-    //getter and setter
+    //getter
     public float GetFood() { return currentFood; }
-    public void SetFood(float f) { food = f; }
+    public int GetCurrentQuota() { return quotaCount; }
+    public float GetQuotaTimer() { return currentTime; }
+
+    //setters
+    public void SetFood(float f) { currentFood = f; }
+    public void SetCurrentQuota(int q) { quotaCount = q; }
+    public void SetQuotaTimer(float t) { currentTime = t; }
 
     //Add to current food
     public void AddFood(float f) { food = food + f; }
@@ -50,8 +56,8 @@ public class FoodScript : MonoBehaviour
 
 
         ///For testing end game screen
-        quotaCount = 9;
-        currentTime = 220;
+        //quotaCount = 9;
+        //currentTime = 220;
         ///
 
 
@@ -72,7 +78,10 @@ public class FoodScript : MonoBehaviour
 
     void Update()
     {
-        Distributer = DistributionChoice.instance.GetDistributionChoice();
+
+        Debug.Log(DistributionChoice.instance.GetDistributionChoice());
+        Debug.Log(quotaAmount);
+        Debug.Log(quotaCount);
 
         //Updates food variables for the food bar
         if (DistributionChoice.instance.GetDistributionChoice() == "BF")

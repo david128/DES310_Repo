@@ -8,8 +8,8 @@ public class Save : MonoBehaviour
 
     //saves current game data
     public void SaveGameData()
-    {
-        SaveGame.SaveGameData(gameManager.GetComponent<Currency>().GetMoney(), gameManager.GetComponent<FoodScript>().GetFood(), gameManager.GetComponent<GridScript>().GetGrid());
+    {                                                                                                                                                                                                                                                                                                                                                 
+        SaveGame.SaveGameData(gameManager.GetComponent<Currency>().GetMoney(), gameManager.GetComponent<FoodScript>().GetFood(), gameManager.GetComponent<GridScript>().GetGrid(), gameManager.GetComponent<FoodScript>().GetQuotaTimer(), gameManager.GetComponent<FoodScript>().GetCurrentQuota(), gameManager.GetComponent<SustainabilityScript>().GetSustainability(), DistributionChoice.instance.GetDistributionChoice());
     }
 
     //loads data into variables to be used in game
@@ -19,8 +19,19 @@ public class Save : MonoBehaviour
 
         if (data != null && SaveGame.LoadGameData() != null)
         {
+            //Sets food and money data
             gameManager.GetComponent<Currency>().SetMoney(data.money);
             gameManager.GetComponent<FoodScript>().SetFood(data.food);
+
+            ////Loads quota data
+            //gameManager.GetComponent<FoodScript>().SetQuotaTimer(data.quotaTimer);
+            //gameManager.GetComponent<FoodScript>().SetCurrentQuota(data.quota);
+
+            ////loads sustainability
+            //gameManager.GetComponent<SustainabilityScript>().SetSustainability(data.sustainabilityLevel);
+
+            ////load distributer
+            //DistributionChoice.instance.SetDistributionChoice(data.distributerChoice);
 
             Vector3[] pos;
             pos = new Vector3[25];
