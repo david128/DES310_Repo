@@ -17,8 +17,12 @@ public class DistributionChoice : MonoBehaviour
 
     string distributerChoice;
 
+    //getter
     public string GetDistributionChoice() { return distributerChoice; }
+
+    //setters
     public void SetDefDistributionChoice() { distributerChoice = "P"; }
+    public void SetDistributionChoice(string d) { distributerChoice = d; }
 
     // Start is called before the first frame update
     void Awake()
