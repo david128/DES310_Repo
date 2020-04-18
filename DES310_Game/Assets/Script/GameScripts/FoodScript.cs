@@ -78,11 +78,6 @@ public class FoodScript : MonoBehaviour
 
     void Update()
     {
-
-        Debug.Log(DistributionChoice.instance.GetDistributionChoice());
-        Debug.Log(quotaAmount);
-        Debug.Log(quotaCount);
-
         //Updates food variables for the food bar
         if (DistributionChoice.instance.GetDistributionChoice() == "BF")
         {
