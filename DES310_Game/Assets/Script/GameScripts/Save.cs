@@ -23,15 +23,16 @@ public class Save : MonoBehaviour
             gameManager.GetComponent<Currency>().SetMoney(data.money);
             gameManager.GetComponent<FoodScript>().SetFood(data.food);
 
-            ////Loads quota data
-            //gameManager.GetComponent<FoodScript>().SetQuotaTimer(data.quotaTimer);
-            //gameManager.GetComponent<FoodScript>().SetCurrentQuota(data.quota);
+            //Loads quota data
+            gameManager.GetComponent<FoodScript>().SetQuotaTimer(data.quotaTimer);
+            gameManager.GetComponent<FoodScript>().SetCurrentQuota(data.quota);
 
-            ////loads sustainability
-            //gameManager.GetComponent<SustainabilityScript>().SetSustainability(data.sustainabilityLevel);
+            //loads sustainability
+            gameManager.GetComponent<SustainabilityScript>().SetSustainability(data.sustainabilityLevel);
 
-            ////load distributer
-            //DistributionChoice.instance.SetDistributionChoice(data.distributerChoice);
+            //load distributer
+            DistributionChoice.instance.SetDistributionChoice(data.distributerChoice);
+            DistributionChoice.instance.SetDistribubuterButtons(data.distributerChoice);
 
             Vector3[] pos;
             pos = new Vector3[25];

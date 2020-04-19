@@ -95,6 +95,8 @@ public class FoodScript : MonoBehaviour
             food = 0;
         }
 
+        Distributer = DistributionChoice.instance.GetDistributionChoice();
+
         foodBar.fillAmount = currentFood / quotaAmount[quotaCount];
 
         if (currentFood > quotaAmount[quotaCount])
@@ -141,8 +143,8 @@ public class FoodScript : MonoBehaviour
         if (timerStart == true)
         {
             //Updates time variables for the time bar
-            time += Time.deltaTime;
-            currentTime = time;
+            ///time += Time.deltaTime;
+            currentTime += Time.deltaTime;
 
             if (currentTime >= quotaTime[quotaCount])
             {
@@ -220,7 +222,7 @@ public class FoodScript : MonoBehaviour
                     }
                 }
 
-                time = 0;
+                currentTime = 0;
                 currentFood = 0;
             }
         }

@@ -26,11 +26,11 @@ public class SaveData
         money = moneyData;
         food = foodData;
 
-        //quotaTimer = quotaTimerData;
-        //quota = quotaData;
+        quotaTimer = quotaTimerData;
+        quota = quotaData;
 
-        //sustainabilityLevel = sustainabilityLevelData;
-        //distributerChoice = distributerChoiceData;
+        sustainabilityLevel = sustainabilityLevelData;
+        distributerChoice = distributerChoiceData;
 
         //sets up arrays to be stored in
         gridType = new string[25];
