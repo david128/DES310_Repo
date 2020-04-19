@@ -389,7 +389,9 @@ public class Events : MonoBehaviour
                     eventUI.GetComponent<EventUIChange>().ChangeText(gameEvents[count].getEVentName(), gameEvents[count].GetEventDescription());
                     eventUI.GetComponent<EventUIChange>().Enable();
                     gameEvents[count].setTriggered(true);
+                    TiggerEffects(count);
                     //currentEventEffects.AddEffects(gameEvents[count].getEffects());
+
                 }
 
             }
@@ -638,6 +640,143 @@ public class Events : MonoBehaviour
 
        
        
+    }
+
+    public void TiggerEffects(int index)
+    {
+        List<EventEffects> effects = gameEvents[index].getEffects();
+
+        for (int i = 0; i < effects.Count; i++)
+        {
+            if (effects[i].GetEventEffectType() == EventEffectType.DESTROY_RANDOM)
+            {
+                List<GameObject> grid = gameManager.GetComponent<GridScript>().GetGrid();
+                List<int> ids = new List<int>();
+
+                //if none then destroy any random one, if specific destroy random one of certain crops
+                if (effects[i].GetFillEffected() != ObjectFill.FillType.NONE)
+                {
+                    for (int j = 0; j < grid.Count; j++)
+                    {
+                        if (grid[j].GetComponent<ObjectFill>().GetFillType() == effects[i].GetFillEffected())
+                        {
+                            ids.Add(j);
+                        }
+                    }
+                }
+                else
+                {
+                    for (int j = 0; j < grid.Count; j++)
+                    {
+                        if (grid[j].GetComponent<ObjectFill>().GetFillType() != ObjectFill.FillType.NONE)
+                        {
+                            ids.Add(j);
+                        }
+                    }
+                }
+
+                //demolish randomly chosen
+                gameManager.GetComponent<InputScript>().AttemptDemolish(ids[Random.Range(0, ids.Count)]);
+                                
+            }
+            else if (effects[i].GetEventEffectType() == EventEffectType.FOOD_EFFECT)
+            {
+                List<GameObject> grid = gameManager.GetComponent<GridScript>().GetGrid();
+                float red = effects[i].GetReduction();
+
+                if (effects[i].GetFillEffected() == ObjectFill.FillType.NONE)
+                {
+                    //effecting all
+                    //reduce all current fields
+                    for (int j = 0; j < grid.Count; j++)
+                    {
+                        if (grid[j].GetComponent<ObjectInfo>().GetObjectType() == ObjectInfo.ObjectType.FIELD)
+                        {
+                            grid[j].GetComponentInChildren<ObjectOutput>().reduceFood(red);
+                        }
+                        else if (grid[j].GetComponent<ObjectFill>().GetFillType() != ObjectFill.FillType.NONE)
+                        {
+                            grid[j].GetComponent<ObjectOutput>().reduceFood(red);
+                        }
+                    }
+
+                }
+                else
+                {
+                    //efecting specific
+
+                    //reduce all current fields
+                    for (int j = 0; j < grid.Count; j++)
+                    {
+
+                        if (grid[j].GetComponent<ObjectFill>().GetFillType() == effects[i].GetFillEffected())
+                        {
+                            if (grid[j].GetComponent<ObjectInfo>().GetObjectType() == ObjectInfo.ObjectType.FIELD)
+                            {
+                                grid[j].GetComponentInChildren<ObjectOutput>().reduceFood(red);
+                            }
+                            else
+                            {
+                                grid[j].GetComponent<ObjectOutput>().reduceFood(red);
+                            }
+                        }
+
+
+                    }
+                        
+
+                }
+            }
+            else //money effect
+            {
+
+                List<GameObject> grid = gameManager.GetComponent<GridScript>().GetGrid();
+                float red = effects[i].GetReduction();
+
+                if (effects[i].GetFillEffected() == ObjectFill.FillType.NONE)
+                {
+                    //effecting all
+                    //reduce all current fields
+                    for (int j = 0; j < grid.Count; j++)
+                    {
+                        if (grid[j].GetComponent<ObjectInfo>().GetObjectType() == ObjectInfo.ObjectType.FIELD)
+                        {
+                            grid[j].GetComponentInChildren<ObjectOutput>().reduceMoney(red);
+                        }
+                        else if (grid[j].GetComponent<ObjectFill>().GetFillType() != ObjectFill.FillType.NONE)
+                        {
+                            grid[j].GetComponent<ObjectOutput>().reduceMoney(red);
+                        }
+                    }
+
+                }
+                else
+                {
+                    //efecting specific
+
+                    //reduce all current fields
+                    for (int j = 0; j < grid.Count; j++)
+                    {
+
+                        if (grid[j].GetComponent<ObjectFill>().GetFillType() == effects[i].GetFillEffected())
+                        {
+                            if (grid[j].GetComponent<ObjectInfo>().GetObjectType() == ObjectInfo.ObjectType.FIELD)
+                            {
+                                grid[j].GetComponentInChildren<ObjectOutput>().reduceMoney(red);
+                            }
+                            else
+                            {
+                                grid[j].GetComponent<ObjectOutput>().reduceMoney(red);
+                            }
+                        }
+
+
+                    }
+
+
+                }
+            }
+        }
     }
 
 }
