@@ -7,7 +7,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 public static class SaveGame
 {
     //saves game data 
-    public static void SaveGameData(int moneyData, float foodData, List<GameObject> grid)
+    public static void SaveGameData(int moneyData, float foodData, List<GameObject> gridData, float quotaTimerData, int quotaData, float sustainabilityLevelData, string distributerChoiceData)
     {
         BinaryFormatter formatter = new BinaryFormatter();
 
@@ -15,7 +15,7 @@ public static class SaveGame
 
         FileStream stream = new FileStream(path, FileMode.Create);
 
-        SaveData data = new SaveData(moneyData, foodData, grid);
+        SaveData data = new SaveData(moneyData, foodData, gridData, quotaTimerData, quotaData, sustainabilityLevelData, distributerChoiceData);
 
         formatter.Serialize(stream, data);
 
