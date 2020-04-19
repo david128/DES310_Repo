@@ -694,7 +694,7 @@ public class Events : MonoBehaviour
                         {
                             grid[j].GetComponentInChildren<ObjectOutput>().reduceFood(red);
                         }
-                        else if (grid[j].GetComponent<ObjectInfo>().GetObjectType() != ObjectInfo.ObjectType.NONE)
+                        else if (grid[j].GetComponent<ObjectFill>().GetFillType() != ObjectFill.FillType.NONE)
                         {
                             grid[j].GetComponent<ObjectOutput>().reduceFood(red);
                         }
@@ -743,7 +743,7 @@ public class Events : MonoBehaviour
                         {
                             grid[j].GetComponentInChildren<ObjectOutput>().reduceMoney(red);
                         }
-                        else if (grid[j].GetComponent<ObjectInfo>().GetObjectType() != ObjectInfo.ObjectType.NONE)
+                        else if (grid[j].GetComponent<ObjectFill>().GetFillType() != ObjectFill.FillType.NONE)
                         {
                             grid[j].GetComponent<ObjectOutput>().reduceMoney(red);
                         }
