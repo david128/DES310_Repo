@@ -8,8 +8,13 @@ public class SaveData
     //Variables to be saved
     public int money;
     public float food;
+    public int totalMoneyEarned;
+    public int totalMoneySpent;
+    public float totalFood;
+
     public float quotaTimer;
     public int quota;
+
     public float sustainabilityLevel;
     public string distributerChoice;
    
@@ -20,17 +25,21 @@ public class SaveData
     public string[] gridFill;
     public float[] gridPos;
 
-    public SaveData(int moneyData, float foodData, List<GameObject> gridData, float quotaTimerData, int quotaData, float sustainabilityLevelData, string distributerChoiceData)
+    public SaveData(int moneyData, float foodData, List<GameObject> gridData, float quotaTimerData, int quotaData, float sustainabilityLevelData, string distributerChoiceData, int totalMoneyEarnedData, int totalMoneySpentData, float totalFoodData)
     {
         //sets variables with passed information
         money = moneyData;
         food = foodData;
 
-        //quotaTimer = quotaTimerData;
-        //quota = quotaData;
+        totalMoneyEarned = totalMoneyEarnedData;
+        totalMoneySpent = totalMoneySpentData;
+        totalFood = totalFoodData;
 
-        //sustainabilityLevel = sustainabilityLevelData;
-        //distributerChoice = distributerChoiceData;
+        quotaTimer = quotaTimerData;
+        quota = quotaData;
+
+        sustainabilityLevel = sustainabilityLevelData;
+        distributerChoice = distributerChoiceData;
 
         //sets up arrays to be stored in
         gridType = new string[25];

@@ -271,6 +271,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 281529796240298667, guid: 9df5f68e6677da045b76d31e6a795c1e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 281529796240298667, guid: 9df5f68e6677da045b76d31e6a795c1e,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 7.600006
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9df5f68e6677da045b76d31e6a795c1e, type: 3}
 --- !u!224 &57386996 stripped
@@ -871,6 +881,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f0ec80095679714883004afb7c1d5dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 215528158}
   money: 1000
 --- !u!114 &215528162
 MonoBehaviour:
@@ -918,6 +929,9 @@ MonoBehaviour:
   GrassMat: {fileID: 2100000, guid: ba0ed77097f0023429517d98f52249f5, type: 2}
   TreeMat: {fileID: 2100000, guid: 9f67f7b78ef3de64184224f183e0595d, type: 2}
   lighting: {fileID: 705507994}
+  totalMoneyEarned: 0
+  totalMoneySpent: 0
+  totalFood: 0
 --- !u!114 &215528164
 MonoBehaviour:
   m_ObjectHideFlags: 0
