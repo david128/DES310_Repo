@@ -9,6 +9,7 @@ public class GameLoop : MonoBehaviour
     //Declare variables
     public GameObject gameManager, textManager;
 
+    //Warnings
     public Image UpgradeWarning;
     public Image MoneyWarning;
     public Image QuotaWarning;
@@ -42,10 +43,29 @@ public class GameLoop : MonoBehaviour
     public Material TreeMat;
     public Light lighting;
 
+    //Total variables for stats menus
+    public int totalMoneyEarned;
+    public int totalMoneySpent;
+    public float totalFood;
+
     //getters
     public Image GetUpgradeWarning() { return UpgradeWarning; }
     public Image GetMoneyWarning() { return MoneyWarning; }
     public Image GetQuotaWarning() { return QuotaWarning; }
+    
+    //Total "" getters
+    public int GetTotalMoneyEarned() { return totalMoneyEarned; }
+    public int GetTotalMoneySpent() { return totalMoneySpent; }
+    public float GetTotalFood() { return totalFood; }
+
+    //setters
+    public void SetTotalMoneyEarned(int tM) { totalMoneyEarned = tM; }
+    public void SetTotalMoneySpent(int tM) { totalMoneySpent = tM; }
+    public void SetTotalFood(float tF) { totalFood = tF; }
+
+    public void AddToTotalMoneyEarned(int tM) { totalMoneyEarned += tM; }
+    public void AddToTotalMoneySpent(int tM) { totalMoneySpent += tM; }
+    public void AddToTotalFood(float tF) { totalFood += tF; }
 
     //Frames per second
     public float GetFPS() { return FPS; }
@@ -116,7 +136,7 @@ public class GameLoop : MonoBehaviour
         FPS = 1.0f / Time.deltaTime;
 
         //When the time gets to 3 seconds the money will increase causing a passive income
-        if (time > 7)
+        if (time > 60)
         {
             //Resets the period of time for the passive income
             time = 0.0f;
@@ -153,7 +173,6 @@ public class GameLoop : MonoBehaviour
                 seasonTimer = 0;
             }
         }
-
 
         //Gets input from player
         gameManager.GetComponent<InputScript>().GetInput();

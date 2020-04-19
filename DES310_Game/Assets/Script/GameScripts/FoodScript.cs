@@ -48,7 +48,7 @@ public class FoodScript : MonoBehaviour
     public void SetQuotaTimer(float t) { currentTime = t; }
 
     //Add to current food
-    public void AddFood(float f) { food = food + f; }
+    public void AddFood(float f) { gameManager.GetComponent<GameLoop>().AddToTotalFood(f);  food = food + f; }
 
     private void Start()
     {

@@ -9,7 +9,7 @@ public class Save : MonoBehaviour
     //saves current game data
     public void SaveGameData()
     {                                                                                                                                                                                                                                                                                                                                                 
-        SaveGame.SaveGameData(gameManager.GetComponent<Currency>().GetMoney(), gameManager.GetComponent<FoodScript>().GetFood(), gameManager.GetComponent<GridScript>().GetGrid(), gameManager.GetComponent<FoodScript>().GetQuotaTimer(), gameManager.GetComponent<FoodScript>().GetCurrentQuota(), gameManager.GetComponent<SustainabilityScript>().GetSustainability(), DistributionChoice.instance.GetDistributionChoice());
+        SaveGame.SaveGameData(gameManager.GetComponent<Currency>().GetMoney(), gameManager.GetComponent<FoodScript>().GetFood(), gameManager.GetComponent<GridScript>().GetGrid(), gameManager.GetComponent<FoodScript>().GetQuotaTimer(), gameManager.GetComponent<FoodScript>().GetCurrentQuota(), gameManager.GetComponent<SustainabilityScript>().GetSustainability(), DistributionChoice.instance.GetDistributionChoice(), gameManager.GetComponent<GameLoop>().GetTotalMoneyEarned(), gameManager.GetComponent<GameLoop>().GetTotalMoneySpent(), gameManager.GetComponent<GameLoop>().GetTotalFood());
     }
 
     //loads data into variables to be used in game
@@ -23,7 +23,13 @@ public class Save : MonoBehaviour
             gameManager.GetComponent<Currency>().SetMoney(data.money);
             gameManager.GetComponent<FoodScript>().SetFood(data.food);
 
+
+            gameManager.GetComponent<GameLoop>().SetTotalMoneyEarned(data.totalMoneyEarned);
+            gameManager.GetComponent<GameLoop>().SetTotalMoneySpent(data.totalMoneySpent);
+            gameManager.GetComponent<GameLoop>().SetTotalFood(data.totalFood);
+
             //Loads quota data
+
             gameManager.GetComponent<FoodScript>().SetQuotaTimer(data.quotaTimer);
             gameManager.GetComponent<FoodScript>().SetCurrentQuota(data.quota);
 

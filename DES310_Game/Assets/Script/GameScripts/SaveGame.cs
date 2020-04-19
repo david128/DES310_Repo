@@ -7,15 +7,15 @@ using System.Runtime.Serialization.Formatters.Binary;
 public static class SaveGame
 {
     //saves game data 
-    public static void SaveGameData(int moneyData, float foodData, List<GameObject> gridData, float quotaTimerData, int quotaData, float sustainabilityLevelData, string distributerChoiceData)
-    {
+    public static void SaveGameData(int moneyData, float foodData, List<GameObject> gridData, float quotaTimerData, int quotaData, float sustainabilityLevelData, string distributerChoiceData, int totalMoneyEarnedData, int totalMoneySpentData, float totalFoodData)
+    { 
         BinaryFormatter formatter = new BinaryFormatter();
 
         string path = Application.persistentDataPath + "/saveData.SaveData";
 
         FileStream stream = new FileStream(path, FileMode.Create);
 
-        SaveData data = new SaveData(moneyData, foodData, gridData, quotaTimerData, quotaData, sustainabilityLevelData, distributerChoiceData);
+        SaveData data = new SaveData(moneyData, foodData, gridData, quotaTimerData, quotaData, sustainabilityLevelData, distributerChoiceData, totalMoneyEarnedData, totalMoneySpentData, totalFoodData);
 
         formatter.Serialize(stream, data);
 
