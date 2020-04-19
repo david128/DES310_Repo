@@ -104,7 +104,7 @@ public class FoodScript : MonoBehaviour
         else
         {
             overQuota = false;
-        }   
+        }
 
         if (overQuota == false)
         {
@@ -149,7 +149,7 @@ public class FoodScript : MonoBehaviour
                 if (currentFood > quotaAmount[quotaCount])
                 {
                     foodOver = currentFood - quotaAmount[quotaCount];
-                
+
                     moneyGain = (int)foodOver;
 
                     if (DistributionChoice.instance.GetDistributionChoice() == "BF")
@@ -199,7 +199,14 @@ public class FoodScript : MonoBehaviour
 
                     moneyGain = Mathf.RoundToInt(moneyGain / 10) * 10;
 
-                    gameManager.GetComponent<Currency>().AddMoney(moneyGain);
+                    if (gameManager.GetComponent<Currency>().GetMoney() < Mathf.Abs(moneyGain))
+                    {
+                        gameManager.GetComponent<Currency>().SetMoney(0);
+                    }
+                    else
+                    {
+                        gameManager.GetComponent<Currency>().AddMoney(moneyGain);
+                    }
 
                     //failure count
                     failToFill++;
