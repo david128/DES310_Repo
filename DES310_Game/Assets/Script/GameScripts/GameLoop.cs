@@ -263,14 +263,6 @@ public class GameLoop : MonoBehaviour
         PlayerPrefs.SetInt("Ending", 1);
     }
 
-    // looks for and finds end game stats to show player
-    public void GatherStats()
-    {
-        //gets all stats info
-
-    }
-
-
     // Quits the player when the user hits escape
     public void QuitGame()
     {

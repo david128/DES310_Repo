@@ -14,6 +14,7 @@ public class SaveData
 
     public float quotaTimer;
     public int quota;
+
     public float sustainabilityLevel;
     public string distributerChoice;
    

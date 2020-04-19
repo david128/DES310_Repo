@@ -48,7 +48,7 @@ public class DistributionChoice : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         instance = this;
         distributerChoice = "P";
