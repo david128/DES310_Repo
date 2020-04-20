@@ -22,7 +22,8 @@ public class ObjectInfo : MonoBehaviour
         RESEARCH = 9,
         VERTICAL_FARM = 10,
         LOCKED = 11,
-        MEAT_LAB = 12
+        MEAT_LAB = 12,
+        BATTERY = 13
     };
   
     public int level;
