@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class FoodScript : MonoBehaviour
 {
@@ -48,7 +49,16 @@ public class FoodScript : MonoBehaviour
     public void SetQuotaTimer(float t) { currentTime = t; }
 
     //Add to current food
-    public void AddFood(float f) { gameManager.GetComponent<GameLoop>().AddToTotalFood(f);  food = food + f; }
+    public void AddFood(float f)
+    {
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("TutorialScene"))
+        {   
+            gameManager.GetComponent<GameLoop>().AddToTotalFood(f);
+        }
+
+
+        food = food + f; 
+    }
 
     private void Start()
     {

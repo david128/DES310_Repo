@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Currency : MonoBehaviour
 {
@@ -16,13 +17,17 @@ public class Currency : MonoBehaviour
     //Add to current money
     public void AddMoney(int m) 
     {
-        if (m > 0)
+        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("TutorialScene"))
         {
-            gameManager.GetComponent<GameLoop>().AddToTotalMoneyEarned(m);
-        }
-        else
-        {
-            gameManager.GetComponent<GameLoop>().AddToTotalMoneySpent(m);
+            if (m > 0)
+            {
+                gameManager.GetComponent<GameLoop>().AddToTotalMoneyEarned(m);
+            }
+            else
+            {
+                gameManager.GetComponent<GameLoop>().AddToTotalMoneySpent(m);
+            }
+
         }
 
         money = money + m; 
