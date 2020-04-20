@@ -87,6 +87,8 @@ public class RadialMenu : MonoBehaviour
             //button function goes here
             Debug.Log(selected.title + "was selected");
 
+            RadialMenuSpawner.instance.DisableStatsMenus();
+
             if (selected.title == "Upgrade")
             {
                 if ((currentFarmLevel > gridTile.GetComponent<ObjectInfo>().GetObjectLevel() || gridTile.GetComponent<ObjectInfo>().GetObjectType() == ObjectInfo.ObjectType.FARMHOUSE || gridTile.GetComponent<ObjectInfo>().GetObjectType() == ObjectInfo.ObjectType.BARN || gridTile.GetComponent<ObjectInfo>().GetObjectType() == ObjectInfo.ObjectType.RESEARCH))

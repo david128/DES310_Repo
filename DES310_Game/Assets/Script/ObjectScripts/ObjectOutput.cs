@@ -11,6 +11,10 @@ public class ObjectOutput : MonoBehaviour
     public int[] foodOutput;
     int level;
 
+    //Getters
+    public int[] GetTileMoneyOutput() { return moneyOutput; }
+    public int[] GetTileFoodOutput() { return foodOutput; }
+
     void Start()
     {
 

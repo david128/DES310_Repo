@@ -48,6 +48,9 @@ public class GameLoop : MonoBehaviour
     public int totalMoneySpent;
     public float totalFood;
 
+    //SelectedTile vairable
+    public GameObject selectedTile;
+
     //getters
     public Image GetUpgradeWarning() { return UpgradeWarning; }
     public Image GetMoneyWarning() { return MoneyWarning; }
@@ -58,14 +61,21 @@ public class GameLoop : MonoBehaviour
     public int GetTotalMoneySpent() { return totalMoneySpent; }
     public float GetTotalFood() { return totalFood; }
 
+    //Selected Tile getter
+    public GameObject GetSelectedTile() { return selectedTile; }
+
     //setters
     public void SetTotalMoneyEarned(int tM) { totalMoneyEarned = tM; }
     public void SetTotalMoneySpent(int tM) { totalMoneySpent = tM; }
     public void SetTotalFood(float tF) { totalFood = tF; }
 
+    //Add to total amount
     public void AddToTotalMoneyEarned(int tM) { totalMoneyEarned += tM; }
     public void AddToTotalMoneySpent(int tM) { totalMoneySpent += tM; }
     public void AddToTotalFood(float tF) { totalFood += tF; }
+
+    //sets selected tile
+    public void SetSelectedTile(GameObject s) { selectedTile = s; }
 
     //Frames per second
     public float GetFPS() { return FPS; }
