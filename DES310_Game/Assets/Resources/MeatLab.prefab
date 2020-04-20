@@ -8,16 +8,6 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3762977578568239607}
-  - component: {fileID: 5288297525644555201}
-  - component: {fileID: 1900316732448640824}
-  - component: {fileID: -3640806721039452765}
-  - component: {fileID: 2287065780455796699}
-  - component: {fileID: -798792342522110714}
-  - component: {fileID: -808687065692493425}
-  - component: {fileID: 6107167262050924205}
-  - component: {fileID: -3625230024019734423}
-  - component: {fileID: 8126834944985721416}
   - component: {fileID: 5000100989020531861}
   - component: {fileID: 4051247231677421219}
   - component: {fileID: 7711396831533541978}
@@ -28,7 +18,7 @@ GameObject:
   - component: {fileID: 7135372213983937}
   - component: {fileID: 7135372213983942}
   m_Layer: 0
-  m_Name: MeatLab_lvl1
+  m_Name: MeatLab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -163,13 +153,13 @@ MonoBehaviour:
   title: Meat Lab
   options:
   - Color: {r: 0, g: 0, b: 0, a: 0}
-    Symbol: {fileID: 21300000, guid: 0f630a0a22b4e164b8555e2d166bb8f9, type: 3}
+    Symbol: {fileID: 21300000, guid: c4e29adbe7529464e828d1ba111eb72d, type: 3}
     Title: Upgrade
   - Color: {r: 0, g: 0, b: 0, a: 0}
-    Symbol: {fileID: 21300000, guid: 250cbb2e5fad9f642b5b390dfc38ace9, type: 3}
+    Symbol: {fileID: 21300000, guid: cefcb2c071f914448b9204d6fa8b21cf, type: 3}
     Title: Demolish
   - Color: {r: 0, g: 0, b: 0, a: 0}
-    Symbol: {fileID: 21300000, guid: ca82c9da83539304487a4b5ec8b8c3d9, type: 3}
+    Symbol: {fileID: 21300000, guid: d5f466320659ae149ac82df04e07ce57, type: 3}
     Title: Back
 --- !u!114 &7135372213983937
 MonoBehaviour:
@@ -198,6 +188,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea5c64a0edbc99b44870f36e22d14ba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttatchedToFill: 0
-  moneyOutput: ecffffff0000000000000000
-  foodOutput: 2c0100000000000000000000
+  fillType: 0
