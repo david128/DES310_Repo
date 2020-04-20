@@ -9,7 +9,11 @@ public class RadialMenu : MonoBehaviour
     public RadialButtonScript buttonPrefab;
     public RadialButtonScript selected;
     GameObject gameManager;
-  
+
+    GameLevelStorer gls = new GameLevelStorer();
+
+    int[] levels = new int[3];
+
     public void SpawnButtons(RadialPressable obj)
     {
         //finds game manager
@@ -61,17 +65,44 @@ public class RadialMenu : MonoBehaviour
 
     public void RadialOption()
     {
+        GameObject gridTile;
+
+        gls.GetLevels();
+
+        levels = gls.GetLvls();
+
+        int currentFarmLevel = levels[0];
+        int currentBarnLevel = levels[1];
+        int currentResearchLevel = levels[2];
+
+        bool failToUpgrade = false;
+
         //gets tile currently selected
         int selectedID = gameManager.GetComponent<InputScript>().GetSelectedID();
+
+        gridTile = gameManager.GetComponent<GridScript>().GetGridTile(selectedID);
 
         if (selected)
         {
             //button function goes here
             Debug.Log(selected.title + "was selected");
 
+            RadialMenuSpawner.instance.DisableStatsMenus();
+
             if (selected.title == "Upgrade")
             {
-                gameManager.GetComponent<InputScript>().AttemptUpgrade(selectedID);
+                if ((currentFarmLevel > gridTile.GetComponent<ObjectInfo>().GetObjectLevel() || gridTile.GetComponent<ObjectInfo>().GetObjectType() == ObjectInfo.ObjectType.FARMHOUSE || gridTile.GetComponent<ObjectInfo>().GetObjectType() == ObjectInfo.ObjectType.BARN || gridTile.GetComponent<ObjectInfo>().GetObjectType() == ObjectInfo.ObjectType.RESEARCH))
+                {
+                    gameManager.GetComponent<InputScript>().AttemptUpgrade(selectedID);
+                }
+                else
+                {
+                    failToUpgrade = true;
+
+                    //shows warning message about upgrading
+                    gameManager.GetComponent<GameLoop>().GetUpgradeWarning().gameObject.SetActive(true);
+                    gameManager.GetComponent<InputScript>().SetAllowSelecting(false);
+                }
             }
             else if (selected.title == "Build")
             {
@@ -91,7 +122,11 @@ public class RadialMenu : MonoBehaviour
             Destroy(gameObject);
 
             RadialMenuSpawner.instance.SetAwake(false);
-            gameManager.GetComponent<InputScript>().SetAllowSelecting(true);
+
+            if (failToUpgrade == false)
+            { 
+                gameManager.GetComponent<InputScript>().SetAllowSelecting(true);
+            }
         }
     }
 }

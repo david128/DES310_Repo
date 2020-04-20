@@ -170,8 +170,6 @@ public class TutorialEvents : MonoBehaviour
     {
         objectiveText.text = "Destroy carrot field";
 
-        Instantiate(Resources.Load("Blocker"), new Vector3(56.07f, 10.0f, 31.52f), Quaternion.identity);
-
         light.SetActive(true);
 
         StartCoroutine(WaitForEventToFinish(RadialFlashEvent()));
@@ -294,6 +292,10 @@ public class TutorialEvents : MonoBehaviour
     {
         bool done = false;
 
+        Object fieldBlocker;
+
+        fieldBlocker = Instantiate(Resources.Load("TutorialResources/Blocker"), new Vector3(46.76f, 10.0f, 19.05f), Quaternion.identity);
+
         //Wait until the event is done
         while (!done)
         {
@@ -311,6 +313,10 @@ public class TutorialEvents : MonoBehaviour
 
             yield return null;
         }
+
+        Destroy(fieldBlocker);
+
+        Instantiate(Resources.Load("TutorialResources/Blocker"), new Vector3(46.76f, 10.0f, 31.95f), Quaternion.identity);
 
         eventActive = false;
 
@@ -346,8 +352,9 @@ public class TutorialEvents : MonoBehaviour
         {
             if (InputScript.instance.GetAllowSelecting() == false)
             {
-                InputScript.instance.AllowSelecting();
-            }
+                //causing a bug
+                //InputScript.instance.AllowSelecting();
+            } 
 
             if (destroyedCarrot == true)
             {

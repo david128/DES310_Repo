@@ -74,18 +74,19 @@ public class GridScript : MonoBehaviour
         //spawns outside ground
         Instantiate(Resources.Load("Grid"), new Vector3(36.0f, 1.0f, 25.9f), Quaternion.identity);
         Instantiate(Resources.Load("GridFill"), new Vector3(36.0f, 1.0f, 25.9f), Quaternion.identity);
+        Instantiate(Resources.Load("OutsideArea"), new Vector3(36.0f, -0.3f, 25.9f), Quaternion.identity);
 
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("TutorialScene"))
-        {
-            Instantiate(Resources.Load("TutorialBlockers"), new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
-        }
+        Instantiate(Resources.Load("Tractor"), new Vector3(64.0f, 2.0f, 33.0f), new Quaternion(0.0f, 0.225f, 0.0f, 0.974f));
 
         //Spawns locked area blockers
-        lockLvl2 = Instantiate(lockLvl2, new Vector3(76.64f, 12.0f, -14.213f), Quaternion.identity);
+        lockLvl2 = Instantiate(lockLvl2, new Vector3(76.64f, 12.0f, -21.98f), Quaternion.identity);
 
         lockLvl3 = Instantiate(lockLvl3, new Vector3(-11.89f, 12.0f, 87.5f), new Quaternion(0.0f, 0.7071f, 0.0f, 0.7071f));
 
-        Instantiate(Resources.Load("Tractor"), new Vector3(64.0f, 2.0f, 33.0f), new Quaternion(0.0f, 0.225f, 0.0f, 0.974f));
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("TutorialScene"))
+        {
+            Instantiate(Resources.Load("TutorialResources/TutorialBlockers"), new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity);
+        }
 
         //creates and instantiates each tile, giving them a unique ID
         for (int i = 0; i < columnLength; i++)
@@ -126,11 +127,19 @@ public class GridScript : MonoBehaviour
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectID(ID);
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectType(ObjectInfo.ObjectType.RESEARCH);
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectLevel(1);
-
         }
         else if (tutorial == true)
         {
             CreateTutSquare(pos, ID);
+        }
+        else if (ID == 18)
+        {
+            gridSquares.Add((GameObject)Instantiate(Resources.Load("ChickenCoop"), pos, Quaternion.identity));
+            gridSquares[ID].GetComponent<ObjectInfo>().SetObjectID(ID);
+            gridSquares[ID].GetComponent<ObjectInfo>().SetObjectType(ObjectInfo.ObjectType.CHICKEN_COOP);
+            gridSquares[ID].GetComponent<ObjectInfo>().SetObjectLevel(1);
+            Instantiate(Resources.Load("Chicken"), new Vector3(pos.x + 2.818f, pos.y, pos.z - 1.299f), new Quaternion(0.0f, -0.625f, 0.0f, 0.780f), gridSquares[ID].transform);
+            gridSquares[ID].GetComponent<ObjectFill>().SetFillType(ObjectFill.FillType.CHICKEN);
         }
         else
         {   
@@ -158,7 +167,7 @@ public class GridScript : MonoBehaviour
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectID(ID);
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectType(ObjectInfo.ObjectType.CHICKEN_COOP);
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectLevel(1);
-            Instantiate(Resources.Load("Chicken"), pos, Quaternion.identity, gridSquares[ID].transform);
+            Instantiate(Resources.Load("Chicken"), new Vector3(pos.x + 2.818f, pos.y, pos.z - 1.299f), new Quaternion(0.0f, -0.625f, 0.0f, 0.780f), gridSquares[ID].transform);
             gridSquares[ID].GetComponent<ObjectFill>().SetFillType(ObjectFill.FillType.CHICKEN);
         }
         else if (ID == 7)
@@ -167,9 +176,9 @@ public class GridScript : MonoBehaviour
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectID(ID);
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectType(ObjectInfo.ObjectType.CHICKEN_COOP);
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectLevel(3);
-            Instantiate(Resources.Load("Chicken"), pos, Quaternion.identity, gridSquares[ID].transform);
-            Instantiate(Resources.Load("Chicken"), pos, Quaternion.identity, gridSquares[ID].transform);
-            Instantiate(Resources.Load("Chicken"), pos, Quaternion.identity, gridSquares[ID].transform);
+            Instantiate(Resources.Load("Chicken"), new Vector3(pos.x + -4.5f, pos.y, pos.z + 0.02f), new Quaternion(0.0f, 0.287f, 0.0f, 0.958f), gridSquares[ID].transform);
+            Instantiate(Resources.Load("Chicken"), new Vector3(pos.x + 0.12f, pos.y, pos.z + 1.88f), new Quaternion(0.0f, 0.988f, 0.0f, -0.157f), gridSquares[ID].transform);
+            Instantiate(Resources.Load("Chicken"), new Vector3(pos.x + 2.818f, pos.y, pos.z - 1.299f), new Quaternion(0.0f, -0.625f, 0.0f, 0.780f), gridSquares[ID].transform);
             gridSquares[ID].GetComponent<ObjectFill>().SetFillType(ObjectFill.FillType.CHICKEN);
         }
         else if (ID == 8)
@@ -187,8 +196,8 @@ public class GridScript : MonoBehaviour
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectID(ID);
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectType(ObjectInfo.ObjectType.COW_FIELD);
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectLevel(2);
-            Instantiate(Resources.Load("Cow"), pos, Quaternion.identity, gridSquares[ID].transform);
-            Instantiate(Resources.Load("Cow"), pos, Quaternion.identity, gridSquares[ID].transform);
+            Instantiate(Resources.Load("Cow"), new Vector3(pos.x - 2.86f, pos.y, pos.z + -1.41f), new Quaternion(0.0f, 0.335f, 0.0f, 0.942f), gridSquares[ID].transform);
+            Instantiate(Resources.Load("Cow"), new Vector3(pos.x + -1.52f, pos.y, pos.z + 0.93f), new Quaternion(0.0f, 0.990f, 0.0f, 0.138f), gridSquares[ID].transform);
             gridSquares[ID].GetComponent<ObjectFill>().SetFillType(ObjectFill.FillType.COW);
         }
         else if (ID == 14)
@@ -206,9 +215,9 @@ public class GridScript : MonoBehaviour
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectID(ID);
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectType(ObjectInfo.ObjectType.PIG_PEN);
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectLevel(3);
-            Instantiate(Resources.Load("Pig"), pos, Quaternion.identity, gridSquares[ID].transform);
-            Instantiate(Resources.Load("Pig"), pos, Quaternion.identity, gridSquares[ID].transform);
-            Instantiate(Resources.Load("Pig"), pos, Quaternion.identity, gridSquares[ID].transform);
+            Instantiate(Resources.Load("Pig"), new Vector3(pos.x - 5.75f, pos.y, pos.z + 2.38f), new Quaternion(0.0f, -0.827f, 0.0f, 0.563f), gridSquares[ID].transform);
+            Instantiate(Resources.Load("Pig"), new Vector3(pos.x + 2.44f, pos.y, pos.z - 1.97f), new Quaternion(0.0f, 0.294f, 0.0f, 0.956f), gridSquares[ID].transform);
+            Instantiate(Resources.Load("Pig"), new Vector3(pos.x - 2.19f, pos.y, pos.z + 1.24f), new Quaternion(0.0f, 0.999f, 0.0f, 0.041f), gridSquares[ID].transform);
             gridSquares[ID].GetComponent<ObjectFill>().SetFillType(ObjectFill.FillType.PIG);
         }
         else if(ID == 16)
@@ -217,8 +226,8 @@ public class GridScript : MonoBehaviour
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectID(ID);
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectType(ObjectInfo.ObjectType.PIG_PEN);
             gridSquares[ID].GetComponent<ObjectInfo>().SetObjectLevel(2);
-            Instantiate(Resources.Load("Pig"), pos, Quaternion.identity, gridSquares[ID].transform);
-            Instantiate(Resources.Load("Pig"), pos, Quaternion.identity, gridSquares[ID].transform);
+            Instantiate(Resources.Load("Pig"), new Vector3(pos.x - 5.75f, pos.y, pos.z + 2.38f), new Quaternion(0.0f, 0.294f, 0.0f, 0.956f), gridSquares[ID].transform);
+            Instantiate(Resources.Load("Pig"), new Vector3(pos.x + 2.44f, pos.y, pos.z - 1.97f), new Quaternion(0.0f, 0.294f, 0.0f, 0.956f), gridSquares[ID].transform);
             gridSquares[ID].GetComponent<ObjectFill>().SetFillType(ObjectFill.FillType.PIG);
         }
         else if(ID == 19)

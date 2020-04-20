@@ -5,8 +5,12 @@ using UnityEngine.UI;
 
 public class MarketplaceUnlocker : MonoBehaviour
 {
+    public GameObject GrainTab;
     public GameObject VeggieTab;
     public GameObject AnimalTab;
+    public GameObject SpecialsTab;
+    public GameObject BuildingTab;
+
     public Button ChickenConfirm;
     public Button CarrotConfirm;
 
@@ -48,11 +52,23 @@ public class MarketplaceUnlocker : MonoBehaviour
 
             if (TutorialManager.instance != null && TutorialManager.instance.GetTutorial() == true)
             {
+                if (marketButtons[i].name == "Chick" || marketButtons[i].name == "Carrot")
+                {
+                    marketButtons[i].interactable = true;
+                }
+                else
+                {
+                    marketButtons[i].interactable = false;
+                }
+
                 if (TutorialEvents.instance.GetChickenBuilt() == false)
                 {
+                    GrainTab.SetActive(false);
                     VeggieTab.SetActive(false);
                     AnimalTab.SetActive(true);
-
+                    SpecialsTab.SetActive(false);
+                    BuildingTab.SetActive(false);
+                    
                     bool tempTrue = true;
 
                     if (marketButtons[i].name == "Chick")
@@ -65,8 +81,11 @@ public class MarketplaceUnlocker : MonoBehaviour
 
                 if (TutorialEvents.instance.GetCarrotBuilt() == false && TutorialEvents.instance.GetChickenBuilt() == true)
                 {
+                    GrainTab.SetActive(false);
                     VeggieTab.SetActive(true);
                     AnimalTab.SetActive(false);
+                    SpecialsTab.SetActive(false);
+                    BuildingTab.SetActive(false);
 
                     bool tempTrue = true;
                     if (marketButtons[i].name == "Carrot")

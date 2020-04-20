@@ -43,6 +43,8 @@ public class InputScript : MonoBehaviour
     public bool canMove;
     public GameObject gameManager;
 
+    bool newRadial;
+
     //Selection variables
     public int selectedID;
     public bool selecting = true;
@@ -74,6 +76,11 @@ public class InputScript : MonoBehaviour
     public int GetSelectedID() { return selectedID; }
 
     public bool GetControlType() { return controlType; }
+
+    //radial menu for stats
+    public bool GetNewRadialMenu() { return newRadial; }
+
+    public void SetNewRadialMenu(bool r) { newRadial = r; }
 
     //get Input to be called in main game loop
     public void GetInput()
@@ -332,9 +339,11 @@ public class InputScript : MonoBehaviour
                 }
                 else if (hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectType() != ObjectInfo.ObjectType.EMPTY)
                 {
-                    if (hit.collider.gameObject.TryGetComponent<RadialPressable>(out RadialPressable radial))
+                    if (hit.collider.gameObject.TryGetComponent(out RadialPressable radial))
                     {
                         radial.TriggerMenu();
+                        gameManager.GetComponent<GameLoop>().SetSelectedTile(hit.collider.gameObject);
+                        newRadial = true;
                         selecting = false;
                     }
                     else
@@ -360,6 +369,12 @@ public class InputScript : MonoBehaviour
             Debug.Log("Build on " + selectedID.ToString());
 
             gameManager.GetComponent<AssetChange>().Build(selectedID, t, f);
+        }
+        else
+        {
+            //shows warning message about money
+            gameManager.GetComponent<GameLoop>().GetMoneyWarning().gameObject.SetActive(true);
+            gameManager.GetComponent<InputScript>().SetAllowSelecting(false);
         }
 
     }

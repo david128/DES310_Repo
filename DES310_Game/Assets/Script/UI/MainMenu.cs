@@ -2,40 +2,60 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class MainMenu : MonoBehaviour
 {
-    public static MainMenu instance;
+    public GameObject NewGameConfirm;
+    public GameObject NoSaveNotice;
 
-    public bool fromLoad;
-
-    public bool GetFromLoad() { return fromLoad; }
-
-    void Start()
+    public void CheckNewGame()
     {
-        instance = this;
+        string path = Application.persistentDataPath + "/saveData.SaveData";
+
+        //loads game scene at same time as unloading the menu and sets from load to false
+
+        if (File.Exists(path))
+        {
+            NewGameConfirm.SetActive(true);
+        }
+        else
+        {
+            SceneLoader.instance.LoadScene(2);
+            PlayerPrefs.SetInt("loadGame", 0);
+        }
+
+        // SceneManager.UnloadSceneAsync(0);
     }
 
     public void PlayNewGame()
     {
-        //loads game scene at same time as unloading the menu and sets from load to false
-        SceneLoader.instance.LoadScene(1);
-        fromLoad = false;
-       // SceneManager.UnloadSceneAsync(0);
+        SceneLoader.instance.LoadScene(2);
+        PlayerPrefs.SetInt("loadGame", 0);
     }
 
     public void LoadSavedGame()
     {
+        string path = Application.persistentDataPath + "/saveData.SaveData";
+
         //loads game scene at same time as unloading the menu and sets from load to true
-        SceneLoader.instance.LoadScene(2);
-        fromLoad = true;
-       // SceneManager.UnloadSceneAsync(0);
+        if (File.Exists(path))
+        {
+            SceneLoader.instance.LoadScene(3);
+            PlayerPrefs.SetInt("loadGame", 1);
+        }
+        else
+        {
+            NoSaveNotice.SetActive(true);
+        }
+
+        // SceneManager.UnloadSceneAsync(0);
     }
 
     public void BackToMenu()
     {
         //loads menu scene at same time as unloading the game and sets from load to false
-        SceneLoader.instance.LoadScene(0);
+        SceneLoader.instance.LoadScene(1);
         //SceneManager.UnloadSceneAsync(1);
     }
 
@@ -46,5 +66,4 @@ public class MainMenu : MonoBehaviour
 
         Application.Quit();
     }
-  
 }

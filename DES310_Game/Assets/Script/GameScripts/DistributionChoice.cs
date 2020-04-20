@@ -17,11 +17,38 @@ public class DistributionChoice : MonoBehaviour
 
     string distributerChoice;
 
+    //getter
     public string GetDistributionChoice() { return distributerChoice; }
+
+    //setters
     public void SetDefDistributionChoice() { distributerChoice = "P"; }
+    public void SetDistributionChoice(string d) { distributerChoice = d; }
+
+    public void SetDistribubuterButtons(string distributer)
+    {
+
+        if (distributer == "BF")
+        {
+            BFB.interactable = false;
+            PB.interactable = true;
+            GGB.interactable = true;
+        }
+        else if(distributer == "P")
+        {
+            BFB.interactable = true;
+            PB.interactable = false;
+            GGB.interactable = true;
+        }
+        else if(distributer == "GG")
+        {
+            BFB.interactable = true;
+            PB.interactable = true;
+            GGB.interactable = false;
+        }
+    }
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         instance = this;
         distributerChoice = "P";

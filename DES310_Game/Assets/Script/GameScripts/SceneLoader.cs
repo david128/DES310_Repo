@@ -11,6 +11,7 @@ public class SceneLoader : MonoBehaviour
     public GameObject loadingScreen;
     public Slider loadSlider;
     public TextMeshProUGUI progressText;
+    public Animator EndScreenLoader;
 
     //Static nstance of the class
     public static SceneLoader instance;
@@ -24,6 +25,11 @@ public class SceneLoader : MonoBehaviour
     public void LoadScene(int sceneIndex)
     {
         StartCoroutine(LoadAsynchronously(sceneIndex));
+    }
+
+    public void LoadEndScene(int sceneIndex)
+    {
+        StartCoroutine(LoadEndScreen(sceneIndex));
     }
 
     IEnumerator LoadAsynchronously(int sceneIndex)
@@ -43,6 +49,15 @@ public class SceneLoader : MonoBehaviour
 
             yield return null;
         }
+    }
+
+    IEnumerator LoadEndScreen(int sceneIndex)
+    {
+        EndScreenLoader.SetTrigger("Start");
+
+        yield return new WaitForSeconds(1.0f);
+
+        SceneManager.LoadSceneAsync(sceneIndex);
     }
 
 }

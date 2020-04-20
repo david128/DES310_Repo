@@ -11,6 +11,10 @@ public class ObjectOutput : MonoBehaviour
     public int[] foodOutput;
     int level;
 
+    //Getters
+    public int[] GetTileMoneyOutput() { return moneyOutput; }
+    public int[] GetTileFoodOutput() { return foodOutput; }
+
     void Start()
     {
 
@@ -31,11 +35,33 @@ public class ObjectOutput : MonoBehaviour
         InvokeRepeating("GrowthCycle", 10.0f, 10.0f);
     }
 
+    public void reduceMoney(float red)
+    {
+        //find multiplier => 1(100%) - red * 0.01 (% reduction)
+        float reduction = 1.0f - (red * 0.01f);
+
+        for (int i = 0; i < 3; i++)
+        {
+            moneyOutput[i] = Mathf.RoundToInt((float)moneyOutput[i] * reduction);
+        }
+    }   
+    
+
+    public void reduceFood(float red)
+    {
+        //find multiplier => 1(100%) - red * 0.01 (% reduction)
+        float reduction = 1.0f - (red * 0.01f);
+
+        for (int i = 0; i < 3; i++)
+        {
+            foodOutput[i] = Mathf.RoundToInt((float)moneyOutput[i] * reduction);
+        }
+    }
+
     void GrowthCycle()
     {
         //adds money and food
         gameManager.GetComponent<Currency>().AddMoney(moneyOutput[level]);
         gameManager.GetComponent<FoodScript>().AddFood(foodOutput[level]);        
     }
-
 }
