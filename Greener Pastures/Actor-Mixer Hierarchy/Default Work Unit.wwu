@@ -58,6 +58,18 @@
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="Construction_FX" ID="{2E4477BC-EB24-47DE-B3D0-9236C52B0403}" ShortID="760483681">
+					<PropertyList>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
@@ -78,6 +90,16 @@
 				</Sound>
 				<Sound Name="Destruction_FX" ID="{E3972496-0FA7-43AC-BDD5-81679F6AE48D}" ShortID="843988282">
 					<PropertyList>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
 								<Value>18</Value>
@@ -216,41 +238,6 @@
 						<ActiveSource Name="Marketplace_FX" ID="{A66CBAC1-FC6C-4EC9-967D-7108C6E5EEA0}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="Tractor_FX" ID="{443759A5-53B0-4252-BB32-852E8949CB92}" ShortID="346256829">
-					<PropertyList>
-						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-						<Property Name="Volume" Type="Real64">
-							<ValueList>
-								<Value>-5</Value>
-							</ValueList>
-						</Property>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="Tractor_FX" ID="{164529E6-48AB-4C56-9785-213A0AF315B8}" ShortID="704761648">
-							<Language>SFX</Language>
-							<AudioFile>Tractor_FX.wav</AudioFile>
-						</AudioFileSource>
-						<AudioFileSource Name="DistributionClose_FX" ID="{9C1940A7-02E2-4208-80F0-316ACE467FE2}" ShortID="462020096">
-							<Language>SFX</Language>
-							<AudioFile>DistributionClose_FX.wav</AudioFile>
-						</AudioFileSource>
-						<AudioFileSource Name="Upgrade_FX" ID="{BAE7D445-1F4A-44CB-9889-A025BE088EFB}" ShortID="131375118">
-							<Language>SFX</Language>
-							<AudioFile>Upgrade_FX.wav</AudioFile>
-						</AudioFileSource>
-					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="Tractor_FX" ID="{164529E6-48AB-4C56-9785-213A0AF315B8}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
 				<Sound Name="MenuSong_FX" ID="{71E748A8-13E2-4FE4-9C8B-BDF8055ACEC0}" ShortID="593147764">
 					<PropertyList>
 						<Property Name="Volume" Type="Real64">
@@ -279,17 +266,19 @@
 				</Sound>
 				<Sound Name="Ambience_FX" ID="{421E7DE2-88A5-46D8-8510-A12A9EB0FABF}" ShortID="649453787">
 					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>30</Value>
+								<Value>35</Value>
 							</ValueList>
 							<ModifierList>
 								<ModifierInfo>
 									<Modifier Name="" ID="{9B75B9E5-23D0-40F5-87AF-042EC19E7B83}">
 										<PropertyList>
 											<Property Name="Enabled" Type="bool" Value="True"/>
-											<Property Name="Max" Type="Real64" Value="15"/>
-											<Property Name="Min" Type="Real64" Value="-15"/>
+											<Property Name="Max" Type="Real64" Value="5"/>
+											<Property Name="Min" Type="Real64" Value="-5"/>
 										</PropertyList>
 									</Modifier>
 								</ModifierInfo>
@@ -297,6 +286,68 @@
 						</Property>
 					</PropertyList>
 					<ReferenceList>
+						<Reference Name="Attenuation">
+							<Custom>
+								<Attenuation Name="Attenuation (Custom)" ID="{047B1E17-ACB6-40FF-B385-6341B642F59C}" ShortID="952500214">
+									<CurveUsageInfoList>
+										<VolumeDryUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
+												<Curve Name="VolumeDry" ID="{FC55BDD6-766E-4A3E-9DA1-E325A15C09E3}">
+													<PropertyList>
+														<Property Name="Flags" Type="int32" Value="3"/>
+													</PropertyList>
+													<PointList>
+														<Point>
+															<XPos>0</XPos>
+															<YPos>0</YPos>
+															<Flags>5</Flags>
+														</Point>
+														<Point>
+															<XPos>13.32288</XPos>
+															<YPos>-3.29102</YPos>
+															<Flags>0</Flags>
+														</Point>
+														<Point>
+															<XPos>30.87774</XPos>
+															<YPos>-4.54218</YPos>
+															<Flags>0</Flags>
+														</Point>
+														<Point>
+															<XPos>87.93103</XPos>
+															<YPos>-7.63276</YPos>
+															<Flags>0</Flags>
+														</Point>
+														<Point>
+															<XPos>100</XPos>
+															<YPos>-200</YPos>
+															<Flags>37</Flags>
+														</Point>
+													</PointList>
+												</Curve>
+											</CurveUsageInfo>
+										</VolumeDryUsage>
+										<VolumeWetGameUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+										</VolumeWetGameUsage>
+										<VolumeWetUserUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+										</VolumeWetUserUsage>
+										<LowPassFilterUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+										</LowPassFilterUsage>
+										<HighPassFilterUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+										</HighPassFilterUsage>
+										<SpreadUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+										</SpreadUsage>
+										<FocusUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+										</FocusUsage>
+									</CurveUsageInfoList>
+								</Attenuation>
+							</Custom>
+						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
@@ -309,7 +360,7 @@
 							<Language>SFX</Language>
 							<AudioFile>Ambience_FX.wav</AudioFile>
 							<ConvertedFileIDList>
-								<File Platform="Android" ID="261544477"/>
+								<File Platform="Windows" ID="261544477"/>
 							</ConvertedFileIDList>
 						</AudioFileSource>
 					</ChildrenList>
@@ -507,6 +558,18 @@
 					</ChildrenList>
 				</RandomSequenceContainer>
 				<Sound Name="Upgrade_FX" ID="{A988F9AC-6D18-46F6-8AAB-6AB02F547AE6}" ShortID="799091347">
+					<PropertyList>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
@@ -549,6 +612,95 @@
 					</ChildrenList>
 					<ActiveSourceList>
 						<ActiveSource Name="DistributionClose_FX" ID="{1CC23333-6901-4FA7-BD63-D440080AEFBB}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Tractor_Fixed_FX" ID="{8B025AA7-5289-4E11-B779-6CCA610CFCF6}" ShortID="980094043">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>40</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<Custom>
+								<Attenuation Name="Attenuation (Custom)" ID="{4497C50D-55E5-40F8-98E6-8C69EF4C5AA6}" ShortID="612611308">
+									<CurveUsageInfoList>
+										<VolumeDryUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
+												<Curve Name="VolumeDry" ID="{262C82AF-3176-4A56-882D-33CF80004098}">
+													<PropertyList>
+														<Property Name="Flags" Type="int32" Value="3"/>
+													</PropertyList>
+													<PointList>
+														<Point>
+															<XPos>0</XPos>
+															<YPos>0</YPos>
+															<Flags>5</Flags>
+														</Point>
+														<Point>
+															<XPos>9.24763</XPos>
+															<YPos>-5.42741</YPos>
+															<Flags>0</Flags>
+														</Point>
+														<Point>
+															<XPos>18.02508</XPos>
+															<YPos>-15.75712</YPos>
+															<Flags>0</Flags>
+														</Point>
+														<Point>
+															<XPos>28.52665</XPos>
+															<YPos>-29.09617</YPos>
+															<Flags>0</Flags>
+														</Point>
+														<Point>
+															<XPos>100</XPos>
+															<YPos>-200</YPos>
+															<Flags>37</Flags>
+														</Point>
+													</PointList>
+												</Curve>
+											</CurveUsageInfo>
+										</VolumeDryUsage>
+										<VolumeWetGameUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+										</VolumeWetGameUsage>
+										<VolumeWetUserUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+										</VolumeWetUserUsage>
+										<LowPassFilterUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+										</LowPassFilterUsage>
+										<HighPassFilterUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+										</HighPassFilterUsage>
+										<SpreadUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+										</SpreadUsage>
+										<FocusUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+										</FocusUsage>
+									</CurveUsageInfoList>
+								</Attenuation>
+							</Custom>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{72118ACF-B143-4486-961A-7FB2BDF46F4D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Tractor_Fixed_FX" ID="{154A73C8-6570-43BF-9C35-A11559F43F89}" ShortID="524034529">
+							<Language>SFX</Language>
+							<AudioFile>Tractor_Fixed_FX.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Tractor_Fixed_FX" ID="{154A73C8-6570-43BF-9C35-A11559F43F89}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 			</ChildrenList>

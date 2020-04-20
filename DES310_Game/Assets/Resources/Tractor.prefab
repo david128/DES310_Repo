@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 3466520905213064394}
   - component: {fileID: 7144687094139144243}
   - component: {fileID: 8460745595824511649}
-  - component: {fileID: -1687448574593428745}
-  - component: {fileID: -3608449483928984841}
+  - component: {fileID: -5563001364710885920}
+  - component: {fileID: 7450225622903957888}
   m_Layer: 0
   m_Name: Tractor
   m_TagString: Untagged
@@ -106,7 +106,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-1687448574593428745
+--- !u!114 &-5563001364710885920
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,7 +128,7 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0, z: 0}
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
---- !u!114 &-3608449483928984841
+--- !u!114 &7450225622903957888
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,7 +148,7 @@ MonoBehaviour:
   data:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 34c9543f210c227428922ce90f33cb40,
+    WwiseObjectReference: {fileID: 11400000, guid: 25fc4b7815f731846a39911735f0e564,
       type: 2}
   useCallbacks: 0
   Callbacks: []

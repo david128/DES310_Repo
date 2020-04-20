@@ -101,17 +101,6 @@
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="Ambience_Tractor" ID="{CAE8CEE9-2348-401B-B596-6A519C8EEDF8}">
-					<ChildrenList>
-						<Action Name="" ID="{77CF229E-70D1-4292-A820-1486179FC4BE}" ShortID="461128443">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Tractor_FX" ID="{443759A5-53B0-4252-BB32-852E8949CB92}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
 				<Event Name="Distribution_open" ID="{8FC0B215-746A-4508-8BB6-B15345B372AF}">
 					<ChildrenList>
 						<Action Name="" ID="{08795E98-EB0F-4A4A-AA71-CF01B16C573C}" ShortID="182028164">
@@ -162,6 +151,17 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Upgrade_FX" ID="{A988F9AC-6D18-46F6-8AAB-6AB02F547AE6}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Ambience_Tractor" ID="{FAF68BAC-5632-4590-B3E0-4E6C1114D8B9}">
+					<ChildrenList>
+						<Action Name="" ID="{D9568D27-6553-4F2F-8509-765EDD1BB32E}" ShortID="1044858173">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Tractor_Fixed_FX" ID="{8B025AA7-5289-4E11-B779-6CCA610CFCF6}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

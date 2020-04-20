@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Android" BasePlatform="Android" SchemaVersion="11" SoundbankVersion="134">
 	<RootPaths>
-		<ProjectRoot>E:\Users\Rizwan\Documents\WwiseProjects\Greener Pastures\</ProjectRoot>
-		<SourceFilesRoot>E:\Users\Rizwan\Documents\WwiseProjects\Greener Pastures\.cache\Android\</SourceFilesRoot>
-		<SoundBanksRoot>E:\Users\Rizwan\Documents\WwiseProjects\Greener Pastures\GeneratedSoundBanks\Android\</SoundBanksRoot>
+		<ProjectRoot>E:\Users\Rizwan\Documents\GitHub\DES310_Repo\Greener Pastures\</ProjectRoot>
+		<SourceFilesRoot>E:\Users\Rizwan\Documents\GitHub\DES310_Repo\Greener Pastures\.cache\Android\</SourceFilesRoot>
+		<SoundBanksRoot>E:\Users\Rizwan\Documents\GitHub\DES310_Repo\Greener Pastures\GeneratedSoundBanks\Android\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>E:\Users\Rizwan\Documents\WwiseProjects\Greener Pastures\GeneratedSoundBanks\Android</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>E:\Users\Rizwan\Documents\GitHub\DES310_Repo\Greener Pastures\GeneratedSoundBanks\Android</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -22,8 +22,8 @@
 			<Path>Game_scene.bnk</Path>
 			<IncludedEvents>
 				<Event Id="2450366615" Name="Ambience_Animals" ObjectPath="\Events\Default Work Unit\Ambience_Animals" DurationType="Infinite"/>
-				<Event Id="3850837052" Name="Ambience_Birds" ObjectPath="\Events\Default Work Unit\Ambience_Birds" DurationType="OneShot" DurationMin="94.794510" DurationMax="94.794510"/>
-				<Event Id="1045388109" Name="Ambience_Tractor" ObjectPath="\Events\Default Work Unit\Ambience_Tractor" DurationType="Infinite"/>
+				<Event Id="3850837052" Name="Ambience_Birds" ObjectPath="\Events\Default Work Unit\Ambience_Birds" MaxAttenuation="100.000000" DurationType="Infinite"/>
+				<Event Id="1045388109" Name="Ambience_Tractor" ObjectPath="\Events\Default Work Unit\Ambience_Tractor" MaxAttenuation="100.000000" DurationType="OneShot" DurationMin="67.456963" DurationMax="67.456963"/>
 				<Event Id="2222736396" Name="Bad_Ending" ObjectPath="\Events\Default Work Unit\Bad_Ending" DurationType="OneShot" DurationMin="13.931156" DurationMax="13.931156"/>
 				<Event Id="317641954" Name="ButtonPress" ObjectPath="\Events\Default Work Unit\ButtonPress" DurationType="OneShot" DurationMin="0.114512" DurationMax="0.114512"/>
 				<Event Id="2634775690" Name="Construction" ObjectPath="\Events\Default Work Unit\Construction" DurationType="OneShot" DurationMin="1.403175" DurationMax="1.403175"/>
@@ -36,6 +36,10 @@
 				<Event Id="1323090623" Name="Upgrade" ObjectPath="\Events\Default Work Unit\Upgrade" DurationType="OneShot" DurationMin="0.461542" DurationMax="0.461542"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
+				<File Id="13437860" Language="SFX">
+					<ShortName>Ambience_FX.wav</ShortName>
+					<Path>SFX\Ambience_FX_59836947.wem</Path>
+				</File>
 				<File Id="49601565" Language="SFX">
 					<ShortName>Sheep_FX.wav</ShortName>
 					<Path>SFX\Sheep_FX_FD6CF179.wem</Path>
@@ -56,10 +60,6 @@
 					<ShortName>Distribution_FX.wav</ShortName>
 					<Path>SFX\Distribution_FX_FD6CF179.wem</Path>
 				</File>
-				<File Id="261544477" Language="SFX">
-					<ShortName>Ambience_FX.wav</ShortName>
-					<Path>SFX\Ambience_FX_FD6CF179.wem</Path>
-				</File>
 				<File Id="298103595" Language="SFX">
 					<ShortName>Marketplace_FX.wav</ShortName>
 					<Path>SFX\Marketplace_FX_FD6CF179.wem</Path>
@@ -68,13 +68,13 @@
 					<ShortName>Button_FX.wav</ShortName>
 					<Path>SFX\Button_FX_FD6CF179.wem</Path>
 				</File>
+				<File Id="524034529" Language="SFX">
+					<ShortName>Tractor_Fixed_FX.wav</ShortName>
+					<Path>SFX\Tractor_Fixed_FX_10C4C929.wem</Path>
+				</File>
 				<File Id="630696804" Language="SFX">
 					<ShortName>Event_FX.wav</ShortName>
 					<Path>SFX\Event_FX_FD6CF179.wem</Path>
-				</File>
-				<File Id="704761648" Language="SFX">
-					<ShortName>Tractor_FX.wav</ShortName>
-					<Path>SFX\Tractor_FX_59836947.wem</Path>
 				</File>
 				<File Id="813171452" Language="SFX">
 					<ShortName>BadEnding_FX.wav</ShortName>
