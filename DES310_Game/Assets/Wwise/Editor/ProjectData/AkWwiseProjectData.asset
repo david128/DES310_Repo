@@ -191,7 +191,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: d1712b402b5f65419dd04dc67dc429ea
     GuidInternal: 
-    m_lastTime: -8586145623270032508
+    m_lastTime: -8586140980078388300
     List:
     - name: Game_scene
       guid: 56a7d77c68ed3447b32848cab6ec24ae
@@ -216,7 +216,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 079ed62109d6e54297838745921ea438
     GuidInternal: 
-    m_lastTime: -8586145623269962531
+    m_lastTime: -8586140986830903533
     List:
     - name: Ambience_Animals
       guid: 9abf3811d37a2d4783ae29d037fc25ba
@@ -240,8 +240,44 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Ambience_Birds
       maxAttenuation: 0
-      maxDuration: 94.79451
-      minDuration: 94.79451
+      maxDuration: -1
+      minDuration: -1
+    - name: Ambience_Chicken
+      guid: 48c5dc952b7bb748aeab9d9d53b74d21
+      id: 3046831881
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ambience_Chicken
+        ObjectType: 3
+      Path: Default Work Unit\Ambience_Chicken
+      maxAttenuation: 100
+      maxDuration: 1.856871
+      minDuration: 1.856871
+    - name: Ambience_Cow
+      guid: bbe89cf98da4c943b5453855854170e7
+      id: 275359745
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ambience_Cow
+        ObjectType: 3
+      Path: Default Work Unit\Ambience_Cow
+      maxAttenuation: 100
+      maxDuration: 2.044626
+      minDuration: 2.044626
+    - name: Ambience_Pig
+      guid: 9d6561bc8923124ab40e6736a8fb0245
+      id: 311033632
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Ambience_Pig
+        ObjectType: 3
+      Path: Default Work Unit\Ambience_Pig
+      maxAttenuation: 100
+      maxDuration: 1.369433
+      minDuration: 1.369433
     - name: Ambience_Tractor
       guid: e9cee8ca48231b40b5966a519c8eedf8
       id: 1045388109
@@ -251,7 +287,7 @@ MonoBehaviour:
       - ElementName: Ambience_Tractor
         ObjectType: 3
       Path: Default Work Unit\Ambience_Tractor
-      maxAttenuation: 0
+      maxAttenuation: 100
       maxDuration: -1
       minDuration: -1
     - name: Bad_Ending
@@ -395,7 +431,7 @@ MonoBehaviour:
       - ElementName: Upgrade
         ObjectType: 3
       Path: Default Work Unit\Upgrade
-      maxAttenuation: 0
+      maxAttenuation: 100
       maxDuration: 0.461542
       minDuration: 0.461542
   RtpcWwu:
@@ -548,6 +584,7 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /Greener Pastures
-  - /Greener Pastures/SoundBanks
+  - /Greener Pastures/Events
+  - /Greener Pastures/Events/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: Release

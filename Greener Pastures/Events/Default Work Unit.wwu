@@ -103,10 +103,10 @@
 				</Event>
 				<Event Name="Ambience_Tractor" ID="{CAE8CEE9-2348-401B-B596-6A519C8EEDF8}">
 					<ChildrenList>
-						<Action Name="" ID="{77CF229E-70D1-4292-A820-1486179FC4BE}" ShortID="461128443">
+						<Action Name="" ID="{EBB38808-4397-4559-84C0-A6EE6F67814A}" ShortID="729723186">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Tractor_FX" ID="{443759A5-53B0-4252-BB32-852E8949CB92}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}"/>
+									<ObjectRef Name="Tractor_Fixed_FX" ID="{7F566820-F497-47E8-A03F-2B1E31224A77}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -162,6 +162,39 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Upgrade_FX" ID="{A988F9AC-6D18-46F6-8AAB-6AB02F547AE6}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Ambience_Cow" ID="{F99CE8BB-A48D-43C9-B545-3855854170E7}">
+					<ChildrenList>
+						<Action Name="" ID="{BDA9F15E-E46C-4D9B-9E9D-21ADBB2477B4}" ShortID="297395129">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Cow" ID="{C0101744-FE46-4E2E-A6C3-4B64285E26A3}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Ambience_Chicken" ID="{95DCC548-7B2B-48B7-AEAB-9D9D53B74D21}">
+					<ChildrenList>
+						<Action Name="" ID="{DBCEB9C9-83D1-47C6-9C83-1976874FE163}" ShortID="525111652">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Chicken" ID="{2ABFBCD0-22FC-47AB-8074-B46378E685AF}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Ambience_Pig" ID="{BC61659D-2389-4A12-B40E-6736A8FB0245}">
+					<ChildrenList>
+						<Action Name="" ID="{AC614E4F-4CE3-46E8-AE36-FA4003E76979}" ShortID="146054805">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Pig" ID="{718D3774-C16D-4790-B6C6-9FB26125036C}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
