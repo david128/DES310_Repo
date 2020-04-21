@@ -32,7 +32,7 @@ public class ObjectOutput : MonoBehaviour
 
         //repeats the growthCycle Function after x amount of  time, every y amount of time
 
-        InvokeRepeating("GrowthCycle", 2.0f, 10.0f);
+        InvokeRepeating("GrowthCycle", 10.0f, 10.0f);
     }
 
     public void reduceMoney(float red)
