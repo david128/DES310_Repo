@@ -230,7 +230,7 @@ public class FoodScript : MonoBehaviour
                     gameManager.GetComponent<GameLoop>().GetQuotaWarning().gameObject.SetActive(true);
                     gameManager.GetComponent<InputScript>().SetAllowSelecting(false);
 
-                    if (failToFill == 5)
+                    if (failToFill == 2)
                     {
                         currentQuota = quotaCount;
                         Failure();
