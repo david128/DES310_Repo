@@ -224,7 +224,6 @@ GameObject:
   - component: {fileID: 5892576790808918299}
   - component: {fileID: 4561197128821822561}
   - component: {fileID: -88820077914311627}
-  - component: {fileID: -1472238260003644439}
   m_Layer: 0
   m_Name: Chicken
   m_TagString: Untagged
@@ -279,21 +278,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b3bb3c0bbb3c984a987972f06ad0e52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-1472238260003644439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7466399211026025224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edf237b14a943894d876bad565af84e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AttatchedToFill: 0
-  moneyOutput: 320000000000000000000000
-  foodOutput: 4b0000000000000000000000
 --- !u!1 &8720373874770083631
 GameObject:
   m_ObjectHideFlags: 0
