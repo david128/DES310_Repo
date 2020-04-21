@@ -8,6 +8,9 @@ public class MarketplaceOptions : MonoBehaviour
     public ObjectInfo.ObjectType type;
     public ObjectFill.FillType filler;
 
+    public ObjectInfo.ObjectType GetOptType() { return type; }
+    public ObjectFill.FillType GetOptFill() { return filler; }
+
     public void Quit()
     {
         InputScript i = GameObject.FindGameObjectWithTag("GameController").GetComponent<InputScript>();

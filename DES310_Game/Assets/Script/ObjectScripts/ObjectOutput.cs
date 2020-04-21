@@ -8,7 +8,7 @@ public class ObjectOutput : MonoBehaviour
 
     public bool AttatchedToFill;
     public int[] moneyOutput;
-    public int[] foodOutput;
+    public int[] foodOutput; 
     int level;
 
     //Getters
