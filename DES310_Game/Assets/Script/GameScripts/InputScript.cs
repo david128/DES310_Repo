@@ -44,6 +44,7 @@ public class InputScript : MonoBehaviour
     public GameObject gameManager;
 
     bool newRadial;
+    bool newMarket;
 
     //Selection variables
     public int selectedID;
@@ -81,6 +82,11 @@ public class InputScript : MonoBehaviour
     public bool GetNewRadialMenu() { return newRadial; }
 
     public void SetNewRadialMenu(bool r) { newRadial = r; }
+
+    //radial menu for stats
+    public bool GetNewMarketplaceMenu() { return newMarket; }
+
+    public void SetNewMarketplaceMenu(bool m) { newMarket = m; }
 
     //get Input to be called in main game loop
     public void GetInput()
