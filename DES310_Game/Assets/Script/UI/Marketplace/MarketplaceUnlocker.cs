@@ -14,6 +14,8 @@ public class MarketplaceUnlocker : MonoBehaviour
     public Button ChickenConfirm;
     public Button CarrotConfirm;
 
+    public Image padLock;
+
     //This field should be set by the inspector
     public int[] farmhouseRequirement;
     public int[] barnRequirement;
@@ -39,11 +41,18 @@ public class MarketplaceUnlocker : MonoBehaviour
 
         for (int i = 0; i < marketButtons.Length; i++)
         {
+            Image locked;
+
+            locked = padLock;
+
             unlock = currentFarmLevel >= farmhouseRequirement[i] && currentBarnLevel >= barnRequirement[i] && currentResearchLevel >= researchRequirement[i];
 
             if (unlock == false)
             {
                 marketButtons[i].interactable = false;
+
+                locked = Instantiate(padLock, marketButtons[i].transform.position, Quaternion.identity, marketButtons[i].transform);
+                //Instantiate(Resources.Load("Padlock"), new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity, marketButtons[i].transform);
             }
             else
             {
@@ -59,6 +68,8 @@ public class MarketplaceUnlocker : MonoBehaviour
                 else
                 {
                     marketButtons[i].interactable = false;
+
+                    locked = Instantiate(padLock, marketButtons[i].transform.position, Quaternion.identity, marketButtons[i].transform);
                 }
 
                 if (TutorialEvents.instance.GetChickenBuilt() == false)
