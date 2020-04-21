@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3326284400731081121}
   - component: {fileID: 3326284400731081120}
   - component: {fileID: 3326284400731081123}
+  - component: {fileID: -4210609679569517192}
   m_Layer: 0
   m_Name: MeatLab_lvl2
   m_TagString: Untagged
@@ -171,6 +172,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16a9890003ad75e44a2160c8797ef730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pol_lvl1: 0
-  pol_lvl2: 0
-  pol_lvl3: 0
+  pol_lvl1: -10
+  pol_lvl2: -15
+  pol_lvl3: -20
+--- !u!114 &-4210609679569517192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6703813790397825470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf237b14a943894d876bad565af84e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttatchedToFill: 0
+  moneyOutput: ecffffff0000000014000000
+  foodOutput: 2c01000090010000f4010000
