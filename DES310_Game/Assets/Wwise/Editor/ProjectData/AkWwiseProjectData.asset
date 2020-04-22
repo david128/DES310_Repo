@@ -191,8 +191,17 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: d1712b402b5f65419dd04dc67dc429ea
     GuidInternal: 
-    m_lastTime: -8586140980078388300
+    m_lastTime: -8586140845177657521
     List:
+    - name: End_game
+      guid: cc7c88a1a34fbc489cebfb302c44ee81
+      id: 3717848113
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: End_game
+        ObjectType: 7
+      Path: Default Work Unit\End_game
     - name: Game_scene
       guid: 56a7d77c68ed3447b32848cab6ec24ae
       id: 1983675242
@@ -211,12 +220,39 @@ MonoBehaviour:
       - ElementName: Main_Menu
         ObjectType: 7
       Path: Default Work Unit\Main_Menu
+    - name: Sample_Scene
+      guid: d4535ce3b81c3041a3247693bf49fe4f
+      id: 2517215346
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Sample_Scene
+        ObjectType: 7
+      Path: Default Work Unit\Sample_Scene
+    - name: Splash_Screen
+      guid: 2864f966b12e7640b7d9bd86191eed89
+      id: 3514087899
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Splash_Screen
+        ObjectType: 7
+      Path: Default Work Unit\Splash_Screen
+    - name: Tutorial
+      guid: 886c012978529249823fc59926025754
+      id: 3762955427
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Tutorial
+        ObjectType: 7
+      Path: Default Work Unit\Tutorial
   EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 079ed62109d6e54297838745921ea438
     GuidInternal: 
-    m_lastTime: -8586140986830903533
+    m_lastTime: -8586140908037532299
     List:
     - name: Ambience_Animals
       guid: 9abf3811d37a2d4783ae29d037fc25ba
@@ -252,8 +288,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Ambience_Chicken
       maxAttenuation: 100
-      maxDuration: 1.856871
-      minDuration: 1.856871
+      maxDuration: -1
+      minDuration: -1
     - name: Ambience_Cow
       guid: bbe89cf98da4c943b5453855854170e7
       id: 275359745
@@ -264,8 +300,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Ambience_Cow
       maxAttenuation: 100
-      maxDuration: 2.044626
-      minDuration: 2.044626
+      maxDuration: -1
+      minDuration: -1
     - name: Ambience_Pig
       guid: 9d6561bc8923124ab40e6736a8fb0245
       id: 311033632
@@ -276,8 +312,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Ambience_Pig
       maxAttenuation: 100
-      maxDuration: 1.369433
-      minDuration: 1.369433
+      maxDuration: -1
+      minDuration: -1
     - name: Ambience_Tractor
       guid: e9cee8ca48231b40b5966a519c8eedf8
       id: 1045388109
@@ -300,8 +336,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Bad_Ending
       maxAttenuation: 0
-      maxDuration: 13.931156
-      minDuration: 13.931156
+      maxDuration: -1
+      minDuration: -1
     - name: ButtonPress
       guid: 77d271c8e90e7743b696e6125ed696ca
       id: 317641954
@@ -384,8 +420,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Good_Ending
       maxAttenuation: 0
-      maxDuration: 27.923084
-      minDuration: 27.923084
+      maxDuration: -1
+      minDuration: -1
     - name: MenuSong
       guid: d36c45c11e49d04793589874b362310b
       id: 522020387
@@ -410,6 +446,18 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: New_Open_Market
+      guid: 53b986605fb17245965c782c4dfabd3b
+      id: 432469531
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: New_Open_Market
+        ObjectType: 3
+      Path: Default Work Unit\New_Open_Market
+      maxAttenuation: 0
+      maxDuration: 1.321043
+      minDuration: 1.321043
     - name: OpenMarket
       guid: 751f05f11f941742880eb073600b65ef
       id: 2067451325
@@ -422,6 +470,18 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 3.245034
       minDuration: 3.245034
+    - name: Splash
+      guid: 534733c99b4c194884dc15487fa46eb8
+      id: 160038168
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Splash
+        ObjectType: 3
+      Path: Default Work Unit\Splash
+      maxAttenuation: 0
+      maxDuration: 8.738571
+      minDuration: 8.738571
     - name: Upgrade
       guid: 35197157c2608f4bbebe703f3a5c64ee
       id: 1323090623
@@ -584,7 +644,5 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /Greener Pastures
-  - /Greener Pastures/Events
-  - /Greener Pastures/Events/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: Release

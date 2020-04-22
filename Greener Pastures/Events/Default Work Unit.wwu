@@ -200,6 +200,28 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="New_Open_Market" ID="{6086B953-B15F-4572-965C-782C4DFABD3B}">
+					<ChildrenList>
+						<Action Name="" ID="{FA84ED87-B84D-41A0-BE60-833AB88C4A86}" ShortID="635232115">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="N_Market_FX" ID="{20368C8C-87BA-43C2-923E-C6E310755EDA}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Splash" ID="{C9334753-4C9B-4819-84DC-15487FA46EB8}">
+					<ChildrenList>
+						<Action Name="" ID="{BC689E58-A1AE-4B03-A2A9-34717637E9E7}" ShortID="161595301">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Splash_song" ID="{9F3C7BE7-20AE-45E3-AA4A-4ADA89A1C1F4}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
