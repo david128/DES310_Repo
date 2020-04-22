@@ -594,6 +594,7 @@ public class Events : MonoBehaviour
                         i += 1;
                         ObjectFill.FillType et;
                         if (ObjectFill.FillType.TryParse((lines[i]).ToUpper(), out et) != true) { Debug.LogError("Error: effect fill type does not match fill enum in events file"); } //check that this
+                        newEffect.SetFillEffected(et);
                         break;
 
                     case ("MONEY_EFFECT"):
