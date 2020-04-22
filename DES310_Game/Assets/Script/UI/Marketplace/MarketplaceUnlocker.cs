@@ -51,7 +51,7 @@ public class MarketplaceUnlocker : MonoBehaviour
             {
                 marketButtons[i].interactable = false;
 
-                locked = Instantiate(padLock, marketButtons[i].transform.position, Quaternion.identity, marketButtons[i].transform);
+                Instantiate(padLock, new Vector3(marketButtons[i].transform.position.x + 38.1f, marketButtons[i].transform.position.y - 32.4f, marketButtons[i].transform.position.z), Quaternion.identity, marketButtons[i].transform);
                 //Instantiate(Resources.Load("Padlock"), new Vector3(0.0f, 0.0f, 0.0f), Quaternion.identity, marketButtons[i].transform);
             }
             else
@@ -61,17 +61,6 @@ public class MarketplaceUnlocker : MonoBehaviour
 
             if (TutorialManager.instance != null && TutorialManager.instance.GetTutorial() == true)
             {
-                if (marketButtons[i].name == "Chick" || marketButtons[i].name == "Carrot")
-                {
-                    marketButtons[i].interactable = true;
-                }
-                else
-                {
-                    marketButtons[i].interactable = false;
-
-                    locked = Instantiate(padLock, marketButtons[i].transform.position, Quaternion.identity, marketButtons[i].transform);
-                }
-
                 if (TutorialEvents.instance.GetChickenBuilt() == false)
                 {
                     GrainTab.SetActive(false);
@@ -79,14 +68,22 @@ public class MarketplaceUnlocker : MonoBehaviour
                     AnimalTab.SetActive(true);
                     SpecialsTab.SetActive(false);
                     BuildingTab.SetActive(false);
-                    
+
                     bool tempTrue = true;
 
                     if (marketButtons[i].name == "Chick")
                     {
+                        marketButtons[i].interactable = true;
+
                         marketButtons[i].onClick.AddListener(delegate { TutorialEvents.instance.SetChickenMenuOpen(tempTrue); });
                         ChickenConfirm.onClick.AddListener(delegate { TutorialEvents.instance.SetChickenBuilt(tempTrue); });
                         ChickenConfirm.onClick.AddListener(delegate { TutorialManager.instance.SetTutorialBox(tempTrue); });
+                    }
+                    else
+                    {
+                        marketButtons[i].interactable = false;
+
+                        Instantiate(padLock, new Vector3(marketButtons[i].transform.position.x + 38.1f, marketButtons[i].transform.position.y - 32.4f, marketButtons[i].transform.position.z), Quaternion.identity, marketButtons[i].transform);
                     }
                 }
 
@@ -99,11 +96,20 @@ public class MarketplaceUnlocker : MonoBehaviour
                     BuildingTab.SetActive(false);
 
                     bool tempTrue = true;
+
                     if (marketButtons[i].name == "Carrot")
                     {
+                        marketButtons[i].interactable = true;
+
                         marketButtons[i].onClick.AddListener(delegate { TutorialEvents.instance.SetCarrotMenuOpen(tempTrue); });
                         CarrotConfirm.onClick.AddListener(delegate { TutorialEvents.instance.SetChickenBuilt(tempTrue); });
                         CarrotConfirm.onClick.AddListener(delegate { TutorialManager.instance.SetTutorialBox(tempTrue); });
+                    }
+                    else
+                    {
+                        marketButtons[i].interactable = false;
+
+                        Instantiate(padLock, new Vector3(marketButtons[i].transform.position.x + 38.1f, marketButtons[i].transform.position.y - 32.4f, marketButtons[i].transform.position.z), Quaternion.identity, marketButtons[i].transform);
                     }
                 }
             }
