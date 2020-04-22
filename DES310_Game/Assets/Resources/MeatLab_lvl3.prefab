@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: -180006810955896846}
   - component: {fileID: -1814115113097031469}
   - component: {fileID: -6556462679765986949}
+  - component: {fileID: -2189510201499673005}
   m_Layer: 0
   m_Name: MeatLab_lvl3
   m_TagString: Untagged
@@ -240,3 +241,16 @@ MonoBehaviour:
   eventIdInternal: 0
   valueGuidInternal: 
   m_callbackDataInternal: {fileID: 0}
+--- !u!114 &-2189510201499673005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881223475395506932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea5c64a0edbc99b44870f36e22d14ba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fillType: 0

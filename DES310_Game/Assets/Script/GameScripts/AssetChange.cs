@@ -108,7 +108,7 @@ public class AssetChange : MonoBehaviour
                 return (GameObject)Instantiate(Resources.Load("MeatLab" + lvlExtension), transform.position, Quaternion.identity);
 
             case ObjectInfo.ObjectType.BATTERY:
-                return (GameObject)Instantiate(Resources.Load("MeatLab" + lvlExtension), transform.position, Quaternion.identity);
+                return (GameObject)Instantiate(Resources.Load("BatteryFarm" + lvlExtension), transform.position, Quaternion.identity);
 
             default:
                 return null;
