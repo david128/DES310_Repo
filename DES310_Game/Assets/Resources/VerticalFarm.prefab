@@ -125,6 +125,8 @@ GameObject:
   - component: {fileID: 7725105936565053091}
   - component: {fileID: 5277744042836856840}
   - component: {fileID: 4186855130131797255}
+  - component: {fileID: -1642241258844778060}
+  - component: {fileID: 2891169741113842534}
   m_Layer: 0
   m_Name: VerticalFarm
   m_TagString: Untagged
@@ -189,7 +191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AttatchedToFill: 0
   moneyOutput: 2c01000090010000f4010000
-  foodOutput: 14000000140000001e000000
+  foodOutput: 14000000190000001e000000
 --- !u!114 &-456610134402423619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,9 +259,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16a9890003ad75e44a2160c8797ef730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pol_lvl1: -20
-  pol_lvl2: 0
-  pol_lvl3: 0
+  pol_lvl1: -15
+  pol_lvl2: -25
+  pol_lvl3: -35
+  moneyOutput: 
+--- !u!114 &-1642241258844778060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769837288256873047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1827a24a69115ec43aa074d88aabc621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 1
+  isStaticObject: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
+--- !u!114 &2891169741113842534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769837288256873047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a0a958a2903ce345a557c43de6d7609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: ae8d9d44
+  useOtherObject: 0
+  actionOnEventType: 2
+  curveInterpolation: 4
+  enableActionOnEvent: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 668cff7dc2fa31e4b81c2406d9bbbff6,
+      type: 2}
+  useCallbacks: 0
+  Callbacks: []
+  playingId: 0
+  soundEmitterObject: {fileID: 0}
+  transitionDuration: 0
+  eventIdInternal: 0
+  valueGuidInternal: 
+  m_callbackDataInternal: {fileID: 0}
 --- !u!1 &4152337148165702058
 GameObject:
   m_ObjectHideFlags: 0

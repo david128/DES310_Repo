@@ -21,8 +21,8 @@ public class GameInfo : MonoBehaviour
             case ObjectInfo.ObjectType.BARN:
                 data.purchaseCost = 0;
                 data.levels = 3;
-                data.level2Cost = 3000;
-                data.level3Cost = 10000;
+                data.level2Cost = 1250;
+                data.level3Cost = 2500;
                 break;
 
             case ObjectInfo.ObjectType.EMPTY:
@@ -35,8 +35,8 @@ public class GameInfo : MonoBehaviour
             case ObjectInfo.ObjectType.FARMHOUSE:
                 data.purchaseCost = 0;
                 data.levels = 3;
-                data.level2Cost = 1500;
-                data.level3Cost = 8000;
+                data.level2Cost = 1000;
+                data.level3Cost = 2000;
                 break;
 
             case ObjectInfo.ObjectType.FIELD:
@@ -44,52 +44,52 @@ public class GameInfo : MonoBehaviour
                 switch (fill)
                 {
                     case ObjectFill.FillType.CARROT:
-                        data.purchaseCost = 250;
+                        data.purchaseCost = 200;
                         data.levels = 3;
-                        data.level2Cost = 600;
-                        data.level3Cost = 1200;
+                        data.level2Cost = 150;
+                        data.level3Cost = 200;
                         break;
                     case ObjectFill.FillType.COCCOA:
-                        data.purchaseCost = 1500;
+                        data.purchaseCost = 750;
                         data.levels = 3;
-                        data.level2Cost = 3000;
-                        data.level3Cost = 4500;
+                        data.level2Cost = 500;
+                        data.level3Cost = 600;
                         break;
                     case ObjectFill.FillType.CORN:
-                        data.purchaseCost = 300;
+                        data.purchaseCost = 250;
                         data.levels = 3;
-                        data.level2Cost = 800;
-                        data.level3Cost = 2000;
+                        data.level2Cost = 150;
+                        data.level3Cost = 225;
                         break;
                     case ObjectFill.FillType.WHEAT:
-                        data.purchaseCost = 450;
+                        data.purchaseCost = 400;
                         data.levels = 3;
-                        data.level2Cost = 900;
-                        data.level3Cost = 1800;
+                        data.level2Cost = 450;
+                        data.level3Cost = 500;
                         break;
                     case ObjectFill.FillType.TURNIP:
                         data.purchaseCost = 200;
                         data.levels = 3;
-                        data.level2Cost = 400;
-                        data.level3Cost = 800;
+                        data.level2Cost = 50;
+                        data.level3Cost = 100;
                         break;
                     case ObjectFill.FillType.SUGARCANE:
-                        data.purchaseCost = 1000;
+                        data.purchaseCost = 635;
                         data.levels = 3;
-                        data.level2Cost = 2000;
-                        data.level3Cost = 5000;
+                        data.level2Cost = 450;
+                        data.level3Cost = 550;
                         break;
                     case ObjectFill.FillType.SUNFLOWER:
-                        data.purchaseCost = 750;
-                        data.levels = 3;
-                        data.level2Cost = 1500;
-                        data.level3Cost = 3500;
-                        break;
-                    case ObjectFill.FillType.POTATO:
-                        data.purchaseCost = 150;
+                        data.purchaseCost = 500;
                         data.levels = 3;
                         data.level2Cost = 400;
-                        data.level3Cost = 1000;
+                        data.level3Cost = 500;
+                        break;
+                    case ObjectFill.FillType.POTATO:
+                        data.purchaseCost = 250;
+                        data.levels = 3;
+                        data.level2Cost = 100;
+                        data.level3Cost = 150;
                         break;
                     default:
                         break;
@@ -98,45 +98,52 @@ public class GameInfo : MonoBehaviour
                 break;
 
             case ObjectInfo.ObjectType.RICE:
-                data.purchaseCost = 350;
+                data.purchaseCost = 300;
                 data.levels = 3;
-                data.level2Cost = 700;
-                data.level3Cost = 1250;
+                data.level2Cost = 350;
+                data.level3Cost = 350;
                 break;
 
             case ObjectInfo.ObjectType.PIG_PEN:
-                data.purchaseCost = 600;
+                data.purchaseCost = 425;
                 data.levels = 3;
-                data.level2Cost = 1200;
-                data.level3Cost = 2500;
+                data.level2Cost = 250;
+                data.level3Cost = 350;
                 break;
 
             case ObjectInfo.ObjectType.COW_FIELD:
-                data.purchaseCost = 1000;
+                data.purchaseCost = 600;
                 data.levels = 3;
-                data.level2Cost = 2000;
-                data.level3Cost = 5000;
+                data.level2Cost = 275;
+                data.level3Cost = 400;
                 break;
 
             case ObjectInfo.ObjectType.CHICKEN_COOP:
                 data.purchaseCost = 350;
                 data.levels = 3;
-                data.level2Cost = 700;
-                data.level3Cost = 1500;
+                data.level2Cost = 200;
+                data.level3Cost = 300;
                 break;
 
             case ObjectInfo.ObjectType.RESEARCH:
-                data.purchaseCost = 350;
+                data.purchaseCost = 0;
                 data.levels = 3;
-                data.level2Cost = 1250;
-                data.level3Cost = 10000;
+                data.level2Cost = 1500;
+                data.level3Cost = 3000;
                 break;
 
             case ObjectInfo.ObjectType.VERTICAL_FARM:
-                data.purchaseCost = 3500;
+                data.purchaseCost = 1200;
                 data.levels = 3;
-                data.level2Cost = 5000;
-                data.level3Cost = 7500;
+                data.level2Cost = 600;
+                data.level3Cost = 700;
+                break;
+
+            case ObjectInfo.ObjectType.MEAT_LAB:
+                data.purchaseCost = 1000;
+                data.levels = 3;
+                data.level2Cost = 600;
+                data.level3Cost = 700;
                 break;
 
             default:
