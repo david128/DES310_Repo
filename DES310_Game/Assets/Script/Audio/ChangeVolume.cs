@@ -14,7 +14,7 @@ public class ChangeVolume : MonoBehaviour
     {
         float sliderValue = thisSlider.value;
 
-        if(valueType == "Master")
+        if (valueType == "Master")
         {
             masterVolume = thisSlider.value;
 

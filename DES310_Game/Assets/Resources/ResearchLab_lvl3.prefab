@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 3973211443767463192}
   - component: {fileID: 4874650681219623573}
   - component: {fileID: -1669761105160286137}
+  - component: {fileID: -8514081499248827040}
   m_Layer: 0
   m_Name: ResearchLab_lvl3
   m_TagString: Untagged
@@ -269,3 +270,18 @@ MonoBehaviour:
   eventIdInternal: 0
   valueGuidInternal: 
   m_callbackDataInternal: {fileID: 0}
+--- !u!114 &-8514081499248827040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4247050059805871269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf237b14a943894d876bad565af84e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttatchedToFill: 0
+  moneyOutput: 000000000000000000000000
+  foodOutput: 000000000000000000000000

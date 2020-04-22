@@ -17,6 +17,8 @@ public class RadialStats : MonoBehaviour
     public TextMeshProUGUI foodText;
     public TextMeshProUGUI nextFoodText;
     public TextMeshProUGUI upgradeText;
+    public TextMeshProUGUI moneyPlusSymbol;
+    public TextMeshProUGUI foodPlusSymbol;
 
     public int[] money;
     public int moneyCurrent;
@@ -110,16 +112,26 @@ public class RadialStats : MonoBehaviour
         {
             nextMoneyText.text = "";
             nextFoodText.text = "";
+            moneyPlusSymbol.text = "";
+            foodPlusSymbol.text = "";
             upgradeText.text = "Completed";
         }
 
         if(selectedTile.GetComponent<ObjectInfo>().GetObjectType() == ObjectInfo.ObjectType.FARMHOUSE || selectedTile.GetComponent<ObjectInfo>().GetObjectType() == ObjectInfo.ObjectType.BARN || selectedTile.GetComponent<ObjectInfo>().GetObjectType() == ObjectInfo.ObjectType.RESEARCH)
         {
-            moneyText.text = "No output";
-            foodText.text = "No output";
+            if(moneyCurrent == 0)
+            {
+                moneyText.text = "No output";
+                nextMoneyText.text = "";
+                moneyPlusSymbol.text = "";
+            }
 
-            nextMoneyText.text = "";
-            nextFoodText.text = "";
+            if(foodCurrent == 0)
+            {
+                foodText.text = "No output";
+                nextFoodText.text = "";
+                foodPlusSymbol.text = "";
+            }
         }
 
         //gets current sustainability value

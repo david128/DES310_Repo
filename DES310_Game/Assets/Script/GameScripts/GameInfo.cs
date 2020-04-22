@@ -146,6 +146,13 @@ public class GameInfo : MonoBehaviour
                 data.level3Cost = 700;
                 break;
 
+            case ObjectInfo.ObjectType.BATTERY:
+                data.purchaseCost = 750;
+                data.levels = 3;
+                data.level2Cost = 500;
+                data.level3Cost = 600;
+                break;
+
             default:
                 break;
 

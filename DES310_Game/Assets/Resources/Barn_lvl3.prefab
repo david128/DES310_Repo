@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4165144675683204194}
   - component: {fileID: -7983737220450296963}
   - component: {fileID: -759990428134272967}
+  - component: {fileID: -7286804213252784314}
   - component: {fileID: -2490335131934134765}
   - component: {fileID: -6240306902336758009}
   - component: {fileID: 6461789627042007874}
@@ -113,6 +114,21 @@ MonoBehaviour:
   pol_lvl2: 0
   pol_lvl3: 0
   moneyOutput: 
+--- !u!114 &-7286804213252784314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705080105096421812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf237b14a943894d876bad565af84e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttatchedToFill: 0
+  moneyOutput: 000000000000000000000000
+  foodOutput: 000000000000000000000000
 --- !u!95 &-2490335131934134765
 Animator:
   serializedVersion: 3
