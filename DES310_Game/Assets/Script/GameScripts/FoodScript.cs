@@ -181,7 +181,7 @@ public class FoodScript : MonoBehaviour
 
                     gameManager.GetComponent<Currency>().AddMoney(moneyGain);
 
-                    if (quotaCount != 9)
+                    if (quotaCount != 5)
                     {
                         Debug.Log("Quota " + quotaCount + " completed");
                         quotaCount++;
