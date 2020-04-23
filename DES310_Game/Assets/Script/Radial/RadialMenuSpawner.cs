@@ -11,17 +11,43 @@ public class RadialMenuSpawner : MonoBehaviour
 
     public RadialMenu menuPrefab;
     public bool awake = false;
+    bool canCreateNewRadial = true;
 
     //getters
     public bool GetAwake() { return awake; }
-    public void DisableStatsMenus() { for (int i = 0; i < statsMenus.Length; i++) { statsMenus[i].SetActive(false); } }
+    public bool GetCanCreateNewRadial() { return canCreateNewRadial; }
 
     //setters
     public void SetAwake(bool a) { awake = a; }
+    public void SetCanCreateNewRadial(bool c) { canCreateNewRadial = c; }
+
+    public void DisableStatsMenus() { for (int i = 0; i < statsMenus.Length; i++) { statsMenus[i].SetActive(false); } }
 
     private void Awake()
     {
         instance = this; // should be using a singleton pattern or something.
+    }
+
+    public void DestroyRadial(GameObject gameObj)
+    {
+        Destroy(gameObj);
+
+        StartCoroutine(WaitForNewRadial());
+    }
+
+    public IEnumerator WaitForNewRadial()
+    {
+        float counter = 0;
+        float waitTime = 1.0f;
+
+        //Now, Wait until the current state is done playing
+        while (counter < (waitTime))
+        {
+            counter += Time.deltaTime;
+            yield return null;
+        }
+
+        canCreateNewRadial = true;
     }
 
     public void SpawnMenu(RadialPressable obj)
