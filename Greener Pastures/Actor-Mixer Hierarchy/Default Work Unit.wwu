@@ -32,7 +32,7 @@
 							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+							<ObjectRef Name="Music" ID="{2F84E593-CB4C-4D9F-95A1-0CDAF164A719}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -58,7 +58,7 @@
 							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+							<ObjectRef Name="Sounds" ID="{3468EB0E-D477-49D4-AB99-8417D0CC24E6}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -101,7 +101,7 @@
 					<PropertyList>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>18</Value>
+								<Value>10</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -110,7 +110,7 @@
 							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+							<ObjectRef Name="Sounds" ID="{3468EB0E-D477-49D4-AB99-8417D0CC24E6}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -125,9 +125,14 @@
 				</Sound>
 				<Sound Name="Distribution_FX" ID="{BDF6DC93-CB2A-4A70-9AFD-0BB0EE6BE664}" ShortID="96529251">
 					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-200</Value>
+							</ValueList>
+						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>40</Value>
+								<Value>30</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -136,7 +141,7 @@
 							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+							<ObjectRef Name="Sounds" ID="{3468EB0E-D477-49D4-AB99-8417D0CC24E6}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -162,7 +167,7 @@
 							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+							<ObjectRef Name="Sounds" ID="{3468EB0E-D477-49D4-AB99-8417D0CC24E6}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -199,7 +204,7 @@
 							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+							<ObjectRef Name="Music" ID="{2F84E593-CB4C-4D9F-95A1-0CDAF164A719}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -225,7 +230,7 @@
 							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+							<ObjectRef Name="Sounds" ID="{3468EB0E-D477-49D4-AB99-8417D0CC24E6}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -251,7 +256,7 @@
 							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+							<ObjectRef Name="Music" ID="{2F84E593-CB4C-4D9F-95A1-0CDAF164A719}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -289,7 +294,7 @@
 							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+							<ObjectRef Name="Music" ID="{2F84E593-CB4C-4D9F-95A1-0CDAF164A719}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -328,7 +333,7 @@
 							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+							<ObjectRef Name="Sounds" ID="{3468EB0E-D477-49D4-AB99-8417D0CC24E6}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -591,7 +596,7 @@
 							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+							<ObjectRef Name="Sounds" ID="{3468EB0E-D477-49D4-AB99-8417D0CC24E6}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -610,9 +615,14 @@
 				</Sound>
 				<Sound Name="DistributionClose_FX" ID="{3D3C1DF7-BB95-40F8-9DCE-D151C20BC843}" ShortID="477959397">
 					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-200</Value>
+							</ValueList>
+						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>35</Value>
+								<Value>30</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -621,7 +631,7 @@
 							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+							<ObjectRef Name="Sounds" ID="{3468EB0E-D477-49D4-AB99-8417D0CC24E6}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -711,7 +721,7 @@
 							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+							<ObjectRef Name="Sounds" ID="{3468EB0E-D477-49D4-AB99-8417D0CC24E6}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -742,7 +752,7 @@
 							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+							<ObjectRef Name="Sounds" ID="{3468EB0E-D477-49D4-AB99-8417D0CC24E6}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -760,7 +770,7 @@
 						<Property Name="3DSpatialization" Type="int16" Value="2"/>
 						<Property Name="InitialDelay" Type="Real64">
 							<ValueList>
-								<Value>2</Value>
+								<Value>5</Value>
 							</ValueList>
 						</Property>
 						<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
@@ -773,7 +783,7 @@
 						<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
 						<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
 						<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="3"/>
-						<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="20">
+						<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="40">
 							<ModifierList>
 								<ModifierInfo>
 									<Modifier Name="" ID="{7437C5CC-4F89-4D48-8555-65AEB731D333}">
@@ -861,7 +871,7 @@
 							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+							<ObjectRef Name="Sounds" ID="{3468EB0E-D477-49D4-AB99-8417D0CC24E6}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -892,7 +902,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>9</Value>
+										<Value>5</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -932,7 +942,7 @@
 						<Property Name="3DSpatialization" Type="int16" Value="2"/>
 						<Property Name="InitialDelay" Type="Real64">
 							<ValueList>
-								<Value>4</Value>
+								<Value>10</Value>
 							</ValueList>
 						</Property>
 						<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
@@ -945,7 +955,7 @@
 						<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
 						<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
 						<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="3"/>
-						<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="20">
+						<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="40">
 							<ModifierList>
 								<ModifierInfo>
 									<Modifier Name="" ID="{F2B47D88-D635-421E-9142-55A096CF2A9F}">
@@ -1033,7 +1043,7 @@
 							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+							<ObjectRef Name="Sounds" ID="{3468EB0E-D477-49D4-AB99-8417D0CC24E6}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -1064,7 +1074,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>15</Value>
+										<Value>10</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1096,7 +1106,7 @@
 						<Property Name="3DSpatialization" Type="int16" Value="2"/>
 						<Property Name="InitialDelay" Type="Real64">
 							<ValueList>
-								<Value>7</Value>
+								<Value>15</Value>
 							</ValueList>
 						</Property>
 						<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
@@ -1109,7 +1119,7 @@
 						<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
 						<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
 						<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="3"/>
-						<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="20">
+						<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="40">
 							<ModifierList>
 								<ModifierInfo>
 									<Modifier Name="" ID="{19BF61CF-EEBD-4E21-887F-88C4E5D8F191}">
@@ -1197,7 +1207,7 @@
 							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+							<ObjectRef Name="Sounds" ID="{3468EB0E-D477-49D4-AB99-8417D0CC24E6}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -1247,7 +1257,7 @@
 							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+							<ObjectRef Name="Music" ID="{2F84E593-CB4C-4D9F-95A1-0CDAF164A719}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
