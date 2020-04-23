@@ -14,6 +14,15 @@ public class RadialMenu : MonoBehaviour
 
     int[] levels = new int[3];
 
+
+    public AK.Wwise.Bank MyBank = null;
+    public AK.Wwise.Event MyEvent = null;
+    public void Start()
+    {
+        MyBank.Load();
+
+    }
+
     public void SpawnButtons(RadialPressable obj)
     {
         //finds game manager
@@ -38,6 +47,14 @@ public class RadialMenu : MonoBehaviour
             newButton.circle.color = obj.options[i].Color;
             newButton.symbol.sprite = obj.options[i].Symbol;
             newButton.title = obj.options[i].Title;
+
+            if (newButton.title == "Demolish")
+            {
+                newButton.gameObject.tag = "DemolishButton";
+                MyBank = gameManager.GetComponent<GameLoop>().MyBank;
+                MyEvent = gameManager.GetComponent<GameLoop>().MyEvent;
+
+            }
 
             if (TutorialEvents.instance != null && TutorialEvents.instance.GetCurrentEvent() == TutorialEvents.TutEvents.RadialFlash)
             {
@@ -110,6 +127,10 @@ public class RadialMenu : MonoBehaviour
             }
             else if (selected.title == "Demolish")
             {
+                AkSoundEngine.RegisterGameObj(GameObject.FindGameObjectWithTag("DemolishButton"));
+                AkSoundEngine.PostEvent("Destruction", GameObject.FindGameObjectWithTag("DemolishButton"));
+                AkSoundEngine.UnregisterGameObj(GameObject.FindGameObjectWithTag("DemolishButton"));
+
                 gameManager.GetComponent<InputScript>().AttemptDemolish(selectedID);
 
                 if (TutorialEvents.instance != null && TutorialEvents.instance.GetCurrentEvent() == TutorialEvents.TutEvents.RadialFlash)
@@ -118,7 +139,6 @@ public class RadialMenu : MonoBehaviour
                     TutorialEvents.instance.RunEvent(3);
                 }
             }
-
             Destroy(gameObject);
 
             RadialMenuSpawner.instance.SetAwake(false);

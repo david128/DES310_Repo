@@ -8,6 +8,9 @@ public class GameLoop : MonoBehaviour
 {
     //Declare variables
     public GameObject gameManager, textManager;
+   
+    public AK.Wwise.Bank MyBank = null;
+    public AK.Wwise.Event MyEvent = null;
 
     //Warnings
     public Image UpgradeWarning;

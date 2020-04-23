@@ -184,7 +184,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: dbcfad87071d07448879b73debffb608
     GuidInternal: 
-    m_lastTime: -8586146427670095370
+    m_lastTime: -8586139470816794617
     List: []
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
@@ -384,8 +384,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Distribution_Close
       maxAttenuation: 0
-      maxDuration: 0.822721
-      minDuration: 0.822721
+      maxDuration: 0.923473
+      minDuration: 0.923473
     - name: Distribution_open
       guid: 15b2c08f6a7408458bb6b15345b372af
       id: 4047050990
@@ -396,8 +396,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Distribution_open
       maxAttenuation: 0
-      maxDuration: 1.653605
-      minDuration: 1.653605
+      maxDuration: 1.856109
+      minDuration: 1.856109
     - name: Event_Sound
       guid: 2021be103e3f904fbdff9f97904a233a
       id: 3752309239
@@ -499,8 +499,41 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 0474bbabbe023d45a14128a73e3e991a
     GuidInternal: 
-    m_lastTime: -8586146427669905460
-    List: []
+    m_lastTime: -8586139470973919757
+    List:
+    - name: MasterVolume
+      guid: d82a9b4acd027446aadad89eadabc3cb
+      id: 2918011349
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Volume
+        ObjectType: 4
+      - ElementName: MasterVolume
+        ObjectType: 13
+      Path: Default Work Unit\Volume\MasterVolume
+    - name: MusicVolume
+      guid: bd28c8b06b994d43921f20160ba200c1
+      id: 2346531308
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Volume
+        ObjectType: 4
+      - ElementName: MusicVolume
+        ObjectType: 13
+      Path: Default Work Unit\Volume\MusicVolume
+    - name: SFXVolume
+      guid: 6ef4c87c7d9797479ad282433bf945e7
+      id: 988953028
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Volume
+        ObjectType: 4
+      - ElementName: SFXVolume
+        ObjectType: 13
+      Path: Default Work Unit\Volume\SFXVolume
   - PhysicalPath: Game Parameters\Factory Motion.wwu
     ParentPhysicalPath: 
     guid: 225213d7dbd1d042adc0930743567776
@@ -644,5 +677,7 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /Greener Pastures
+  - /Greener Pastures/Events
+  - /Greener Pastures/Events/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: Release
