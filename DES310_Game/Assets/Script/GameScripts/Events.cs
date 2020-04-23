@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class Events : MonoBehaviour
 {
     public GameObject gameManager;
-    public Image eventUI;
+    public GameObject eventUI;
 
     string path =  "/events.txt";
 
