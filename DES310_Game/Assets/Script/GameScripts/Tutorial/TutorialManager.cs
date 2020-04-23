@@ -66,7 +66,7 @@ public class TutorialManager : MonoBehaviour
             StartCoroutine(UpdateClipLength(camAnim, true));
         }
 
-        endCountdownTime = 15;
+        endCountdownTime = 15.0f;
     }
 
     // Update is called once per frame
