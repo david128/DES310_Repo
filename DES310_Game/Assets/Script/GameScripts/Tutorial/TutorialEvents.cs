@@ -38,6 +38,7 @@ public class TutorialEvents : MonoBehaviour
     bool farmhouse;
 
     //Distribution
+    bool chosenDistributor;
     bool distributionExit;
 
     //PanCamera
@@ -60,6 +61,7 @@ public class TutorialEvents : MonoBehaviour
     public void SetStartMoneyUIFlash(bool s) { startMoneyFlash = s; }
     public void SetDestroyedCarrot(bool d) { destroyedCarrot = d; }
     public void SetFarmhouse(bool f) { farmhouse = f; }
+    public void SetChosenDistributor(bool d) { chosenDistributor = d; }
     public void SetDistributionExit(bool d) { distributionExit = d; }
     public void SetPanCamera(bool p) { panCam = p; }
 
@@ -67,6 +69,7 @@ public class TutorialEvents : MonoBehaviour
     public TutEvents GetCurrentEvent() { return currentEvent; }
     public bool GetChickenBuilt() { return chickenBuilt; }
     public bool GetCarrotBuilt() { return carrotBuilt; }
+    public bool GetDistributionExit() { return distributionExit; }
     public bool GetEventActive() { return eventActive; }
 
     Animator camAnim;
@@ -350,12 +353,6 @@ public class TutorialEvents : MonoBehaviour
         //Wait until the event is done
         while (!done)
         {
-            if (InputScript.instance.GetAllowSelecting() == false)
-            {
-                //causing a bug
-                //InputScript.instance.AllowSelecting();
-            } 
-
             if (destroyedCarrot == true)
             {
                 done = true;
@@ -436,6 +433,12 @@ public class TutorialEvents : MonoBehaviour
         //Wait until the event is done
         while (!done)
         {
+            if (chosenDistributor == true)
+            {
+                TutorialManager.instance.SetTutorialBox(true);
+                chosenDistributor = false;
+            }
+
             if (distributionExit == true)
             {
                 DistributionOut();

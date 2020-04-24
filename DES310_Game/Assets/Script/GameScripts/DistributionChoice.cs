@@ -59,6 +59,11 @@ public class DistributionChoice : MonoBehaviour
     {
         if (BFB.interactable == false)
         {
+            if (TutorialManager.instance != null && TutorialManager.instance.GetTutorial() == true)
+            {
+                TutorialEvents.instance.SetChosenDistributor(true);
+            }
+
             distributerChoice = "BF";
         }
         else if (PB.interactable == false)
