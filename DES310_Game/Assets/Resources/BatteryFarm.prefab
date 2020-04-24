@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 1406236134868383744}
   - component: {fileID: 6485323141588397362}
   m_Layer: 0
-  m_Name: BatteryFarmLVL1
+  m_Name: BatteryFarm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -132,9 +132,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16a9890003ad75e44a2160c8797ef730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pol_lvl1: -10
-  pol_lvl2: -15
-  pol_lvl3: -20
+  pol_lvl1: 10
+  pol_lvl2: 5
+  pol_lvl3: 0
   moneyOutput: 
 --- !u!114 &285521334669886194
 MonoBehaviour:

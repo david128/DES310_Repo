@@ -3064,8 +3064,8 @@ MonoBehaviour:
   CarrotConfirm: {fileID: 7973086443338343494}
   padLock: {fileID: 181993657301169280}
   farmhouseRequirement: 010000000100000001000000010000000200000002000000020000000100000002000000020000000300000003000000030000000300000003000000
-  barnRequirement: 010000000100000001000000010000000100000001000000010000000100000001000000010000000300000003000000030000000300000003000000
-  researchRequirement: 010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  barnRequirement: 010000000100000001000000010000000100000001000000010000000100000003000000020000000300000003000000030000000300000002000000
+  researchRequirement: 010000000100000001000000010000000100000001000000010000000100000001000000010000000100000002000000030000000200000001000000
   marketButtons:
   - {fileID: 1116816644106505349}
   - {fileID: 1116816644115862061}
@@ -12110,11 +12110,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3137354474207493656, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1724397837919885535, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4,
         type: 3}
       propertyPath: m_Sprite
@@ -12250,6 +12245,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: Turnip
+      objectReference: {fileID: 0}
+    - target: {fileID: 3137354474207493656, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4, type: 3}
@@ -12588,11 +12588,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3137354474207493656, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1724397837919885535, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4,
         type: 3}
       propertyPath: m_Sprite
@@ -12713,6 +12708,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: Carrot
+      objectReference: {fileID: 0}
+    - target: {fileID: 3137354474207493656, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4, type: 3}
@@ -13865,16 +13865,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1326244842808723304, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1326244842808723304, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1724397837919885535, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4,
         type: 3}
       propertyPath: m_Sprite
@@ -13995,6 +13985,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: Chicken
+      objectReference: {fileID: 0}
+    - target: {fileID: 1326244842808723304, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1326244842808723304, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4, type: 3}
@@ -15377,11 +15377,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 3948278545434742591, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8784490648459352458, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15568,6 +15563,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3948278545434742591, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33e6cd27b38fd4d4ab06ce8f240e27f4, type: 3}
