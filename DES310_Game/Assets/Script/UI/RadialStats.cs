@@ -16,6 +16,7 @@ public class RadialStats : MonoBehaviour
     public TextMeshProUGUI nextMoneyText;
     public TextMeshProUGUI foodText;
     public TextMeshProUGUI nextFoodText;
+    public TextMeshProUGUI levelText;
     public TextMeshProUGUI upgradeText;
     public TextMeshProUGUI moneyPlusSymbol;
     public TextMeshProUGUI foodPlusSymbol;
@@ -27,6 +28,8 @@ public class RadialStats : MonoBehaviour
     public int[] food;
     public int foodCurrent;
     public float nextFood;
+
+    int level;
 
     public float[] sustValues;
     public float sustainability;
@@ -73,6 +76,8 @@ public class RadialStats : MonoBehaviour
             foodCurrent = food[0];
             nextFood = food[1] - foodCurrent;
 
+            level = 1;
+
             sustainability = sustValues[0];
 
             upgradePrice = selectedData.level2Cost;
@@ -85,6 +90,8 @@ public class RadialStats : MonoBehaviour
             foodCurrent = food[1];
             nextFood = food[2] - foodCurrent;
 
+            level = 2;
+
             sustainability = sustValues[1];
 
             upgradePrice = selectedData.level3Cost;
@@ -94,15 +101,18 @@ public class RadialStats : MonoBehaviour
             moneyCurrent = money[2];
             foodCurrent = food[2];
 
+            level = 3;
+
             sustainability = sustValues[2];
         }
        
         //Parses numeric values into string to show money and food
         moneyText.text = moneyCurrent.ToString();
         foodText.text = foodCurrent.ToString();
+        levelText.text = level.ToString();
 
         //Checks if there is another level to show
-        if(selectedTile.GetComponent<ObjectInfo>().GetObjectLevel() != 3)
+        if (selectedTile.GetComponent<ObjectInfo>().GetObjectLevel() != 3)
         {
             nextMoneyText.text = nextMoney.ToString();
             nextFoodText.text = nextFood.ToString();
