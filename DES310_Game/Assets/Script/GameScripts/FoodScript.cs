@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class FoodScript : MonoBehaviour
 {
@@ -37,12 +38,26 @@ public class FoodScript : MonoBehaviour
     //money gained after food extracted
     int failToFill;
 
-    //getter and setter
+    //getter
     public float GetFood() { return currentFood; }
-    public void SetFood(float f) { food = f; }
+    public int GetCurrentQuota() { return quotaCount; }
+    public float GetQuotaTimer() { return currentTime; }
+
+    //setters
+    public void SetFood(float f) { currentFood = f; }
+    public void SetCurrentQuota(int q) { quotaCount = q; }
+    public void SetQuotaTimer(float t) { currentTime = t; }
 
     //Add to current food
-    public void AddFood(float f) { food = food + f; }
+    public void AddFood(float f)
+    {
+        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("TutorialScene"))
+        {   
+            gameManager.GetComponent<GameLoop>().AddToTotalFood(f);
+        }
+
+        food = food + f; 
+    }
 
     private void Start()
     {
@@ -50,8 +65,8 @@ public class FoodScript : MonoBehaviour
 
 
         ///For testing end game screen
-        quotaCount = 9;
-        currentTime = 220;
+        //quotaCount = 9;
+        //currentTime = 220;
         ///
 
 
@@ -72,8 +87,6 @@ public class FoodScript : MonoBehaviour
 
     void Update()
     {
-        Distributer = DistributionChoice.instance.GetDistributionChoice();
-
         //Updates food variables for the food bar
         if (DistributionChoice.instance.GetDistributionChoice() == "BF")
         {
@@ -91,6 +104,8 @@ public class FoodScript : MonoBehaviour
             food = 0;
         }
 
+        Distributer = DistributionChoice.instance.GetDistributionChoice();
+
         foodBar.fillAmount = currentFood / quotaAmount[quotaCount];
 
         if (currentFood > quotaAmount[quotaCount])
@@ -100,7 +115,7 @@ public class FoodScript : MonoBehaviour
         else
         {
             overQuota = false;
-        }   
+        }
 
         if (overQuota == false)
         {
@@ -137,15 +152,15 @@ public class FoodScript : MonoBehaviour
         if (timerStart == true)
         {
             //Updates time variables for the time bar
-            time += Time.deltaTime;
-            currentTime = time;
+            ///time += Time.deltaTime;
+            currentTime += Time.deltaTime;
 
             if (currentTime >= quotaTime[quotaCount])
             {
                 if (currentFood > quotaAmount[quotaCount])
                 {
                     foodOver = currentFood - quotaAmount[quotaCount];
-                
+
                     moneyGain = (int)foodOver;
 
                     if (DistributionChoice.instance.GetDistributionChoice() == "BF")
@@ -165,7 +180,7 @@ public class FoodScript : MonoBehaviour
 
                     gameManager.GetComponent<Currency>().AddMoney(moneyGain);
 
-                    if (quotaCount != 9)
+                    if (quotaCount != 5)
                     {
                         Debug.Log("Quota " + quotaCount + " completed");
                         quotaCount++;
@@ -195,7 +210,14 @@ public class FoodScript : MonoBehaviour
 
                     moneyGain = Mathf.RoundToInt(moneyGain / 10) * 10;
 
-                    gameManager.GetComponent<Currency>().AddMoney(moneyGain);
+                    if (gameManager.GetComponent<Currency>().GetMoney() < Mathf.Abs(moneyGain))
+                    {
+                        gameManager.GetComponent<Currency>().SetMoney(0);
+                    }
+                    else
+                    {
+                        gameManager.GetComponent<Currency>().AddMoney(moneyGain);
+                    }
 
                     //failure count
                     failToFill++;
@@ -207,7 +229,7 @@ public class FoodScript : MonoBehaviour
                     gameManager.GetComponent<GameLoop>().GetQuotaWarning().gameObject.SetActive(true);
                     gameManager.GetComponent<InputScript>().SetAllowSelecting(false);
 
-                    if (failToFill == 5)
+                    if (failToFill == 2)
                     {
                         currentQuota = quotaCount;
                         Failure();
@@ -216,7 +238,7 @@ public class FoodScript : MonoBehaviour
                     }
                 }
 
-                time = 0;
+                currentTime = 0;
                 currentFood = 0;
             }
         }

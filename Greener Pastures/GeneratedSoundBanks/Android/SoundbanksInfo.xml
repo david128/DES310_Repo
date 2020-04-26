@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Android" BasePlatform="Android" SchemaVersion="11" SoundbankVersion="134">
 	<RootPaths>
-		<ProjectRoot>E:\Users\Rizwan\Documents\WwiseProjects\Greener Pastures\</ProjectRoot>
-		<SourceFilesRoot>E:\Users\Rizwan\Documents\WwiseProjects\Greener Pastures\.cache\Android\</SourceFilesRoot>
-		<SoundBanksRoot>E:\Users\Rizwan\Documents\WwiseProjects\Greener Pastures\GeneratedSoundBanks\Android\</SoundBanksRoot>
+		<ProjectRoot>E:\Users\Rizwan\Documents\GitHub\DES310_Repo\Greener Pastures\</ProjectRoot>
+		<SourceFilesRoot>E:\Users\Rizwan\Documents\GitHub\DES310_Repo\Greener Pastures\.cache\Android\</SourceFilesRoot>
+		<SoundBanksRoot>E:\Users\Rizwan\Documents\GitHub\DES310_Repo\Greener Pastures\GeneratedSoundBanks\Android\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>E:\Users\Rizwan\Documents\WwiseProjects\Greener Pastures\GeneratedSoundBanks\Android</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>E:\Users\Rizwan\Documents\GitHub\DES310_Repo\Greener Pastures\GeneratedSoundBanks\Android</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -20,83 +20,6 @@
 			<ObjectPath>\SoundBanks\Default Work Unit\Game_scene</ObjectPath>
 			<ShortName>Game_scene</ShortName>
 			<Path>Game_scene.bnk</Path>
-			<IncludedEvents>
-				<Event Id="2450366615" Name="Ambience_Animals" ObjectPath="\Events\Default Work Unit\Ambience_Animals" DurationType="Infinite"/>
-				<Event Id="3850837052" Name="Ambience_Birds" ObjectPath="\Events\Default Work Unit\Ambience_Birds" DurationType="OneShot" DurationMin="94.794510" DurationMax="94.794510"/>
-				<Event Id="1045388109" Name="Ambience_Tractor" ObjectPath="\Events\Default Work Unit\Ambience_Tractor" DurationType="Infinite"/>
-				<Event Id="2222736396" Name="Bad_Ending" ObjectPath="\Events\Default Work Unit\Bad_Ending" DurationType="OneShot" DurationMin="13.931156" DurationMax="13.931156"/>
-				<Event Id="317641954" Name="ButtonPress" ObjectPath="\Events\Default Work Unit\ButtonPress" DurationType="OneShot" DurationMin="0.114512" DurationMax="0.114512"/>
-				<Event Id="2634775690" Name="Construction" ObjectPath="\Events\Default Work Unit\Construction" DurationType="OneShot" DurationMin="1.403175" DurationMax="1.403175"/>
-				<Event Id="2446376615" Name="Destruction" ObjectPath="\Events\Default Work Unit\Destruction" DurationType="OneShot" DurationMin="2.072562" DurationMax="2.072562"/>
-				<Event Id="2918043850" Name="Distribution_Close" ObjectPath="\Events\Default Work Unit\Distribution_Close" DurationType="OneShot" DurationMin="0.822721" DurationMax="0.822721"/>
-				<Event Id="4047050990" Name="Distribution_open" ObjectPath="\Events\Default Work Unit\Distribution_open" DurationType="OneShot" DurationMin="1.653605" DurationMax="1.653605"/>
-				<Event Id="3752309239" Name="Event_Sound" ObjectPath="\Events\Default Work Unit\Event_Sound" DurationType="OneShot" DurationMin="2.442222" DurationMax="2.442222"/>
-				<Event Id="589883976" Name="Good_Ending" ObjectPath="\Events\Default Work Unit\Good_Ending" DurationType="OneShot" DurationMin="27.923084" DurationMax="27.923084"/>
-				<Event Id="2067451325" Name="OpenMarket" ObjectPath="\Events\Default Work Unit\OpenMarket" DurationType="OneShot" DurationMin="3.245034" DurationMax="3.245034"/>
-				<Event Id="1323090623" Name="Upgrade" ObjectPath="\Events\Default Work Unit\Upgrade" DurationType="OneShot" DurationMin="0.461542" DurationMax="0.461542"/>
-			</IncludedEvents>
-			<IncludedMemoryFiles>
-				<File Id="49601565" Language="SFX">
-					<ShortName>Sheep_FX.wav</ShortName>
-					<Path>SFX\Sheep_FX_FD6CF179.wem</Path>
-				</File>
-				<File Id="58226309" Language="SFX">
-					<ShortName>Cow_FX.wav</ShortName>
-					<Path>SFX\Cow_FX_FD6CF179.wem</Path>
-				</File>
-				<File Id="69855631" Language="SFX">
-					<ShortName>Chicken_FX.wav</ShortName>
-					<Path>SFX\Chicken_FX_FD6CF179.wem</Path>
-				</File>
-				<File Id="147969968" Language="SFX">
-					<ShortName>Destruction_FX.wav</ShortName>
-					<Path>SFX\Destruction_FX_FD6CF179.wem</Path>
-				</File>
-				<File Id="247433775" Language="SFX">
-					<ShortName>Distribution_FX.wav</ShortName>
-					<Path>SFX\Distribution_FX_FD6CF179.wem</Path>
-				</File>
-				<File Id="261544477" Language="SFX">
-					<ShortName>Ambience_FX.wav</ShortName>
-					<Path>SFX\Ambience_FX_FD6CF179.wem</Path>
-				</File>
-				<File Id="298103595" Language="SFX">
-					<ShortName>Marketplace_FX.wav</ShortName>
-					<Path>SFX\Marketplace_FX_FD6CF179.wem</Path>
-				</File>
-				<File Id="516583319" Language="SFX">
-					<ShortName>Button_FX.wav</ShortName>
-					<Path>SFX\Button_FX_FD6CF179.wem</Path>
-				</File>
-				<File Id="630696804" Language="SFX">
-					<ShortName>Event_FX.wav</ShortName>
-					<Path>SFX\Event_FX_FD6CF179.wem</Path>
-				</File>
-				<File Id="704761648" Language="SFX">
-					<ShortName>Tractor_FX.wav</ShortName>
-					<Path>SFX\Tractor_FX_59836947.wem</Path>
-				</File>
-				<File Id="813171452" Language="SFX">
-					<ShortName>BadEnding_FX.wav</ShortName>
-					<Path>SFX\BadEnding_FX_FD6CF179.wem</Path>
-				</File>
-				<File Id="860197988" Language="SFX">
-					<ShortName>Upgrade_FX.wav</ShortName>
-					<Path>SFX\Upgrade_FX_FD6CF179.wem</Path>
-				</File>
-				<File Id="898616527" Language="SFX">
-					<ShortName>DistributionClose_FX.wav</ShortName>
-					<Path>SFX\DistributionClose_FX_FD6CF179.wem</Path>
-				</File>
-				<File Id="901315954" Language="SFX">
-					<ShortName>GoodEnding_FX.wav</ShortName>
-					<Path>SFX\GoodEnding_FX_FD6CF179.wem</Path>
-				</File>
-				<File Id="1013786943" Language="SFX">
-					<ShortName>Construction2_FX.wav</ShortName>
-					<Path>SFX\Construction2_FX_FD6CF179.wem</Path>
-				</File>
-			</IncludedMemoryFiles>
 		</SoundBank>
 		<SoundBank Id="2005704188" Language="SFX">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main_Menu</ObjectPath>
@@ -114,6 +37,157 @@
 				<File Id="1056975954" Language="SFX">
 					<ShortName>MenuSong_FX.wav</ShortName>
 					<Path>SFX\MenuSong_FX_FD6CF179.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+		<SoundBank Id="2517215346" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\Sample_Scene</ObjectPath>
+			<ShortName>Sample_Scene</ShortName>
+			<Path>Sample_Scene.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3850837052" Name="Ambience_Birds" ObjectPath="\Events\Default Work Unit\Ambience_Birds" DurationType="Infinite"/>
+				<Event Id="3046831881" Name="Ambience_Chicken" ObjectPath="\Events\Default Work Unit\Ambience_Chicken" MaxAttenuation="100.000000" DurationType="Infinite"/>
+				<Event Id="275359745" Name="Ambience_Cow" ObjectPath="\Events\Default Work Unit\Ambience_Cow" MaxAttenuation="100.000000" DurationType="Infinite"/>
+				<Event Id="311033632" Name="Ambience_Pig" ObjectPath="\Events\Default Work Unit\Ambience_Pig" MaxAttenuation="100.000000" DurationType="Infinite"/>
+				<Event Id="1045388109" Name="Ambience_Tractor" ObjectPath="\Events\Default Work Unit\Ambience_Tractor" MaxAttenuation="100.000000" DurationType="Infinite"/>
+				<Event Id="317641954" Name="ButtonPress" ObjectPath="\Events\Default Work Unit\ButtonPress" DurationType="OneShot" DurationMin="0.114512" DurationMax="0.114512"/>
+				<Event Id="2634775690" Name="Construction" ObjectPath="\Events\Default Work Unit\Construction" DurationType="OneShot" DurationMin="1.403175" DurationMax="1.403175"/>
+				<Event Id="2446376615" Name="Destruction" ObjectPath="\Events\Default Work Unit\Destruction" DurationType="OneShot" DurationMin="2.072562" DurationMax="2.072562"/>
+				<Event Id="2918043850" Name="Distribution_Close" ObjectPath="\Events\Default Work Unit\Distribution_Close" DurationType="OneShot" DurationMin="0.923473" DurationMax="0.923473"/>
+				<Event Id="4047050990" Name="Distribution_open" ObjectPath="\Events\Default Work Unit\Distribution_open" DurationType="OneShot" DurationMin="1.856109" DurationMax="1.856109"/>
+				<Event Id="432469531" Name="New_Open_Market" ObjectPath="\Events\Default Work Unit\New_Open_Market" DurationType="OneShot" DurationMin="1.321043" DurationMax="1.321043"/>
+				<Event Id="1323090623" Name="Upgrade" ObjectPath="\Events\Default Work Unit\Upgrade" MaxAttenuation="100.000000" DurationType="OneShot" DurationMin="0.461542" DurationMax="0.461542"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="13437860" Language="SFX">
+					<ShortName>Ambience_FX.wav</ShortName>
+					<Path>SFX\Ambience_FX_59836947.wem</Path>
+				</File>
+				<File Id="58226309" Language="SFX">
+					<ShortName>Cow_FX.wav</ShortName>
+					<Path>SFX\Cow_FX_FD6CF179.wem</Path>
+				</File>
+				<File Id="69855631" Language="SFX">
+					<ShortName>Chicken_FX.wav</ShortName>
+					<Path>SFX\Chicken_FX_FD6CF179.wem</Path>
+				</File>
+				<File Id="147969968" Language="SFX">
+					<ShortName>Destruction_FX.wav</ShortName>
+					<Path>SFX\Destruction_FX_FD6CF179.wem</Path>
+				</File>
+				<File Id="176897255" Language="SFX">
+					<ShortName>Pig_FX.wav</ShortName>
+					<Path>SFX\Pig_FX_FD6CF179.wem</Path>
+				</File>
+				<File Id="247433775" Language="SFX">
+					<ShortName>Distribution_FX.wav</ShortName>
+					<Path>SFX\Distribution_FX_FD6CF179.wem</Path>
+				</File>
+				<File Id="516583319" Language="SFX">
+					<ShortName>Button_FX.wav</ShortName>
+					<Path>SFX\Button_FX_FD6CF179.wem</Path>
+				</File>
+				<File Id="622556427" Language="SFX">
+					<ShortName>Tractor_Fixed_FX.wav</ShortName>
+					<Path>SFX\Tractor_Fixed_FX_59836947.wem</Path>
+				</File>
+				<File Id="751774092" Language="SFX">
+					<ShortName>N_Market_FX.wav</ShortName>
+					<Path>SFX\N_Market_FX_FD6CF179.wem</Path>
+				</File>
+				<File Id="860197988" Language="SFX">
+					<ShortName>Upgrade_FX.wav</ShortName>
+					<Path>SFX\Upgrade_FX_FD6CF179.wem</Path>
+				</File>
+				<File Id="898616527" Language="SFX">
+					<ShortName>DistributionClose_FX.wav</ShortName>
+					<Path>SFX\DistributionClose_FX_FD6CF179.wem</Path>
+				</File>
+				<File Id="1013786943" Language="SFX">
+					<ShortName>Construction2_FX.wav</ShortName>
+					<Path>SFX\Construction2_FX_FD6CF179.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+		<SoundBank Id="3514087899" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\Splash_Screen</ObjectPath>
+			<ShortName>Splash_Screen</ShortName>
+			<Path>Splash_Screen.bnk</Path>
+			<IncludedEvents>
+				<Event Id="160038168" Name="Splash" ObjectPath="\Events\Default Work Unit\Splash" DurationType="OneShot" DurationMin="8.738571" DurationMax="8.738571"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="332519443" Language="SFX">
+					<ShortName>Splash_song.wav</ShortName>
+					<Path>SFX\Splash_song_FD6CF179.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+		<SoundBank Id="3717848113" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\End_game</ObjectPath>
+			<ShortName>End_game</ShortName>
+			<Path>End_game.bnk</Path>
+			<IncludedEvents>
+				<Event Id="2222736396" Name="Bad_Ending" ObjectPath="\Events\Default Work Unit\Bad_Ending" DurationType="Infinite"/>
+				<Event Id="317641954" Name="ButtonPress" ObjectPath="\Events\Default Work Unit\ButtonPress" DurationType="OneShot" DurationMin="0.114512" DurationMax="0.114512"/>
+				<Event Id="589883976" Name="Good_Ending" ObjectPath="\Events\Default Work Unit\Good_Ending" DurationType="Infinite"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="516583319" Language="SFX">
+					<ShortName>Button_FX.wav</ShortName>
+					<Path>SFX\Button_FX_FD6CF179.wem</Path>
+				</File>
+				<File Id="813171452" Language="SFX">
+					<ShortName>BadEnding_FX.wav</ShortName>
+					<Path>SFX\BadEnding_FX_59836947.wem</Path>
+				</File>
+				<File Id="901315954" Language="SFX">
+					<ShortName>GoodEnding_FX.wav</ShortName>
+					<Path>SFX\GoodEnding_FX_59836947.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+		<SoundBank Id="3762955427" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\Tutorial</ObjectPath>
+			<ShortName>Tutorial</ShortName>
+			<Path>Tutorial.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3046831881" Name="Ambience_Chicken" ObjectPath="\Events\Default Work Unit\Ambience_Chicken" MaxAttenuation="100.000000" DurationType="Infinite"/>
+				<Event Id="275359745" Name="Ambience_Cow" ObjectPath="\Events\Default Work Unit\Ambience_Cow" MaxAttenuation="100.000000" DurationType="Infinite"/>
+				<Event Id="311033632" Name="Ambience_Pig" ObjectPath="\Events\Default Work Unit\Ambience_Pig" MaxAttenuation="100.000000" DurationType="Infinite"/>
+				<Event Id="1045388109" Name="Ambience_Tractor" ObjectPath="\Events\Default Work Unit\Ambience_Tractor" MaxAttenuation="100.000000" DurationType="Infinite"/>
+				<Event Id="317641954" Name="ButtonPress" ObjectPath="\Events\Default Work Unit\ButtonPress" DurationType="OneShot" DurationMin="0.114512" DurationMax="0.114512"/>
+				<Event Id="2634775690" Name="Construction" ObjectPath="\Events\Default Work Unit\Construction" DurationType="OneShot" DurationMin="1.403175" DurationMax="1.403175"/>
+				<Event Id="432469531" Name="New_Open_Market" ObjectPath="\Events\Default Work Unit\New_Open_Market" DurationType="OneShot" DurationMin="1.321043" DurationMax="1.321043"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="58226309" Language="SFX">
+					<ShortName>Cow_FX.wav</ShortName>
+					<Path>SFX\Cow_FX_FD6CF179.wem</Path>
+				</File>
+				<File Id="69855631" Language="SFX">
+					<ShortName>Chicken_FX.wav</ShortName>
+					<Path>SFX\Chicken_FX_FD6CF179.wem</Path>
+				</File>
+				<File Id="176897255" Language="SFX">
+					<ShortName>Pig_FX.wav</ShortName>
+					<Path>SFX\Pig_FX_FD6CF179.wem</Path>
+				</File>
+				<File Id="516583319" Language="SFX">
+					<ShortName>Button_FX.wav</ShortName>
+					<Path>SFX\Button_FX_FD6CF179.wem</Path>
+				</File>
+				<File Id="622556427" Language="SFX">
+					<ShortName>Tractor_Fixed_FX.wav</ShortName>
+					<Path>SFX\Tractor_Fixed_FX_59836947.wem</Path>
+				</File>
+				<File Id="751774092" Language="SFX">
+					<ShortName>N_Market_FX.wav</ShortName>
+					<Path>SFX\N_Market_FX_FD6CF179.wem</Path>
+				</File>
+				<File Id="1013786943" Language="SFX">
+					<ShortName>Construction2_FX.wav</ShortName>
+					<Path>SFX\Construction2_FX_FD6CF179.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>

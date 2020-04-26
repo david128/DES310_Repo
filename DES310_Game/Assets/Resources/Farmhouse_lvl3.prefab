@@ -17,6 +17,9 @@ GameObject:
   - component: {fileID: -6545920769084966244}
   - component: {fileID: 8088322239670929843}
   - component: {fileID: -6336340241781335808}
+  - component: {fileID: 7807096710419927990}
+  - component: {fileID: -7598264819726333194}
+  - component: {fileID: 8431625573606097654}
   m_Layer: 0
   m_Name: Farmhouse_lvl3
   m_TagString: Untagged
@@ -71,7 +74,7 @@ MeshRenderer:
   - {fileID: 2100000, guid: e9e42fd411fe66549903241181541cad, type: 2}
   - {fileID: 2100000, guid: 69dd36af093b33c4bbcf94e097dcaa51, type: 2}
   - {fileID: 2100000, guid: fc26c50d5e1c7ca49848d9c09373a43d, type: 2}
-  - {fileID: 2100000, guid: 4674bae256f6a0749b335f1ee8e849b1, type: 2}
+  - {fileID: 2100000, guid: 7eac8f36072f122419a0b6ea55db7d7c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -165,6 +168,7 @@ MonoBehaviour:
   pol_lvl1: 0
   pol_lvl2: 0
   pol_lvl3: 0
+  moneyOutput: 
 --- !u!95 &-6336340241781335808
 Animator:
   serializedVersion: 3
@@ -184,3 +188,70 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7807096710419927990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5030813248048364716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf237b14a943894d876bad565af84e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttatchedToFill: 0
+  moneyOutput: 4b000000640000007d000000
+  foodOutput: 000000000000000000000000
+--- !u!114 &-7598264819726333194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5030813248048364716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1827a24a69115ec43aa074d88aabc621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 1
+  isStaticObject: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
+--- !u!114 &8431625573606097654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5030813248048364716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a0a958a2903ce345a557c43de6d7609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: ae8d9d44
+  useOtherObject: 0
+  actionOnEventType: 0
+  curveInterpolation: 4
+  enableActionOnEvent: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: e638ba0e80d8bf74689381f0e3532a26,
+      type: 2}
+  useCallbacks: 0
+  Callbacks: []
+  playingId: 0
+  soundEmitterObject: {fileID: 0}
+  transitionDuration: 0
+  eventIdInternal: 0
+  valueGuidInternal: 
+  m_callbackDataInternal: {fileID: 0}

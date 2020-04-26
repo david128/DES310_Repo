@@ -8,18 +8,43 @@ public class SaveData
     //Variables to be saved
     public int money;
     public float food;
+    public int totalMoneyEarned;
+    public int totalMoneySpent;
+    public float totalFood;
+    public float totalPeopleFed;
+    public float totalTimePlayed;
+
+    public float quotaTimer;
+    public int quota;
+
+    public float sustainabilityLevel;
+    public string distributerChoice;
+   
+    //grid data to be saved
     public string[] gridType;
     public int[] gridLevel;
     public int[] gridID;
     public string[] gridFill;
     public float[] gridPos;
-    public float[] pos;
 
-    public SaveData(int moneyData, float foodData, List<GameObject> grid)
+    public SaveData(int moneyData, float foodData, List<GameObject> gridData, float quotaTimerData, int quotaData, float sustainabilityLevelData, string distributerChoiceData, int totalMoneyEarnedData, int totalMoneySpentData, float totalFoodData, float totalTimePlayedData, float totalPeopleFedData)
     {
         //sets variables with passed information
         money = moneyData;
         food = foodData;
+
+        totalMoneyEarned = totalMoneyEarnedData;
+        totalMoneySpent = totalMoneySpentData;
+        totalFood = totalFoodData;
+        totalPeopleFed = totalPeopleFedData;
+
+        totalTimePlayed = totalTimePlayedData;
+
+        quotaTimer = quotaTimerData;
+        quota = quotaData;
+
+        sustainabilityLevel = sustainabilityLevelData;
+        distributerChoice = distributerChoiceData;
 
         //sets up arrays to be stored in
         gridType = new string[25];
@@ -28,19 +53,18 @@ public class SaveData
         gridFill = new string[25];
         gridPos = new float[75];
 
-        pos = new float[3];
         int count = 0;
 
         //loops through each grid tile
         for (int i = 0; i < 25; i++)
         {
-            gridType[i] = grid[i].GetComponent<ObjectInfo>().GetObjectType().ToString();
-            gridLevel[i] = grid[i].GetComponent<ObjectInfo>().GetObjectLevel();
-            gridID[i] = grid[i].GetComponent<ObjectInfo>().GetObjectID();
-            gridFill[i] = grid[i].GetComponent<ObjectFill>().GetFillType().ToString();
-            gridPos[count] = grid[i].transform.localPosition.x;
-            gridPos[count + 1] = grid[i].transform.localPosition.y;
-            gridPos[count + 2] = grid[i].transform.localPosition.z;
+            gridType[i] = gridData[i].GetComponent<ObjectInfo>().GetObjectType().ToString();
+            gridLevel[i] = gridData[i].GetComponent<ObjectInfo>().GetObjectLevel();
+            gridID[i] = gridData[i].GetComponent<ObjectInfo>().GetObjectID();
+            gridFill[i] = gridData[i].GetComponent<ObjectFill>().GetFillType().ToString();
+            gridPos[count] = gridData[i].transform.localPosition.x;
+            gridPos[count + 1] = gridData[i].transform.localPosition.y;
+            gridPos[count + 2] = gridData[i].transform.localPosition.z;
 
             count += 3;
         }

@@ -28,6 +28,7 @@ public class InputScript : MonoBehaviour
 
     //Touch Variables
     Vector3 touchStart;
+
     //Public so it can be checked in the radial script
     public float touch0StartTime;
     Vector2 touch0StartPosition;
@@ -42,6 +43,9 @@ public class InputScript : MonoBehaviour
     public bool controlType;//true for mobile, false for pc
     public bool canMove;
     public GameObject gameManager;
+
+    bool newRadial;
+    bool newMarket;
 
     //Selection variables
     public int selectedID;
@@ -74,6 +78,16 @@ public class InputScript : MonoBehaviour
     public int GetSelectedID() { return selectedID; }
 
     public bool GetControlType() { return controlType; }
+
+    //radial menu for stats
+    public bool GetNewRadialMenu() { return newRadial; }
+
+    public void SetNewRadialMenu(bool r) { newRadial = r; }
+
+    //radial menu for stats
+    public bool GetNewMarketplaceMenu() { return newMarket; }
+
+    public void SetNewMarketplaceMenu(bool m) { newMarket = m; }
 
     //get Input to be called in main game loop
     public void GetInput()
@@ -330,11 +344,13 @@ public class InputScript : MonoBehaviour
                     gameManager.GetComponent<MarketplaceSpawner>().SpawnMenu();
                     selecting = false;
                 }
-                else if (hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectType() != ObjectInfo.ObjectType.EMPTY)
+                else if (hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectType() != ObjectInfo.ObjectType.EMPTY && RadialMenuSpawner.instance.GetCanCreateNewRadial() == true)
                 {
-                    if (hit.collider.gameObject.TryGetComponent<RadialPressable>(out RadialPressable radial))
+                    if (hit.collider.gameObject.TryGetComponent(out RadialPressable radial))
                     {
                         radial.TriggerMenu();
+                        gameManager.GetComponent<GameLoop>().SetSelectedTile(hit.collider.gameObject);
+                        newRadial = true;
                         selecting = false;
                     }
                     else

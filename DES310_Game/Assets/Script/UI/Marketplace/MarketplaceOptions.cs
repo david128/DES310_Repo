@@ -8,6 +8,9 @@ public class MarketplaceOptions : MonoBehaviour
     public ObjectInfo.ObjectType type;
     public ObjectFill.FillType filler;
 
+    public ObjectInfo.ObjectType GetOptType() { return type; }
+    public ObjectFill.FillType GetOptFill() { return filler; }
+
     public void Quit()
     {
         InputScript i = GameObject.FindGameObjectWithTag("GameController").GetComponent<InputScript>();
@@ -18,7 +21,9 @@ public class MarketplaceOptions : MonoBehaviour
     public void Build()
     {
         InputScript i = GameObject.FindGameObjectWithTag("GameController").GetComponent<InputScript>();
+
         Debug.Log("Building " + type.ToString() + " with filler " + filler.ToString());
+
         i.AttemptBuild(type, filler);
 
         Quit();

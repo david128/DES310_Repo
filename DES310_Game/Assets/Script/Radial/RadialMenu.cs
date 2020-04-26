@@ -14,6 +14,14 @@ public class RadialMenu : MonoBehaviour
 
     int[] levels = new int[3];
 
+    public AK.Wwise.Bank MyBank = null;
+    public AK.Wwise.Event MyEvent = null;
+
+    public void Start()
+    {
+        MyBank.Load();
+    }
+
     public void SpawnButtons(RadialPressable obj)
     {
         //finds game manager
@@ -38,6 +46,14 @@ public class RadialMenu : MonoBehaviour
             newButton.circle.color = obj.options[i].Color;
             newButton.symbol.sprite = obj.options[i].Symbol;
             newButton.title = obj.options[i].Title;
+
+            if (newButton.title == "Demolish")
+            {
+                newButton.gameObject.tag = "DemolishButton";
+                MyBank = gameManager.GetComponent<GameLoop>().MyBank;
+                MyEvent = gameManager.GetComponent<GameLoop>().MyEvent;
+
+            }
 
             if (TutorialEvents.instance != null && TutorialEvents.instance.GetCurrentEvent() == TutorialEvents.TutEvents.RadialFlash)
             {
@@ -87,14 +103,19 @@ public class RadialMenu : MonoBehaviour
             //button function goes here
             Debug.Log(selected.title + "was selected");
 
+            //Disables stats menus that are not needed anymore
+            RadialMenuSpawner.instance.DisableStatsMenus();
+
             if (selected.title == "Upgrade")
             {
+                //Checks if the player has right kevels of farmhouse
                 if ((currentFarmLevel > gridTile.GetComponent<ObjectInfo>().GetObjectLevel() || gridTile.GetComponent<ObjectInfo>().GetObjectType() == ObjectInfo.ObjectType.FARMHOUSE || gridTile.GetComponent<ObjectInfo>().GetObjectType() == ObjectInfo.ObjectType.BARN || gridTile.GetComponent<ObjectInfo>().GetObjectType() == ObjectInfo.ObjectType.RESEARCH))
                 {
                     gameManager.GetComponent<InputScript>().AttemptUpgrade(selectedID);
                 }
                 else
                 {
+                    //sets up for pop up to tell them they need to upgrade farmhouse
                     failToUpgrade = true;
 
                     //shows warning message about upgrading
@@ -108,8 +129,15 @@ public class RadialMenu : MonoBehaviour
             }
             else if (selected.title == "Demolish")
             {
+                //PLays destruction sound
+                AkSoundEngine.RegisterGameObj(GameObject.FindGameObjectWithTag("DemolishButton"));
+                AkSoundEngine.PostEvent("Destruction", GameObject.FindGameObjectWithTag("DemolishButton"));
+                AkSoundEngine.UnregisterGameObj(GameObject.FindGameObjectWithTag("DemolishButton"));
+
+                //Attempts to demolish the field
                 gameManager.GetComponent<InputScript>().AttemptDemolish(selectedID);
 
+                //If in the tutorial and at the carrot event it will set up the next event
                 if (TutorialEvents.instance != null && TutorialEvents.instance.GetCurrentEvent() == TutorialEvents.TutEvents.RadialFlash)
                 {
                     TutorialEvents.instance.SetDestroyedCarrot(true);
@@ -117,10 +145,13 @@ public class RadialMenu : MonoBehaviour
                 }
             }
 
-            Destroy(gameObject);
+            //Destroys and wait to be able to spawn next radial menu
+            RadialMenuSpawner.instance.DestroyRadial(gameObject);
 
+            //Sets radial menu to false
             RadialMenuSpawner.instance.SetAwake(false);
 
+            //if player has not enough money it will set the selecting to false to allow for the pop up to show and not let the player continue playing
             if (failToUpgrade == false)
             { 
                 gameManager.GetComponent<InputScript>().SetAllowSelecting(true);

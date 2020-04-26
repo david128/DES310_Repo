@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class TextScript : MonoBehaviour
 {
     //Declares UI variables
-    public Text moneyText;
+    public TextMeshProUGUI moneyText;
     public Text foodText;
     public Text fpsText;
     public GameObject gameManager;
@@ -16,7 +17,7 @@ public class TextScript : MonoBehaviour
     {
         //translates into strings to be displayed
         foodText.text = ("Food:" + gameManager.GetComponent<FoodScript>().GetFood().ToString());
-        moneyText.text = ("Money:" + gameManager.GetComponent<Currency>().GetMoney().ToString());
+        moneyText.text = (gameManager.GetComponent<Currency>().GetMoney().ToString());
         fpsText.text = ("FPS: " + gameManager.GetComponent<GameLoop>().GetFPS().ToString());
     }
 }

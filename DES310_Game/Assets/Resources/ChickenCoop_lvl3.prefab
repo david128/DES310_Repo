@@ -17,6 +17,9 @@ GameObject:
   - component: {fileID: 2101601372082285546}
   - component: {fileID: 8825054442957758373}
   - component: {fileID: -7871201293627811608}
+  - component: {fileID: -221107243991915463}
+  - component: {fileID: -7463091892620248463}
+  - component: {fileID: 4591539446368775174}
   m_Layer: 0
   m_Name: ChickenCoop_lvl3
   m_TagString: Untagged
@@ -82,10 +85,10 @@ MonoBehaviour:
   title: Chicken Field
   options:
   - Color: {r: 0, g: 0, b: 0, a: 0}
-    Symbol: {fileID: 21300000, guid: 59f671ec53a8d5843b6ef4ff9378c2d3, type: 3}
+    Symbol: {fileID: 21300000, guid: 250cbb2e5fad9f642b5b390dfc38ace9, type: 3}
     Title: Demolish
   - Color: {r: 0, g: 0, b: 0, a: 0}
-    Symbol: {fileID: 21300000, guid: 72405e6d4b5b3494b9b4209d48bdb377, type: 3}
+    Symbol: {fileID: 21300000, guid: ca82c9da83539304487a4b5ec8b8c3d9, type: 3}
     Title: Back
 --- !u!114 &3906321631794682201
 MonoBehaviour:
@@ -100,8 +103,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AttatchedToFill: 0
-  moneyOutput: 0000000000000000af000000
-  foodOutput: 0000000000000000f0000000
+  moneyOutput: 320000007d000000af000000
+  foodOutput: 4b00000096000000f0000000
 --- !u!114 &8027435178987956754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,9 +156,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16a9890003ad75e44a2160c8797ef730, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pol_lvl1: 0
-  pol_lvl2: 0
+  pol_lvl1: 5
+  pol_lvl2: 7
   pol_lvl3: 10
+  moneyOutput: 
 --- !u!65 &-7871201293627811608
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -169,6 +173,88 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 12, y: 2, z: 8}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-221107243991915463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285733469376572589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1827a24a69115ec43aa074d88aabc621, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 1
+  isStaticObject: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
+--- !u!114 &-7463091892620248463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285733469376572589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a0a958a2903ce345a557c43de6d7609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: ae8d9d44
+  useOtherObject: 0
+  actionOnEventType: 0
+  curveInterpolation: 4
+  enableActionOnEvent: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: e638ba0e80d8bf74689381f0e3532a26,
+      type: 2}
+  useCallbacks: 0
+  Callbacks: []
+  playingId: 0
+  soundEmitterObject: {fileID: 0}
+  transitionDuration: 0
+  eventIdInternal: 0
+  valueGuidInternal: 
+  m_callbackDataInternal: {fileID: 0}
+--- !u!114 &4591539446368775174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 285733469376572589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a0a958a2903ce345a557c43de6d7609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: ae8d9d44
+  useOtherObject: 0
+  actionOnEventType: 0
+  curveInterpolation: 4
+  enableActionOnEvent: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 61f2fc3ef89f52541b89617af1ceb98b,
+      type: 2}
+  useCallbacks: 0
+  Callbacks: []
+  playingId: 0
+  soundEmitterObject: {fileID: 0}
+  transitionDuration: 0
+  eventIdInternal: 0
+  valueGuidInternal: 
+  m_callbackDataInternal: {fileID: 0}
 --- !u!1 &349493204513473441
 GameObject:
   m_ObjectHideFlags: 0

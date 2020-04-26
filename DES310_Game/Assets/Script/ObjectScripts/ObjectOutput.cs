@@ -8,8 +8,12 @@ public class ObjectOutput : MonoBehaviour
 
     public bool AttatchedToFill;
     public int[] moneyOutput;
-    public int[] foodOutput;
+    public int[] foodOutput; 
     int level;
+
+    //Getters
+    public int[] GetTileMoneyOutput() { return moneyOutput; }
+    public int[] GetTileFoodOutput() { return foodOutput; }
 
     void Start()
     {
@@ -28,7 +32,30 @@ public class ObjectOutput : MonoBehaviour
 
         //repeats the growthCycle Function after x amount of  time, every y amount of time
 
-        InvokeRepeating("GrowthCycle", 10.0f, 10.0f);
+        InvokeRepeating("GrowthCycle", 3.0f, 10.0f);
+    }
+
+    public void reduceMoney(float red)
+    {
+        //find multiplier => 1(100%) - red * 0.01 (% reduction)
+        float reduction = 1.0f - (red * 0.01f);
+
+        for (int i = 0; i < 3; i++)
+        {
+            moneyOutput[i] = Mathf.RoundToInt((float)moneyOutput[i] * reduction);
+        }
+    }   
+    
+
+    public void reduceFood(float red)
+    {
+        //find multiplier => 1(100%) - red * 0.01 (% reduction)
+        float reduction = 1.0f - (red * 0.01f);
+
+        for (int i = 0; i < 3; i++)
+        {
+            foodOutput[i] = Mathf.RoundToInt((float)moneyOutput[i] * reduction);
+        }
     }
 
     void GrowthCycle()
@@ -37,5 +64,4 @@ public class ObjectOutput : MonoBehaviour
         gameManager.GetComponent<Currency>().AddMoney(moneyOutput[level]);
         gameManager.GetComponent<FoodScript>().AddFood(foodOutput[level]);        
     }
-
 }
