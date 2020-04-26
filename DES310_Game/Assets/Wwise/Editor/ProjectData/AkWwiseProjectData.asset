@@ -191,7 +191,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: d1712b402b5f65419dd04dc67dc429ea
     GuidInternal: 
-    m_lastTime: -8586140845177657521
+    m_lastTime: -8586136888103035032
     List:
     - name: End_game
       guid: cc7c88a1a34fbc489cebfb302c44ee81
@@ -220,6 +220,15 @@ MonoBehaviour:
       - ElementName: Main_Menu
         ObjectType: 7
       Path: Default Work Unit\Main_Menu
+    - name: Main_Menu_01
+      guid: 8412d7efaa927148aa45a1483e475ac4
+      id: 1268350434
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Main_Menu_01
+        ObjectType: 7
+      Path: Default Work Unit\Main_Menu_01
     - name: Sample_Scene
       guid: d4535ce3b81c3041a3247693bf49fe4f
       id: 2517215346
@@ -229,6 +238,15 @@ MonoBehaviour:
       - ElementName: Sample_Scene
         ObjectType: 7
       Path: Default Work Unit\Sample_Scene
+    - name: Sample_Scene_01
+      guid: aed1bbce4bb5fc4d94e74a47cbcd8c23
+      id: 1766426960
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Sample_Scene_01
+        ObjectType: 7
+      Path: Default Work Unit\Sample_Scene_01
     - name: Splash_Screen
       guid: 2864f966b12e7640b7d9bd86191eed89
       id: 3514087899
@@ -238,6 +256,15 @@ MonoBehaviour:
       - ElementName: Splash_Screen
         ObjectType: 7
       Path: Default Work Unit\Splash_Screen
+    - name: Splash_Screen_01
+      guid: 75477c36f77b8148a68ae803b65400b5
+      id: 2643561487
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Splash_Screen_01
+        ObjectType: 7
+      Path: Default Work Unit\Splash_Screen_01
     - name: Tutorial
       guid: 886c012978529249823fc59926025754
       id: 3762955427
@@ -247,12 +274,21 @@ MonoBehaviour:
       - ElementName: Tutorial
         ObjectType: 7
       Path: Default Work Unit\Tutorial
+    - name: Tutorial_01
+      guid: 3c10561c02833842ae098d2288f4c284
+      id: 1882713495
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Tutorial_01
+        ObjectType: 7
+      Path: Default Work Unit\Tutorial_01
   EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 079ed62109d6e54297838745921ea438
     GuidInternal: 
-    m_lastTime: -8586140908037532299
+    m_lastTime: -8586136897779706974
     List:
     - name: Ambience_Animals
       guid: 9abf3811d37a2d4783ae29d037fc25ba
@@ -408,8 +444,32 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Event_Sound
       maxAttenuation: 0
-      maxDuration: 2.442222
-      minDuration: 2.442222
+      maxDuration: -1
+      minDuration: -1
+    - name: GameLoop_Song
+      guid: daddceee4fca764b86c39c3d36d63248
+      id: 2132630239
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: GameLoop_Song
+        ObjectType: 3
+      Path: Default Work Unit\GameLoop_Song
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: GameLoop_Stop
+      guid: 9cafb446c6e90f41b2646703321eeaaf
+      id: 2689984332
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: GameLoop_Stop
+        ObjectType: 3
+      Path: Default Work Unit\GameLoop_Stop
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Good_Ending
       guid: db60c6ca75310f43b45b38dd8171162d
       id: 589883976
@@ -422,6 +482,18 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Mac
+      guid: f9d2c503d74c2d408f0da749eb49ef97
+      id: 1048449622
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Mac
+        ObjectType: 3
+      Path: Default Work Unit\Mac
+      maxAttenuation: 0
+      maxDuration: 1.503016
+      minDuration: 1.503016
     - name: MenuSong
       guid: d36c45c11e49d04793589874b362310b
       id: 522020387
@@ -432,20 +504,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\MenuSong
       maxAttenuation: 0
-      maxDuration: 73.01041
-      minDuration: 73.01041
-    - name: MenuStop
-      guid: 9cafb446c6e90f41b2646703321eeaaf
-      id: 1074254744
-      PathAndIcons:
-      - ElementName: Default Work Unit
-        ObjectType: 12
-      - ElementName: MenuStop
-        ObjectType: 3
-      Path: Default Work Unit\MenuStop
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 73
+      minDuration: 73
     - name: New_Open_Market
       guid: 53b986605fb17245965c782c4dfabd3b
       id: 432469531
@@ -468,8 +528,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\OpenMarket
       maxAttenuation: 0
-      maxDuration: 3.245034
-      minDuration: 3.245034
+      maxDuration: -1
+      minDuration: -1
     - name: Splash
       guid: 534733c99b4c194884dc15487fa46eb8
       id: 160038168

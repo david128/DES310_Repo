@@ -71,22 +71,26 @@
 				</Event>
 				<Event Name="MenuSong" ID="{C1456CD3-491E-47D0-9358-9874B362310B}">
 					<ChildrenList>
-						<Action Name="" ID="{06161001-93B8-4AC6-AA28-339D694CCBD6}" ShortID="31906187">
+						<Action Name="" ID="{6B248723-CC8C-4AE7-B19B-A544030B72D9}" ShortID="528104012">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="MenuSong_FX" ID="{71E748A8-13E2-4FE4-9C8B-BDF8055ACEC0}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}"/>
+									<ObjectRef Name="NEW_MenuUpdated_FX" ID="{D5920D0A-4A65-4807-94A5-D1925BBD3EA8}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
 					</ChildrenList>
 				</Event>
-				<Event Name="MenuStop" ID="{46B4AF9C-E9C6-410F-B264-6703321EEAAF}">
+				<Event Name="GameLoop_Stop" ID="{46B4AF9C-E9C6-410F-B264-6703321EEAAF}">
 					<ChildrenList>
-						<Action Name="" ID="{2D69831E-E3A4-4916-92E2-237130D39CA4}" ShortID="727735684">
+						<Action Name="" ID="{4F353CA4-57AC-49A2-9B46-F094909EBE38}" ShortID="868235873">
 							<PropertyList>
-								<Property Name="ActionType" Type="int16" Value="3"/>
+								<Property Name="ActionType" Type="int16" Value="34"/>
 							</PropertyList>
-							<ReferenceList/>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="GameLoop" ID="{0104E979-0821-465B-9FAF-81F0747650A8}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}"/>
+								</Reference>
+							</ReferenceList>
 						</Action>
 					</ChildrenList>
 				</Event>
@@ -217,6 +221,28 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Splash_song" ID="{9F3C7BE7-20AE-45E3-AA4A-4ADA89A1C1F4}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="GameLoop_Song" ID="{EECEDDDA-CA4F-4B76-86C3-9C3D36D63248}">
+					<ChildrenList>
+						<Action Name="" ID="{B2B0AB49-4F04-4D68-A1B8-28AFA79C7CF5}" ShortID="521769612">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="GameLoop" ID="{0104E979-0821-465B-9FAF-81F0747650A8}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Mac" ID="{03C5D2F9-4CD7-402D-8F0D-A749EB49EF97}">
+					<ChildrenList>
+						<Action Name="" ID="{EC32F171-0A2D-4EFA-A866-95B4F80D595B}" ShortID="945184713">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Mac_FX" ID="{88B2690B-8EBD-4195-892C-B35FA656A320}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

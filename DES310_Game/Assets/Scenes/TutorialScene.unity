@@ -537,11 +537,13 @@ MonoBehaviour:
   MyBank:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 8faed584a0271094ba589c01fcc5b7d5,
+      type: 2}
   MyEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 66d2b711585f2264cbd3688944e650c1,
+      type: 2}
   UpgradeWarning: {fileID: 1649585170}
   MoneyWarning: {fileID: 203405601}
   QuotaWarning: {fileID: 6946787074251222789}
@@ -555,6 +557,8 @@ MonoBehaviour:
   totalMoneyEarned: 0
   totalMoneySpent: 0
   totalFood: 0
+  totalTimePlayed: 0
+  totalPeopleFed: 0
   selectedTile: {fileID: 0}
 --- !u!114 &215528164
 MonoBehaviour:
@@ -1073,7 +1077,7 @@ PrefabInstance:
     - target: {fileID: 4233899226186049867, guid: 58832e9207908e14a99582410e3adb03,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4233899226186049867, guid: 58832e9207908e14a99582410e3adb03,
         type: 3}
@@ -1293,7 +1297,7 @@ PrefabInstance:
     - target: {fileID: 5824690290155507913, guid: 58832e9207908e14a99582410e3adb03,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5824690290155507913, guid: 58832e9207908e14a99582410e3adb03,
         type: 3}

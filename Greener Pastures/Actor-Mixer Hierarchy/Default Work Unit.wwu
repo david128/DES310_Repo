@@ -243,32 +243,6 @@
 						<ActiveSource Name="Marketplace_FX" ID="{A66CBAC1-FC6C-4EC9-967D-7108C6E5EEA0}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="MenuSong_FX" ID="{71E748A8-13E2-4FE4-9C8B-BDF8055ACEC0}" ShortID="593147764">
-					<PropertyList>
-						<Property Name="Volume" Type="Real64">
-							<ValueList>
-								<Value>-10</Value>
-							</ValueList>
-						</Property>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Music" ID="{2F84E593-CB4C-4D9F-95A1-0CDAF164A719}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="MenuSong_FX" ID="{CE5C216B-DE56-4AF9-9116-83FCD466A67F}" ShortID="1056975954">
-							<Language>SFX</Language>
-							<AudioFile>MenuSong_FX.wav</AudioFile>
-						</AudioFileSource>
-					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="MenuSong_FX" ID="{CE5C216B-DE56-4AF9-9116-83FCD466A67F}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
 				<Sound Name="Ambience_FX" ID="{421E7DE2-88A5-46D8-8510-A12A9EB0FABF}" ShortID="649453787">
 					<PropertyList>
 						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
@@ -294,7 +268,7 @@
 							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Music" ID="{2F84E593-CB4C-4D9F-95A1-0CDAF164A719}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+							<ObjectRef Name="Sounds" ID="{3468EB0E-D477-49D4-AB99-8417D0CC24E6}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -1268,6 +1242,145 @@
 					</ChildrenList>
 					<ActiveSourceList>
 						<ActiveSource Name="Splash_song" ID="{7F9FF272-FF21-4AB1-ADF5-BD86032BDD3B}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="NEW_MenuUpdated_FX" ID="{D5920D0A-4A65-4807-94A5-D1925BBD3EA8}" ShortID="385435671">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Music" ID="{2F84E593-CB4C-4D9F-95A1-0CDAF164A719}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="NEW_MenuUpdated_FX" ID="{F1A479C4-4436-448F-BE59-B52CA29DF698}" ShortID="295604371">
+							<Language>SFX</Language>
+							<AudioFile>NEW_MenuUpdated_FX.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="NEW_MenuUpdated_FX" ID="{F1A479C4-4436-448F-BE59-B52CA29DF698}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<RandomSequenceContainer Name="GameLoop" ID="{0104E979-0821-465B-9FAF-81F0747650A8}" ShortID="767506153">
+					<PropertyList>
+						<Property Name="InitialDelay" Type="Real64">
+							<ValueList>
+								<Value>3</Value>
+							</ValueList>
+						</Property>
+						<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
+						<Property Name="MaxReachedBehavior" Type="int16" Value="1"/>
+						<Property Name="MaxSoundPerInstance" Type="int16">
+							<ValueList>
+								<Value>2</Value>
+							</ValueList>
+						</Property>
+						<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+						<Property Name="PlayMechanismLoopCount" Type="int32" Value="15"/>
+						<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+						<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="4"/>
+						<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="5"/>
+						<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+						<Property Name="UseMaxSoundPerInstance" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-20</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Music" ID="{2F84E593-CB4C-4D9F-95A1-0CDAF164A719}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="NEW_GameLoop1_FX" ID="{9CDFE0FE-86D6-49C6-A742-84F34EA421CD}" ShortID="88116982">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>30</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="NEW_GameLoop1_FX" ID="{50937956-2982-408C-8075-D4C5940873BF}" ShortID="813840247">
+									<Language>SFX</Language>
+									<AudioFile>NEW_GameLoop1_FX.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="NEW_GameLoop1_FX" ID="{50937956-2982-408C-8075-D4C5940873BF}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="NEW_GameLoop2_FX" ID="{1683187C-3FB9-4D65-BD00-00CC9916476F}" ShortID="609986707">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>30</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="NEW_GameLoop2_FX" ID="{5E3706B4-FC6F-43D1-B1E9-0D034A214924}" ShortID="778091218">
+									<Language>SFX</Language>
+									<AudioFile>NEW_GameLoop2_FX.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="NEW_GameLoop2_FX" ID="{5E3706B4-FC6F-43D1-B1E9-0D034A214924}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<Sound Name="Mac_FX" ID="{88B2690B-8EBD-4195-892C-B35FA656A320}" ShortID="632225840">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-10</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Quality Medium" ID="{01D20CF3-9A4C-4EEE-AE3E-2942B47543E9}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Sounds" ID="{3468EB0E-D477-49D4-AB99-8417D0CC24E6}" WorkUnitID="{87ADCFDB-1D07-4407-8879-B73DEBFFB608}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Mac_FX" ID="{1D7C8DC2-F06A-432A-BC6C-EC75DCBFA014}" ShortID="561233126">
+							<Language>SFX</Language>
+							<AudioFile>Mac_FX.wav</AudioFile>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Mac_FX" ID="{1D7C8DC2-F06A-432A-BC6C-EC75DCBFA014}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 			</ChildrenList>
