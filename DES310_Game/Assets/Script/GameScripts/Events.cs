@@ -237,6 +237,7 @@ public class Events : MonoBehaviour
         int count = 0;
         while (triggered == false && count < gameEvents.Count)
         {
+            Debug.Log(gameEvents[count].getEVentName().ToString());
             if (gameEvents[count].getTriggered() == false) //if the event has not been triggered then it will be checked for
             {
 
@@ -351,14 +352,14 @@ public class Events : MonoBehaviour
                                     else
                                     {
                                         //prev condition is true so dont need to check second
-                                        i = eventRequirements.Count;
+                                        j = eventRequirements[i].Count;
                                     }
 
                                 }
                                 else if (triggered == false)
                                 {
                                     //first condition has failed so no need to continue check
-                                    i = eventRequirements.Count;
+                                    j = eventRequirements[i].Count;
                                 }
 
                             }
@@ -493,7 +494,7 @@ public class Events : MonoBehaviour
                         }
                         break;
 
-                    case ("SUSTAINABILLITY"):
+                    case ("SUSTAINABILITY"):
                         minValue = new ValueMinOrMax(true, 0);
                         minValue.SetRequirementType(EventRequirementName.SUSTAINABILITY);
                         i += 1;
