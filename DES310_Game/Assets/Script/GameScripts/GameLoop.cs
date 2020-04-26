@@ -157,7 +157,7 @@ public class GameLoop : MonoBehaviour
         FPS = 1.0f / Time.deltaTime;
 
         //When the time gets to 3 seconds the money will increase causing a passive income
-        if (time > 60)
+        if (time > 20)
         {
             //Resets the period of time for the passive income
             time = 0.0f;
