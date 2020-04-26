@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class SustainabilityScript : MonoBehaviour
 {
-    float sustainability;
+    public float sustainability;
+    float mult =1;
 
     public float GetSustainability() { return sustainability; }
     public void AddSustainability(float s) { sustainability += s; }
     public void SetSustainability(float s) { sustainability = s; }
 
     public GameObject gameManager;
+
+    public void SetMultiplier(float m) { mult = m; }
 
     public void CheckPollution()
     {                      
@@ -59,5 +62,7 @@ public class SustainabilityScript : MonoBehaviour
                 }
             }
         }
+
+        sustainability = sustainability * mult;
     }
 }
