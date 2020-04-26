@@ -50,6 +50,8 @@ public class GameLoop : MonoBehaviour
     public int totalMoneyEarned;
     public int totalMoneySpent;
     public float totalFood;
+    public float totalTimePlayed;
+    public int totalPeopleFed;
 
     //SelectedTile vairable
     public GameObject selectedTile;
@@ -63,6 +65,8 @@ public class GameLoop : MonoBehaviour
     public int GetTotalMoneyEarned() { return totalMoneyEarned; }
     public int GetTotalMoneySpent() { return totalMoneySpent; }
     public float GetTotalFood() { return totalFood; }
+    public float GetTotalTimePlayed() { return totalTimePlayed; }
+    public int GetTotalPeopleFed() { return totalPeopleFed; }
 
     //Selected Tile getter
     public GameObject GetSelectedTile() { return selectedTile; }
@@ -71,11 +75,15 @@ public class GameLoop : MonoBehaviour
     public void SetTotalMoneyEarned(int tM) { totalMoneyEarned = tM; }
     public void SetTotalMoneySpent(int tM) { totalMoneySpent = tM; }
     public void SetTotalFood(float tF) { totalFood = tF; }
+    public void SetTotalTimePlayed(float tP) { totalTimePlayed = tP; }
+    public void SetTotalPeopleFed(int pF) { totalPeopleFed = pF; }
 
     //Add to total amount
     public void AddToTotalMoneyEarned(int tM) { totalMoneyEarned += tM; }
     public void AddToTotalMoneySpent(int tM) { totalMoneySpent += tM; }
     public void AddToTotalFood(float tF) { totalFood += tF; }
+    public void AddToTotalTimePlayed(float tP) { totalTimePlayed += tP; }
+    public void AddToTotalPeopleFed(int pF) { totalPeopleFed += pF; }
 
     //sets selected tile
     public void SetSelectedTile(GameObject s) { selectedTile = s; }
@@ -264,6 +272,121 @@ public class GameLoop : MonoBehaviour
         }
 
         changingSeason = false;
+    }
+
+    public void SaveGameStats(int moneyEarned, int moneySpent, float foodProduced, float timePlayed, int peopleFed)
+    {
+        PlayerPrefs.SetInt("TotalMoneyEarned", moneyEarned);
+        PlayerPrefs.SetInt("TotalMoneySpent", moneySpent);
+        PlayerPrefs.SetFloat("TotalFoodProduced", foodProduced);
+        PlayerPrefs.SetFloat("TotalTimePlayed", timePlayed);
+        PlayerPrefs.SetInt("PeopleFed", peopleFed);
+    }
+
+    public void SaveFieldStats(ObjectInfo.ObjectType type, ObjectFill.FillType fill, int tileCount, int moneyCount , int foodCount)
+    {
+        switch (type)
+        {
+            case ObjectInfo.ObjectType.FIELD:
+
+                switch (fill)
+                {
+                    case ObjectFill.FillType.WHEAT:
+                        PlayerPrefs.SetInt("WheatFieldCount", tileCount);
+                        PlayerPrefs.SetInt("WheatFieldFood", moneyCount);
+                        PlayerPrefs.SetInt("WheatFieldMoney", foodCount);
+                        break;
+
+                    case ObjectFill.FillType.CORN:
+                        PlayerPrefs.SetInt("CornFieldCount", tileCount);
+                        PlayerPrefs.SetInt("CornFieldFood", moneyCount);
+                        PlayerPrefs.SetInt("CornFieldMoney", foodCount);
+                        break;
+
+                    case ObjectFill.FillType.CARROT:
+                        PlayerPrefs.SetInt("CarrotFieldCount", tileCount);
+                        PlayerPrefs.SetInt("CarrotFieldFood", moneyCount);
+                        PlayerPrefs.SetInt("CarrotFieldMoney", foodCount);
+                        break;
+
+                    case ObjectFill.FillType.POTATO:
+                        PlayerPrefs.SetInt("CabbageFieldCount", tileCount);
+                        PlayerPrefs.SetInt("CabbageFieldFood", moneyCount);
+                        PlayerPrefs.SetInt("CabbageFieldMoney", foodCount);
+                        break;
+
+                    case ObjectFill.FillType.TURNIP:
+                        PlayerPrefs.SetInt("TurnipFieldCount", tileCount);
+                        PlayerPrefs.SetInt("TurnipFieldFood", moneyCount);
+                        PlayerPrefs.SetInt("TurnipFieldMoney", foodCount);
+                        break;
+
+                    case ObjectFill.FillType.SUGARCANE:
+                        PlayerPrefs.SetInt("SugarFieldCount", tileCount);
+                        PlayerPrefs.SetInt("SugarFieldFood", moneyCount);
+                        PlayerPrefs.SetInt("SugarFieldMoney", foodCount);
+                        break;
+
+                    case ObjectFill.FillType.SUNFLOWER:
+                        PlayerPrefs.SetInt("SunflowerFieldCount", tileCount);
+                        PlayerPrefs.SetInt("SunflowerFieldFood", moneyCount);
+                        PlayerPrefs.SetInt("SunflowerFieldMoney", foodCount);
+                        break;
+
+                    case ObjectFill.FillType.COCCOA:
+                        PlayerPrefs.SetInt("CocoaFieldCount", tileCount);
+                        PlayerPrefs.SetInt("CocoaFieldFood", moneyCount);
+                        PlayerPrefs.SetInt("CocoaFieldMoney", foodCount);
+                        break;
+                }
+
+                break;
+
+            case ObjectInfo.ObjectType.RICE:
+                PlayerPrefs.SetInt("RiceFieldCount", tileCount);
+                PlayerPrefs.SetInt("RiceFieldFood", moneyCount);
+                PlayerPrefs.SetInt("RiceFieldMoney", foodCount);
+                break;
+
+            case ObjectInfo.ObjectType.COW_FIELD:
+                PlayerPrefs.SetInt("CowFieldCount", tileCount);
+                PlayerPrefs.SetInt("CowFieldFood", moneyCount);
+                PlayerPrefs.SetInt("CowFieldMoney", foodCount);
+                break;
+
+            case ObjectInfo.ObjectType.CHICKEN_COOP:
+                PlayerPrefs.SetInt("ChickenFieldCount", tileCount);
+                PlayerPrefs.SetInt("ChickenFieldFood", moneyCount);
+                PlayerPrefs.SetInt("ChickenFieldMoney", foodCount);
+                break;
+
+            case ObjectInfo.ObjectType.PIG_PEN:
+                PlayerPrefs.SetInt("PigFieldCount", tileCount);
+                PlayerPrefs.SetInt("PigFieldFood", moneyCount);
+                PlayerPrefs.SetInt("PigFieldMoney", foodCount);
+                break;
+
+            case ObjectInfo.ObjectType.BATTERY:
+                PlayerPrefs.SetInt("BatteryCount", tileCount);
+                PlayerPrefs.SetInt("BatteryFood", moneyCount);
+                PlayerPrefs.SetInt("BatterybMoney", foodCount);
+                break;
+
+            case ObjectInfo.ObjectType.MEAT_LAB:
+                PlayerPrefs.SetInt("MeatLabCount", tileCount);
+                PlayerPrefs.SetInt("MeatLabFood", moneyCount);
+                PlayerPrefs.SetInt("MeatLabMoney", foodCount);
+                break;
+
+            case ObjectInfo.ObjectType.VERTICAL_FARM:
+                PlayerPrefs.SetInt("HydroCount", tileCount);
+                PlayerPrefs.SetInt("HydroFieldFood", moneyCount);
+                PlayerPrefs.SetInt("HydroFieldMoney", foodCount);
+                break;
+
+            default:
+                return;
+        }
     }
 
     // Quits the player when the user hits escape

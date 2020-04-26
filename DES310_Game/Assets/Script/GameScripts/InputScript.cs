@@ -28,6 +28,7 @@ public class InputScript : MonoBehaviour
 
     //Touch Variables
     Vector3 touchStart;
+
     //Public so it can be checked in the radial script
     public float touch0StartTime;
     Vector2 touch0StartPosition;
