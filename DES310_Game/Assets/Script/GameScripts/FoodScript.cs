@@ -188,14 +188,7 @@ public class FoodScript : MonoBehaviour
                     }
                     else
                     {
-                        if (gameManager.GetComponent<SustainabilityScript>().GetSustainability() > 10)
-                        {
-                            Debug.Log("You have completed the game with a good ending");
-                        }
-                        else
-                        {
-                            Debug.Log("You have completed the game with a bad ending");
-                        }
+
 
                         //quotaCount = 9;
 
