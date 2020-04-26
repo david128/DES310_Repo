@@ -395,8 +395,19 @@ public class GameLoop : MonoBehaviour
         //gets all stats info
         //GatherStats();
 
+        if (gameManager.GetComponent<SustainabilityScript>().GetSustainability() < 50)
+        {
+            Debug.Log("You have completed the game with a good ending");
+            PlayerPrefs.SetInt("Ending", 1);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("Ending", 0);
+            Debug.Log("You have completed the game with a bad ending");
+        }
+
         SceneLoader.instance.LoadEndScene(4);
-        PlayerPrefs.SetInt("Ending", 1);
+        
     }
 
     // Quits the player when the user hits escape

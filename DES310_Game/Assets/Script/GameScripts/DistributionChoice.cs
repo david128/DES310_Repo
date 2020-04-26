@@ -57,6 +57,7 @@ public class DistributionChoice : MonoBehaviour
     // Chooses current Distributor
     public void ChangeDistributer()
     {
+        
         if (BFB.interactable == false)
         {
             if (TutorialManager.instance != null && TutorialManager.instance.GetTutorial() == true)
@@ -65,14 +66,17 @@ public class DistributionChoice : MonoBehaviour
             }
 
             distributerChoice = "BF";
+            gameManager.GetComponent<SustainabilityScript>().SetMultiplier(1.2f);
         }
         else if (PB.interactable == false)
         {
             distributerChoice = "P";
+            gameManager.GetComponent<SustainabilityScript>().SetMultiplier(1.0f);
         }
         else if (GGB.interactable == false)
         {
             distributerChoice = "GG";
+            gameManager.GetComponent<SustainabilityScript>().SetMultiplier(0.8f);
         }
     }
 }
