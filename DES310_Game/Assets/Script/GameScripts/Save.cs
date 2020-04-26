@@ -9,7 +9,7 @@ public class Save : MonoBehaviour
     //saves current game data
     public void SaveGameData()
     {                                                                                                                                                                                                                                                                                                                                                 
-        SaveGame.SaveGameData(gameManager.GetComponent<Currency>().GetMoney(), gameManager.GetComponent<FoodScript>().GetFood(), gameManager.GetComponent<GridScript>().GetGrid(), gameManager.GetComponent<FoodScript>().GetQuotaTimer(), gameManager.GetComponent<FoodScript>().GetCurrentQuota(), gameManager.GetComponent<SustainabilityScript>().GetSustainability(), DistributionChoice.instance.GetDistributionChoice(), gameManager.GetComponent<GameLoop>().GetTotalMoneyEarned(), gameManager.GetComponent<GameLoop>().GetTotalMoneySpent(), gameManager.GetComponent<GameLoop>().GetTotalFood());
+        SaveGame.SaveGameData(gameManager.GetComponent<Currency>().GetMoney(), gameManager.GetComponent<FoodScript>().GetFood(), gameManager.GetComponent<GridScript>().GetGrid(), gameManager.GetComponent<FoodScript>().GetQuotaTimer(), gameManager.GetComponent<FoodScript>().GetCurrentQuota(), gameManager.GetComponent<SustainabilityScript>().GetSustainability(), DistributionChoice.instance.GetDistributionChoice(), gameManager.GetComponent<GameLoop>().GetTotalMoneyEarned(), gameManager.GetComponent<GameLoop>().GetTotalMoneySpent(), gameManager.GetComponent<GameLoop>().GetTotalFood(), gameManager.GetComponent<GameLoop>().GetTotalTimePlayed(), gameManager.GetComponent<GameLoop>().GetTotalPeopleFed());
     }
 
     //loads data into variables to be used in game
@@ -27,6 +27,9 @@ public class Save : MonoBehaviour
             gameManager.GetComponent<GameLoop>().SetTotalMoneyEarned(data.totalMoneyEarned);
             gameManager.GetComponent<GameLoop>().SetTotalMoneySpent(data.totalMoneySpent);
             gameManager.GetComponent<GameLoop>().SetTotalFood(data.totalFood);
+            gameManager.GetComponent<GameLoop>().SetTotalFood(data.totalPeopleFed);
+
+            gameManager.GetComponent<GameLoop>().SetTotalTimePlayed(data.totalTimePlayed);
 
             //Loads quota data
 

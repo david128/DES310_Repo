@@ -51,11 +51,10 @@ public class FoodScript : MonoBehaviour
     //Add to current food
     public void AddFood(float f)
     {
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("TutorialScene"))
+        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("TutorialScene"))
         {   
             gameManager.GetComponent<GameLoop>().AddToTotalFood(f);
         }
-
 
         food = food + f; 
     }

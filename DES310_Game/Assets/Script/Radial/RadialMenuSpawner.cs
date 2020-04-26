@@ -136,6 +136,10 @@ public class RadialMenuSpawner : MonoBehaviour
                 statsMenus[8].SetActive(true);
                 break;
 
+            case ObjectInfo.ObjectType.BATTERY:
+                statsMenus[12].SetActive(true);
+                break;
+
             case ObjectInfo.ObjectType.MEAT_LAB:
                 statsMenus[13].SetActive(true);
                 break;

@@ -11,6 +11,8 @@ public class SaveData
     public int totalMoneyEarned;
     public int totalMoneySpent;
     public float totalFood;
+    public float totalPeopleFed;
+    public float totalTimePlayed;
 
     public float quotaTimer;
     public int quota;
@@ -25,7 +27,7 @@ public class SaveData
     public string[] gridFill;
     public float[] gridPos;
 
-    public SaveData(int moneyData, float foodData, List<GameObject> gridData, float quotaTimerData, int quotaData, float sustainabilityLevelData, string distributerChoiceData, int totalMoneyEarnedData, int totalMoneySpentData, float totalFoodData)
+    public SaveData(int moneyData, float foodData, List<GameObject> gridData, float quotaTimerData, int quotaData, float sustainabilityLevelData, string distributerChoiceData, int totalMoneyEarnedData, int totalMoneySpentData, float totalFoodData, float totalTimePlayedData, float totalPeopleFedData)
     {
         //sets variables with passed information
         money = moneyData;
@@ -34,6 +36,9 @@ public class SaveData
         totalMoneyEarned = totalMoneyEarnedData;
         totalMoneySpent = totalMoneySpentData;
         totalFood = totalFoodData;
+        totalPeopleFed = totalPeopleFedData;
+
+        totalTimePlayed = totalTimePlayedData;
 
         quotaTimer = quotaTimerData;
         quota = quotaData;
