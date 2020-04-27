@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Currency : MonoBehaviour
 {
+    //public variable to set in inspector
     public GameObject gameManager;
 
     //Declare money variable
@@ -17,8 +18,10 @@ public class Currency : MonoBehaviour
     //Add to current money
     public void AddMoney(int m) 
     {
+        //checks if scene is not tutorial
         if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("TutorialScene"))
         {
+            //if money is greater than 0
             if (m > 0)
             {
                 gameManager.GetComponent<GameLoop>().AddToTotalMoneyEarned(m);
@@ -27,9 +30,9 @@ public class Currency : MonoBehaviour
             {
                 gameManager.GetComponent<GameLoop>().AddToTotalMoneySpent(m);
             }
-
         }
 
+        //add money value
         money = money + m; 
     }
 }

@@ -6,6 +6,7 @@ using TMPro;
 
 public class TutorialEvents : MonoBehaviour
 {
+    //public varaibel to be set in inspector
     public static TutorialEvents instance;
     public GameObject cam;
     public GameObject light;
@@ -91,6 +92,7 @@ public class TutorialEvents : MonoBehaviour
     {
         eventActive = true;
 
+        //checks event to run
         switch (i)
         {
             case 0:
@@ -137,25 +139,33 @@ public class TutorialEvents : MonoBehaviour
 
     void BuildChicken()
     {
+        //sets new objective
         objectiveText.text = "Build a chicken field";
 
+        //tries to get animator to move camera
         if (cam.TryGetComponent(out camAnim))
         {
             camAnim.enabled = true;
             camAnim.Play("PanForChicken");
+
+            //updates aniamtor length
             StartCoroutine(TutorialManager.instance.UpdateClipLength(camAnim, true));
         }
 
+        //moves light to show player where to look
         light.transform.position = new Vector3(54.15f, 19.6f, 39.04f);
         light.SetActive(true);
 
+        //waits for even tto finish
         StartCoroutine(WaitForEventToFinish(ChickenEvent()));
     }
 
     void BuildCarrot()
     {
+        //sets new objective
         objectiveText.text = "Plant a carrot field";
 
+        //tries to get animator to move camera
         if (cam.TryGetComponent(out camAnim))
         {
             camAnim.enabled = true;
@@ -166,20 +176,24 @@ public class TutorialEvents : MonoBehaviour
         light.transform.position = new Vector3(53.71f, 19.6f, 25.36f);
         light.SetActive(true);
 
+        //waits for even tto finish
         StartCoroutine(WaitForEventToFinish(CarrotEvent()));
     }
 
     void RadialFlash()
     {
+        //sets new objective
         objectiveText.text = "Destroy carrot field";
 
         light.SetActive(true);
 
+        //waits for even tto finish
         StartCoroutine(WaitForEventToFinish(RadialFlashEvent()));
     }
 
     void Farmhouse()
     {
+        //tries to get animator to move camera
         if (cam.TryGetComponent(out camAnim))
         {
             camAnim.enabled = true;
@@ -190,13 +204,16 @@ public class TutorialEvents : MonoBehaviour
         light.transform.position = new Vector3(71.51f, 19.6f, 38.43f);
         light.SetActive(true);
 
+        //waits for even tto finish
         StartCoroutine(WaitForEventToFinish(FarmhouseEvent()));
     }
 
     void FoodUIFlash()
     {
+        //sets new objective
         objectiveText.text = "Look at food";
 
+        //play animation for the flashing
         if (FoodPanel.TryGetComponent(out Animator UIPanelAnim) && FoodIcon.TryGetComponent(out Animator UIIconAnim))
         {
             UIPanelAnim.Play("UIFlashAnim");
@@ -206,13 +223,16 @@ public class TutorialEvents : MonoBehaviour
             StartCoroutine(TutorialManager.instance.UpdateClipLength(UIIconAnim, false));
         }
 
+        //waits for even tto finish
         StartCoroutine(WaitForEventToFinish(UIFlashEvent()));
     }
 
     void MoneyUIFlash()
     {
+        //sets new objective
         objectiveText.text = "Look at money";
 
+        //play animation for the flashing
         if (MoneyPanel.TryGetComponent(out Animator UIPanelAnim) && MoneyIcon.TryGetComponent(out Animator UIIconAnim))
         {
             UIPanelAnim.Play("UIFlashAnim");
@@ -225,6 +245,7 @@ public class TutorialEvents : MonoBehaviour
 
     void DistributionIn()
     {
+        //sets new objective
         objectiveText.text = "Select a distributer";
 
         if (DistributionPanel.TryGetComponent(out Animator UIPanelAnim))
@@ -232,6 +253,7 @@ public class TutorialEvents : MonoBehaviour
             UIPanelAnim.Play("DistributionAnim");
             StartCoroutine(TutorialManager.instance.UpdateClipLength(UIPanelAnim, false));
         }
+        //waits for even tto finish
 
         StartCoroutine(WaitForEventToFinish(DistributionEvent()));
     }
@@ -254,11 +276,13 @@ public class TutorialEvents : MonoBehaviour
             StartCoroutine(TutorialManager.instance.UpdateClipLength(camAnim, false));
         }
 
+        //waits for even tto finish
         StartCoroutine(WaitForEventToFinish(PanCameraEvent()));
     }
 
     void RevertCamera()
     {
+        //sets new objective
         objectiveText.text = "Prepare for new beginnings";
 
         if (cam.TryGetComponent(out camAnim))
@@ -276,18 +300,10 @@ public class TutorialEvents : MonoBehaviour
         //Wait until the event is done
         while (eventActive)
         {
-            if(currentEvent == TutEvents.ChickenField)
-            { 
-                
-            }
-            else if(currentEvent == TutEvents.CarrotField)
-            {
-               
-            }
-
             yield return eventName;
         }
 
+        //show tutorial box
         TutorialManager.instance.SetTutorialBox(true);
     }
 
@@ -297,11 +313,13 @@ public class TutorialEvents : MonoBehaviour
 
         Object fieldBlocker;
 
+        //spawn blocker to stop player tapping on other objects
         fieldBlocker = Instantiate(Resources.Load("TutorialResources/Blocker"), new Vector3(46.76f, 10.0f, 19.05f), Quaternion.identity);
 
         //Wait until the event is done
         while (!done)
         {
+            //check if trigger has been triggered
             if (chickenMenuOpen == true && countCheck < 1)
             {
                 TutorialManager.instance.SetTutorialBox(true);
@@ -309,6 +327,7 @@ public class TutorialEvents : MonoBehaviour
                 countCheck++;
             }
 
+            //checks if chicken has been built
             if (chickenBuilt == true)
             {
                 done = true;
@@ -317,8 +336,10 @@ public class TutorialEvents : MonoBehaviour
             yield return null;
         }
 
+        //destoy blocker
         Destroy(fieldBlocker);
 
+        //spawn new blocker over chicken field
         Instantiate(Resources.Load("TutorialResources/Blocker"), new Vector3(46.76f, 10.0f, 31.95f), Quaternion.identity);
 
         eventActive = false;
@@ -333,6 +354,7 @@ public class TutorialEvents : MonoBehaviour
         //Wait until the event is done
         while (!done)
         {
+            // check if trigger has been triggered
             if (carrotBuilt == true)
             {
                 done = true;
@@ -471,9 +493,4 @@ public class TutorialEvents : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
