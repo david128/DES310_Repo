@@ -19,7 +19,7 @@ public class RadialMenuSpawner : MonoBehaviour
     
     //setters
     public void SetAwake(bool a) { awake = a; }
-    public void SetCanCreateNewRadial(bool c) { canCreateNewRadial = c; }
+   
 
     //loops through menus and disables them so that only the menu needed is on screen
     public void DisableStatsMenus() { for (int i = 0; i < statsMenus.Length; i++) { statsMenus[i].SetActive(false); } }

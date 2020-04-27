@@ -99,9 +99,13 @@ public class GameLoop : MonoBehaviour
     {
         //Application.targetFrameRate = targetFrameRate;
         QualitySettings.vSyncCount = 0;
-        
+
         //load events
-        gameManager.GetComponent<Events>().HandleEventFile();
+        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("TutorialScene"))
+        {
+            gameManager.GetComponent<Events>().HandleEventFile();
+
+        }
 
         //Set season colours
         spring = new Color(0.1685667f, 0.4056604f, 0.03252938f);
@@ -164,7 +168,11 @@ public class GameLoop : MonoBehaviour
             time = 0.0f;
 
             //checks for events
-            gameManager.GetComponent<Events>().checkTrigger();
+            if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("TutorialScene"))
+            {
+                gameManager.GetComponent<Events>().checkTrigger();
+            }
+            
         }
 
         //checks season to change to and the game time

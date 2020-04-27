@@ -74,9 +74,6 @@ public class InputScript : MonoBehaviour
     //getters
     public bool GetAllowSelecting() { return selecting; }
 
-    //Getters/Setters
-    public bool GetAllowSelecting() { return selecting; }
-
     public void SetAllowSelecting(bool s) { selecting = s; }
 
     public void AllowSelectingAfterTime()
@@ -107,8 +104,6 @@ public class InputScript : MonoBehaviour
     public int GetSelectedID() { return selectedID; }
 
     //setters
-    public void SetAllowSelecting(bool s) { selecting = s; }
-    public void SetCanMove(bool c) { canMove = c; }
     public void SetNewMarketplaceMenu(bool m) { newMarket = m; }
     public void SetNewRadialMenu(bool r) { newRadial = r; }
 
