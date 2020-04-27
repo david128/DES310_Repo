@@ -31,8 +31,10 @@ public class AssetChange : MonoBehaviour
         //set fill
         ObjectFill.FillType fill;
 
+        //checks whatr type
         if (type == ObjectInfo.ObjectType.FIELD || type == ObjectInfo.ObjectType.CHICKEN_COOP || type == ObjectInfo.ObjectType.COW_FIELD || type == ObjectInfo.ObjectType.PIG_PEN)
         {
+            //fill type assosiated so has then check what fill it is
             fill = asset.GetComponent<ObjectFill>().GetFillType();
         }
         else
@@ -40,17 +42,19 @@ public class AssetChange : MonoBehaviour
             fill = ObjectFill.FillType.NONE;
         }
 
+        //pass change asset the required data to change the asset
         ChangeAsset(id, level, type, fill);
     }
 
     public void Demolish(int id) //change to empty
     { 
-        
+        //same id, level 0, typee empty, no fill
         ChangeAsset(id, 0, ObjectInfo.ObjectType.EMPTY, 0);
     }
 
     public void Build(int id, ObjectInfo.ObjectType type, ObjectFill.FillType fill)//build new tile
     {
+        //same id, level 1, type, fill
         ChangeAsset(id, 1, type, fill);
     }
 
@@ -72,6 +76,7 @@ public class AssetChange : MonoBehaviour
             lvlExtension = ""; //no extension needed.
         }
 
+        //load using name and extension, extension being _lvl2 or _lvl3
         switch (type)
         {
             case ObjectInfo.ObjectType.EMPTY:
@@ -115,12 +120,14 @@ public class AssetChange : MonoBehaviour
         }    
     }
 
+    //code to unload old and load new asset
     public void ChangeAsset(int id, int level, ObjectInfo.ObjectType type, ObjectFill.FillType fill)
     {
         //find asset and keep transform
         GameObject asset;
         asset = gameManager.GetComponent<GridScript>().GetGridTile(id);
 
+        //store transform
         Transform transform = asset.transform;
         Object locked;
 
@@ -217,6 +224,7 @@ public class AssetChange : MonoBehaviour
 
     GameObject LoadFill(ObjectFill.FillType fill, Transform transform, int level)
     {
+        //load fill based on name
         switch (fill)
         {
             case ObjectFill.FillType.NONE:
@@ -237,6 +245,7 @@ public class AssetChange : MonoBehaviour
             case ObjectFill.FillType.TURNIP:
                 return (GameObject)Instantiate(Resources.Load("Turnips"), transform.position, Quaternion.identity, newAsset.transform);
 
+            //position of animals based on level
             case ObjectFill.FillType.COW:
 
                 if (level == 3)

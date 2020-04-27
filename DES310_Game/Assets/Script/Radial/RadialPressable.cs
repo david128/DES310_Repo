@@ -31,6 +31,7 @@ public class RadialPressable : MonoBehaviour
             return;
         }
 
+        //if allow selecting is true spawn menu and stats
         if (RadialMenuSpawner.instance.GetAwake() == false && InputScript.instance.GetAllowSelecting() == true && RadialMenuSpawner.instance.GetCanCreateNewRadial() == true)
         {
             RadialMenuSpawner.instance.SpawnMenu(this);
