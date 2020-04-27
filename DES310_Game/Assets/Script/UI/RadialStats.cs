@@ -61,10 +61,14 @@ public class RadialStats : MonoBehaviour
             //in parent
             sustValues = pol.GetPolValues();
         }
-        else
+        else if (selectedTile.GetComponentInChildren<ObjectPollution>().GetPolValues() != null)
         {
             //in child
             sustValues = selectedTile.GetComponentInChildren<ObjectPollution>().GetPolValues();
+        }
+        else
+        {
+            sustainability = 0;
         }
 
         //Sets values to show in menu depending on level of field
@@ -150,8 +154,14 @@ public class RadialStats : MonoBehaviour
         //takes overall sustainability and adds the fields sustainability
         float futureSustainability = currentSust + sustainability;
 
-        //Checks how much pollution this field is producing
-        if (futureSustainability <= (sustainability * 3))
+        if (sustainability == 0)
+        {
+            goodPol.SetActive(true);
+            badPol.SetActive(false);
+
+            goodPol.GetComponent<TextMeshProUGUI>().text = "+ + +";
+        }
+        else if (futureSustainability <= (sustainability * 3))//Checks how much pollution this field is producing
         {
             //Sets what pollution to show
             badPol.SetActive(false);
@@ -163,7 +173,7 @@ public class RadialStats : MonoBehaviour
             {
                 goodPol.GetComponent<TextMeshProUGUI>().text = "+ + +";
             }
-            else if(futureSustainability * 0.8 < currentSust)
+            else if (futureSustainability * 0.8 < currentSust)
             {
                 goodPol.GetComponent<TextMeshProUGUI>().text = "+ +";
             }
@@ -171,7 +181,7 @@ public class RadialStats : MonoBehaviour
             {
                 goodPol.GetComponent<TextMeshProUGUI>().text = "+";
             }
-            
+
         }
         else
         {

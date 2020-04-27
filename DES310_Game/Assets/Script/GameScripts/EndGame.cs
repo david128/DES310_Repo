@@ -23,6 +23,8 @@ public class EndGame : MonoBehaviour
     public TextMeshProUGUI totalFoodProducedText;
     public TextMeshProUGUI totalPeopleFedText;
 
+    public TextMeshProUGUI reasonOfEndText;
+
     bool gathered;
 
     // Start is called before the first frame update
@@ -60,6 +62,7 @@ public class EndGame : MonoBehaviour
             totalFoodProducedText.text = PlayerPrefs.GetFloat("TotalFoodProduced").ToString();
             totalTimePlayedText.text = string.Format("{0:D2}h:{1:D2}m:{2:D2}s", t.Hours, t.Minutes, t.Seconds);
             totalPeopleFedText.text = PlayerPrefs.GetInt("PeopleFed").ToString();
+            reasonOfEndText.text = PlayerPrefs.GetString("ReasonOfEnd");
 
             //Loops though all fields to show values for each
             for (int i = 0; i < 15; i++)
@@ -163,7 +166,6 @@ public class EndGame : MonoBehaviour
 
             gathered = true;
         }
-
     }
 
     IEnumerator WaitToShowStats(int waitTime)
