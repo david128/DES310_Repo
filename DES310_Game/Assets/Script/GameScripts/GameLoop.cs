@@ -12,6 +12,9 @@ public class GameLoop : MonoBehaviour
     public AK.Wwise.Bank MyBank = null;
     public AK.Wwise.Event MyEvent = null;
 
+    public FieldStats[] fieldStats;
+    public GameStatisticsScript gameStats;
+
     //Warnings
     public Image UpgradeWarning;
     public Image MoneyWarning;
@@ -389,21 +392,48 @@ public class GameLoop : MonoBehaviour
         }
     }
 
-    // Quits the player when the user hits escape
+    //Gatherss session stats to show at the end screen 
+    public void GatherStats()
+    {
+        //loops though feild stats to show
+        for (int i = 0; i < fieldStats.Length; i++)
+        {
+            fieldStats[i].GatherStats();
+        }
+
+        gameStats.GatherGameStats();
+    }
+
+    //will run fail game if quota count is not met
+    public void FailedGame()
+    {
+        //gets all stats info
+        GatherStats();
+
+        PlayerPrefs.SetInt("Ending", 0);
+        PlayerPrefs.SetString("ReasonOfEnd", "You did not manange to meet all quotas. Try again?");
+
+        SceneLoader.instance.LoadEndScene(4);
+    }
+
+    //will check sustainabilty after all the quotas are met to see if the player done good or bad
     public void FinishGame()
     {
         //gets all stats info
-        //GatherStats();
+        GatherStats();
 
         if (gameManager.GetComponent<SustainabilityScript>().GetSustainability() < 50)
         {
             Debug.Log("You have completed the game with a good ending");
             PlayerPrefs.SetInt("Ending", 1);
+
+            PlayerPrefs.SetString("ReasonOfEnd", "You managed to meet all quotas and keep a good sustainibility level. Congratulations!");
         }
         else
         {
-            PlayerPrefs.SetInt("Ending", 0);
             Debug.Log("You have completed the game with a bad ending");
+            PlayerPrefs.SetInt("Ending", 0);
+            PlayerPrefs.SetString("ReasonOfEnd", "You managed to meet all quotas, but did not manage to keep a good sustainability level. Try again?");
         }
 
         SceneLoader.instance.LoadEndScene(4);

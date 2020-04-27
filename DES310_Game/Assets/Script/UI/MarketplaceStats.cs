@@ -47,9 +47,10 @@ public class MarketplaceStats : MonoBehaviour
         {
             sustainability = pol.pol_lvl1;
         }
-        else
+        else if (tileInfo.GetComponentInChildren<ObjectPollution>().GetPolValues() != null)
         {
-            sustainability = 0;
+            //in child
+            sustValues = tileInfo.GetComponentInChildren<ObjectPollution>().GetPolValues();
         }
        
         //gets current sustainability value
@@ -58,14 +59,7 @@ public class MarketplaceStats : MonoBehaviour
         //takes overall sustainability and adds the fields sustainability
         float futureSustainability = currentSust + sustainability;
 
-        if(sustainability == 0)
-        {
-            goodPol.SetActive(true);
-            badPol.SetActive(false);
-
-            goodPol.GetComponent<TextMeshProUGUI>().text = "+ + +";
-        }
-        else if (futureSustainability <= (sustainability * 3)) //Checks how much pollution this field is producing
+        if (futureSustainability <= (sustainability * 3)) //Checks how much pollution this field is producing
         {
             //Sets what pollution to show
             badPol.SetActive(false);

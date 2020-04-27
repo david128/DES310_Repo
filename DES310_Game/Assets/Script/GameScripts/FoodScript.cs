@@ -240,9 +240,6 @@ public class FoodScript : MonoBehaviour
     void Failure()
     {
         Debug.Log("You have failed to meet the quota too mnay times and the government have asked you to vacate your farm.");
-
-        SceneLoader.instance.LoadEndScene(4);
-        PlayerPrefs.SetInt("Ending", 0);
-        //gameManager.GetComponent<Save>().LoadGameData();
+        gameManager.GetComponent<GameLoop>().FailedGame();
     }
 }
