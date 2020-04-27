@@ -7,6 +7,7 @@ public class DistributionChoice : MonoBehaviour
 {
     //Public variables
     public GameObject gameManager;
+    public GameObject enterButton;
 
     public Button BFB;
     public Button PB;
@@ -61,6 +62,15 @@ public class DistributionChoice : MonoBehaviour
 
     void Update()
     {
+        if (gameManager.GetComponent<InputScript>().GetAllowSelecting() == false && enterButton.active == true)
+        {
+            enterButton.SetActive(false);
+        }
+        else if (gameManager.GetComponent<InputScript>().GetAllowSelecting() == true && enterButton.active == false)
+        {
+            enterButton.SetActive(true);
+        }
+       
         //checks if distribution id open and if selecting is true
         if (gameManager.GetComponent<InputScript>().GetAllowSelecting() == true && distributionOpen == true)
         {
