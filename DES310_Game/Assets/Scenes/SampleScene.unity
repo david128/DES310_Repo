@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4505726, g: 0.5005519, b: 0.5750574, a: 1}
+  m_IndirectSpecularColor: {r: 0.4505732, g: 0.5005528, b: 0.5750584, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1551,36 +1551,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Distribution_Stats
       objectReference: {fileID: 0}
-    - target: {fileID: 6166403883806373820, guid: 58832e9207908e14a99582410e3adb03,
-        type: 3}
-      propertyPath: gameManager
-      value: 
-      objectReference: {fileID: 215528158}
-    - target: {fileID: 2344233999243419291, guid: 58832e9207908e14a99582410e3adb03,
-        type: 3}
-      propertyPath: gameManager
-      value: 
-      objectReference: {fileID: 215528158}
-    - target: {fileID: 4551679208313450404, guid: 58832e9207908e14a99582410e3adb03,
-        type: 3}
-      propertyPath: gameManager
-      value: 
-      objectReference: {fileID: 215528158}
-    - target: {fileID: 5064577589381458223, guid: 58832e9207908e14a99582410e3adb03,
-        type: 3}
-      propertyPath: gameManager
-      value: 
-      objectReference: {fileID: 215528158}
-    - target: {fileID: 2592110331335265189, guid: 58832e9207908e14a99582410e3adb03,
-        type: 3}
-      propertyPath: gameManager
-      value: 
-      objectReference: {fileID: 215528158}
-    - target: {fileID: 2128366571600283659, guid: 58832e9207908e14a99582410e3adb03,
-        type: 3}
-      propertyPath: gameManager
-      value: 
-      objectReference: {fileID: 215528158}
     - target: {fileID: 1932814941293569520, guid: 58832e9207908e14a99582410e3adb03,
         type: 3}
       propertyPath: gameManager
@@ -1624,7 +1594,7 @@ PrefabInstance:
     - target: {fileID: 4233899226186049867, guid: 58832e9207908e14a99582410e3adb03,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 22
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 4233899226186049867, guid: 58832e9207908e14a99582410e3adb03,
         type: 3}
@@ -1921,6 +1891,36 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[21].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4233899226186049867, guid: 58832e9207908e14a99582410e3adb03,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[22].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233899226186049867, guid: 58832e9207908e14a99582410e3adb03,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[22].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233899226186049867, guid: 58832e9207908e14a99582410e3adb03,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[22].m_Target
+      value: 
+      objectReference: {fileID: 611921490}
+    - target: {fileID: 4233899226186049867, guid: 58832e9207908e14a99582410e3adb03,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[22].m_MethodName
+      value: SetDistributionOpen
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233899226186049867, guid: 58832e9207908e14a99582410e3adb03,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[22].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233899226186049867, guid: 58832e9207908e14a99582410e3adb03,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[22].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6583054626019452726, guid: 58832e9207908e14a99582410e3adb03,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -2084,7 +2084,7 @@ PrefabInstance:
     - target: {fileID: 5824690290155507913, guid: 58832e9207908e14a99582410e3adb03,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5824690290155507913, guid: 58832e9207908e14a99582410e3adb03,
         type: 3}
@@ -2174,6 +2174,36 @@ PrefabInstance:
     - target: {fileID: 5824690290155507913, guid: 58832e9207908e14a99582410e3adb03,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[5].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5824690290155507913, guid: 58832e9207908e14a99582410e3adb03,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5824690290155507913, guid: 58832e9207908e14a99582410e3adb03,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5824690290155507913, guid: 58832e9207908e14a99582410e3adb03,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5824690290155507913, guid: 58832e9207908e14a99582410e3adb03,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      value: 
+      objectReference: {fileID: 611921490}
+    - target: {fileID: 5824690290155507913, guid: 58832e9207908e14a99582410e3adb03,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_MethodName
+      value: SetDistributionOpen
+      objectReference: {fileID: 0}
+    - target: {fileID: 5824690290155507913, guid: 58832e9207908e14a99582410e3adb03,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[6].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1265030378287864907, guid: 58832e9207908e14a99582410e3adb03,
@@ -3956,6 +3986,11 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 215528158}
+    - target: {fileID: 2128366571600283659, guid: 58832e9207908e14a99582410e3adb03,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 215528158}
     - target: {fileID: 5140677542343263461, guid: 58832e9207908e14a99582410e3adb03,
         type: 3}
       propertyPath: gameManager
@@ -3966,12 +4001,37 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 215528158}
+    - target: {fileID: 2344233999243419291, guid: 58832e9207908e14a99582410e3adb03,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 215528158}
+    - target: {fileID: 4551679208313450404, guid: 58832e9207908e14a99582410e3adb03,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 215528158}
     - target: {fileID: 5359006529555539362, guid: 58832e9207908e14a99582410e3adb03,
         type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 215528158}
+    - target: {fileID: 6166403883806373820, guid: 58832e9207908e14a99582410e3adb03,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 215528158}
     - target: {fileID: 8617180850220602545, guid: 58832e9207908e14a99582410e3adb03,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 215528158}
+    - target: {fileID: 2592110331335265189, guid: 58832e9207908e14a99582410e3adb03,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 215528158}
+    - target: {fileID: 5064577589381458223, guid: 58832e9207908e14a99582410e3adb03,
         type: 3}
       propertyPath: gameManager
       value: 
