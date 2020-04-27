@@ -54,6 +54,9 @@ public class RadialMenuSpawner : MonoBehaviour
     {
         RadialMenu newMenu = Instantiate(menuPrefab) as RadialMenu;
 
+        //Gives radial menu a while awake script component
+        newMenu.gameObject.AddComponent<WhileAwake>();
+
         newMenu.transform.SetParent(transform, false);
 
         newMenu.transform.position = new Vector3(Screen.width * 0.5f, Screen.height * 0.5f, 0.0f);

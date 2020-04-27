@@ -5,12 +5,11 @@ using TMPro;
 
 public class RadialStats : MonoBehaviour
 {
+    //public variables to be set in inspector
     public GameObject gameManager;
 
     public GameObject badPol;
     public GameObject goodPol;
-
-    GameObject selectedTile;
 
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI nextMoneyText;
@@ -21,24 +20,34 @@ public class RadialStats : MonoBehaviour
     public TextMeshProUGUI moneyPlusSymbol;
     public TextMeshProUGUI foodPlusSymbol;
 
+    GameObject selectedTile;
+
+    //variables used in script
+        //money
     public int[] money;
     public int moneyCurrent;
     public int nextMoney;
-
+    
+        //food
     public int[] food;
     public int foodCurrent;
     public float nextFood;
 
+        //level
     int level;
 
+        //Sustainability
     public float[] sustValues;
     public float sustainability;
     public int upgradePrice;
 
+    //Gets stats
     public void GetStats()
     {
+        //Gets selceted tile to be used to gather data
         selectedTile = gameManager.GetComponent<GameLoop>().GetSelectedTile();
 
+        //Gets object data of the selected tile
         ObjectData selectedData = gameManager.GetComponent<GameInfo>().GetTypeInfo(selectedTile.GetComponent<ObjectInfo>().GetObjectType(), selectedTile.GetComponent<ObjectFill>().GetFillType()); //get data relating to target
 
         //Money and food for stats radial menu
@@ -48,14 +57,16 @@ public class RadialStats : MonoBehaviour
             money = output.GetComponent<ObjectOutput>().GetTileMoneyOutput();
             food = output.GetComponent<ObjectOutput>().GetTileFoodOutput();
         }
-        else if(selectedTile.GetComponent<ObjectInfo>().GetObjectType() != ObjectInfo.ObjectType.FARMHOUSE || selectedTile.GetComponent<ObjectInfo>().GetObjectType() != ObjectInfo.ObjectType.BARN || selectedTile.GetComponent<ObjectInfo>().GetObjectType() != ObjectInfo.ObjectType.RESEARCH)
+        else if(selectedTile.GetComponent<ObjectInfo>().GetObjectType() != ObjectInfo.ObjectType.FARMHOUSE 
+                || selectedTile.GetComponent<ObjectInfo>().GetObjectType() != ObjectInfo.ObjectType.BARN 
+                || selectedTile.GetComponent<ObjectInfo>().GetObjectType() != ObjectInfo.ObjectType.RESEARCH) //checks if the selected tile is not one of the defaults
         {
             //in child object
             money = selectedTile.GetComponentInChildren<ObjectOutput>().GetTileMoneyOutput();
             food = selectedTile.GetComponentInChildren<ObjectOutput>().GetTileFoodOutput();
         }
 
-        //Sustainability for radial stas menu
+        //Sustainability for radial stats menu
         if (selectedTile.TryGetComponent(out ObjectPollution pol))
         {
             //in parent
