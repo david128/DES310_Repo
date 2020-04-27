@@ -167,6 +167,7 @@
 				<Event Id="1045388109" Name="Ambience_Tractor" ObjectPath="\Events\Default Work Unit\Ambience_Tractor" MaxAttenuation="100.000000" DurationType="Infinite"/>
 				<Event Id="317641954" Name="ButtonPress" ObjectPath="\Events\Default Work Unit\ButtonPress" DurationType="OneShot" DurationMin="0.114512" DurationMax="0.114512"/>
 				<Event Id="2634775690" Name="Construction" ObjectPath="\Events\Default Work Unit\Construction" DurationType="OneShot" DurationMin="1.403175" DurationMax="1.403175"/>
+				<Event Id="2446376615" Name="Destruction" ObjectPath="\Events\Default Work Unit\Destruction" DurationType="OneShot" DurationMin="2.072562" DurationMax="2.072562"/>
 				<Event Id="432469531" Name="New_Open_Market" ObjectPath="\Events\Default Work Unit\New_Open_Market" DurationType="OneShot" DurationMin="1.321043" DurationMax="1.321043"/>
 				<Event Id="1323090623" Name="Upgrade" ObjectPath="\Events\Default Work Unit\Upgrade" MaxAttenuation="100.000000" DurationType="OneShot" DurationMin="0.461542" DurationMax="0.461542"/>
 			</IncludedEvents>
@@ -178,6 +179,10 @@
 				<File Id="69855631" Language="SFX">
 					<ShortName>Chicken_FX.wav</ShortName>
 					<Path>SFX\Chicken_FX_FD6CF179.wem</Path>
+				</File>
+				<File Id="147969968" Language="SFX">
+					<ShortName>Destruction_FX.wav</ShortName>
+					<Path>SFX\Destruction_FX_FD6CF179.wem</Path>
 				</File>
 				<File Id="176897255" Language="SFX">
 					<ShortName>Pig_FX.wav</ShortName>
