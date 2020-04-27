@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4505732, g: 0.5005528, b: 0.5750584, a: 1}
+  m_IndirectSpecularColor: {r: 0.4505726, g: 0.5005519, b: 0.5750574, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -137,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &32216172
 RectTransform:
   m_ObjectHideFlags: 0
@@ -442,7 +442,6 @@ GameObject:
   - component: {fileID: 215528168}
   - component: {fileID: 215528166}
   - component: {fileID: 215528169}
-  - component: {fileID: 215528170}
   - component: {fileID: 215528171}
   - component: {fileID: 215528167}
   - component: {fileID: 215528163}
@@ -510,12 +509,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9d57d2e0b7abbb4ea6fda865eeef5d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 215528158}
+  controlType: 0
   touch0StartTime: 0
   maxDistanceForTap: 10
   maxDurationForTap: 0.4
-  controlType: 0
-  canMove: 0
-  gameManager: {fileID: 215528158}
   selectedID: 0
   selecting: 1
   zoomOutMin: 5
@@ -546,11 +544,11 @@ MonoBehaviour:
       type: 2}
   fieldStats: []
   gameStats: {fileID: 0}
+  time: 0
+  FPS: 0
   UpgradeWarning: {fileID: 1649585170}
   MoneyWarning: {fileID: 203405601}
   QuotaWarning: {fileID: 6946787074251222789}
-  time: 0
-  FPS: 0
   season: 
   seasonTimer: 0
   GrassMat: {fileID: 2100000, guid: ba0ed77097f0023429517d98f52249f5, type: 2}
@@ -599,7 +597,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 215528158}
   quotaFailCountText: {fileID: 6946787074251222788}
-  Distributer: 
   food: 0
   currentFood: 0
   foodBar: {fileID: 1250031535}
@@ -627,6 +624,7 @@ MonoBehaviour:
   - 1000
   - 1000
   - 1000
+  Distributer: 
 --- !u!114 &215528166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -679,20 +677,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menuPrefab: {fileID: 1116816644762094971, guid: 2fc8793f70326924991d0525bbe066ec,
     type: 3}
---- !u!114 &215528170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 215528158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5b11580257473a4f9dc1f547c67b23f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 215528158}
-  eventUI: {fileID: 0}
 --- !u!114 &215528171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1037,6 +1021,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Distribution_Stats
       objectReference: {fileID: 0}
+    - target: {fileID: 3042638964459240316, guid: 58832e9207908e14a99582410e3adb03,
+        type: 3}
+      propertyPath: enterButton
+      value: 
+      objectReference: {fileID: 1642258177}
+    - target: {fileID: 3042638964459240316, guid: 58832e9207908e14a99582410e3adb03,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 215528158}
     - target: {fileID: 4233899225852231488, guid: 58832e9207908e14a99582410e3adb03,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5261,10 +5255,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 215528158}
-  enterButton: {fileID: 0}
+  enterButton: {fileID: 1642258177}
   BFB: {fileID: 300883419}
   PB: {fileID: 300883418}
   GGB: {fileID: 300883417}
+--- !u!1 &1642258177 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4233899226186049877, guid: 58832e9207908e14a99582410e3adb03,
+    type: 3}
+  m_PrefabInstance: {fileID: 300883416}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1649585168
 PrefabInstance:
   m_ObjectHideFlags: 0

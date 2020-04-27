@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4505732, g: 0.5005528, b: 0.5750584, a: 1}
+  m_IndirectSpecularColor: {r: 0.4505726, g: 0.5005519, b: 0.5750574, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -137,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &32216172
 RectTransform:
   m_ObjectHideFlags: 0
@@ -936,12 +936,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9d57d2e0b7abbb4ea6fda865eeef5d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 215528158}
+  controlType: 0
   touch0StartTime: 0
   maxDistanceForTap: 10
   maxDurationForTap: 0.4
-  controlType: 0
-  canMove: 0
-  gameManager: {fileID: 215528158}
   selectedID: 0
   selecting: 1
   zoomOutMin: 5
@@ -987,11 +986,11 @@ MonoBehaviour:
   - {fileID: 517519235}
   - {fileID: 1059561748}
   gameStats: {fileID: 880080478}
+  time: 0
+  FPS: 0
   UpgradeWarning: {fileID: 57386997}
   MoneyWarning: {fileID: 932858472115143157}
   QuotaWarning: {fileID: 934837451}
-  time: 0
-  FPS: 0
   season: 
   seasonTimer: 0
   GrassMat: {fileID: 2100000, guid: ba0ed77097f0023429517d98f52249f5, type: 2}
@@ -1040,7 +1039,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 215528158}
   quotaFailCountText: {fileID: 934837450}
-  Distributer: 
   food: 0
   currentFood: 0
   foodBar: {fileID: 1704458499}
@@ -1060,6 +1058,7 @@ MonoBehaviour:
   - 2500
   - 5000
   - 12500
+  Distributer: 
 --- !u!114 &215528166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1596,6 +1595,11 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 215528158}
+    - target: {fileID: 3042638964459240316, guid: 58832e9207908e14a99582410e3adb03,
+        type: 3}
+      propertyPath: enterButton
+      value: 
+      objectReference: {fileID: 1567676061}
     - target: {fileID: 4233899225852231488, guid: 58832e9207908e14a99582410e3adb03,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4061,6 +4065,11 @@ PrefabInstance:
       propertyPath: m_CullTransparentMesh
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4233899226186049877, guid: 58832e9207908e14a99582410e3adb03,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58832e9207908e14a99582410e3adb03, type: 3}
 --- !u!224 &611921485 stripped
@@ -5770,7 +5779,7 @@ PrefabInstance:
     - target: {fileID: 6285219975983079814, guid: 3e529313ee7f154428ae4a1d8b636e5c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6285219975983079814, guid: 3e529313ee7f154428ae4a1d8b636e5c,
         type: 3}
@@ -5785,7 +5794,7 @@ PrefabInstance:
     - target: {fileID: 6285219975983079814, guid: 3e529313ee7f154428ae4a1d8b636e5c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetAllowSelecting
+      value: AllowSelectingAfterTime
       objectReference: {fileID: 0}
     - target: {fileID: 6285219975983079814, guid: 3e529313ee7f154428ae4a1d8b636e5c,
         type: 3}
@@ -5905,7 +5914,7 @@ PrefabInstance:
     - target: {fileID: 1578743330612339734, guid: 3e529313ee7f154428ae4a1d8b636e5c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1578743330612339734, guid: 3e529313ee7f154428ae4a1d8b636e5c,
         type: 3}
@@ -5920,7 +5929,7 @@ PrefabInstance:
     - target: {fileID: 1578743330612339734, guid: 3e529313ee7f154428ae4a1d8b636e5c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: SetAllowSelecting
+      value: AllowSelectingAfterTime
       objectReference: {fileID: 0}
     - target: {fileID: 1578743330612339734, guid: 3e529313ee7f154428ae4a1d8b636e5c,
         type: 3}
@@ -6673,6 +6682,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2078746240900721026, guid: 644c988195024e242b4c69c7ec1c6c9b,
     type: 3}
   m_PrefabInstance: {fileID: 2078746240306735536}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1567676061 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4233899226186049877, guid: 58832e9207908e14a99582410e3adb03,
+    type: 3}
+  m_PrefabInstance: {fileID: 611921484}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1568850235
 GameObject:

@@ -6,64 +6,75 @@ using System.IO;
 
 public class MainMenu : MonoBehaviour
 {
+    //public variables to be set in inspector
     public GameObject NewGameConfirm;
     public GameObject NoSaveNotice;
 
+    //checks if there is a save on the devices local game files
     public void CheckNewGame()
     {
+        //sets path to file to check
         string path = Application.persistentDataPath + "/saveData.SaveData";
 
-        //loads game scene at same time as unloading the menu and sets from load to false
-
+        //if the path exists then the new game warning will appear, prompting the player o choose confirm or not
         if (File.Exists(path))
         {
+            //set warning to show
             NewGameConfirm.SetActive(true);
         }
-        else
+        else //will automatically load new game as there is no save to be deleted
         {
+            //loads new game into tutorial to show player around
             SceneLoader.instance.LoadScene(2);
+
+            //sets the player prefs to be able to transfer data between scenes so that the game knows not to load
             PlayerPrefs.SetInt("loadGame", 0);
         }
-
-        // SceneManager.UnloadSceneAsync(0);
     }
 
+    //plays new game when confirm button in warning is pressed
     public void PlayNewGame()
     {
+        //loads new game into tutorial to show player around
         SceneLoader.instance.LoadScene(2);
+
+        //sets the player prefs to be able to transfer data between scenes so that the game knows not to load
         PlayerPrefs.SetInt("loadGame", 0);
     }
 
+    //load saved file
     public void LoadSavedGame()
     {
+        //sets path to file to check
         string path = Application.persistentDataPath + "/saveData.SaveData";
 
-        //loads game scene at same time as unloading the menu and sets from load to true
+        //if the path exists then the game will load into saved game
         if (File.Exists(path))
         {
+            //loads game into actual game scene
             SceneLoader.instance.LoadScene(3);
+
+            //sets loading so that the game knows to the save file 
             PlayerPrefs.SetInt("loadGame", 1);
         }
-        else
+        else //path not found meaning the player will get a notice saying no save file found
         {
+            //shows no save notice
             NoSaveNotice.SetActive(true);
         }
-
-        // SceneManager.UnloadSceneAsync(0);
     }
 
+    //goes back to menu scene
     public void BackToMenu()
     {
-        //loads menu scene at same time as unloading the game and sets from load to false
+        //loads menu scene
         SceneLoader.instance.LoadScene(1);
-        //SceneManager.UnloadSceneAsync(1);
     }
 
+    //Quits application
     public void QuitGame()
     {
-        //Quits application
-        Debug.Log("Quit");
-
+        //Quits
         Application.Quit();
     }
 }
