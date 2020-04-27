@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
+using System.Collections;
 
 public class InputScript : MonoBehaviour
 {
@@ -67,10 +68,31 @@ public class InputScript : MonoBehaviour
     //Selecting Variables
     public void AllowSelecting() { selecting = true;}
 
+
     //Getters/Setters
     public bool GetAllowSelecting() { return selecting; }
 
     public void SetAllowSelecting(bool s) { selecting = s; }
+
+    public void AllowSelectingAfterTime()
+    {
+        StartCoroutine(WaitToSelect());
+    }
+    public IEnumerator WaitToSelect()
+    {
+        float counter = 0;
+        float waitTime = 0.5f;
+
+        //Now, Wait until the current state is done playing
+        while (counter < (waitTime))
+        {
+            counter += Time.deltaTime;
+            yield return null;
+        }
+
+        //allow selecting again
+        AllowSelecting();
+    }
 
     public void SetCanMove(bool c) { canMove = c; }
     public bool GetCanMove() { return canMove; }
