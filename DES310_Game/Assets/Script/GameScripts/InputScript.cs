@@ -431,6 +431,12 @@ public class InputScript : MonoBehaviour
             Debug.Log("upgrade on " + id.ToString());
             gameManager.GetComponent<AssetChange>().Upgrade(id);
         }
+        else
+        {
+            //shows warning message about money
+            gameManager.GetComponent<GameLoop>().GetMoneyWarning().gameObject.SetActive(true);
+            gameManager.GetComponent<InputScript>().SetAllowSelecting(false);
+        }
     }
 
     public void AttemptDemolish(int id)
