@@ -219,16 +219,22 @@ public class FoodScript : MonoBehaviour
 
                     quotaFailCountText.text = "" + failToFill;
 
-                    gameManager.GetComponent<GameLoop>().GetQuotaWarning().gameObject.SetActive(true);
-                    gameManager.GetComponent<InputScript>().SetAllowSelecting(false);
+                    
 
-                    if (failToFill == 2)
+                    if (failToFill == 3)
                     {
                         currentQuota = quotaCount;
                         Failure();
                         failToFill = 0;
                         quotaCount = currentQuota;
                     }
+                    else 
+                    {
+                        gameManager.GetComponent<GameLoop>().GetQuotaWarning().gameObject.SetActive(true);
+                        gameManager.GetComponent<InputScript>().SetAllowSelecting(false);
+                    }
+                    
+
                 }
 
                 currentTime = 0;

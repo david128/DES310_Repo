@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4505732, g: 0.5005528, b: 0.5750584, a: 1}
+  m_IndirectSpecularColor: {r: 0.4505726, g: 0.5005519, b: 0.5750574, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1551,6 +1551,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Distribution_Stats
       objectReference: {fileID: 0}
+    - target: {fileID: 6166403883806373820, guid: 58832e9207908e14a99582410e3adb03,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 215528158}
+    - target: {fileID: 2344233999243419291, guid: 58832e9207908e14a99582410e3adb03,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 215528158}
+    - target: {fileID: 4551679208313450404, guid: 58832e9207908e14a99582410e3adb03,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 215528158}
+    - target: {fileID: 5064577589381458223, guid: 58832e9207908e14a99582410e3adb03,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 215528158}
+    - target: {fileID: 2592110331335265189, guid: 58832e9207908e14a99582410e3adb03,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 215528158}
+    - target: {fileID: 2128366571600283659, guid: 58832e9207908e14a99582410e3adb03,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 215528158}
     - target: {fileID: 1932814941293569520, guid: 58832e9207908e14a99582410e3adb03,
         type: 3}
       propertyPath: gameManager
@@ -3926,11 +3956,6 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 215528158}
-    - target: {fileID: 2128366571600283659, guid: 58832e9207908e14a99582410e3adb03,
-        type: 3}
-      propertyPath: gameManager
-      value: 
-      objectReference: {fileID: 215528158}
     - target: {fileID: 5140677542343263461, guid: 58832e9207908e14a99582410e3adb03,
         type: 3}
       propertyPath: gameManager
@@ -3941,37 +3966,12 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 215528158}
-    - target: {fileID: 2344233999243419291, guid: 58832e9207908e14a99582410e3adb03,
-        type: 3}
-      propertyPath: gameManager
-      value: 
-      objectReference: {fileID: 215528158}
-    - target: {fileID: 4551679208313450404, guid: 58832e9207908e14a99582410e3adb03,
-        type: 3}
-      propertyPath: gameManager
-      value: 
-      objectReference: {fileID: 215528158}
     - target: {fileID: 5359006529555539362, guid: 58832e9207908e14a99582410e3adb03,
         type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 215528158}
-    - target: {fileID: 6166403883806373820, guid: 58832e9207908e14a99582410e3adb03,
-        type: 3}
-      propertyPath: gameManager
-      value: 
-      objectReference: {fileID: 215528158}
     - target: {fileID: 8617180850220602545, guid: 58832e9207908e14a99582410e3adb03,
-        type: 3}
-      propertyPath: gameManager
-      value: 
-      objectReference: {fileID: 215528158}
-    - target: {fileID: 2592110331335265189, guid: 58832e9207908e14a99582410e3adb03,
-        type: 3}
-      propertyPath: gameManager
-      value: 
-      objectReference: {fileID: 215528158}
-    - target: {fileID: 5064577589381458223, guid: 58832e9207908e14a99582410e3adb03,
         type: 3}
       propertyPath: gameManager
       value: 
@@ -4609,8 +4609,8 @@ Camera:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.68485224, g: 0.7487095, b: 0.8490566, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
