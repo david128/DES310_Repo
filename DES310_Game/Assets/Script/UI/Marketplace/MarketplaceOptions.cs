@@ -11,6 +11,7 @@ public class MarketplaceOptions : MonoBehaviour
     public ObjectInfo.ObjectType GetOptType() { return type; }
     public ObjectFill.FillType GetOptFill() { return filler; }
 
+    //quit button will allow selecting again and then destroy marketplace
     public void Quit()
     {
         //find gamemanager and input scrip
@@ -25,6 +26,7 @@ public class MarketplaceOptions : MonoBehaviour
         Destroy( GameObject.FindGameObjectWithTag("Marketplace"));
     }
 
+    //build will attempt to build the field vased on the type and filler of the marketplace the player is on
     public void Build()
     {
         GameObject gameManager = GameObject.FindGameObjectWithTag("GameController");

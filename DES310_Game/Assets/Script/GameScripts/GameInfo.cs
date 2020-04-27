@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//purchase cost, levels and each level cost
 public class ObjectData
 {
     public int purchaseCost;
@@ -16,6 +17,7 @@ public class GameInfo : MonoBehaviour
 
     public ObjectData GetTypeInfo(ObjectInfo.ObjectType type, ObjectFill.FillType fill) //ret
     {
+        //case statement to get data
         switch (type)
         {
             case ObjectInfo.ObjectType.BARN:
