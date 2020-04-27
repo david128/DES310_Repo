@@ -103,19 +103,19 @@ public class InputScript : MonoBehaviour
             {
                 if (Input.GetKey("w") && Camera.main.transform.position.z <= 41 && Camera.main.transform.position.x <= 58)
                 {
-                    cameraMovement.MoveUp(Time.deltaTime * 0.5f);
+                    cameraMovement.MoveUp(Time.deltaTime * 10.0f);
                 }
                 if (Input.GetKey("s") && Camera.main.transform.position.z >= -15 && Camera.main.transform.position.x >= -16)
                 {
-                    cameraMovement.MoveDown(Time.deltaTime * 0.5f);
+                    cameraMovement.MoveDown(Time.deltaTime * 10.0f);
                 }
                 if (Input.GetKey("d") && Camera.main.transform.position.z >= -15 && Camera.main.transform.position.x <= 58)
                 {
-                    cameraMovement.MoveLeft(Time.deltaTime * 0.5f);
+                    cameraMovement.MoveLeft(Time.deltaTime * 10.0f);
                 }
                 if (Input.GetKey("a") && Camera.main.transform.position.z <= 41 && Camera.main.transform.position.x >= -16)
                 {
-                    cameraMovement.MoveRight(Time.deltaTime * 0.5f);
+                    cameraMovement.MoveRight(Time.deltaTime * 10.0f);
                 }
             }
 
