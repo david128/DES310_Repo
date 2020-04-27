@@ -151,11 +151,7 @@ public class RadialMenu : MonoBehaviour
             //Sets radial menu to false
             RadialMenuSpawner.instance.SetAwake(false);
 
-            //if player has not enough money it will set the selecting to false to allow for the pop up to show and not let the player continue playing
-            if (failToUpgrade == false)
-            { 
-                gameManager.GetComponent<InputScript>().SetAllowSelecting(true);
-            }
+
         }
     }
 }

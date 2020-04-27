@@ -11,16 +11,14 @@ public class RadialMenuSpawner : MonoBehaviour
 
     public RadialMenu menuPrefab;
     public bool awake = false;
-    bool canCreateNewRadial = true;
+    
 
     //getters
     public bool GetAwake() { return awake; }
-    public bool GetCanCreateNewRadial() { return canCreateNewRadial; }
-
+    
     //setters
     public void SetAwake(bool a) { awake = a; }
-    public void SetCanCreateNewRadial(bool c) { canCreateNewRadial = c; }
-
+    
     public void DisableStatsMenus() { for (int i = 0; i < statsMenus.Length; i++) { statsMenus[i].SetActive(false); } }
 
     private void Awake()
@@ -38,7 +36,7 @@ public class RadialMenuSpawner : MonoBehaviour
     public IEnumerator WaitForNewRadial()
     {
         float counter = 0;
-        float waitTime = 1.0f;
+        float waitTime = 0.5f;
 
         //Now, Wait until the current state is done playing
         while (counter < (waitTime))
@@ -47,12 +45,17 @@ public class RadialMenuSpawner : MonoBehaviour
             yield return null;
         }
 
-        canCreateNewRadial = true;
+        //allow selecting again
+        GameObject gameManager = GameObject.FindGameObjectWithTag("GameController");
+        gameManager.GetComponent<InputScript>().AllowSelecting();
     }
 
     public void SpawnMenu(RadialPressable obj)
     {
         RadialMenu newMenu = Instantiate(menuPrefab) as RadialMenu;
+
+        //Gives radial menu a while awake script component
+        newMenu.gameObject.AddComponent<WhileAwake>();
 
         newMenu.transform.SetParent(transform, false);
 

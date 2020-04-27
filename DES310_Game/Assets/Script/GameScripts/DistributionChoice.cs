@@ -17,13 +17,18 @@ public class DistributionChoice : MonoBehaviour
 
     string distributerChoice;
 
+    bool distributionOpen;
+
     //getter
     public string GetDistributionChoice() { return distributerChoice; }
+    public bool GetDistributionOpen() { return distributionOpen; }
 
     //setters
     public void SetDefDistributionChoice() { distributerChoice = "P"; }
     public void SetDistributionChoice(string d) { distributerChoice = d; }
+    public void SetDistributionOpen(bool dO) { distributionOpen = dO; }
 
+    //Sets buttons
     public void SetDistribubuterButtons(string distributer)
     {
 
@@ -52,6 +57,15 @@ public class DistributionChoice : MonoBehaviour
     {
         instance = this;
         distributerChoice = "P";
+    }
+
+    void Update()
+    {
+        //checks if distribution id open and if selecting is true
+        if (gameManager.GetComponent<InputScript>().GetAllowSelecting() == true && distributionOpen == true)
+        {
+            gameManager.GetComponent<InputScript>().SetAllowSelecting(false);
+        }
     }
 
     // Chooses current Distributor
