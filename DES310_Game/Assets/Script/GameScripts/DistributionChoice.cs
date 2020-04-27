@@ -10,6 +10,7 @@ public class DistributionChoice : MonoBehaviour
 
     //Public variables to be set in inspector
     public GameObject gameManager;
+    public GameObject enterButton;
 
     public Button BFB;
     public Button PB;
@@ -65,6 +66,16 @@ public class DistributionChoice : MonoBehaviour
     void Update()
     {
         //checks if distribution is open and if selecting is true
+        if (gameManager.GetComponent<InputScript>().GetAllowSelecting() == false && enterButton.active == true)
+        {
+            enterButton.SetActive(false);
+        }
+        else if (gameManager.GetComponent<InputScript>().GetAllowSelecting() == true && enterButton.active == false)
+        {
+            enterButton.SetActive(true);
+        }
+       
+        //checks if distribution id open and if selecting is true
         if (gameManager.GetComponent<InputScript>().GetAllowSelecting() == true && distributionOpen == true)
         {
             gameManager.GetComponent<InputScript>().SetAllowSelecting(false);

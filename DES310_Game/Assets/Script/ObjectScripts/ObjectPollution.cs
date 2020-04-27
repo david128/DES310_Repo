@@ -12,6 +12,7 @@ public class ObjectPollution : MonoBehaviour
 
     public float[] GetPolValues() { pol[0] = pol_lvl1; pol[1] = pol_lvl2; pol[2] = pol_lvl3; return pol;}
 
+    //set polution values
     void Start() 
     {
         pol = new float[3];

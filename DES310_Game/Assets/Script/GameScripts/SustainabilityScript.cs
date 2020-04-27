@@ -63,6 +63,7 @@ public class SustainabilityScript : MonoBehaviour
             }
         }
 
+        //sust effected by distributioon
         sustainability = sustainability * mult;
     }
 }

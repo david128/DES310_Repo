@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using UnityEditor.Build.Content;
+using System.Collections;
 
 public class InputScript : MonoBehaviour
 {
@@ -72,6 +73,33 @@ public class InputScript : MonoBehaviour
 
     //getters
     public bool GetAllowSelecting() { return selecting; }
+
+    //Getters/Setters
+    public bool GetAllowSelecting() { return selecting; }
+
+    public void SetAllowSelecting(bool s) { selecting = s; }
+
+    public void AllowSelectingAfterTime()
+    {
+        StartCoroutine(WaitToSelect());
+    }
+    public IEnumerator WaitToSelect()
+    {
+        float counter = 0;
+        float waitTime = 0.5f;
+
+        //Now, Wait until the current state is done playing
+        while (counter < (waitTime))
+        {
+            counter += Time.deltaTime;
+            yield return null;
+        }
+
+        //allow selecting again
+        AllowSelecting();
+    }
+
+    public void SetCanMove(bool c) { canMove = c; }
     public bool GetCanMove() { return canMove; }
     public bool GetControlType() { return controlType; }
     public bool GetNewMarketplaceMenu() { return newMarket; }
@@ -360,7 +388,7 @@ public class InputScript : MonoBehaviour
                     gameManager.GetComponent<MarketplaceSpawner>().SpawnMenu();
                     selecting = false;
                 }
-                else if (hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectType() != ObjectInfo.ObjectType.EMPTY && RadialMenuSpawner.instance.GetCanCreateNewRadial() == true) //checks what the collider interacts with
+                else if (hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectType() != ObjectInfo.ObjectType.EMPTY )
                 {
                     //if the object has a radial pressable component
                     if (hit.collider.gameObject.TryGetComponent(out RadialPressable radial))
@@ -435,6 +463,12 @@ public class InputScript : MonoBehaviour
 
             //upgrade selected tile
             gameManager.GetComponent<AssetChange>().Upgrade(id);
+        }
+        else
+        {
+            //shows warning message about money
+            gameManager.GetComponent<GameLoop>().GetMoneyWarning().gameObject.SetActive(true);
+            gameManager.GetComponent<InputScript>().SetAllowSelecting(false);
         }
     }
 

@@ -6,6 +6,7 @@ using System.IO;
 
 public class EventsEditor : EditorWindow
 {
+
     public Events events = new Events();
     bool initialLoad = false;
     List<string> eventNames = new List<string>();
@@ -19,31 +20,35 @@ public class EventsEditor : EditorWindow
     int[] convertSub =  { 100 ,100};
     EventRequirementName convertSubTo;
     
-
+    //sets varaibles to init values
     string name = "";
     string desc = "";
-
     int index = 0;
-
     int prevIndex = 0;
 
     Vector2 sPos;
 
+    //sets the editor to be available in the tools section
     [MenuItem("Tools/Events Editor")]
     public static void ShowWindow()
     {
         GetWindow(typeof(EventsEditor));
     }
 
+
     public void OnGUI()
     {
+        //label
         GUILayout.Label("Events", EditorStyles.boldLabel);
 
         //load file button
         if (GUILayout.Button("Load File") == true)
         {
+            //change prevIndex so that will update
             prevIndex = 100;
             initialLoad = true;
+
+            //use events from gamemanager to load events
             GameObject GameManager = GameObject.FindGameObjectWithTag("GameController");
             events = GameManager.GetComponent<Events>();
             events.HandleEventFile();
@@ -53,16 +58,16 @@ public class EventsEditor : EditorWindow
             eventNames.Clear();
             for (int i = 0; i < gameEvents.Count; i++)
             {
-
+                //list events by names
                 eventNames.Add(gameEvents[i].getEVentName());
 
             }
+
+            //set name amd desc
             name = gameEvents[index].getEVentName();
             desc = gameEvents[index].GetEventDescription();
             requirements = gameEvents[index].getEventRequirements();
             effects = gameEvents[index].getEffects();
-
-
 
         }
 
@@ -87,6 +92,7 @@ public class EventsEditor : EditorWindow
             //requirements
             GUILayout.Label("Requirements", EditorStyles.boldLabel);
 
+            //loads all requirements with enum and value boxesd based on what is required
             for (int i = 0; i < requirements.Count; i++)
             {
                 GUILayout.Label("", EditorStyles.label);
@@ -521,12 +527,14 @@ public class EventsEditor : EditorWindow
             EditorGUILayout.EndVertical();
         }
 
+        //queued to delete 
         if (delete != 100)
         {
             gameEvents[index].DeleteRequirement(delete);
             delete = 100;
         }
 
+        //queued to delete sub 
         if (deleteSub[0] != 100 )
         {
             gameEvents[index].DeleteSubRequirement(deleteSub[0], deleteSub[1]);
@@ -534,12 +542,15 @@ public class EventsEditor : EditorWindow
             deleteSub[1] = 100;
         }
 
+
+        //queued to convert
         if (convert != 100)
         {
             gameEvents[index].ConvertRequirement(convert, convertTo);
             convert = 100;
         }
 
+        //queued to convert sub
         if (convertSub[0] != 100)
         {
             gameEvents[index].ConvertSubRequirement(convertSub[0],convertSub[1], convertSubTo);
@@ -550,14 +561,16 @@ public class EventsEditor : EditorWindow
 
         void WriteChanges()
         {
+            //path to file
             string path = "Assets/Resources/files/events.txt";
 
+            //resets file
             File.WriteAllText(path, "");
 
-
-            
+            //loops each event
             for (int index = 0; index < gameEvents.Count; index++)
             {
+                //append name and desc
                 File.AppendAllText(path, "EVENTNAME\n");
                 File.AppendAllText(path, gameEvents[index].getEVentName().ToString() + "\n");
 
@@ -565,10 +578,10 @@ public class EventsEditor : EditorWindow
                 File.AppendAllText(path, gameEvents[index].GetEventDescription().ToString() + "\n");
 
                 List<dynamic> reqs = gameEvents[index].getEventRequirements();
+                //loop through reqs
                 for (int i = 0; i < reqs.Count; i++)
                 {
-                    
-                    
+                    //write reqs
                     if (reqs[i] is ValueMinOrMax)
                     {
 

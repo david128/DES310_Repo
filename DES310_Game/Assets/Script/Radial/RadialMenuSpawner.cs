@@ -12,12 +12,11 @@ public class RadialMenuSpawner : MonoBehaviour
 
     //variables used in script
     public bool awake = false;
-    bool canCreateNewRadial = true;
+    
 
     //getters
     public bool GetAwake() { return awake; }
-    public bool GetCanCreateNewRadial() { return canCreateNewRadial; }
-
+    
     //setters
     public void SetAwake(bool a) { awake = a; }
     public void SetCanCreateNewRadial(bool c) { canCreateNewRadial = c; }
@@ -45,7 +44,7 @@ public class RadialMenuSpawner : MonoBehaviour
     {
         //variables
         float counter = 0;
-        float waitTime = 1.0f;
+        float waitTime = 0.5f;
 
         //Now, Wait until the current state is done playing
         while (counter < (waitTime))
@@ -57,8 +56,9 @@ public class RadialMenuSpawner : MonoBehaviour
             yield return null;
         }
 
-        //sets being able to open a new menu true
-        canCreateNewRadial = true;
+        //allow selecting again
+        GameObject gameManager = GameObject.FindGameObjectWithTag("GameController");
+        gameManager.GetComponent<InputScript>().AllowSelecting();
     }
 
     //spawns new radial menu

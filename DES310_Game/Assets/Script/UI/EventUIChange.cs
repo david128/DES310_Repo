@@ -17,17 +17,21 @@ public class EventUIChange : MonoBehaviour
         descText.text = desc;
     }
 
+    //disables event ui
     public void Disable()
     {
         this.gameObject.SetActive(false);
     }    
     
+    //enables
     public void Enable()
     {
         this.gameObject.SetActive(true);
+        //waits for 5 seconds and then disables
         StartCoroutine(WaitTime());
     }
 
+    //disables after 5 seconds
     public IEnumerator WaitTime()
     {
         float counter = 0;
