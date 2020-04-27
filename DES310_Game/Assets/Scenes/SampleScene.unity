@@ -936,12 +936,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9d57d2e0b7abbb4ea6fda865eeef5d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 215528158}
+  controlType: 0
   touch0StartTime: 0
   maxDistanceForTap: 10
   maxDurationForTap: 0.4
-  controlType: 0
-  canMove: 0
-  gameManager: {fileID: 215528158}
   selectedID: 0
   selecting: 1
   zoomOutMin: 5
@@ -987,11 +986,11 @@ MonoBehaviour:
   - {fileID: 517519235}
   - {fileID: 1059561748}
   gameStats: {fileID: 880080478}
+  time: 0
+  FPS: 0
   UpgradeWarning: {fileID: 57386997}
   MoneyWarning: {fileID: 932858472115143157}
   QuotaWarning: {fileID: 934837451}
-  time: 0
-  FPS: 0
   season: 
   seasonTimer: 0
   GrassMat: {fileID: 2100000, guid: ba0ed77097f0023429517d98f52249f5, type: 2}
@@ -1040,7 +1039,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 215528158}
   quotaFailCountText: {fileID: 934837450}
-  Distributer: 
   food: 0
   currentFood: 0
   foodBar: {fileID: 1704458499}
@@ -1060,6 +1058,7 @@ MonoBehaviour:
   - 2500
   - 5000
   - 12500
+  Distributer: 
 --- !u!114 &215528166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4060,6 +4059,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_CullTransparentMesh
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4233899226186049877, guid: 58832e9207908e14a99582410e3adb03,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58832e9207908e14a99582410e3adb03, type: 3}

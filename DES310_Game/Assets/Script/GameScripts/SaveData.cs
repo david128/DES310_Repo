@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//sets class to be serilisable so that it can be formatted into binary
 [System.Serializable]
 public class SaveData
 {
@@ -13,10 +14,8 @@ public class SaveData
     public float totalFood;
     public float totalPeopleFed;
     public float totalTimePlayed;
-
     public float quotaTimer;
     public int quota;
-
     public float sustainabilityLevel;
     public string distributerChoice;
    
@@ -27,22 +26,19 @@ public class SaveData
     public string[] gridFill;
     public float[] gridPos;
 
+    //saves data
     public SaveData(int moneyData, float foodData, List<GameObject> gridData, float quotaTimerData, int quotaData, float sustainabilityLevelData, string distributerChoiceData, int totalMoneyEarnedData, int totalMoneySpentData, float totalFoodData, float totalTimePlayedData, float totalPeopleFedData)
     {
         //sets variables with passed information
         money = moneyData;
         food = foodData;
-
         totalMoneyEarned = totalMoneyEarnedData;
         totalMoneySpent = totalMoneySpentData;
         totalFood = totalFoodData;
         totalPeopleFed = totalPeopleFedData;
-
         totalTimePlayed = totalTimePlayedData;
-
         quotaTimer = quotaTimerData;
         quota = quotaData;
-
         sustainabilityLevel = sustainabilityLevelData;
         distributerChoice = distributerChoiceData;
 
@@ -53,11 +49,13 @@ public class SaveData
         gridFill = new string[25];
         gridPos = new float[75];
 
+        //sets count to 0
         int count = 0;
 
-        //loops through each grid tile
+        //loops through each grid tile to save the data about each grid in the game
         for (int i = 0; i < 25; i++)
         {
+            //saves current grid tiles information
             gridType[i] = gridData[i].GetComponent<ObjectInfo>().GetObjectType().ToString();
             gridLevel[i] = gridData[i].GetComponent<ObjectInfo>().GetObjectLevel();
             gridID[i] = gridData[i].GetComponent<ObjectInfo>().GetObjectID();
@@ -66,6 +64,7 @@ public class SaveData
             gridPos[count + 1] = gridData[i].transform.localPosition.y;
             gridPos[count + 2] = gridData[i].transform.localPosition.z;
 
+            //adds 3 as to not save over the x, y and z values of each grid tile
             count += 3;
         }
     }
