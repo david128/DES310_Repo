@@ -11,21 +11,32 @@ public class MarketplaceOptions : MonoBehaviour
     public ObjectInfo.ObjectType GetOptType() { return type; }
     public ObjectFill.FillType GetOptFill() { return filler; }
 
+    //quit button will allow selecting again and then destroy marketplace
     public void Quit()
     {
-        InputScript i = GameObject.FindGameObjectWithTag("GameController").GetComponent<InputScript>();
-        i.AllowSelecting();
+        //find gamemanager and input scrip
+        GameObject gameManager = GameObject.FindGameObjectWithTag("GameController");
+        InputScript i = gameManager.GetComponent<InputScript>();
+
+        //call OnDestroyMP to make sure another marketplace doesnt open immediately.
+        gameManager.GetComponent<MarketplaceSpawner>().OnDestroyMP();
+
+
+        //destroy the marketplace
         Destroy( GameObject.FindGameObjectWithTag("Marketplace"));
     }
 
+    //build will attempt to build the field vased on the type and filler of the marketplace the player is on
     public void Build()
     {
-        InputScript i = GameObject.FindGameObjectWithTag("GameController").GetComponent<InputScript>();
+        GameObject gameManager = GameObject.FindGameObjectWithTag("GameController");
+        InputScript i = gameManager.GetComponent<InputScript>();
 
         Debug.Log("Building " + type.ToString() + " with filler " + filler.ToString());
 
         i.AttemptBuild(type, filler);
 
+        //close marketplace
         Quit();
     }
 

@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class SustainabilityScript : MonoBehaviour
 {
-    float sustainability;
+    public float sustainability;
+    float mult =1;
 
     public float GetSustainability() { return sustainability; }
     public void AddSustainability(float s) { sustainability += s; }
     public void SetSustainability(float s) { sustainability = s; }
 
     public GameObject gameManager;
+
+    public void SetMultiplier(float m) { mult = m; }
 
     public void CheckPollution()
     {                      
@@ -22,10 +25,10 @@ public class SustainabilityScript : MonoBehaviour
         for (int i = 0; i < Grid.Count; i++)
         {
             //take out animal stuff, temp cause animals arent in game yet
-            if (Grid[i].GetComponent<ObjectInfo>().GetObjectType() != ObjectInfo.ObjectType.EMPTY && Grid[i].GetComponent<ObjectInfo>().GetObjectType() !=  ObjectInfo.ObjectType.CHICKEN_COOP && Grid[i].GetComponent<ObjectInfo>().GetObjectType() != ObjectInfo.ObjectType.PIG_PEN && Grid[i].GetComponent<ObjectInfo>().GetObjectType() != ObjectInfo.ObjectType.COW_FIELD)
+            if (Grid[i].GetComponent<ObjectInfo>().GetObjectType() != ObjectInfo.ObjectType.EMPTY )
             {
                 //if no fill then pol comes from building
-                if (Grid[i].GetComponent<ObjectFill>().fillType == ObjectFill.FillType.NONE)
+                if (( Grid[i].GetComponent<ObjectFill>().fillType == ObjectFill.FillType.NONE ) || Grid[i].GetComponent<ObjectInfo>().GetObjectType() == ObjectInfo.ObjectType.CHICKEN_COOP && Grid[i].GetComponent<ObjectInfo>().GetObjectType() == ObjectInfo.ObjectType.PIG_PEN && Grid[i].GetComponent<ObjectInfo>().GetObjectType() == ObjectInfo.ObjectType.COW_FIELD)
                 {
                     if (Grid[i].GetComponent<ObjectInfo>().GetObjectLevel() == 1)
                     {
@@ -59,5 +62,8 @@ public class SustainabilityScript : MonoBehaviour
                 }
             }
         }
+
+        //sust effected by distributioon
+        sustainability = sustainability * mult;
     }
 }

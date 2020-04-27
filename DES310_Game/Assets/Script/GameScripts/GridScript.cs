@@ -74,14 +74,14 @@ public class GridScript : MonoBehaviour
         //spawns outside ground
         Instantiate(Resources.Load("Grid"), new Vector3(36.0f, 1.0f, 25.9f), Quaternion.identity);
         Instantiate(Resources.Load("GridFill"), new Vector3(36.0f, 1.0f, 25.9f), Quaternion.identity);
-        Instantiate(Resources.Load("OutsideArea"), new Vector3(36.0f, -0.3f, 25.9f), Quaternion.identity);
+        Instantiate(Resources.Load("OutsideArea"), new Vector3(36.0f, 1.0f, 25.9f), Quaternion.identity);
 
         Instantiate(Resources.Load("Tractor"), new Vector3(64.0f, 2.0f, 33.0f), new Quaternion(0.0f, 0.225f, 0.0f, 0.974f));
 
         //Spawns locked area blockers
-        lockLvl2 = Instantiate(lockLvl2, new Vector3(76.64f, 12.0f, -21.98f), Quaternion.identity);
+        lockLvl2 = Instantiate(lockLvl2, new Vector3(76.64f, 13.5f, -23.25f), Quaternion.identity);
 
-        lockLvl3 = Instantiate(lockLvl3, new Vector3(-11.89f, 12.0f, 87.5f), new Quaternion(0.0f, 0.7071f, 0.0f, 0.7071f));
+        lockLvl3 = Instantiate(lockLvl3, new Vector3(-13.25f, 13.5f, 86.23f), new Quaternion(0.0f, 0.7071f, 0.0f, 0.7071f));
 
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("TutorialScene"))
         {

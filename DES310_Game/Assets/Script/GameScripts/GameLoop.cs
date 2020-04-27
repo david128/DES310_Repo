@@ -6,21 +6,24 @@ using UnityEngine.UI;
 
 public class GameLoop : MonoBehaviour
 {
-    //Declare variables
+    //public variables to be set in inspector
     public GameObject gameManager, textManager;
    
     public AK.Wwise.Bank MyBank = null;
     public AK.Wwise.Event MyEvent = null;
+    public FieldStats[] fieldStats;
+
+    public GameStatisticsScript gameStats;
+
+    public float time;
+    public float FPS;
 
     //Warnings
     public Image UpgradeWarning;
     public Image MoneyWarning;
     public Image QuotaWarning;
 
-    public float time;
-    public float FPS;
-
-    //Seasoon varaibles
+    //Season varaibles
     public string season;
     public float seasonTimer;
     bool changingSeason;
@@ -78,15 +81,15 @@ public class GameLoop : MonoBehaviour
     public void SetTotalTimePlayed(float tP) { totalTimePlayed = tP; }
     public void SetTotalPeopleFed(int pF) { totalPeopleFed = pF; }
 
+    //sets selected tile
+    public void SetSelectedTile(GameObject s) { selectedTile = s; }
+
     //Add to total amount
     public void AddToTotalMoneyEarned(int tM) { totalMoneyEarned += tM; }
     public void AddToTotalMoneySpent(int tM) { totalMoneySpent += tM; }
     public void AddToTotalFood(float tF) { totalFood += tF; }
     public void AddToTotalTimePlayed(float tP) { totalTimePlayed += tP; }
     public void AddToTotalPeopleFed(int pF) { totalPeopleFed += pF; }
-
-    //sets selected tile
-    public void SetSelectedTile(GameObject s) { selectedTile = s; }
 
     //Frames per second
     public float GetFPS() { return FPS; }
@@ -96,9 +99,13 @@ public class GameLoop : MonoBehaviour
     {
         //Application.targetFrameRate = targetFrameRate;
         QualitySettings.vSyncCount = 0;
-        
+
         //load events
-        gameManager.GetComponent<Events>().HandleEventFile();
+        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("TutorialScene"))
+        {
+            gameManager.GetComponent<Events>().HandleEventFile();
+
+        }
 
         //Set season colours
         spring = new Color(0.1685667f, 0.4056604f, 0.03252938f);
@@ -122,6 +129,7 @@ public class GameLoop : MonoBehaviour
         TreeMat.color = sprTree;
         lighting.color = sprLight;
 
+        //sets default
         season = "spring";
 
         //checks if the tutorial scene i
@@ -136,9 +144,9 @@ public class GameLoop : MonoBehaviour
         else
         {
             gameManager.GetComponent<GridScript>().CreateGrid(false);
-
         }
 
+        //checks if it has to laod the game
         if(PlayerPrefs.GetInt("loadGame") == 1)
         {
             gameManager.GetComponent<Save>().LoadGameData();
@@ -148,25 +156,26 @@ public class GameLoop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(QualitySettings.vSyncCount.ToString());
         //Adds up time passed every frame
         time += Time.deltaTime;
-
         seasonTimer += Time.deltaTime;
-
         FPS = 1.0f / Time.deltaTime;
 
         //When the time gets to 3 seconds the money will increase causing a passive income
-        if (time > 60)
+        if (time > 20)
         {
             //Resets the period of time for the passive income
             time = 0.0f;
 
             //checks for events
-            gameManager.GetComponent<Events>().checkTrigger();
+            if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("TutorialScene"))
+            {
+                gameManager.GetComponent<Events>().checkTrigger();
+            }
+            
         }
 
-
+        //checks season to change to and the game time
         if (changingSeason == false)
         {
             if (seasonTimer < 46.0f && season != "spring")
@@ -202,22 +211,27 @@ public class GameLoop : MonoBehaviour
         textManager.GetComponent<TextScript>().UpdateText();
     }
 
+    //change season coroutine
     IEnumerator ChangeSeason()
     {
+        //sets up variable to be used
         bool done = false;
-
         float slowerChangeTime = 0;
         float fasterChangeTime = 0;
         float superSlowChangeTime = 0;
 
+        //sets changing to true
         changingSeason = true;
 
+        //loops until season is changed colours
         while (!done)
         {
+            //sets up time to change
             slowerChangeTime += Time.deltaTime * 0.003f;
             fasterChangeTime += Time.deltaTime * 0.005f;
             superSlowChangeTime += Time.deltaTime * 0.0005f;
 
+            //checks season to change to
             if (season == "spring")
             {
                 //White-green tone
@@ -268,14 +282,18 @@ public class GameLoop : MonoBehaviour
                 }
             }
 
+            //returns null until condition is met
             yield return null;
         }
 
+        //sets changing to false
         changingSeason = false;
     }
 
+    //saves game stats
     public void SaveGameStats(int moneyEarned, int moneySpent, float foodProduced, float timePlayed, int peopleFed)
     {
+        //gets all player prefs to set values to
         PlayerPrefs.SetInt("TotalMoneyEarned", moneyEarned);
         PlayerPrefs.SetInt("TotalMoneySpent", moneySpent);
         PlayerPrefs.SetFloat("TotalFoodProduced", foodProduced);
@@ -283,12 +301,14 @@ public class GameLoop : MonoBehaviour
         PlayerPrefs.SetInt("PeopleFed", peopleFed);
     }
 
+    //saves feild stats
     public void SaveFieldStats(ObjectInfo.ObjectType type, ObjectFill.FillType fill, int tileCount, int moneyCount , int foodCount)
     {
+        //checks type
         switch (type)
         {
+            //if field then check fill
             case ObjectInfo.ObjectType.FIELD:
-
                 switch (fill)
                 {
                     case ObjectFill.FillType.WHEAT:
@@ -389,25 +409,59 @@ public class GameLoop : MonoBehaviour
         }
     }
 
-    // Quits the player when the user hits escape
+    //Gatherss session stats to show at the end screen 
+    public void GatherStats()
+    {
+        //loops though feild stats to show
+        for (int i = 0; i < fieldStats.Length; i++)
+        {
+            fieldStats[i].GatherStats();
+        }
+
+        //gather game stats for updated end screen
+        gameStats.GatherGameStats();
+    }
+
+    //will run fail game if quota count is not met
+    public void FailedGame()
+    {
+        //gets all stats info
+        GatherStats();
+
+        //sets player prefs and reason of ending
+        PlayerPrefs.SetInt("Ending", 0);
+        PlayerPrefs.SetString("ReasonOfEnd", "You did not manange to meet all quotas. Try again?");
+
+        //load end scene
+        SceneLoader.instance.LoadEndScene(4);
+    }
+
+    //will check sustainabilty after all the quotas are met to see if the player done good or bad
     public void FinishGame()
     {
         //gets all stats info
-        //GatherStats();
+        GatherStats();
 
+        if (gameManager.GetComponent<SustainabilityScript>().GetSustainability() < 50)
+        {    
+            //sets player prefs and reason of ending
+            PlayerPrefs.SetInt("Ending", 1);
+            PlayerPrefs.SetString("ReasonOfEnd", "You managed to meet all quotas and keep a good sustainibility level. Congratulations!");
+        }
+        else
+        {
+            //sets player prefs and reason of ending
+            PlayerPrefs.SetInt("Ending", 0);
+            PlayerPrefs.SetString("ReasonOfEnd", "You managed to meet all quotas, but did not manage to keep a good sustainability level. Try again?");
+        }
+
+        //loads end scene
         SceneLoader.instance.LoadEndScene(4);
-        PlayerPrefs.SetInt("Ending", 1);
     }
 
     // Quits the player when the user hits escape
     public void QuitGame()
     {
-        //Saves Game
-        ///Done in button now
-        //saveGame.SaveGameData();
-
-        Debug.Log("Quit Application");
-
         //Quits application
         Application.Quit();
     }

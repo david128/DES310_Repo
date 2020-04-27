@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class EndGame : MonoBehaviour
 {
+    //public variables to be set in inspector
     public GameObject BadEnd;
     public GameObject GoodEnd;
-
     public GameObject Stats;
 
     //field stats
@@ -23,32 +23,33 @@ public class EndGame : MonoBehaviour
     public TextMeshProUGUI totalFoodProducedText;
     public TextMeshProUGUI totalPeopleFedText;
 
+    public TextMeshProUGUI reasonOfEndText;
+
+    //variable used in script
     bool gathered;
 
     // Start is called before the first frame update
     void Awake()
     {
-        //Checks 
+        //Checks waht ending to video to play
         if (PlayerPrefs.GetInt("Ending") == 0)
         {
             BadEnd.SetActive(true);
             GoodEnd.SetActive(false);
-
-            //StartCoroutine(WaitToShowStats(5));
         }
         else
         {
             GoodEnd.SetActive(true);
             BadEnd.SetActive(false);
-
-            //StartCoroutine(WaitToShowStats(5));
         }
 
+        //gather stats to show in menu
         GatherStats();
     }
 
     void GatherStats() 
     {
+        //if stats havent been gathered yet
         if (gathered == false)
         {
             //gets time since the scene was loaded
@@ -60,6 +61,7 @@ public class EndGame : MonoBehaviour
             totalFoodProducedText.text = PlayerPrefs.GetFloat("TotalFoodProduced").ToString();
             totalTimePlayedText.text = string.Format("{0:D2}h:{1:D2}m:{2:D2}s", t.Hours, t.Minutes, t.Seconds);
             totalPeopleFedText.text = PlayerPrefs.GetInt("PeopleFed").ToString();
+            reasonOfEndText.text = PlayerPrefs.GetString("ReasonOfEnd");
 
             //Loops though all fields to show values for each
             for (int i = 0; i < 15; i++)
@@ -163,27 +165,5 @@ public class EndGame : MonoBehaviour
 
             gathered = true;
         }
-
-    }
-
-    IEnumerator WaitToShowStats(int waitTime)
-    {
-        //float counter = 0;
-
-        //while (counter < waitTime)
-        //{
-        //    counter += Time.deltaTime;
-
-        //    yield return null;
-        //}
-
-        yield return new WaitForSeconds(waitTime);
-
-        Stats.SetActive(true);
-
-        yield return new WaitForSeconds(1.5f);
-
-        Stats.GetComponent<Animator>().SetTrigger("Start");
-
     }
 }

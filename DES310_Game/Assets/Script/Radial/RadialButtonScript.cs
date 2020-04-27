@@ -14,11 +14,13 @@ public class RadialButtonScript : MonoBehaviour, IPointerEnterHandler, IPointerE
     
     Color defaultColor;
 
+    //animate buttons
     public void Anim()
     {
         StartCoroutine(AnimateButtonIn());
     }
 
+    //animation
     IEnumerator AnimateButtonIn()
      {
         transform.localScale = Vector3.zero;
