@@ -1015,8 +1015,8 @@ MonoBehaviour:
   currentFood: 0
   foodBar: {fileID: 1704458499}
   quotaTime:
-  - 3
-  - 3
+  - 30
+  - 30
   - 45
   - 45
   - 60
@@ -1473,6 +1473,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Distribution_Stats
       objectReference: {fileID: 0}
+    - target: {fileID: 1932814941293569520, guid: 58832e9207908e14a99582410e3adb03,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 215528158}
+    - target: {fileID: 2868988171570961073, guid: 58832e9207908e14a99582410e3adb03,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 215528158}
     - target: {fileID: 4233899225852231488, guid: 58832e9207908e14a99582410e3adb03,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3033,11 +3043,6 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1932814941293569520, guid: 58832e9207908e14a99582410e3adb03,
-        type: 3}
-      propertyPath: gameManager
-      value: 
-      objectReference: {fileID: 215528158}
     - target: {fileID: 75933549147304116, guid: 58832e9207908e14a99582410e3adb03,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -3093,11 +3098,6 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2868988171570961073, guid: 58832e9207908e14a99582410e3adb03,
-        type: 3}
-      propertyPath: gameManager
-      value: 
-      objectReference: {fileID: 215528158}
     - target: {fileID: 8622206885848542409, guid: 58832e9207908e14a99582410e3adb03,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -7686,11 +7686,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: StatsMenu
       objectReference: {fileID: 0}
-    - target: {fileID: 2078746241348195493, guid: 644c988195024e242b4c69c7ec1c6c9b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2078746240690057498, guid: 644c988195024e242b4c69c7ec1c6c9b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7744,6 +7739,31 @@ PrefabInstance:
     - target: {fileID: 2078746240690057498, guid: 644c988195024e242b4c69c7ec1c6c9b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2078746241348195493, guid: 644c988195024e242b4c69c7ec1c6c9b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2078746241236471356, guid: 644c988195024e242b4c69c7ec1c6c9b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2078746240957853034, guid: 644c988195024e242b4c69c7ec1c6c9b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2078746241619598156, guid: 644c988195024e242b4c69c7ec1c6c9b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2078746241525695563, guid: 644c988195024e242b4c69c7ec1c6c9b,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2078746241488516993, guid: 644c988195024e242b4c69c7ec1c6c9b,
@@ -7841,26 +7861,6 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 215528158}
-    - target: {fileID: 2078746241525695563, guid: 644c988195024e242b4c69c7ec1c6c9b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2078746241619598156, guid: 644c988195024e242b4c69c7ec1c6c9b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2078746241236471356, guid: 644c988195024e242b4c69c7ec1c6c9b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2078746240957853034, guid: 644c988195024e242b4c69c7ec1c6c9b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2078746241488516994, guid: 644c988195024e242b4c69c7ec1c6c9b,
         type: 3}
       propertyPath: m_LocalScale.x
