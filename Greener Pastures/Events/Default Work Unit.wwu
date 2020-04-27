@@ -248,6 +248,28 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Amb_Sample_Chicken" ID="{F5889913-B195-4E91-B422-E733D7BD3EBB}">
+					<ChildrenList>
+						<Action Name="" ID="{4FBFE7AE-CBB6-4EEB-89FC-ED9DA0EE50F5}" ShortID="657587001">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Chicken_Sample" ID="{78E4DFC5-2669-4ACF-8383-D6BD9984218A}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Amb_Sample_Pig" ID="{316D3FE9-BEEC-424E-AC84-C38129EDBA1C}">
+					<ChildrenList>
+						<Action Name="" ID="{56124F8A-5045-441B-A279-7F9AFF971454}" ShortID="864317497">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Pig_Sample" ID="{EA7B05EE-ECAC-45FA-9031-6246E23694E1}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

@@ -355,8 +355,6 @@
 				<Event Id="317641954" Name="ButtonPress" ObjectPath="\Events\Default Work Unit\ButtonPress" DurationType="OneShot" DurationMin="0.114512" DurationMax="0.114512"/>
 				<Event Id="2634775690" Name="Construction" ObjectPath="\Events\Default Work Unit\Construction" DurationType="OneShot" DurationMin="1.403175" DurationMax="1.403175"/>
 				<Event Id="2446376615" Name="Destruction" ObjectPath="\Events\Default Work Unit\Destruction" DurationType="OneShot" DurationMin="2.072562" DurationMax="2.072562"/>
-				<Event Id="2132630239" Name="GameLoop_Song" ObjectPath="\Events\Default Work Unit\GameLoop_Song" DurationType="Infinite"/>
-				<Event Id="2689984332" Name="GameLoop_Stop" ObjectPath="\Events\Default Work Unit\GameLoop_Stop" MaxAttenuation="0.000000" DurationType="OneShot" DurationMin="0.000000" DurationMax="0.000000"/>
 				<Event Id="1048449622" Name="Mac" ObjectPath="\Events\Default Work Unit\Mac" DurationType="OneShot" DurationMin="1.503016" DurationMax="1.503016"/>
 				<Event Id="432469531" Name="New_Open_Market" ObjectPath="\Events\Default Work Unit\New_Open_Market" DurationType="OneShot" DurationMin="1.321043" DurationMax="1.321043"/>
 				<Event Id="1323090623" Name="Upgrade" ObjectPath="\Events\Default Work Unit\Upgrade" MaxAttenuation="100.000000" DurationType="OneShot" DurationMin="0.461542" DurationMax="0.461542"/>
@@ -393,14 +391,6 @@
 				<File Id="751774092" Language="SFX">
 					<ShortName>N_Market_FX.wav</ShortName>
 					<Path>SFX\N_Market_FX_FD6CF179.wem</Path>
-				</File>
-				<File Id="778091218" Language="SFX">
-					<ShortName>NEW_GameLoop2_FX.wav</ShortName>
-					<Path>SFX\NEW_GameLoop2_FX_FD6CF179.wem</Path>
-				</File>
-				<File Id="813840247" Language="SFX">
-					<ShortName>NEW_GameLoop1_FX.wav</ShortName>
-					<Path>SFX\NEW_GameLoop1_FX_FD6CF179.wem</Path>
 				</File>
 				<File Id="860197988" Language="SFX">
 					<ShortName>Upgrade_FX.wav</ShortName>
