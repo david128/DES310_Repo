@@ -191,7 +191,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: d1712b402b5f65419dd04dc67dc429ea
     GuidInternal: 
-    m_lastTime: -8586140845177657521
+    m_lastTime: -8586135841084558056
     List:
     - name: End_game
       guid: cc7c88a1a34fbc489cebfb302c44ee81
@@ -252,7 +252,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 079ed62109d6e54297838745921ea438
     GuidInternal: 
-    m_lastTime: -8586140908037532299
+    m_lastTime: -8586135848617291325
     List:
     - name: Ambience_Animals
       guid: 9abf3811d37a2d4783ae29d037fc25ba
@@ -408,8 +408,32 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Event_Sound
       maxAttenuation: 0
-      maxDuration: 2.442222
-      minDuration: 2.442222
+      maxDuration: -1
+      minDuration: -1
+    - name: GameLoop
+      guid: e9cd45cd675c744581bdfb47ae79d794
+      id: 2775062713
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: GameLoop
+        ObjectType: 3
+      Path: Default Work Unit\GameLoop
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: GameLoopEnd
+      guid: 1d3f12705ad05b44ba31275b1464e950
+      id: 257209496
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: GameLoopEnd
+        ObjectType: 3
+      Path: Default Work Unit\GameLoopEnd
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Good_Ending
       guid: db60c6ca75310f43b45b38dd8171162d
       id: 589883976
@@ -432,8 +456,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\MenuSong
       maxAttenuation: 0
-      maxDuration: 73.01041
-      minDuration: 73.01041
+      maxDuration: 73
+      minDuration: 73
     - name: MenuStop
       guid: 9cafb446c6e90f41b2646703321eeaaf
       id: 1074254744
@@ -468,8 +492,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\OpenMarket
       maxAttenuation: 0
-      maxDuration: 3.245034
-      minDuration: 3.245034
+      maxDuration: -1
+      minDuration: -1
     - name: Splash
       guid: 534733c99b4c194884dc15487fa46eb8
       id: 160038168
@@ -677,7 +701,5 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /Greener Pastures
-  - /Greener Pastures/Events
-  - /Greener Pastures/Events/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: Release

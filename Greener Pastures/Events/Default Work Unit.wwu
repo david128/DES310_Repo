@@ -71,10 +71,10 @@
 				</Event>
 				<Event Name="MenuSong" ID="{C1456CD3-491E-47D0-9358-9874B362310B}">
 					<ChildrenList>
-						<Action Name="" ID="{06161001-93B8-4AC6-AA28-339D694CCBD6}" ShortID="31906187">
+						<Action Name="" ID="{E0D709B8-5A2B-4E57-9061-818B0F9CC900}" ShortID="863936464">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="MenuSong_FX" ID="{71E748A8-13E2-4FE4-9C8B-BDF8055ACEC0}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}"/>
+									<ObjectRef Name="NEW_MenuUpdated_FX" ID="{5F677264-2AC4-4E4A-A4AE-0C287E2F3DF2}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -222,6 +222,18 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="GameLoop" ID="{CD45CDE9-5C67-4574-81BD-FB47AE79D794}">
+					<ChildrenList>
+						<Action Name="" ID="{9105C23C-7168-4495-A222-911A5DA9E593}" ShortID="633273833">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="GameLoop" ID="{4A70F30D-C509-40DB-BC05-2FC5AFAE53EF}" WorkUnitID="{4D69277F-0C97-4157-89B2-39B13192AC5D}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="GameLoopEnd" ID="{70123F1D-D05A-445B-BA31-275B1464E950}"/>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
