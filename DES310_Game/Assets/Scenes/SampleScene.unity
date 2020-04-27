@@ -1596,6 +1596,11 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 215528158}
+    - target: {fileID: 3042638964459240316, guid: 58832e9207908e14a99582410e3adb03,
+        type: 3}
+      propertyPath: enterButton
+      value: 
+      objectReference: {fileID: 1567676061}
     - target: {fileID: 4233899225852231488, guid: 58832e9207908e14a99582410e3adb03,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5612,7 +5617,7 @@ PrefabInstance:
     - target: {fileID: 6285219975983079814, guid: 3e529313ee7f154428ae4a1d8b636e5c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6285219975983079814, guid: 3e529313ee7f154428ae4a1d8b636e5c,
         type: 3}
@@ -5627,7 +5632,7 @@ PrefabInstance:
     - target: {fileID: 6285219975983079814, guid: 3e529313ee7f154428ae4a1d8b636e5c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetAllowSelecting
+      value: AllowSelectingAfterTime
       objectReference: {fileID: 0}
     - target: {fileID: 6285219975983079814, guid: 3e529313ee7f154428ae4a1d8b636e5c,
         type: 3}
@@ -5747,7 +5752,7 @@ PrefabInstance:
     - target: {fileID: 1578743330612339734, guid: 3e529313ee7f154428ae4a1d8b636e5c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1578743330612339734, guid: 3e529313ee7f154428ae4a1d8b636e5c,
         type: 3}
@@ -5762,7 +5767,7 @@ PrefabInstance:
     - target: {fileID: 1578743330612339734, guid: 3e529313ee7f154428ae4a1d8b636e5c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: SetAllowSelecting
+      value: AllowSelectingAfterTime
       objectReference: {fileID: 0}
     - target: {fileID: 1578743330612339734, guid: 3e529313ee7f154428ae4a1d8b636e5c,
         type: 3}
@@ -6515,6 +6520,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2078746240900721026, guid: 644c988195024e242b4c69c7ec1c6c9b,
     type: 3}
   m_PrefabInstance: {fileID: 2078746240306735536}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1567676061 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4233899226186049877, guid: 58832e9207908e14a99582410e3adb03,
+    type: 3}
+  m_PrefabInstance: {fileID: 611921484}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1568850235
 GameObject:
