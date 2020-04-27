@@ -5,7 +5,6 @@ using UnityEngine;
 using System;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
-using UnityEditor.Build.Content;
 using System.Collections;
 
 public class InputScript : MonoBehaviour
