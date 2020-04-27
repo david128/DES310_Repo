@@ -344,7 +344,7 @@ public class InputScript : MonoBehaviour
                     gameManager.GetComponent<MarketplaceSpawner>().SpawnMenu();
                     selecting = false;
                 }
-                else if (hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectType() != ObjectInfo.ObjectType.EMPTY && RadialMenuSpawner.instance.GetCanCreateNewRadial() == true)
+                else if (hit.collider.gameObject.GetComponent<ObjectInfo>().GetObjectType() != ObjectInfo.ObjectType.EMPTY )
                 {
                     if (hit.collider.gameObject.TryGetComponent(out RadialPressable radial))
                     {

@@ -31,11 +31,11 @@ public class RadialPressable : MonoBehaviour
             return;
         }
 
-        if (RadialMenuSpawner.instance.GetAwake() == false && InputScript.instance.GetAllowSelecting() == true && RadialMenuSpawner.instance.GetCanCreateNewRadial() == true)
+        if (RadialMenuSpawner.instance.GetAwake() == false && InputScript.instance.GetAllowSelecting() == true)
         {
             RadialMenuSpawner.instance.SpawnMenu(this);
             RadialMenuSpawner.instance.SpawnStats(this.GetComponent<ObjectInfo>().GetObjectType(), this.GetComponent<ObjectFill>().GetFillType());
-            RadialMenuSpawner.instance.SetCanCreateNewRadial(false);
+            
         }
     }
 }
